@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edoworks — Software Factory</title>
+  <meta name="description" content="Edoworks is the software factory brand of Foculoom LLC. This site hosts the factory portfolio and the factory engineering blog.">
+  <meta name="generator" content="Edoworks 202607210652.0">
+  <meta name="robots" content="index,follow">
+  <style>
+    :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           background: var(--bg); color: var(--text); margin: 0; padding: 0; }
+    nav { background: #0f172a; color: #fff; padding: 16px 20px; }
+    nav .nav-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+    nav .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1em; }
+    nav .brand-meta { color: #94a3b8; font-size: 0.9em; }
+    nav a { color: #c7d2fe; text-decoration: none; }
+    nav a:hover { color: #fff; }
+    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 60px; }
+    .hero { text-align: center; margin-bottom: 48px; }
+    .hero h1 { color: var(--accent); font-size: 2.4em; margin: 0 0 12px; }
+    .hero p { color: var(--muted); font-size: 1.15em; max-width: 620px; margin: 0 auto; line-height: 1.6; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; text-align: left; }
+    .card h2 { color: var(--accent); margin: 0 0 8px; font-size: 1.3em; }
+    .card p { color: var(--text); line-height: 1.6; margin: 0 0 16px; }
+    .card a { display: inline-block; padding: 8px 16px; border-radius: 6px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95em; }
+    .card a:hover { background: #6d28d9; }
+    .card .sub { color: var(--muted); font-size: 0.9em; margin-top: 12px; }
+    footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="https://edoworks.com/">Edoworks</a>
+      <span class="brand-meta">software factory</span>
+      <a href="/blog/" style="margin-left:auto">Blog</a>
+      <a href="/portfolio/">Portfolio</a>
+    </div>
+  </nav>
+  <main>
+    <div class="hero">
+      <h1>Edoworks</h1>
+      <p>The software factory brand of Foculoom LLC. Edoworks designs, builds, and ships a portfolio of apps through an agentic factory — humans set intent; agents research, plan, implement, test, review, and improve.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h2>Portfolio</h2>
+        <p>Every product built by the factory, tracked in a single machine-readable registry. Grouped by category, with status badges and links to each product's site and PRD.</p>
+        <a href="/portfolio/">View portfolio</a>
+        <div class="sub">Backed by <code>.factory/config/product-registry.json</code></div>
+      </div>
+      <div class="card">
+        <h2>Factory Blog</h2>
+        <p>Engineering notes from inside the factory: retrospectives, agent patterns, factory-ops, and lessons learned shipping autonomous software.</p>
+        <a href="/blog/">Read the blog</a>
+        <div class="sub">Factory-internal content; the Foculoom LLC corporate blog lives at <a href="https://foculoom.com/blog/">foculoom.com/blog/</a>.</div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <span>&copy; 2026 Edoworks · Foculoom LLC</span>
+    <span><a href="https://foculoom.com/">foculoom.com</a> &middot; <a href="/privacy/">Privacy</a></span>
+    <span>Built by Edoworks 202607210652.0.</span>
+  </footer>
+</body>
+</html>
