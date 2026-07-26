@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks Factory — Portfolio</title>
   <meta name="description" content="Public portfolio of products built by the Edoworks software factory.">
-  <meta name="generator" content="Edoworks 202607231431.0">
+  <meta name="generator" content="Edoworks 202607262101.0">
   <meta name="robots" content="index,follow">
   <style>
     :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
     * { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: var(--bg); color: var(--text); max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
-    nav { background: #0f172a; color: #fff; margin: 0 -20px 32px; padding: 16px 20px; }
-    nav .brand { font-weight: 700; color: #fff; text-decoration: none; }
-    nav .brand-meta { color: #94a3b8; font-size: 0.9em; margin-left: 12px; }
+           background: var(--bg); color: var(--text); margin: 0; padding: 0; }
+    nav { background: #0f172a; color: #fff; padding: 16px 20px; }
+    nav .nav-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+    nav .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1em; }
+    nav .brand-meta { color: #94a3b8; font-size: 0.9em; }
+    nav a { color: #c7d2fe; text-decoration: none; }
+    nav a:hover { color: #fff; }
+    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 60px; }
     h1 { color: var(--accent); margin: 0 0 8px; font-size: 2em; }
     h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
     .lede { color: var(--muted); margin: 0 0 32px; }
@@ -30,64 +34,63 @@
     .btn-prd { background: #e5e7eb; color: var(--text); }
     .note { color: var(--muted); font-size: 0.9em; }
     a { color: var(--accent); }
-    footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; }
+    footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { color: var(--accent); text-decoration: none; }
   </style>
 </head>
 <body>
   <nav>
-    <a class="brand" href="/">Edoworks</a>
-    <span class="brand-meta">software factory · portfolio</span>
+    <div class="nav-inner">
+      <a class="brand" href="https://edoworks.com/">Edoworks</a>
+      <span class="brand-meta">software factory · portfolio</span>
+      <a href="/blog/" style="margin-left:auto">Blog</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
   </nav>
-  <h1>Edoworks Factory — Portfolio</h1>
-  <p class="lede">18 products tracked in the factory registry. Grouped by category; status badges reflect current factory state.</p>
+  <main>
+    <h1>Edoworks Factory — Portfolio</h1>
+    <p class="lede">12 products tracked in the factory registry. Grouped by category; status badges reflect current factory state.</p>
 <section class="category" id="cat-ios-app">
   <h2>iOS Apps</h2>
   <div class="card" id="veilsort">
-  <h3>Veilsort <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+  <h3>Veilsort <span class="badge" style="color:#ca8a04;background:#fef9c3;border:1px solid #ca8a0440">beta</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
   <div class="links"><a class="btn btn-site" href="https://veilsort.com/">Website</a></div>
 </div>
 
-<div class="card" id="skiplet">
-  <h3>Skiplet <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
-  <div class="meta">platform: ios · stack: godot</div>
-  
-  <div class="links"><a class="btn btn-site" href="https://playskiplet.com/">Website</a></div>
-</div>
-
 <div class="card" id="jumpyloo">
-  <h3>Jumpyloo <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+  <h3>Jumpyloo <span class="badge" style="color:#0891b2;background:#cffafe;border:1px solid #0891b240">implementation</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: godot</div>
-  
   <div class="links"><a class="btn btn-site" href="https://jumpyloo.com/">Website</a></div>
 </div>
 
 <div class="card" id="vorynce">
-  <h3>Vorynce <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+  <h3>Vorynce <span class="badge" style="color:#0891b2;background:#cffafe;border:1px solid #0891b240">implementation</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
   <div class="links"><a class="btn btn-site" href="https://vorynce.com/">Website</a></div>
 </div>
 
 <div class="card" id="docketloom">
-  <h3>Docketloom <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+  <h3>Docketloom <span class="badge" style="color:#0891b2;background:#cffafe;border:1px solid #0891b240">implementation</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
   <div class="links"><a class="btn btn-site" href="https://docketloom.com/">Website</a></div>
 </div>
 
-<div class="card" id="edglex">
-  <h3>Edglex <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+<div class="card" id="edgex">
+  <h3>Edglex <span class="badge" style="color:#0891b2;background:#cffafe;border:1px solid #0891b240">implementation</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
   <div class="links"></div>
 </div>
 
-<div class="card" id="bloomline">
-  <h3>Bloomline <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
-  <div class="meta">platform: ios · stack: godot</div>
-  
+<div class="card" id="ledgerloom">
+  <h3>Ledgerloom <span class="badge" style="color:#2563eb;background:#dbeafe;border:1px solid #2563eb40">spec</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
+  <div class="meta">platform: ios · stack: SwiftUI</div>
+  <div class="links"></div>
+</div>
+
+<div class="card" id="pro-se-prep">
+  <h3>Pro-Se Prep (placeholder name) <span class="badge" style="color:#2563eb;background:#dbeafe;border:1px solid #2563eb40">spec</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
+  <div class="meta">platform: ios · stack: SwiftUI</div>
   <div class="links"></div>
 </div>
 
@@ -96,9 +99,8 @@
 <section class="category" id="cat-macos-app">
   <h2>macOS Apps</h2>
   <div class="card" id="harmonia">
-  <h3>Harmonia <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
+  <h3>Harmonia <span class="badge" style="color:#2563eb;background:#dbeafe;border:1px solid #2563eb40">spec</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: macos · stack: SwiftUI</div>
-  <p class="notes">macOS menu-bar + window app. Newly authorized product lane per docs/wedge/2026-q3-active-focus.md Amendment 2026-07-19.</p>
   <div class="links"></div>
 </div>
 
@@ -107,59 +109,8 @@
 <section class="category" id="cat-godot-game">
   <h2>Godot Games</h2>
   <div class="card" id="gem-cascade">
-  <h3>Gem Cascade <span class="badge" style="color:#9333ea;background:#f3e8ff;border:1px solid #9333ea40">concept</span></h3>
-  <div class="meta">platform: ios · stack: godot · Target iOS (match-3 puzzle). Engine target Godot gl_compatibility.</div>
-  
-  <div class="links"></div>
-</div>
-
-<div class="card" id="kinetic-foundry">
-  <h3>Kinetic Foundry <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
-  <div class="meta">platform: multi · stack: godot · Desktop (macOS) vertical slice; no iOS target per projects/README.md.</div>
-  <p class="notes">First-person 3D physics puzzle, Godot 4.6.3 Forward+. 8 milestones complete. See projects/README.md.</p>
-  <div class="links"></div>
-</div>
-
-<div class="card" id="lumen-vault">
-  <h3>Lumen Vault <span class="badge" style="color:#16a34a;background:#dcfce7;border:1px solid #16a34a40">active</span></h3>
-  <div class="meta">platform: multi · stack: godot · Desktop (macOS) vertical slice; web export via tools/publish_web.sh. No iOS target per projects/README.md.</div>
-  <p class="notes">2D top-down extraction action, Godot 4.6.3 Compatibility. 8 milestones + polish. See projects/README.md.</p>
-  <div class="links"></div>
-</div>
-
-</section>
-
-<section class="category" id="cat-prototype">
-  <h2>Prototypes</h2>
-  <div class="card" id="move-command">
-  <h3>Move Command <span class="badge" style="color:#2563eb;background:#dbeafe;border:1px solid #2563eb40">prototype</span></h3>
-  <div class="meta">platform: ios · stack: SwiftUI · README describes &amp;#x27;local-first iOS moving utility prototype&amp;#x27;.</div>
-  <p class="notes">Repo initialized; product source blocked pending aggregate PASS implementation review. No remote, CloudKit, signing, device install, or release configured. See projects/move-command/README.md.</p>
-  <div class="links"></div>
-</div>
-
-</section>
-
-<section class="category" id="cat-research">
-  <h2>Research &amp; Concepts</h2>
-  <div class="card" id="runner-concepts">
-  <h3>Bounce Bloom (runner concept) <span class="badge" style="color:#9333ea;background:#f3e8ff;border:1px solid #9333ea40">concept</span></h3>
-  <div class="meta">platform: ios · stack: godot · Target iOS (Godot portrait 414x896 gl_compatibility).</div>
-  <p class="notes">Runner-concept exploration dir. Bounce Bloom is the named concept (bundle ID com.foculoom.bounce-bloom per README). Concept-briefs + prototype subdirs present.</p>
-  <div class="links"></div>
-</div>
-
-<div class="card" id="game-concepts">
-  <h3>Game Concept Exploration <span class="badge" style="color:#9333ea;background:#f3e8ff;border:1px solid #9333ea40">concept</span></h3>
-  <div class="meta">platform: multi · stack: godot · Exploration dir — no single target platform.</div>
-  <p class="notes">Brainstorms/evaluates non-endless-runner game concepts. Parent of Bloomline (BLOOMLINE_PRD.md lives here). See projects/game-concepts/README.md.</p>
-  <div class="links"></div>
-</div>
-
-<div class="card" id="apple-design-award-apps">
-  <h3>Apple Design Award App Candidates <span class="badge" style="color:#9333ea;background:#f3e8ff;border:1px solid #9333ea40">concept</span></h3>
-  <div class="meta">platform: ios · stack: SwiftUI · Target iOS (Apple Design Award caliber).</div>
-  <p class="notes">Funnel that identifies Apple Design Award-caliber concepts. See projects/apple-design-award-apps/README.md.</p>
+  <h3>Gem Cascade <span class="badge" style="color:#9333ea;background:#f3e8ff;border:1px solid #9333ea40">concept</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
+  <div class="meta">platform: ios · stack: godot</div>
   <div class="links"></div>
 </div>
 
@@ -168,31 +119,30 @@
 <section class="category" id="cat-archived">
   <h2>Archived</h2>
   <div class="card" id="findmyloophole">
-  <h3>FindMyLoophole <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span></h3>
+  <h3>FindMyLoophole <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
-  <div class="links"><span class="note">→ consolidated into <strong>Edglex</strong></span></div>
+  <div class="links"><span class="note">→ consolidated into <strong>Edgex</strong></span></div>
 </div>
 
 <div class="card" id="lawgaps">
-  <h3>LawGaps <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span></h3>
+  <h3>LawGaps <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
-  <div class="links"><a class="btn btn-site" href="https://lawgaps.com/">Website</a> <span class="note">→ consolidated into <strong>Edglex</strong></span></div>
+  <div class="links"><a class="btn btn-site" href="https://lawgaps.com/">Website</a> <span class="note">→ consolidated into <strong>Edgex</strong></span></div>
 </div>
 
 <div class="card" id="legalexception">
-  <h3>LegalException <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span></h3>
+  <h3>LegalException <span class="badge" style="color:#6b7280;background:#f3f4f6;border:1px solid #6b728040">archived</span> <span class="badge role-badge" style="color:#0ea5e9;background:#e0f2fe;border:1px solid #0ea5e940">commercial</span></h3>
   <div class="meta">platform: ios · stack: SwiftUI</div>
-  
-  <div class="links"><a class="btn btn-site" href="https://legalexception.com/">Website</a> <span class="note">→ consolidated into <strong>Edglex</strong></span></div>
+  <div class="links"><a class="btn btn-site" href="https://legalexception.com/">Website</a> <span class="note">→ consolidated into <strong>Edgex</strong></span></div>
 </div>
 
 </section>
 
+  </main>
   <footer>
-    <span>Built by Edoworks 202607231431.0.</span>
-    <span style="margin-left:12px">Regenerated 2026-07-23T14:31:02Z</span>
+    <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
+    <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></span>
+    <span>Built by Edoworks 202607262101.0.</span>
   </footer>
 </body>
 </html>

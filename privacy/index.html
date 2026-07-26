@@ -11,11 +11,14 @@
     :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
     * { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: var(--bg); color: var(--text); max-width: 920px; margin: 0 auto; padding: 0 20px 60px; }
-    nav { background: #0f172a; color: #fff; margin: 0 -20px 32px; padding: 16px 20px; }
-    nav .brand { font-weight: 700; color: #fff; text-decoration: none; }
-    nav .brand-meta { color: #94a3b8; font-size: 0.9em; margin-left: 12px; }
+           background: var(--bg); color: var(--text); margin: 0; padding: 0; }
+    nav { background: #0f172a; color: #fff; padding: 16px 20px; }
+    nav .nav-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
+    nav .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1em; }
+    nav .brand-meta { color: #94a3b8; font-size: 0.9em; }
     nav a { color: #c7d2fe; text-decoration: none; }
+    nav a:hover { color: #fff; }
+    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 60px; }
     h1 { color: var(--accent); margin: 0 0 8px; font-size: 2em; }
     h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
     p { line-height: 1.65; color: var(--text); }
@@ -26,11 +29,14 @@
 </head>
 <body>
   <nav>
-    <a class="brand" href="https://edoworks.com/">Edoworks</a>
-    <span class="brand-meta">software factory</span>
-    <a href="/blog/" style="margin-left:auto">Blog</a>
-    <a href="/portfolio/">Portfolio</a>
+    <div class="nav-inner">
+      <a class="brand" href="https://edoworks.com/">Edoworks</a>
+      <span class="brand-meta">software factory</span>
+      <a href="/blog/" style="margin-left:auto">Blog</a>
+      <a href="/portfolio/">Portfolio</a>
+    </div>
   </nav>
+  <main>
   <h1>Privacy Policy</h1>
   <p class="lede">Last updated: July 23, 2026</p>
 
@@ -55,7 +61,7 @@
 
   <h2>Changes</h2>
   <p>If this policy changes, we will update the "Last updated" date above and republish this page.</p>
-
+  </main>
   <footer>
     <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
     <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a> &middot; <a href="/blog/">Blog</a></span>
