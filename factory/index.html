@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foculoom — Factory Dashboard</title>
+  <meta name="description" content="Foculoom factory health dashboard — autonomy ratio trend and validation status.">
+  <meta name="generator" content="Edoworks 202607291812.0">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f3ff;
+      color: #111827;
+      line-height: 1.6;
+    }
+    .content { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    h1 { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: #111827; }
+    .generated { color: #6b7280; font-size: 0.875rem; margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.3rem; font-weight: 700; color: #5b21b6;
+      margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em;
+      padding-bottom: 0.5rem; border-bottom: 2px solid #7c3aed;
+    }
+    .group { margin-bottom: 1.5rem; }
+    .panels { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+    .panel {
+      background: #fff; border: 1px solid #ddd6fe;
+      border-top: 3px solid #7c3aed; border-radius: 12px; padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.06);
+    }
+    .panel h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; color: #111827; }
+    .badge {
+      display: inline-block; font-size: 0.7rem; font-weight: 600;
+      padding: 0.15rem 0.5rem; border-radius: 4px; color: #fff;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .status-pass { border-top-color: #2a7d2a; }
+    .status-pass .badge { background: #2a7d2a; }
+    .status-fail { border-top-color: #c62828; }
+    .status-fail .badge { background: #c62828; }
+    .status-nodata { border-top-color: #999; }
+    .status-nodata .badge { background: #999; }
+    .status-rejected, .status-error { border-top-color: #c62828; }
+    .status-rejected .badge, .status-error .badge { background: #c62828; }
+    .status-unknown .badge { background: #999; }
+    .panel-trend { grid-column: 1 / -1; }
+    .trend-chart { width: 100%; height: auto; display: block; margin-top: 0.75rem; }
+    .detail { font: 0.82rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #374151; margin: 0.5rem 0 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .note { font-size: 0.8rem; color: #6b7280; font-style: italic; margin: 0.4rem 0 0 0; }
+    .source { font-size: 0.75rem; color: #9ca3af; margin: 0.4rem 0 0 0; }
+    code { font-family: ui-monospace, monospace; font-size: 0.8rem; }
+    footer {
+      text-align: center; padding: 1.25rem;
+      font-size: 0.8125rem; color: #9ca3af;
+    }
+    footer a { color: #9ca3af; text-decoration: none; }
+  </style>
+</head>
+<body>
+<nav style="background:#0f172a;padding:1rem 1.5rem"><div style="max-width:720px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#f8fafc;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Foculoom</a><span style="color:#475569">/</span><span style="color:#94a3b8;font-size:0.9rem;font-weight:500">Factory</span></div></nav>
+
+  <div class="content">
+    <h1>Factory Dashboard</h1>
+    <p class="generated">Last regenerated: 2026-07-29T11:12:05</p>
+  <section class="group">
+    <h2>Health</h2>
+    <div class="panels">
+    <div id="verify-status" class="panel status-pass">
+      <h3>Factory health check</h3>
+      <span class="badge status-pass">PASS</span>
+      <p class="detail">All checks passed</p>
+    </div>
+    <div id="daily-autonomy" class="panel status-pass panel-trend">
+      <h3>Daily Autonomy Ratio</h3>
+      <span class="badge status-pass">PASS</span>
+<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily autonomy ratio chart: 11 periods, latest 13.96." xmlns="http://www.w3.org/2000/svg">
+  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">0.0</text>
+  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">49.7</text>
+  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">99.3</text>
+  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="157.7" x2="464" y2="157.7" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="462" y="154.7" text-anchor="end" font-size="8" fill="#2563eb">target (10)</text>
+  <polyline points="44.0,154.4 86.0,156.1 128.0,147.9 170.0,149.5 212.0,128.8 254.0,39.0 296.0,123.5 338.0,161.8 380.0,76.2 422.0,143.4 464.0,151.2" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle cx="44.0" cy="154.4" r="3.5" fill="#7c3aed"/>
+  <circle cx="86.0" cy="156.1" r="3.5" fill="#7c3aed"/>
+  <circle cx="128.0" cy="147.9" r="3.5" fill="#7c3aed"/>
+  <circle cx="170.0" cy="149.5" r="3.5" fill="#7c3aed"/>
+  <circle cx="212.0" cy="128.8" r="3.5" fill="#7c3aed"/>
+  <circle cx="254.0" cy="39.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="296.0" cy="123.5" r="3.5" fill="#7c3aed"/>
+  <circle cx="338.0" cy="161.8" r="3.5" fill="#7c3aed"/>
+  <circle cx="380.0" cy="76.2" r="3.5" fill="#7c3aed"/>
+  <circle cx="422.0" cy="143.4" r="3.5" fill="#7c3aed"/>
+  <circle cx="464.0" cy="151.2" r="3.5" fill="#7c3aed"/>
+  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-09</text>
+  <text x="86.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-10</text>
+  <text x="128.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-12</text>
+  <text x="170.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-14</text>
+  <text x="212.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-15</text>
+  <text x="254.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-16</text>
+  <text x="296.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-17</text>
+  <text x="338.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-18</text>
+  <text x="380.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-26</text>
+  <text x="422.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-28</text>
+  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-29</text>
+</svg>
+<p class="detail" style="color:#6b7280;font-size:0.8rem;margin-top:0.4rem">11 daily observations, 2026-07-09 to 2026-07-29. Latest: 13.96.</p>
+    </div>
+    </div>
+  </section>
+  <section class="group">
+    <h2>Governance</h2>
+    <div class="panels">
+    <div id="daily-cost" class="panel status-pass panel-trend">
+      <h3>Daily factory cost ($)</h3>
+      <span class="badge status-pass">PASS</span>
+<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily factory cost chart: 10 periods, latest $0.00." xmlns="http://www.w3.org/2000/svg">
+  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">$0.0</text>
+  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$4.1</text>
+  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$8.2</text>
+  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
+  <polyline points="44.0,121.1 90.7,166.4 137.3,145.5 184.0,39.0 230.7,174.0 277.3,174.0 324.0,174.0 370.7,174.0 417.3,174.0 464.0,174.0" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle cx="44.0" cy="121.1" r="3.5" fill="#7c3aed"/>
+  <circle cx="90.7" cy="166.4" r="3.5" fill="#7c3aed"/>
+  <circle cx="137.3" cy="145.5" r="3.5" fill="#7c3aed"/>
+  <circle cx="184.0" cy="39.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="230.7" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="277.3" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="324.0" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="370.7" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="417.3" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="464.0" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-10</text>
+  <text x="90.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-11</text>
+  <text x="137.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-12</text>
+  <text x="184.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-13</text>
+  <text x="230.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-15</text>
+  <text x="277.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-16</text>
+  <text x="324.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-17</text>
+  <text x="370.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-25</text>
+  <text x="417.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-28</text>
+  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-29</text>
+</svg>
+<p class="detail" style="color:#6b7280;font-size:0.8rem;margin-top:0.4rem">10 daily observations, 2026-07-10 to 2026-07-29. Latest: $0.00.</p>
+    </div>
+    <div id="github-copilot-monthly-cost" class="panel status-pass panel-trend">
+      <h3>GitHub Copilot cost before factory telemetry ($)</h3>
+      <span class="badge status-pass">PASS</span>
+<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Monthly GitHub Copilot cost chart: 4 periods, latest $22.06." xmlns="http://www.w3.org/2000/svg">
+  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">$0.0</text>
+  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$651.8</text>
+  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$1303.7</text>
+  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
+  <polyline points="44.0,152.2 184.0,121.9 324.0,39.0 464.0,171.3" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle cx="44.0" cy="152.2" r="3.5" fill="#7c3aed"/>
+  <circle cx="184.0" cy="121.9" r="3.5" fill="#7c3aed"/>
+  <circle cx="324.0" cy="39.0" r="3.5" fill="#7c3aed"/>
+  <circle cx="464.0" cy="171.3" r="3.5" fill="#7c3aed"/>
+  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-04</text>
+  <text x="184.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-05</text>
+  <text x="324.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-06</text>
+  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-07</text>
+</svg>
+<p class="detail" style="color:#6b7280;font-size:0.8rem;margin-top:0.4rem">4 monthly observations, 2026-04-01 to 2026-07-01. Latest: $22.06.</p>
+      <p class="note">Note: This is vendor billing, separate from daily factory telemetry. GitHub returned no Copilot usage rows for February or March. July is month-to-date; earlier points are completed billing months.</p>
+    </div>
+    </div>
+  </section>
+  </div>
+  <footer id="dashboard-footer">
+    <span>© 2026 Foculoom LLC &nbsp;·&nbsp;
+      <a href="/">Home</a> &nbsp;·&nbsp;
+      <a href="/blog/">Blog</a>
+    </span>
+    <br><span>Built by Edoworks 202607291812.0.</span>
+  </footer>
+</body>
+</html>
