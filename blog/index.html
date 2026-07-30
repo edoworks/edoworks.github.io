@@ -93,7 +93,7 @@
     const input = document.getElementById('site-search-input');
     const resultsEl = document.getElementById('site-search-results');
     const postList = document.getElementById('post-list');
-    let pagefind, debounce;
+    let pagefind, debounce, reqId = 0;
     async function ensurePagefind() {
       if (!pagefind) {
         pagefind = await import('/pagefind/pagefind.js');
@@ -102,20 +102,40 @@
       }
       return pagefind;
     }
+    function renderExcerpt(parent, excerpt) {
+      // Pagefind returns excerpt with <mark>...</mark> highlighting. Parse via
+      // DOMParser then keep only bare <mark> elements (no attributes) to prevent
+      // any event-handler/attribute injection. Text nodes are preserved.
+      const doc = new DOMParser().parseFromString('<div>' + (excerpt || '') + '</div>', 'text/html');
+      const out = document.createElement('div');
+      for (const node of doc.body.firstChild.childNodes) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          out.appendChild(node.cloneNode());
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'MARK' && !node.attributes.length) {
+          const m = document.createElement('mark');
+          m.textContent = node.textContent;
+          out.appendChild(m);
+        }
+      }
+      parent.appendChild(out);
+    }
     async function runSearch(query) {
+      const myId = ++reqId;
       if (!query.trim()) {
-        resultsEl.innerHTML = '';
-        postList.style.display = '';
+        if (myId === reqId) { resultsEl.innerHTML = ''; postList.style.display = ''; }
         return;
       }
       const pf = await ensurePagefind();
+      if (myId !== reqId) return;
       const search = await pf.search(query);
+      if (myId !== reqId) return;
       postList.style.display = 'none';
       if (!search.results.length) {
         resultsEl.innerHTML = '<div class="search-empty">No posts match “' + query.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])) + '.”</div>';
         return;
       }
       const top = await Promise.all(search.results.slice(0, 20).map(r => r.data()));
+      if (myId !== reqId) return;
       resultsEl.innerHTML = '';
       for (const r of top) {
         const card = document.createElement('div');
@@ -128,10 +148,7 @@
         titleRow.appendChild(a);
         const ex = document.createElement('div');
         ex.className = 'result-excerpt';
-        // Pagefind returns excerpt with <mark>...</mark> highlighting; strip any
-        // tag other than <mark> for safety, then set via innerHTML.
-        const safe = (r.excerpt || '').replace(/<(?!\/?mark\b)[^>]*>/g, '');
-        ex.innerHTML = safe;
+        renderExcerpt(ex, r.excerpt);
         card.appendChild(titleRow);
         card.appendChild(ex);
         resultsEl.appendChild(card);
