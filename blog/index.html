@@ -116,12 +116,26 @@
         return;
       }
       const top = await Promise.all(search.results.slice(0, 20).map(r => r.data()));
-      resultsEl.innerHTML = top.map(r => {
-        const title = (r.meta?.title || r.url).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-        const href = r.url.replace(/[<>"]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-        const excerpt = (r.excerpt || '').replace(/[<>]/g, c => ({'<':'&lt;','>':'&gt;'}[c]));
-        return '<div class="search-result"><div class="result-title"><a href="' + href + '">' + title + '</a></div><div class="result-excerpt">' + excerpt + '</div></div>';
-      }).join('');
+      resultsEl.innerHTML = '';
+      for (const r of top) {
+        const card = document.createElement('div');
+        card.className = 'search-result';
+        const titleRow = document.createElement('div');
+        titleRow.className = 'result-title';
+        const a = document.createElement('a');
+        a.href = r.url;
+        a.textContent = r.meta?.title || r.url;
+        titleRow.appendChild(a);
+        const ex = document.createElement('div');
+        ex.className = 'result-excerpt';
+        // Pagefind returns excerpt with <mark>...</mark> highlighting; strip any
+        // tag other than <mark> for safety, then set via innerHTML.
+        const safe = (r.excerpt || '').replace(/<(?!\/?mark\b)[^>]*>/g, '');
+        ex.innerHTML = safe;
+        card.appendChild(titleRow);
+        card.appendChild(ex);
+        resultsEl.appendChild(card);
+      }
     }
     input.addEventListener('input', () => {
       clearTimeout(debounce);
