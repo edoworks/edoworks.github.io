@@ -32,6 +32,23 @@
     .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
     footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     footer a { color: var(--accent); text-decoration: none; }
+    /* Pagefind search */
+    .site-search { margin: 0 0 28px; }
+    .site-search input[type="search"] {
+      width: 100%; padding: 12px 16px; font-size: 1em;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: var(--card); color: var(--text);
+      box-sizing: border-box; outline: none;
+    }
+    .site-search input[type="search"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(124,58,237,0.15); }
+    .search-results { margin-top: 12px; }
+    .search-result { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+    .search-result .result-title { font-weight: 600; }
+    .search-result .result-title a { color: var(--text); text-decoration: none; }
+    .search-result .result-title a:hover { color: var(--accent); }
+    .search-result .result-excerpt { color: var(--muted); font-size: 0.95em; margin-top: 4px; line-height: 1.5; }
+    .search-result .result-excerpt mark { background: #ede9fe; color: var(--text); padding: 0 2px; border-radius: 2px; }
+    .search-empty { color: var(--muted); font-style: italic; padding: 16px 0; }
   </style>
 </head>
 <body>
@@ -48,7 +65,11 @@
       <h1>Edoworks Blog</h1>
       <p>Engineering notes from inside the factory.</p>
     </div>
-    <div class="post-list">
+    <div class="site-search">
+      <input id="site-search-input" type="search" placeholder="Search posts…" aria-label="Search posts" autocomplete="off">
+      <div class="search-results" id="site-search-results" role="status" aria-live="polite"></div>
+    </div>
+    <div class="post-list" id="post-list">
       <div class="post-card">
         <h2><a href="/blog/measure-autonomous-work-surface-outcome.html">Measure Autonomous Work by Surface and Outcome</a></h2>
         <div class="byline">Edoworks factory notes &middot; July 29, 2026</div>
@@ -66,5 +87,47 @@
     <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span>
     <span>Built by Edoworks 202607210652.0.</span>
   </footer>
+  <link rel="stylesheet" href="/pagefind/pagefind-modular-ui.css">
+  <script src="/pagefind/pagefind-modular-ui.js" type="module"></script>
+  <script type="module">
+    const input = document.getElementById('site-search-input');
+    const resultsEl = document.getElementById('site-search-results');
+    const postList = document.getElementById('post-list');
+    let pagefind, debounce;
+    async function ensurePagefind() {
+      if (!pagefind) {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.options({ excerptLength: 25 });
+        pagefind.init();
+      }
+      return pagefind;
+    }
+    async function runSearch(query) {
+      if (!query.trim()) {
+        resultsEl.innerHTML = '';
+        postList.style.display = '';
+        return;
+      }
+      const pf = await ensurePagefind();
+      const search = await pf.search(query);
+      postList.style.display = 'none';
+      if (!search.results.length) {
+        resultsEl.innerHTML = '<div class="search-empty">No posts match “' + query.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])) + '.”</div>';
+        return;
+      }
+      const top = await Promise.all(search.results.slice(0, 20).map(r => r.data()));
+      resultsEl.innerHTML = top.map(r => {
+        const title = (r.meta?.title || r.url).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+        const href = r.url.replace(/[<>"]/g, c => ({'<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+        const excerpt = (r.excerpt || '').replace(/[<>]/g, c => ({'<':'&lt;','>':'&gt;'}[c]));
+        return '<div class="search-result"><div class="result-title"><a href="' + href + '">' + title + '</a></div><div class="result-excerpt">' + excerpt + '</div></div>';
+      }).join('');
+    }
+    input.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(() => runSearch(input.value), 180);
+    });
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') { clearTimeout(debounce); runSearch(input.value); } });
+  </script>
 </body>
 </html>
