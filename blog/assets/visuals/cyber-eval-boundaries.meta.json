@@ -1,0 +1,10 @@
+{
+  "recipe_id": "cyber-eval-boundaries",
+  "schema_version": "0.8.34",
+  "renderer_version": "0.47.0",
+  "renderer_sha256": "7824e2e3accc2a7d306443d80f117ed0cef14147970d69b33e753390a38fcd9a",
+  "recipe_sha256": "ccb05201f782aec492b2c5bd5befb46259e8fa838bc67387a91260b1c250e5ca",
+  "assets_manifest_sha256": "5f87174d1e0a5a40946687c3fa75d17e0664e8c5de02a6a9cee3733758014258",
+  "git_commit": "b00549fcab43e9d3d1ee9ec3a0222ffb446807a5",
+  "render_timestamp": "2026-07-31T17:01:20.316330+00:00"
+}
