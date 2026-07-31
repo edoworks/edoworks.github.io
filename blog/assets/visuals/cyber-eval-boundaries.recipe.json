@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.8.34",
+  "recipe_id": "cyber-eval-boundaries",
+  "kind": "annotated-code",
+  "status": "canonical",
+  "canvas": {"width_px": 1200, "height_px": 675, "dpi": 96, "color_profile": "sRGB", "background_color": "#F1F5F9"},
+  "output": {"format": "png", "icc_profile": "sRGB-IEC61966-2.1"},
+  "seed": 61,
+  "scene": {"elements": [
+    {"type": "group", "id": "boundary-policy", "elements": [
+      {"type": "rect", "x": 80, "y": 75, "width": 760, "height": 525, "rx": 24, "fill": "#0F172A"},
+      {"type": "text", "x": 135, "y": 175, "content": "scope = allowlist", "font_family": "Noto Sans", "font_size": 34, "font_weight": 700, "fill": "#C4B5FD"},
+      {"type": "text", "x": 135, "y": 265, "content": "network = deny", "font_family": "Noto Sans", "font_size": 34, "font_weight": 700, "fill": "#FDE68A"},
+      {"type": "text", "x": 135, "y": 355, "content": "monitor = live", "font_family": "Noto Sans", "font_size": 34, "font_weight": 700, "fill": "#7DD3FC"},
+      {"type": "text", "x": 135, "y": 445, "content": "stop = automatic", "font_family": "Noto Sans", "font_size": 34, "font_weight": 700, "fill": "#86EFAC"}
+    ]},
+    {"type": "line", "x1": 540, "y1": 255, "x2": 1040, "y2": 175, "stroke": "#DC2626", "stroke_width": 7},
+    {"type": "path", "d": "M1015 150 L1055 172 L1022 205", "fill": "none", "stroke": "#DC2626", "stroke_width": 7, "stroke_linecap": "round"},
+    {"type": "text", "x": 900, "y": 125, "content": "Enforce", "font_family": "Noto Sans", "font_size": 36, "font_weight": 700, "fill": "#991B1B"},
+    {"type": "text", "x": 895, "y": 335, "content": "Do not rely", "font_family": "Noto Sans", "font_size": 32, "font_weight": 700, "fill": "#334155"},
+    {"type": "text", "x": 895, "y": 385, "content": "on the prompt", "font_family": "Noto Sans", "font_size": 32, "font_weight": 700, "fill": "#334155"}
+  ]}
+}
