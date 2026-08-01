@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
   <meta name="description" content="Edoworks factory health dashboard — live, public measurements of an AI-assisted software factory: costs, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608010600.0">
+  <meta name="generator" content="Edoworks 202608010820.0">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -105,7 +105,7 @@
         </dl>
       </details>
     </section>
-    <p class="generated">Last regenerated: 2026-08-01T05:59:06Z</p>
+    <p class="generated">Last regenerated: 2026-08-01T08:17:55Z</p>
   <section class="group">
     <h2>Health</h2>
     <div class="panels">
@@ -117,47 +117,49 @@
     </div>
     <div id="daily-autonomy" class="panel status-pass panel-trend">
       <h3>Daily autonomy (AI hours per human hour)</h3>
-      <p class="public-explanation">How many hours of productive work the AI agents did for each hour of human time, per day. Higher means the factory ran more autonomously that day. The dashed line is the target.</p>
+      <p class="public-explanation">For each day, how many hours the AI factory ran versus how many hours the human worked. Solid points are wall-clock time (current standard, capped at 24h); hollow points are pre-2026-07-29 aggregate parallel-compute effort (not wall-clock, may exceed 24h). The ratio is AI hours divided by human hours; higher means more autonomous. The dashed line is the 10:1 target. Pair this with the quality panel: a high ratio with high revert or change-failure rates is not a real gain.</p>
       <span class="badge status-pass" aria-label="PASS: 12 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily autonomy ratio chart: 11 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="10" text-anchor="end" font-size="8" fill="#9ca3af">autonomy ratio (X:1)</text>
-  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">0.0</text>
-  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">36.0</text>
-  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">72.0</text>
-  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="151.5" x2="464" y2="151.5" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="462" y="148.5" text-anchor="end" font-size="8" fill="#2563eb">target (10)</text>
-  <polyline data-series="measured" points="44.0,147.0 86.0,149.2 128.0,138.0 170.0,140.2 212.0,111.6 254.0,104.4 296.0,157.1 338.0,39.0 380.0,131.8 422.0,142.8 464.0,136.2" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="147.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="86.0" cy="149.2" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="128.0" cy="138.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="170.0" cy="140.2" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="212.0" cy="111.6" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="254.0" cy="104.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="296.0" cy="157.1" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="338.0" cy="39.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="380.0" cy="131.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="422.0" cy="142.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="136.2" r="3.5" fill="#7c3aed"/>
-  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-09</text>
-  <text x="86.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-10</text>
-  <text x="128.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-12</text>
-  <text x="170.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-14</text>
-  <text x="212.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-15</text>
-  <text x="254.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-17</text>
-  <text x="296.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-18</text>
-  <text x="338.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-26</text>
-  <text x="380.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-28</text>
-  <text x="422.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-29</text>
-  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-31</text>
+<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 12 measured, 0 unknown, 0 stale periods (two series: wall-clock vs effort)." xmlns="http://www.w3.org/2000/svg">
+  <text x="44" y="20" text-anchor="start" font-size="10" fill="#6b7280">autonomy ratio (X:1)</text>
+  <line x1="44" y1="184.0" x2="412" y2="184.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="187.0" text-anchor="end" font-size="10" fill="#4b5563">0.0</text>
+  <line x1="44" y1="104.0" x2="412" y2="104.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="107.0" text-anchor="end" font-size="10" fill="#4b5563">49.7</text>
+  <line x1="44" y1="24.0" x2="412" y2="24.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="27.0" text-anchor="end" font-size="10" fill="#4b5563">99.3</text>
+  <line x1="44" y1="24" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="184" x2="412" y2="184" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="167.9" x2="412" y2="167.9" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="414" y="170.9" text-anchor="start" font-size="10" fill="#2563eb">target (10)</text>
+  <circle data-series="wallclock" data-state="measured" cx="412.0" cy="156.9" r="3.5" fill="#7c3aed"/>
+  <circle data-series="effort" data-state="measured" cx="44.0" cy="164.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="77.5" cy="166.3" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="110.9" cy="158.2" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="144.4" cy="159.8" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="177.8" cy="139.3" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="211.3" cy="50.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="244.7" cy="134.2" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="278.2" cy="171.9" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="311.6" cy="87.4" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="345.1" cy="153.8" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" cx="378.5" cy="161.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
+  <text x="44.0" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-09</text>
+  <text x="77.5" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-10</text>
+  <text x="110.9" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-12</text>
+  <text x="144.4" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-14</text>
+  <text x="177.8" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-15</text>
+  <text x="211.3" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-16</text>
+  <text x="244.7" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-17</text>
+  <text x="278.2" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-18</text>
+  <text x="311.6" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-26</text>
+  <text x="345.1" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-28</text>
+  <text x="378.5" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-29</text>
+  <text x="412.0" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-31</text>
 </svg>
-<p class="detail metric-caption">11 daily observations: 11 measured, 0 unknown, 0 stale periods. Latest measured: 16.82.</p>
-<p class="detail metric-caption">1 day(s) excluded: effort-typed (parallel subagent compute, not wall-clock). Excluded date(s): 2026-07-16.</p>
+<p class="detail metric-caption">12 daily observations: 12 measured, 0 unknown, 0 stale periods. Latest measured: 16.82.</p>
+<p class="detail metric-caption">Two series: 1 wall-clock day(s) (solid, current standard, capped 24h) and 11 aggregate-compute day(s) (hollow, pre-2026-07-29, parallel subagent effort &mdash; not wall-clock, may exceed 24h). Ratio = AI hours &divide; human hours.</p>
+      <p class="note">Note: Two series: solid = wall-clock days (current standard, capped 24h); hollow = aggregate parallel-compute days (pre-2026-07-29, not wall-clock). See docs/dashboard/README.md.</p>
     </div>
     </div>
   </section>
@@ -169,37 +171,37 @@
       <p class="public-explanation">What the factory costs to run each day, in US dollars — including both variable AI-tool usage and the daily share of fixed monthly subscriptions (AI tools, cloud compute, code hosting).</p>
       <span class="badge status-pass" aria-label="PASS: 10 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily factory cost chart: 10 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="10" text-anchor="end" font-size="8" fill="#9ca3af">factory cost</text>
-  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">$0.0</text>
-  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$14.8</text>
+<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily factory cost chart: 10 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
+  <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">factory cost</text>
+  <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">$0.0</text>
+  <line x1="44" y1="98.0" x2="464" y2="98.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="101.0" text-anchor="end" font-size="9" fill="#4b5563">$14.8</text>
   <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$29.7</text>
-  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
-  <polyline data-series="measured" points="44.0,61.8 90.7,74.3 137.3,68.5 184.0,39.0 230.7,76.4 277.3,76.4 324.0,76.4 370.7,76.4 417.3,76.4 464.0,76.4" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="61.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="90.7" cy="74.3" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="137.3" cy="68.5" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="184.0" cy="39.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="230.7" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="277.3" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="324.0" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="370.7" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="417.3" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="76.4" r="3.5" fill="#7c3aed"/>
-  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-10</text>
-  <text x="90.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-11</text>
-  <text x="137.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-12</text>
-  <text x="184.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-13</text>
-  <text x="230.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-15</text>
-  <text x="277.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-16</text>
-  <text x="324.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-17</text>
-  <text x="370.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-25</text>
-  <text x="417.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-28</text>
-  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-29</text>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#4b5563">$29.7</text>
+  <line x1="44" y1="12" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="184" x2="464" y2="184" stroke="#ccc" stroke-width="1"/>
+  <polyline data-series="measured" points="44.0,64.8 90.7,78.1 137.3,72.0 184.0,40.7 230.7,80.4 277.3,80.4 324.0,80.4 370.7,80.4 417.3,80.4 464.0,80.4" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle data-state="measured" cx="44.0" cy="64.8" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="90.7" cy="78.1" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="137.3" cy="72.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="184.0" cy="40.7" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="230.7" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="277.3" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="324.0" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="370.7" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="417.3" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="464.0" cy="80.4" r="3.5" fill="#7c3aed"/>
+  <text x="44.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-10</text>
+  <text x="90.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-11</text>
+  <text x="137.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-12</text>
+  <text x="184.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-13</text>
+  <text x="230.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-15</text>
+  <text x="277.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-16</text>
+  <text x="324.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-17</text>
+  <text x="370.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-25</text>
+  <text x="417.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-28</text>
+  <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
 </svg>
 <p class="detail metric-caption">10 daily observations: 10 measured, 0 unknown, 0 stale periods. Latest measured: $17.87.</p>
     </div>
@@ -211,7 +213,7 @@
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608010600.0.</span>
+    <br><span>Built by Edoworks 202608010820.0.</span>
   </footer>
 </body>
 </html>
