@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
   <meta name="description" content="Edoworks factory health dashboard — live, public measurements of an AI-assisted software factory: costs, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608010242.0">
+  <meta name="generator" content="Edoworks 202608010300.0">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -105,7 +105,7 @@
         </dl>
       </details>
     </section>
-    <p class="generated">Last regenerated: 2026-08-01T02:42:37Z</p>
+    <p class="generated">Last regenerated: 2026-08-01T03:00:12Z</p>
   <section class="group">
     <h2>Health</h2>
     <div class="panels">
@@ -167,7 +167,7 @@
     <div class="panels">
     <div id="daily-cost" class="panel status-pass panel-trend">
       <h3>Daily AI-tool cost ($)</h3>
-      <p class="public-explanation">What the cloud and AI tools cost the factory each day, in US dollars. This is on-demand usage, separate from the fixed monthly subscriptions below.</p>
+      <p class="public-explanation">What the factory costs to run each day, in US dollars — including both variable AI-tool usage and the daily share of fixed monthly subscriptions (AI tools, cloud compute, code hosting).</p>
       <span class="badge status-pass" aria-label="PASS: 10 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
 <svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily factory cost chart: 10 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
@@ -175,22 +175,22 @@
   <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
   <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">$0.0</text>
   <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$4.1</text>
+  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$14.8</text>
   <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$8.2</text>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$29.7</text>
   <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
   <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
-  <polyline data-series="measured" points="44.0,121.1 90.7,166.4 137.3,145.5 184.0,39.0 230.7,174.0 277.3,174.0 324.0,174.0 370.7,174.0 417.3,174.0 464.0,174.0" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="121.1" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="90.7" cy="166.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="137.3" cy="145.5" r="3.5" fill="#7c3aed"/>
+  <polyline data-series="measured" points="44.0,61.8 90.7,74.3 137.3,68.5 184.0,39.0 230.7,76.4 277.3,76.4 324.0,76.4 370.7,76.4 417.3,76.4 464.0,76.4" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle data-state="measured" cx="44.0" cy="61.8" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="90.7" cy="74.3" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="137.3" cy="68.5" r="3.5" fill="#7c3aed"/>
   <circle data-state="measured" cx="184.0" cy="39.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="230.7" cy="174.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="277.3" cy="174.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="324.0" cy="174.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="370.7" cy="174.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="417.3" cy="174.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="174.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="230.7" cy="76.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="277.3" cy="76.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="324.0" cy="76.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="370.7" cy="76.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="417.3" cy="76.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="464.0" cy="76.4" r="3.5" fill="#7c3aed"/>
   <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-10</text>
   <text x="90.7" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-11</text>
   <text x="137.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-12</text>
@@ -202,62 +202,7 @@
   <text x="417.3" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-28</text>
   <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">07-29</text>
 </svg>
-<p class="detail metric-caption">10 daily observations: 10 measured, 0 unknown, 0 stale periods. Latest measured: $0.00.</p>
-    </div>
-    <div id="github-copilot-monthly-cost" class="panel status-pass panel-trend">
-      <h3>AI coding-tool monthly bill ($)</h3>
-      <p class="public-explanation">The monthly bill for one specific AI coding tool (GitHub Copilot), reported by the vendor&#39;s own billing API. Shown separately from the daily usage cost above.</p>
-      <span class="badge status-pass" aria-label="PASS: 4 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Monthly GitHub Copilot cost chart: 4 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
-  <text x="40" y="10" text-anchor="end" font-size="8" fill="#9ca3af">GitHub Copilot cost</text>
-  <line x1="44" y1="174.0" x2="464" y2="174.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="177.0" text-anchor="end" font-size="9" fill="#666">$0.0</text>
-  <line x1="44" y1="93.0" x2="464" y2="93.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="96.0" text-anchor="end" font-size="9" fill="#666">$651.8</text>
-  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#666">$1303.7</text>
-  <line x1="44" y1="12" x2="44" y2="174" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="174" x2="464" y2="174" stroke="#ccc" stroke-width="1"/>
-  <polyline data-series="measured" points="44.0,152.2 184.0,121.9 324.0,39.0 464.0,171.3" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="152.2" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="184.0" cy="121.9" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="324.0" cy="39.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="171.3" r="3.5" fill="#7c3aed"/>
-  <text x="44.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-04</text>
-  <text x="184.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-05</text>
-  <text x="324.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-06</text>
-  <text x="464.0" y="188" text-anchor="middle" font-size="8" fill="#6b7280">2026-07</text>
-</svg>
-<p class="detail metric-caption">4 monthly observations: 4 measured, 0 unknown, 0 stale periods. Latest measured: $22.06.</p>
-      <p class="note">Note: Vendor billing, separate from daily factory telemetry. July is month-to-date; earlier points are completed billing months.</p>
-    </div>
-    </div>
-  </section>
-  <section class="group">
-    <h2>Finance</h2>
-    <div class="panels">
-    <div id="operating-costs-monthly" class="panel status-unknown panel-trend">
-      <h3>Fixed monthly subscriptions ($/mo)</h3>
-      <p class="public-explanation">The fixed monthly subscriptions the factory pays (AI tools, cloud compute, code hosting). The chart shows the validated monthly total; the annual equivalent is what those subscriptions cost over a year.</p>
-      <span class="badge status-unknown" aria-label="UNKNOWN: No metric observations"><span class="state-icon" aria-hidden="true">&#63;</span> UNKNOWN</span>
-      <p class="metric-value" aria-label="Numeric value unavailable">&mdash;</p>
-      <p class="state-reason">No metric observations</p>
-      <span class="provenance provenance-unknown">unknown</span>
-<p class="detail">Awaiting daily data</p>
-      <p class="note">Note: Fixed recurring subscriptions (AI tools, cloud compute, code hosting). The annual figure is what those subscriptions cost over a year.</p>
-    </div>
-    <div id="operating-capacity" class="panel status-pass">
-      <h3>AI-compute capacity (modeled)</h3>
-      <p class="public-explanation">A model of how much AI-compute headroom the subscriptions give the factory. Upgrading a cheaper plan to a larger one multiplies that headroom; this card shows the current multiplier per account.</p>
-      <span class="badge status-pass" aria-label="PASS: Available"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <p class="detail">Available</p>
-    </div>
-    <div id="recurring-cost-rollup" class="panel status-pass">
-      <h3>Total monthly cost (subscriptions + usage)</h3>
-      <p class="public-explanation">The combined monthly figure: fixed subscriptions plus variable usage billing. &#39;measured&#39; means both numbers were actually observed this period, not estimated.</p>
-      <span class="badge status-pass" aria-label="PASS: Available"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <p class="detail">Available</p>
+<p class="detail metric-caption">10 daily observations: 10 measured, 0 unknown, 0 stale periods. Latest measured: $17.87.</p>
     </div>
     </div>
   </section>
@@ -267,7 +212,7 @@
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608010242.0.</span>
+    <br><span>Built by Edoworks 202608010300.0.</span>
   </footer>
 </body>
 </html>
