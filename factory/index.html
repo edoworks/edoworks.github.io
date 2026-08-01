@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
-  <meta name="description" content="Edoworks factory health dashboard — autonomy ratio trend and validation status.">
-  <meta name="generator" content="Edoworks 202608010016.0">
+  <meta name="description" content="Edoworks factory health dashboard — live, public measurements of an AI-assisted software factory: costs, autonomy, and validation status.">
+  <meta name="generator" content="Edoworks 202608010156.0">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -61,6 +61,14 @@
       font-size: 0.8125rem; color: #9ca3af;
     }
     footer a { color: #9ca3af; text-decoration: none; }
+    .intro { background: #ede9fe; border: 1px solid #c4b5fd; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+    .intro-lead { font-size: 0.95rem; color: #3b1f6e; margin-bottom: 0.75rem; line-height: 1.55; }
+    .lexicon { margin-top: 0.75rem; font-size: 0.85rem; }
+    .lexicon summary { cursor: pointer; color: #5b21b6; font-weight: 600; font-size: 0.85rem; }
+    .lexicon dl { margin-top: 0.6rem; }
+    .lexicon dt { font-weight: 600; color: #3b1f6e; margin-top: 0.5rem; }
+    .lexicon dd { margin-left: 1.25rem; color: #4b5563; }
+    .public-explanation { font-size: 0.82rem; color: #6b7280; margin: 0 0 0.5rem 0; font-style: italic; }
   </style>
 </head>
 <body>
@@ -68,18 +76,48 @@
 
   <div class="content">
     <h1>Factory Dashboard</h1>
-    <p class="generated">Last regenerated: 2026-08-01T00:16:20Z</p>
+    <section class="intro">
+      <p class="intro-lead">Edoworks is a one-person software studio that builds apps using an
+      AI-assisted factory &mdash; a set of AI agents that research, plan, build, test, and
+      review software. This page shows, in public, how that factory is running right now.</p>
+      <p class="intro-lead">Each card below is a live measurement. <strong>Green</strong> means a
+      check is passing; the numbers are real data from the last few weeks, not estimates. The
+      page regenerates itself automatically and is published as-is &mdash; no manual editing.</p>
+      <details class="lexicon"><summary>What the terms mean</summary>
+        <dl>
+          <dt>Autonomy ratio</dt>
+          <dd>How many hours of productive work the AI agents did for each hour of human time.
+          Higher means the factory ran more autonomously that day.</dd>
+          <dt>Factory cost</dt>
+          <dd>What the cloud and AI tools cost the factory per day, in US dollars.</dd>
+          <dt>Recurring operating cost</dt>
+          <dd>The fixed monthly subscriptions the factory pays (AI tools, cloud, code hosting).
+          The annual figure is what those subscriptions cost over a year.</dd>
+          <dt>Operating capacity</dt>
+          <dd>A model of how much AI-compute headroom the subscriptions give the factory.
+          Upgrading a cheaper plan to a larger one multiplies that headroom.</dd>
+          <dt>Provenance: measured</dt>
+          <dd>The number was actually observed from a real source (a billing API or a log file),
+          not estimated or guessed.</dd>
+          <dt>PASS</dt>
+          <dd>The check ran and returned a healthy result.</dd>
+        </dl>
+      </details>
+    </section>
+    <p class="generated">Last regenerated: 2026-08-01T01:56:42Z</p>
   <section class="group">
     <h2>Health</h2>
     <div class="panels">
     <div id="verify-status" class="panel status-unknown">
       <h3>Factory health check</h3>
+      <p class="public-explanation">A single pass/fail over every automated check the factory runs on itself. Green means all checks passed on the latest run.</p>
       <span class="badge status-unknown" aria-label="UNKNOWN: Awaiting first run"><span class="state-icon" aria-hidden="true">&#63;</span> UNKNOWN</span>
       <p class="metric-value" aria-label="Numeric value unavailable">&mdash;</p>
       <p class="state-reason">Awaiting first run</p>
     </div>
     <div id="daily-autonomy" class="panel status-pass panel-trend">
-      <h3>Daily Autonomy Ratio</h3>
+      <h3>Daily autonomy (AI hours per human hour)</h3>
+      <p class="public-explanation">How many hours of productive work the AI agents did for each hour of human time, per day. Higher means the factory ran more autonomously that day. The dashed line is the target.</p>
       <span class="badge status-pass" aria-label="PASS: 12 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
 <svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily autonomy ratio chart: 11 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +165,8 @@
     <h2>Governance</h2>
     <div class="panels">
     <div id="daily-cost" class="panel status-pass panel-trend">
-      <h3>Daily factory cost ($)</h3>
+      <h3>Daily AI-tool cost ($)</h3>
+      <p class="public-explanation">What the cloud and AI tools cost the factory each day, in US dollars. This is on-demand usage, separate from the fixed monthly subscriptions below.</p>
       <span class="badge status-pass" aria-label="PASS: 10 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
 <svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Daily factory cost chart: 10 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +204,8 @@
 <p class="detail metric-caption">10 daily observations: 10 measured, 0 unknown, 0 stale periods. Latest measured: $0.00.</p>
     </div>
     <div id="github-copilot-monthly-cost" class="panel status-pass panel-trend">
-      <h3>GitHub Copilot cost before factory telemetry ($)</h3>
+      <h3>AI coding-tool monthly bill ($)</h3>
+      <p class="public-explanation">The monthly bill for one specific AI coding tool (GitHub Copilot), reported by the vendor&#39;s own billing API. Shown separately from the daily usage cost above.</p>
       <span class="badge status-pass" aria-label="PASS: 4 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
 <svg class="trend-chart" viewBox="0 0 480 210" role="img" aria-label="Monthly GitHub Copilot cost chart: 4 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
@@ -193,13 +233,56 @@
     </div>
     </div>
   </section>
+  <section class="group">
+    <h2>Finance</h2>
+    <div class="panels">
+    <div id="operating-costs-monthly" class="panel status-unknown panel-trend">
+      <h3>Fixed monthly subscriptions ($/mo)</h3>
+      <p class="public-explanation">The fixed monthly subscriptions the factory pays (AI tools, cloud compute, code hosting). The chart shows the validated monthly total; the annual equivalent is what those subscriptions cost over a year.</p>
+      <span class="badge status-unknown" aria-label="UNKNOWN: No metric observations"><span class="state-icon" aria-hidden="true">&#63;</span> UNKNOWN</span>
+      <p class="metric-value" aria-label="Numeric value unavailable">&mdash;</p>
+      <p class="state-reason">No metric observations</p>
+      <span class="provenance provenance-unknown">unknown</span>
+<p class="detail">Awaiting daily data</p>
+      <p class="note">Note: Fixed recurring subscriptions. Total ~$532/mo = ~$6,384/yr against the $250K/yr revenue target. See .factory/standards/operating-costs.md.</p>
+    </div>
+    <div id="operating-capacity" class="panel status-pass">
+      <h3>AI-compute capacity (modeled)</h3>
+      <p class="public-explanation">A model of how much AI-compute headroom the subscriptions give the factory. Upgrading a cheaper plan to a larger one multiplies that headroom; this card shows the current multiplier per account.</p>
+      <span class="badge status-pass" aria-label="PASS: 4 record(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
+      <p class="detail">4 record(s)</p>
+    </div>
+    <div id="recurring-cost-rollup" class="panel status-pass">
+      <h3>Total monthly cost (subscriptions + usage)</h3>
+      <p class="public-explanation">The combined monthly figure: fixed subscriptions plus variable usage billing. &#39;measured&#39; means both numbers were actually observed this period, not estimated.</p>
+      <span class="badge status-pass" aria-label="PASS: {
+  &quot;as_of&quot;: &quot;2026-07-31&quot;,
+  &quot;monthly_total_usd&quot;: 554.0645,
+  &quot;annual_total_usd&quot;: 6648.774,
+  &quot;cost_provenance&quot;: &quot;measured&quot;,
+  &quot;unknown_reason&quot;: null,
+  &quot;by_source&quot;: {
+    &quot;operating_costs&quot;: {
+      &quot;"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
+      <p class="detail">{
+  &quot;as_of&quot;: &quot;2026-07-31&quot;,
+  &quot;monthly_total_usd&quot;: 554.0645,
+  &quot;annual_total_usd&quot;: 6648.774,
+  &quot;cost_provenance&quot;: &quot;measured&quot;,
+  &quot;unknown_reason&quot;: null,
+  &quot;by_source&quot;: {
+    &quot;operating_costs&quot;: {
+      &quot;</p>
+    </div>
+    </div>
+  </section>
   </div>
   <footer id="dashboard-footer">
     <span>© 2026 Foculoom LLC &nbsp;·&nbsp;
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608010016.0.</span>
+    <br><span>Built by Edoworks 202608010156.0.</span>
   </footer>
 </body>
 </html>
