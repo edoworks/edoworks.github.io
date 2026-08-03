@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.8.34",
+  "recipe_id": "opus5-long-running-agent-loop",
+  "kind": "concept-diagram",
+  "status": "canonical",
+  "canvas": {"width_px": 1200, "height_px": 675, "dpi": 96, "color_profile": "sRGB", "background_color": "#FAF9FF"},
+  "output": {"format": "png", "icc_profile": "sRGB-IEC61966-2.1"},
+  "seed": 83,
+  "scene": {"elements": [
+    {"type": "circle", "cx": 600, "cy": 340, "r": 200, "fill": "#EDE9FE", "stroke": "#7C3AED", "stroke_width": 6},
+    {"type": "circle", "cx": 600, "cy": 340, "r": 130, "fill": "#C4B5FD", "stroke": "#5B21B6", "stroke_width": 5},
+    {"type": "circle", "cx": 600, "cy": 340, "r": 65, "fill": "#7C3AED", "stroke": "#3B0764", "stroke_width": 4},
+    {"type": "text", "x": 555, "y": 350, "content": "Agent", "font_family": "Noto Sans", "font_size": 32, "font_weight": 700, "fill": "#F5F3FF"},
+    {"type": "circle", "cx": 280, "cy": 180, "r": 55, "fill": "#DDD6FE", "stroke": "#7C3AED", "stroke_width": 4},
+    {"type": "text", "x": 250, "y": 188, "content": "Plan", "font_family": "Noto Sans", "font_size": 26, "font_weight": 700, "fill": "#4C1D95"},
+    {"type": "circle", "cx": 920, "cy": 180, "r": 55, "fill": "#DDD6FE", "stroke": "#7C3AED", "stroke_width": 4},
+    {"type": "text", "x": 880, "y": 188, "content": "Build", "font_family": "Noto Sans", "font_size": 26, "font_weight": 700, "fill": "#4C1D95"},
+    {"type": "circle", "cx": 280, "cy": 500, "r": 55, "fill": "#DDD6FE", "stroke": "#7C3AED", "stroke_width": 4},
+    {"type": "text", "x": 245, "y": 508, "content": "Review", "font_family": "Noto Sans", "font_size": 24, "font_weight": 700, "fill": "#4C1D95"},
+    {"type": "circle", "cx": 920, "cy": 500, "r": 55, "fill": "#DDD6FE", "stroke": "#7C3AED", "stroke_width": 4},
+    {"type": "text", "x": 890, "y": 508, "content": "Verify", "font_family": "Noto Sans", "font_size": 24, "font_weight": 700, "fill": "#4C1D95"},
+    {"type": "path", "d": "M335 180 Q470 220 470 280", "fill": "none", "stroke": "#7C3AED", "stroke_width": 5, "stroke_linecap": "round"},
+    {"type": "path", "d": "M865 180 Q730 220 730 280", "fill": "none", "stroke": "#7C3AED", "stroke_width": 5, "stroke_linecap": "round"},
+    {"type": "path", "d": "M335 500 Q470 460 470 400", "fill": "none", "stroke": "#7C3AED", "stroke_width": 5, "stroke_linecap": "round"},
+    {"type": "path", "d": "M865 500 Q730 460 730 400", "fill": "none", "stroke": "#7C3AED", "stroke_width": 5, "stroke_linecap": "round"}
+  ]}
+}
