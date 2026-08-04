@@ -1,7 +1,6 @@
 # edoworks.github.io
 
-Public website for the **Edoworks** software factory brand — the factory
-brand of Foculoom LLC.
+Public website for **Edoworks** — a software factory.
 
 - **Domain:** `edoworks.com` (pending registration, FG-114 — founder
   approval gate. See
@@ -17,11 +16,10 @@ brand of Foculoom LLC.
 
 ## Brand architecture
 
-- **Edoworks** = factory brand (stamp + portfolio + blog at `edoworks.com`).
+- **Edoworks** = software factory (stamp + portfolio + blog at `edoworks.com`).
 - **Foculoom LLC** = legal entity (corporate site at `foculoom.com`).
 
-Both surfaces carry the Edoworks stamp. See
-`.factory/standards/factory-stamp.md` § Brand architecture.
+See `.factory/standards/factory-stamp.md` § Brand architecture.
 
 ## Local structure
 
