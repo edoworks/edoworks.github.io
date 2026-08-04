@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "eval-first-model-upgrades-comparison-table",
+  "source_article": "eval-first-model-upgrades.html",
+  "output_sha256": "55b408ed404142935b021e4936b60ea447d47841354eae41e989bb935d7fde56",
+  "concepts": [
+    "Translate Claims Into Factory Task",
+    "Compare Outcomes, Not Elo Scores",
+    "Hold the Environment Constant"
+  ],
+  "content_kind": "release-notes / model-eval",
+  "content_kind_source": "heuristic"
+}
