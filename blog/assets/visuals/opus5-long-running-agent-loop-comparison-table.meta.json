@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "opus5-long-running-agent-loop-comparison-table",
+  "source_article": "opus5-long-running-agent-loop.html",
+  "output_sha256": "22f709c5f9de994cf2611d6236a42a1897c0fe4f62962667fb4e9c89f4ce819f",
+  "concepts": [
+    "What Long-Running Agents Need",
+    "How the Factory Loop Maps to the A",
+    "Why Opus 5 Matters for Factory Ope"
+  ],
+  "content_kind": "release-notes / model-eval",
+  "content_kind_source": "heuristic"
+}

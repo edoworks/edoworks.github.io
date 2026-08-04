@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "cyber-eval-boundaries-comparison-table",
+  "source_article": "cyber-eval-boundaries.html",
+  "output_sha256": "2835a24be4f72e0da3ed233c5d21bd039ecdc8f8d6020f12e4f6ebd9ab2b83aa",
+  "concepts": [
+    "The Prompt Described a Boundary Th",
+    "Preflight Must Test the Negative S",
+    "Scope Should Be an Allowlist"
+  ],
+  "content_kind": "release-notes / model-eval",
+  "content_kind_source": "heuristic"
+}
