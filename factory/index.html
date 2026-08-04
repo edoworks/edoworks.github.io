@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
-  <meta name="description" content="Edoworks factory health dashboard — live, public measurements of an AI-assisted software factory: costs, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608040050.0">
+  <meta name="description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
+  <meta name="generator" content="Edoworks 202608042342.0">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -73,30 +73,22 @@
   </style>
 </head>
 <body>
-<nav style="background:#0f172a;padding:1rem 1.5rem"><div style="max-width:720px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#f8fafc;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span style="color:#475569">/</span><span style="color:#94a3b8;font-size:0.9rem;font-weight:500">Factory</span></div></nav>
-
   <div class="content">
     <h1>Factory Dashboard</h1>
     <section class="intro">
-      <p class="intro-lead">Edoworks is a one-person software studio that builds apps using an
-      AI-assisted factory &mdash; a set of AI agents that research, plan, build, test, and
-      review software. This page shows, in public, how that factory is running right now.</p>
+      <p class="intro-lead">Edoworks is a software studio that ships apps through a software
+      factory &mdash; a system of AI agents that research, plan, build, test, and review
+      software. This page shows, in public, how that factory is running right now.</p>
       <p class="intro-lead">Each card below is a live measurement. <strong>Green</strong> means a
       check is passing; the numbers are real data from the last few weeks, not estimates. The
       page regenerates itself automatically and is published as-is &mdash; no manual editing.</p>
       <details class="lexicon"><summary>What the terms mean</summary>
         <dl>
           <dt>Autonomy ratio</dt>
-          <dd>How many hours of productive work the AI agents did for each hour of human time.
+          <dd>How many hours of work the AI agents did for each hour of human time.
           Higher means the factory ran more autonomously that day.</dd>
           <dt>Factory cost</dt>
           <dd>What the cloud and AI tools cost the factory per day, in US dollars.</dd>
-          <dt>Recurring operating cost</dt>
-          <dd>The fixed monthly subscriptions the factory pays (AI tools, cloud, code hosting).
-          The annual figure is what those subscriptions cost over a year.</dd>
-          <dt>Operating capacity</dt>
-          <dd>A model of how much AI-compute headroom the subscriptions give the factory.
-          Upgrading a cheaper plan to a larger one multiplies that headroom.</dd>
           <dt>Provenance: measured</dt>
           <dd>The number was actually observed from a real source (a billing API or a log file),
           not estimated or guessed.</dd>
@@ -105,7 +97,7 @@
         </dl>
       </details>
     </section>
-    <p class="generated">Last regenerated: 2026-08-04T00:50:30Z</p>
+    <p class="generated">Last regenerated: 2026-08-04T23:41:59Z</p>
   <section class="group">
     <h2>Health</h2>
     <div class="panels">
@@ -117,49 +109,46 @@
     </div>
     <div id="daily-autonomy" class="panel status-pass panel-trend">
       <h3>Daily autonomy (AI hours per human hour)</h3>
-      <p class="public-explanation">For each day, how many hours the AI factory ran versus how many hours the human worked. Solid points are wall-clock time (current standard, capped at 24h); hollow points are pre-2026-07-29 aggregate parallel-compute effort (not wall-clock, may exceed 24h). The ratio is AI hours divided by human hours; higher means more autonomous. The dashed line is the 10:1 target. Pair this with the quality panel: a high ratio with high revert or change-failure rates is not a real gain.</p>
+      <p class="public-explanation">For each day, how many hours the AI agents worked versus how many hours the human worked. The ratio is agent hours divided by human hours; higher means the factory ran more autonomously that day.</p>
       <span class="badge status-pass" aria-label="PASS: 12 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
       <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 12 measured, 0 unknown, 0 stale periods (two series: wall-clock vs effort)." xmlns="http://www.w3.org/2000/svg">
-  <text x="44" y="20" text-anchor="start" font-size="10" fill="#6b7280">autonomy ratio (X:1)</text>
-  <line x1="44" y1="184.0" x2="412" y2="184.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="187.0" text-anchor="end" font-size="10" fill="#4b5563">0.0</text>
-  <line x1="44" y1="104.0" x2="412" y2="104.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="107.0" text-anchor="end" font-size="10" fill="#4b5563">49.7</text>
-  <line x1="44" y1="24.0" x2="412" y2="24.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="27.0" text-anchor="end" font-size="10" fill="#4b5563">99.3</text>
-  <line x1="44" y1="24" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="184" x2="412" y2="184" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="167.9" x2="412" y2="167.9" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="414" y="170.9" text-anchor="start" font-size="10" fill="#2563eb">target (10)</text>
-  <circle data-series="wallclock" data-state="measured" cx="412.0" cy="156.9" r="3.5" fill="#7c3aed"/>
-  <circle data-series="effort" data-state="measured" cx="44.0" cy="164.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="77.5" cy="166.3" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="110.9" cy="158.2" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="144.4" cy="159.8" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="177.8" cy="139.3" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="211.3" cy="50.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="244.7" cy="134.2" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="278.2" cy="171.9" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="311.6" cy="87.4" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="345.1" cy="153.8" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <circle data-series="effort" data-state="measured" cx="378.5" cy="161.7" r="3.5" fill="#fff" stroke="#6b7280" stroke-width="1.75"/>
-  <text x="44.0" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-09</text>
-  <text x="77.5" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-10</text>
-  <text x="110.9" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-12</text>
-  <text x="144.4" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-14</text>
-  <text x="177.8" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-15</text>
-  <text x="211.3" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-16</text>
-  <text x="244.7" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-17</text>
-  <text x="278.2" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-18</text>
-  <text x="311.6" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-26</text>
-  <text x="345.1" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-28</text>
-  <text x="378.5" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-29</text>
-  <text x="412.0" y="199" text-anchor="middle" font-size="10" fill="#4b5563">07-31</text>
+<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 12 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
+  <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">autonomy ratio (X:1)</text>
+  <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">0.0</text>
+  <line x1="44" y1="98.0" x2="464" y2="98.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="101.0" text-anchor="end" font-size="9" fill="#4b5563">49.7</text>
+  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#4b5563">99.3</text>
+  <line x1="44" y1="12" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
+  <line x1="44" y1="184" x2="464" y2="184" stroke="#ccc" stroke-width="1"/>
+  <polyline data-series="measured" points="44.0,163.2 82.2,165.0 120.4,156.3 158.5,158.0 196.7,136.0 234.9,40.7 273.1,130.4 311.3,171.0 349.5,80.1 387.6,151.5 425.8,160.0 464.0,154.9" fill="none" stroke="#5b21b6" stroke-width="2"/>
+  <circle data-state="measured" cx="44.0" cy="163.2" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="82.2" cy="165.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="120.4" cy="156.3" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="158.5" cy="158.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="196.7" cy="136.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="234.9" cy="40.7" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="273.1" cy="130.4" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="311.3" cy="171.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="349.5" cy="80.1" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="387.6" cy="151.5" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="425.8" cy="160.0" r="3.5" fill="#7c3aed"/>
+  <circle data-state="measured" cx="464.0" cy="154.9" r="3.5" fill="#7c3aed"/>
+  <text x="44.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-09</text>
+  <text x="82.2" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-10</text>
+  <text x="120.4" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-12</text>
+  <text x="158.5" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-14</text>
+  <text x="196.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-15</text>
+  <text x="234.9" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-16</text>
+  <text x="273.1" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-17</text>
+  <text x="311.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-18</text>
+  <text x="349.5" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-26</text>
+  <text x="387.6" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-28</text>
+  <text x="425.8" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
+  <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-31</text>
 </svg>
 <p class="detail metric-caption">12 daily observations: 12 measured, 0 unknown, 0 stale periods. Latest measured: 16.82.</p>
-<p class="detail metric-caption">Two series: 1 wall-clock day(s) (solid, current standard, capped 24h) and 11 aggregate-compute day(s) (hollow, pre-2026-07-29, parallel subagent effort &mdash; not wall-clock, may exceed 24h). Ratio = AI hours &divide; human hours.</p>
-      <p class="note">Note: Two series: solid = wall-clock days (current standard, capped 24h); hollow = aggregate parallel-compute days (pre-2026-07-29, not wall-clock). See docs/dashboard/README.md.</p>
     </div>
     </div>
   </section>
@@ -213,7 +202,7 @@
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608040050.0.</span>
+    <br><span>Built by Edoworks 202608042342.0.</span>
   </footer>
 </body>
 </html>
