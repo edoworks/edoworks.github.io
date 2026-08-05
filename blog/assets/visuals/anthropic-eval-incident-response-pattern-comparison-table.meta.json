@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "anthropic-eval-incident-response-pattern-comparison-table",
+  "source_article": "anthropic-eval-incident-response-pattern.html",
+  "output_sha256": "73b96ab2cd0ac7fe705ca5534e1266d6a8fa215d27975528da457a00c43ff5c5",
+  "concepts": [
+    "Sources",
+    "How it works",
+    "Practical takeaway"
+  ],
+  "content_kind": "release-notes / model-eval",
+  "content_kind_source": "heuristic"
+}
