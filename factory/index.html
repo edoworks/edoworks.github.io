@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
   <meta name="description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608051022.0">
+  <meta name="generator" content="Edoworks 202608051747.0">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -62,12 +62,7 @@
     }
     footer a { color: #9ca3af; text-decoration: none; }
     .intro { background: #ede9fe; border: 1px solid #c4b5fd; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; overflow-wrap: break-word; }
-    .intro-lead { font-size: 0.95rem; color: #3b1f6e; margin-bottom: 0.75rem; line-height: 1.55; }
-    .lexicon { margin-top: 0.75rem; font-size: 0.85rem; }
-    .lexicon summary { cursor: pointer; color: #5b21b6; font-weight: 600; font-size: 0.85rem; }
-    .lexicon dl { margin-top: 0.6rem; }
-    .lexicon dt { font-weight: 600; color: #3b1f6e; margin-top: 0.5rem; }
-    .lexicon dd { margin-left: 1.25rem; color: #4b5563; }
+    .intro-lead { font-size: 0.95rem; color: #3b1f6e; margin: 0; line-height: 1.55; }
     .public-explanation { font-size: 0.82rem; color: #6b7280; margin: 0 0 0.5rem 0; font-style: italic; }
     .trend-chart { max-width: 100%; }
   </style>
@@ -78,43 +73,18 @@
   <div class="content">
     <h1>Factory Dashboard</h1>
     <section class="intro">
-      <p class="intro-lead">Edoworks is a software studio that ships apps through a software
-      factory &mdash; a system of AI agents that research, plan, build, test, and review
-      software. This page shows, in public, how that factory is running right now.</p>
-      <p class="intro-lead">Each card below is a live measurement. <strong>Green</strong> means a
-      check is passing; the numbers are real data from the last few weeks, not estimates. The
-      page regenerates itself automatically and is published as-is &mdash; no manual editing.</p>
-      <details class="lexicon"><summary>What the terms mean</summary>
-        <dl>
-          <dt>Autonomy ratio</dt>
-          <dd>How many hours of work the AI agents did for each hour of human time.
-          Higher means the factory ran more autonomously that day.</dd>
-          <dt>Factory cost</dt>
-          <dd>What the cloud and AI tools cost the factory per day, in US dollars.</dd>
-          <dt>Provenance: measured</dt>
-          <dd>The number was actually observed from a real source (a billing API or a log file),
-          not estimated or guessed.</dd>
-          <dt>PASS</dt>
-          <dd>The check ran and returned a healthy result.</dd>
-        </dl>
-      </details>
+      <p class="intro-lead">Live measurements from a software factory: how
+      much it costs to run each day, and how much of the work the agents
+      did on their own.</p>
     </section>
-    <p class="generated">Last regenerated: 2026-08-05T10:22:26Z</p>
+    <p class="generated">Last regenerated: 2026-08-05T17:47:39Z</p>
   <section class="group">
-    <h2>Health</h2>
+    <h2>Activity</h2>
     <div class="panels">
-    <div id="verify-status" class="panel status-pass">
-      <h3>Factory health check</h3>
-      <p class="public-explanation">A single pass/fail over every automated check the factory runs on itself. Green means all checks passed on the latest run.</p>
-      <span class="badge status-pass" aria-label="PASS: All checks passed"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <p class="detail">All checks passed</p>
-    </div>
     <div id="daily-autonomy" class="panel status-pass panel-trend">
       <h3>Daily autonomy (AI hours per human hour)</h3>
-      <p class="public-explanation">For each day, how many hours the AI agents worked versus how many hours the human worked. The ratio is agent hours divided by human hours; higher means the factory ran more autonomously that day.</p>
-      <span class="badge status-pass" aria-label="PASS: 12 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 12 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
+      <p class="public-explanation">Agent hours divided by human hours, per day. Higher means the factory ran more autonomously that day.</p>
+<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 12 observations." xmlns="http://www.w3.org/2000/svg">
   <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">autonomy ratio (X:1)</text>
   <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
   <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">0.0</text>
@@ -150,19 +120,12 @@
   <text x="425.8" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
   <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-31</text>
 </svg>
-<p class="detail metric-caption">12 daily observations: 12 measured, 0 unknown, 0 stale periods. Latest measured: 16.82.</p>
+<p class="detail metric-caption">12 daily observations. Latest: 16.82.</p>
     </div>
-    </div>
-  </section>
-  <section class="group">
-    <h2>Governance</h2>
-    <div class="panels">
     <div id="daily-cost" class="panel status-pass panel-trend">
-      <h3>Daily AI-tool cost ($)</h3>
-      <p class="public-explanation">What the factory costs to run each day, in US dollars — including both variable AI-tool usage and the daily share of fixed monthly subscriptions (AI tools, cloud compute, code hosting).</p>
-      <span class="badge status-pass" aria-label="PASS: 10 day(s)"><span class="state-icon" aria-hidden="true">&#8226;</span> PASS</span>
-      <span class="provenance provenance-measured">measured</span>
-<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily factory cost chart: 10 measured, 0 unknown, 0 stale periods." xmlns="http://www.w3.org/2000/svg">
+      <h3>Daily factory cost ($)</h3>
+      <p class="public-explanation">What the factory costs to run each day, in US dollars.</p>
+<svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily factory cost chart: 10 observations." xmlns="http://www.w3.org/2000/svg">
   <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">factory cost</text>
   <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
   <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">$0.0</text>
@@ -194,7 +157,7 @@
   <text x="417.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-28</text>
   <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
 </svg>
-<p class="detail metric-caption">10 daily observations: 10 measured, 0 unknown, 0 stale periods. Latest measured: $17.87.</p>
+<p class="detail metric-caption">10 daily observations. Latest: $17.87.</p>
     </div>
     </div>
   </section>
@@ -204,7 +167,7 @@
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608051022.0.</span>
+    <br><span>Built by Edoworks 202608051747.0.</span>
   </footer>
 </body>
 </html>
