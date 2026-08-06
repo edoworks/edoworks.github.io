@@ -1,12 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="426" viewBox="0 0 1200 426">
   <rect x="0" y="0" width="1200" height="426" fill="#FFFFFF"/>
-  <rect x="50" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="430" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="810" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <text x="70" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Adoption Is a
-Lead, Not a</text>
-  <text x="450" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Map Each Field to
-an Outcome Quest</text>
-  <text x="830" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Compare Surfaces
-on the Same Axis</text>
+  <rect x="40" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="40" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="60" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Adoption Is a Lead,</text>
+  <text x="60" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Not a Verdict</text>
+  <rect x="276" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="276" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="296" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Map Each Field to an</text>
+  <text x="296" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Outcome Question</text>
+  <rect x="512" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="512" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="532" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Compare Surfaces on</text>
+  <text x="532" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">the Same Axis</text>
+  <rect x="748" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="748" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="768" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Gate on Accepted Work,</text>
+  <text x="768" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Not on Activity</text>
+  <rect x="984" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="984" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="1004" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Sources</text>
+  <text x="60" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Usage metrics tell you that</text>
+  <text x="60" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">someone interacted with a</text>
+  <text x="60" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">tool.</text>
+  <text x="296" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">The changelog lists specific</text>
+  <text x="296" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">fields.</text>
+  <text x="532" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">The value of folding Copilot</text>
+  <text x="532" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">app activity into the standard</text>
+  <text x="532" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">rollups is that the app</text>
+  <text x="532" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">surface can be compared</text>
+  <text x="532" y="202" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">against the</text>
+  <text x="768" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Agent hours vs human hours is</text>
+  <text x="768" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">an outcome metric.</text>
+  <text x="1004" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Edoworks — a software factory.</text>
 </svg>

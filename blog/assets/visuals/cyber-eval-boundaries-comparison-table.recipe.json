@@ -11,9 +11,9 @@
     "elements": [
       {
         "type": "rect",
-        "x": 50,
+        "x": 40,
         "y": 40,
-        "width": 360,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
@@ -21,9 +21,36 @@
       },
       {
         "type": "rect",
-        "x": 430,
+        "x": 40,
         "y": 40,
-        "width": 360,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 60,
+        "content": "The Prompt Described a",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 80,
+        "content": "Boundary That Did Not\u2026",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 276,
+        "y": 40,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
@@ -31,40 +58,294 @@
       },
       {
         "type": "rect",
-        "x": 810,
+        "x": 276,
         "y": 40,
-        "width": 360,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 60,
+        "content": "Preflight Must Test",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 80,
+        "content": "the Negative Space",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 512,
+        "y": 40,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
         "stroke_width": 3
       },
       {
-        "type": "text",
-        "x": 70,
-        "y": 80,
-        "content": "The Prompt\nDescribed a",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "type": "rect",
+        "x": 512,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
       },
       {
         "type": "text",
-        "x": 450,
-        "y": 80,
-        "content": "Preflight Must\nTest the Negative",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "x": 532,
+        "y": 60,
+        "content": "Scope Should Be an",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
       },
       {
         "type": "text",
-        "x": 830,
+        "x": 532,
         "y": 80,
-        "content": "Scope Should Be an\nAllowlist",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "content": "Allowlist",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 748,
+        "y": 40,
+        "width": 216,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 748,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 60,
+        "content": "Monitoring Must Be",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 80,
+        "content": "Live, Not\u2026",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 984,
+        "y": 40,
+        "width": 216,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 984,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 60,
+        "content": "Third-Party Ranges Are",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 80,
+        "content": "Part of the Security\u2026",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 130,
+        "content": "The core lesson: a prompt can",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 148,
+        "content": "describe scope, but it cannot",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 166,
+        "content": "enforce scope.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 130,
+        "content": "A preflight that confirms the",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 148,
+        "content": "target service is reachable is",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 166,
+        "content": "incomplete for a sealed cyber",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 184,
+        "content": "range.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 130,
+        "content": "An open-ended capture-the-flag",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 148,
+        "content": "task encourages exploration.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 130,
+        "content": "Anthropic found the incidents",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 148,
+        "content": "through a large-scale",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 166,
+        "content": "retrospective review and says",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 184,
+        "content": "it stopped cyber evaluations",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 202,
+        "content": "the same",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 130,
+        "content": "The incidents involved a",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 148,
+        "content": "third-party evaluation",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 166,
+        "content": "environment.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
       }
     ]
   },
