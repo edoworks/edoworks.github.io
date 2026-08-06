@@ -4,11 +4,13 @@
   "kind": "comparison-table",
   "recipe_id": "measure-autonomous-work-surface-outcome-comparison-table",
   "source_article": "measure-autonomous-work-surface-outcome.html",
-  "output_sha256": "8acb5ac2be85a4d048d892b632aa2d6f40a70a10ccbfb2a9ae7bbd278e20ea44",
+  "output_sha256": "0f4e4a616ec4f9df88e9f6e5f9ec7d823af9be44886a520d1c839d91efa0039f",
   "concepts": [
     "Adoption Is a Lead, Not a Verdict",
-    "Map Each Field to an Outcome Quest",
-    "Compare Surfaces on the Same Axis"
+    "Map Each Field to an Outcome Question",
+    "Compare Surfaces on the Same Axis",
+    "Gate on Accepted Work, Not on Activity",
+    "Sources"
   ],
   "content_kind": "regulatory-gap / compliance-gap",
   "content_kind_source": "heuristic"

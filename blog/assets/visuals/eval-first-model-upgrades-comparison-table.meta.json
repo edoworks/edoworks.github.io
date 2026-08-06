@@ -4,11 +4,13 @@
   "kind": "comparison-table",
   "recipe_id": "eval-first-model-upgrades-comparison-table",
   "source_article": "eval-first-model-upgrades.html",
-  "output_sha256": "55b408ed404142935b021e4936b60ea447d47841354eae41e989bb935d7fde56",
+  "output_sha256": "13af1dd6ec331a7c69def13e58ccde53fcbc49d82aabe838b064d5e817b11434",
   "concepts": [
-    "Translate Claims Into Factory Task",
+    "Translate Claims Into Tasks",
     "Compare Outcomes, Not Elo Scores",
-    "Hold the Environment Constant"
+    "Hold the Environment Constant",
+    "Promote One Route at a Time",
+    "Preserve a Rollback Trigger"
   ],
   "content_kind": "release-notes / model-eval",
   "content_kind_source": "heuristic"

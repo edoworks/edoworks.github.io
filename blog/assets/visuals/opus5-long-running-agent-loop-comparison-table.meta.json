@@ -4,11 +4,13 @@
   "kind": "comparison-table",
   "recipe_id": "opus5-long-running-agent-loop-comparison-table",
   "source_article": "opus5-long-running-agent-loop.html",
-  "output_sha256": "22f709c5f9de994cf2611d6236a42a1897c0fe4f62962667fb4e9c89f4ce819f",
+  "output_sha256": "e7d4ef1717188f882c0d22968d2718291c7387265b256ae42af71dd5d29a8b1c",
   "concepts": [
     "What Long-Running Agents Need",
-    "How the Factory Loop Maps to the A",
-    "Why Opus 5 Matters for Factory Ope"
+    "How the Loop Maps to the Agent Loop",
+    "Why Opus 5 Matters for Agent Operations",
+    "The Cost Dimension",
+    "What This Means"
   ],
   "content_kind": "release-notes / model-eval",
   "content_kind_source": "heuristic"

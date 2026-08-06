@@ -4,11 +4,13 @@
   "kind": "comparison-table",
   "recipe_id": "cyber-eval-boundaries-comparison-table",
   "source_article": "cyber-eval-boundaries.html",
-  "output_sha256": "2835a24be4f72e0da3ed233c5d21bd039ecdc8f8d6020f12e4f6ebd9ab2b83aa",
+  "output_sha256": "b1c283b64eae9e4dadc3ede2cd6058f7a7f7f89845e09e07473df23c739320e8",
   "concepts": [
-    "The Prompt Described a Boundary Th",
-    "Preflight Must Test the Negative S",
-    "Scope Should Be an Allowlist"
+    "The Prompt Described a Boundary That Did Not Exist",
+    "Preflight Must Test the Negative Space",
+    "Scope Should Be an Allowlist",
+    "Monitoring Must Be Live, Not Retrospective Only",
+    "Third-Party Ranges Are Part of the Security Boundary"
   ],
   "content_kind": "release-notes / model-eval",
   "content_kind_source": "heuristic"

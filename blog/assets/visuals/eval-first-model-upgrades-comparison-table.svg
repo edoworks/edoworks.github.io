@@ -1,12 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="426" viewBox="0 0 1200 426">
   <rect x="0" y="0" width="1200" height="426" fill="#FFFFFF"/>
-  <rect x="50" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="430" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="810" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <text x="70" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Translate Claims
-Into Factory Task</text>
-  <text x="450" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Compare Outcomes,
-Not Elo Scores</text>
-  <text x="830" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Hold the
-Environment</text>
+  <rect x="40" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="40" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="60" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Translate Claims Into</text>
+  <text x="60" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Tasks</text>
+  <rect x="276" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="276" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="296" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Compare Outcomes, Not</text>
+  <text x="296" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Elo Scores</text>
+  <rect x="512" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="512" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="532" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Hold the Environment</text>
+  <text x="532" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Constant</text>
+  <rect x="748" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="748" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="768" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Promote One Route at a</text>
+  <text x="768" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Time</text>
+  <rect x="984" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="984" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="1004" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Preserve a Rollback</text>
+  <text x="1004" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Trigger</text>
+  <text x="60" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">A launch page usually reports</text>
+  <text x="60" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">broad benchmarks and selected</text>
+  <text x="60" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">customer examples.</text>
+  <text x="296" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">General benchmarks are useful</text>
+  <text x="296" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">discovery signals, but routing</text>
+  <text x="296" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">decisions should use change</text>
+  <text x="296" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">acceptance rate, defects found</text>
+  <text x="532" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Model comparisons become</text>
+  <text x="532" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">meaningless when prompts,</text>
+  <text x="532" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">permissions, tools, or</text>
+  <text x="532" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">validation differ.</text>
+  <text x="768" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">If a candidate passes, change</text>
+  <text x="768" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">the smallest useful route.</text>
+  <text x="1004" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Every route change needs an</text>
+  <text x="1004" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">explicit rollback condition:</text>
+  <text x="1004" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">validator failure rate,</text>
+  <text x="1004" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">repeated review findings, cost</text>
 </svg>

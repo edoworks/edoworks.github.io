@@ -1,12 +1,40 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="426" viewBox="0 0 1200 426">
   <rect x="0" y="0" width="1200" height="426" fill="#FFFFFF"/>
-  <rect x="50" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="430" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <rect x="810" y="40" width="360" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
-  <text x="70" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">The Prompt
-Described a</text>
-  <text x="450" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Preflight Must
-Test the Negative</text>
-  <text x="830" y="80" text-anchor="start" font-family="sans-serif" font-size="20" fill="#7c3aed" font-weight="700">Scope Should Be an
-Allowlist</text>
+  <rect x="40" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="40" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="60" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">The Prompt Described a</text>
+  <text x="60" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Boundary That Did Not…</text>
+  <rect x="276" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="276" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="296" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Preflight Must Test</text>
+  <text x="296" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">the Negative Space</text>
+  <rect x="512" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="512" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="532" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Scope Should Be an</text>
+  <text x="532" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Allowlist</text>
+  <rect x="748" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="748" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="768" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Monitoring Must Be</text>
+  <text x="768" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Live, Not…</text>
+  <rect x="984" y="40" width="216" height="340" fill="#F8FAFC" stroke="#7c3aed" stroke-width="3" rx="0" opacity="1.0"/>
+  <rect x="984" y="40" width="216" height="60" fill="#7c3aed" stroke="none" stroke-width="1" rx="0" opacity="0.12"/>
+  <text x="1004" y="60" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Third-Party Ranges Are</text>
+  <text x="1004" y="80" text-anchor="start" font-family="sans-serif" font-size="18" fill="#7c3aed" font-weight="700">Part of the Security…</text>
+  <text x="60" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">The core lesson: a prompt can</text>
+  <text x="60" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">describe scope, but it cannot</text>
+  <text x="60" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">enforce scope.</text>
+  <text x="296" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">A preflight that confirms the</text>
+  <text x="296" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">target service is reachable is</text>
+  <text x="296" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">incomplete for a sealed cyber</text>
+  <text x="296" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">range.</text>
+  <text x="532" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">An open-ended capture-the-flag</text>
+  <text x="532" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">task encourages exploration.</text>
+  <text x="768" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">Anthropic found the incidents</text>
+  <text x="768" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">through a large-scale</text>
+  <text x="768" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">retrospective review and says</text>
+  <text x="768" y="184" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">it stopped cyber evaluations</text>
+  <text x="768" y="202" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">the same</text>
+  <text x="1004" y="130" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">The incidents involved a</text>
+  <text x="1004" y="148" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">third-party evaluation</text>
+  <text x="1004" y="166" text-anchor="start" font-family="sans-serif" font-size="14" fill="#1F2937" font-weight="400">environment.</text>
 </svg>

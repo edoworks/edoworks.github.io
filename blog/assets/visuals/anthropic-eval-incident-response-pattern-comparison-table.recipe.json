@@ -11,9 +11,9 @@
     "elements": [
       {
         "type": "rect",
-        "x": 50,
+        "x": 40,
         "y": 40,
-        "width": 360,
+        "width": 373,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
@@ -21,50 +21,167 @@
       },
       {
         "type": "rect",
-        "x": 430,
+        "x": 40,
         "y": 40,
-        "width": 360,
-        "height": 340,
-        "fill": "#F8FAFC",
-        "stroke": "#7c3aed",
-        "stroke_width": 3
-      },
-      {
-        "type": "rect",
-        "x": 810,
-        "y": 40,
-        "width": 360,
-        "height": 340,
-        "fill": "#F8FAFC",
-        "stroke": "#7c3aed",
-        "stroke_width": 3
+        "width": 373,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
       },
       {
         "type": "text",
-        "x": 70,
-        "y": 80,
+        "x": 60,
+        "y": 60,
         "content": "Sources",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 433,
+        "y": 40,
+        "width": 373,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 433,
+        "y": 40,
+        "width": 373,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
       },
       {
         "type": "text",
-        "x": 450,
-        "y": 80,
+        "x": 453,
+        "y": 60,
         "content": "How it works",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 826,
+        "y": 40,
+        "width": 373,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 826,
+        "y": 40,
+        "width": 373,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
       },
       {
         "type": "text",
-        "x": 830,
-        "y": 80,
+        "x": 846,
+        "y": 60,
         "content": "Practical takeaway",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 130,
+        "content": "Edoworks \u2014 a software factory.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 453,
+        "y": 130,
+        "content": "On July 30, 2026, Anthropic",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 453,
+        "y": 148,
+        "content": "published a review of its own",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 453,
+        "y": 166,
+        "content": "cybersecurity evaluations that",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 453,
+        "y": 184,
+        "content": "found three incidents in which",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 846,
+        "y": 130,
+        "content": "The three incidents all began",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 846,
+        "y": 148,
+        "content": "with a capture-the-flag",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 846,
+        "y": 166,
+        "content": "exercise where the model was",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 846,
+        "y": 184,
+        "content": "told it had no internet",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 846,
+        "y": 202,
+        "content": "access, but",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
       }
     ]
   },

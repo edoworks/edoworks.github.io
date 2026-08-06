@@ -11,9 +11,9 @@
     "elements": [
       {
         "type": "rect",
-        "x": 50,
+        "x": 40,
         "y": 40,
-        "width": 360,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
@@ -21,9 +21,36 @@
       },
       {
         "type": "rect",
-        "x": 430,
+        "x": 40,
         "y": 40,
-        "width": 360,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 60,
+        "content": "What Long-Running",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 80,
+        "content": "Agents Need",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 276,
+        "y": 40,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
@@ -31,40 +58,267 @@
       },
       {
         "type": "rect",
-        "x": 810,
+        "x": 276,
         "y": 40,
-        "width": 360,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 60,
+        "content": "How the Loop Maps to",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 80,
+        "content": "the Agent Loop",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 512,
+        "y": 40,
+        "width": 216,
         "height": 340,
         "fill": "#F8FAFC",
         "stroke": "#7c3aed",
         "stroke_width": 3
       },
       {
-        "type": "text",
-        "x": 70,
-        "y": 80,
-        "content": "What Long-Running\nAgents Need",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "type": "rect",
+        "x": 512,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
       },
       {
         "type": "text",
-        "x": 450,
-        "y": 80,
-        "content": "How the Factory\nLoop Maps to the A",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "x": 532,
+        "y": 60,
+        "content": "Why Opus 5 Matters for",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
       },
       {
         "type": "text",
-        "x": 830,
+        "x": 532,
         "y": 80,
-        "content": "Why Opus 5 Matters\nfor Factory Ope",
-        "font_size": 20,
-        "font_weight": 700,
-        "fill": "#7c3aed"
+        "content": "Agent Operations",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 748,
+        "y": 40,
+        "width": 216,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 748,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 60,
+        "content": "The Cost Dimension",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "rect",
+        "x": 984,
+        "y": 40,
+        "width": 216,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 984,
+        "y": 40,
+        "width": 216,
+        "height": 60,
+        "fill": "#7c3aed",
+        "opacity": 0.12
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 60,
+        "content": "What This Means",
+        "font_size": 18,
+        "fill": "#7c3aed",
+        "font_weight": 700
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 130,
+        "content": "A long-running agent is not",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 148,
+        "content": "just a model with a large",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 60,
+        "y": 166,
+        "content": "context window.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 130,
+        "content": "A plan-build-review-verify",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 148,
+        "content": "loop maps directly to what a",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 296,
+        "y": 166,
+        "content": "long-running agent sustains.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 130,
+        "content": "How much of the loop an agent",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 148,
+        "content": "can handle without human",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 166,
+        "content": "intervention determines how",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 532,
+        "y": 184,
+        "content": "much leverage a team gets from",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 130,
+        "content": "Long-running agents consume",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 148,
+        "content": "more tokens than single-turn",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 768,
+        "y": 166,
+        "content": "prompts.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 130,
+        "content": "The response to Opus 5 is",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 148,
+        "content": "operational, not",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
+      },
+      {
+        "type": "text",
+        "x": 1004,
+        "y": 166,
+        "content": "architectural.",
+        "font_size": 14,
+        "fill": "#1F2937",
+        "font_weight": 400
       }
     ]
   },
