@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Veilsort — Edoworks</title>
   <meta name="description" content="Veilsort — a product built by the Edoworks software factory. On-device email analysis with plain-English summaries, risk flags, and suggested replies.">
-  <meta name="generator" content="Edoworks 202608070939.0">
+  <meta name="generator" content="Edoworks 202608071005.0">
   <meta name="robots" content="index,follow">
   <style>
     :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
@@ -50,6 +50,28 @@
       .hero-screenshot { width: 80px; height: 80px; }
       nav .nav-inner { gap: 10px; }
       nav .brand-meta { display: none; }
+    }
+    .factory-receipt { margin: 0; }
+    .receipt-meta { color: var(--muted, #6b7280); font-size: 0.82em; margin: 0 0 12px; }
+    .receipt-meta code { font-family: ui-monospace, monospace; font-size: 0.9em; color: var(--accent, #7c3aed); }
+    .receipt-table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
+    .receipt-table th { text-align: left; color: var(--accent, #7c3aed); font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 1px solid var(--border, #e5e7eb); padding: 6px 8px; }
+    .receipt-table td { padding: 8px; border-bottom: 1px solid var(--border, #e5e7eb); vertical-align: top; color: var(--text, #1f2937); }
+    .receipt-label { font-weight: 600; white-space: nowrap; }
+    .receipt-value { font-family: ui-monospace, monospace; }
+    .receipt-value.not-instrumented { color: var(--muted, #6b7280); font-style: italic; }
+    .receipt-desc { color: var(--muted, #6b7280); font-size: 0.85em; line-height: 1.5; }
+    .receipt-src-cell { font-size: 0.78em; }
+    .receipt-source { display: block; color: var(--muted, #6b7280); line-height: 1.5; }
+    .receipt-source.not-instrumented { font-style: italic; }
+    .receipt-src-label { font-weight: 600; }
+    .receipt-src-date { font-family: ui-monospace, monospace; opacity: 0.8; }
+    .receipt-src-sha { font-family: ui-monospace, monospace; color: var(--accent, #7c3aed); }
+    .receipt-src-ts { font-family: ui-monospace, monospace; opacity: 0.8; }
+    .receipt-scope { color: var(--muted, #6b7280); font-size: 0.85em; font-weight: normal; }
+    @media (max-width: 560px) {
+      .receipt-table { font-size: 0.82em; }
+      .receipt-table th:nth-child(3), .receipt-table td:nth-child(3) { display: none; }
     }
   </style>
 </head>
@@ -101,13 +123,25 @@
 </section>
 <section class="detail-section" id="receipt">
   <h2>Receipt</h2>
-  <div class="section-content"><p class="placeholder">Factory receipts are planned for a future release. Each receipt will include per-metric source attribution: data file, commit SHA, and generation timestamp.</p></div>
+  <div class="section-content"><div class="factory-receipt">
+<p class="receipt-meta">Receipt generated <time>2026-08-07T10:05:07.620149Z</time> · generator commit <code>c2904620</code> · availability: <strong>In App Store review</strong></p>
+<table class="receipt-table">
+<thead><tr><th>Metric</th><th>Value</th><th>Description</th><th>Source attribution</th></tr></thead>
+<tbody>
+<tr class="receipt-row"><td class="receipt-label">Autonomy ratio<br><em class="receipt-scope">(factory-wide)</em></td><td class="receipt-value not-instrumented">NOT INSTRUMENTED</td><td class="receipt-desc">Factory-wide agent productive hours / human work hours.</td><td class="receipt-src-cell"><span class="receipt-source not-instrumented">not instrumented</span></td></tr>
+<tr class="receipt-row"><td class="receipt-label">Recovery time (median, min)<br><em class="receipt-scope">(factory-wide)</em></td><td class="receipt-value not-instrumented">NOT INSTRUMENTED</td><td class="receipt-desc">Factory-wide median minutes from failure to restore.</td><td class="receipt-src-cell"><span class="receipt-source not-instrumented">not instrumented</span></td></tr>
+<tr class="receipt-row"><td class="receipt-label">Accepted work count<br><em class="receipt-scope">(factory-wide)</em></td><td class="receipt-value">0</td><td class="receipt-desc">Factory-wide work units accepted via independent review.</td><td class="receipt-src-cell"><span class="receipt-source"><span class="receipt-src-label">Factory scorecard</span> <span class="receipt-src-date">(2026-08-07)</span> <span class="receipt-src-sha">@c2904620</span></span></td></tr>
+<tr class="receipt-row"><td class="receipt-label">Daily cost (USD)<br><em class="receipt-scope">(factory-wide)</em></td><td class="receipt-value not-instrumented">NOT INSTRUMENTED</td><td class="receipt-desc">Factory-wide daily operating cost in USD.</td><td class="receipt-src-cell"><span class="receipt-source not-instrumented">not instrumented</span></td></tr>
+<tr class="receipt-row"><td class="receipt-label">Maturity level<br><em class="receipt-scope">(factory-wide)</em></td><td class="receipt-value">NOT COMPUTABLE</td><td class="receipt-desc">Factory maturity aggregate level (shadow mode).</td><td class="receipt-src-cell"><span class="receipt-source"><span class="receipt-src-label">Maturity shadow log</span> <span class="receipt-src-date">(2026-08-07)</span> <span class="receipt-src-sha">@c2904620</span></span></td></tr>
+</tbody>
+</table>
+</div></div>
 </section>
   </main>
   <footer>
     <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
     <span><a href="/portfolio/">Portfolio</a> &middot; <a href="/factory/">Factory</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></span>
-    <span>Built by Edoworks 202608070939.0.</span>
+    <span>Built by Edoworks 202608071005.0.</span>
   </footer>
 </body>
 </html>
