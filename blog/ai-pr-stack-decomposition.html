@@ -16,7 +16,11 @@
 </style>  
   
   
-<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}
+  /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
+  /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
+  /*a11y-focus-visible*/a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}
+  </style>
 
 <link rel="canonical" href="https://edoworks.com/blog/ai-pr-stack-decomposition.html">
 <meta name="theme-color" content="#111418">
@@ -33,8 +37,10 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Decomposing AI-Generated Pull Requests Into Stacks", "description": "GitHub's August 2026 stacked pull requests post shows how to turn one giant AI-generated pull request into an ordered stack of small, independently reviewable PRs. The pattern is the answer to the un-reviewable 1,000-line agent diff.", "url": "https://edoworks.com/blog/ai-pr-stack-decomposition.html", "isPartOf": {"@type": "Blog", "name": "Edoworks Blog", "url": "https://edoworks.com/blog/"}, "datePublished": "2026-08-05"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Edoworks", "item": "https://edoworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edoworks.com/blog/"}]}</script>
 </head><body>
-<nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
-<main data-pagefind-body><article data-pagefind-body>
+  <!--a11y-skip-link-->
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav aria-label="Site navigation"><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+<main data-pagefind-body id="main-content"><article data-pagefind-body>
 <header class="post-header"><div class="post-tag">Engineering</div><h1>Decomposing AI-Generated Pull Requests Into Stacks</h1><p class="byline">By <strong>Edoworks</strong> &nbsp;&middot;&nbsp; <time datetime="2026-08-05">August 5, 2026</time></p></header>
 <figure class="visual-learning-map" data-visual-learning="rendit-concept-diagram">
       <img src="/blog/assets/visuals/ai-pr-stack-decomposition-concept-diagram.svg" alt="concept-diagram diagram for Decomposing AI-Generated Pull Requests Into Stacks: The un-reviewable giant PR, The stack decomposition, The review discipline that makes it work" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/ai-pr-stack-decomposition-concept-diagram.meta.json" style="display:block;width:100%;height:auto">
