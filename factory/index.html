@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
   <meta name="description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608071459.0">
+  <meta name="generator" content="Edoworks 202608071526.0">
   <link rel="canonical" href="https://edoworks.com/factory/">
 <meta name="theme-color" content="#111418">
 <meta property="og:type" content="website">
@@ -31,6 +31,10 @@
     a { color:var(--active); }
     a:hover { color:var(--text); }
     :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    nav.nav-inner, .nav-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1rem; }
+    nav[aria-label] { background:var(--surface); border-bottom:1px solid var(--border); padding:0.75rem 1.5rem; }
+    nav .brand { color:var(--text); text-decoration:none; font-weight:700; font-size:0.9rem; }
+    nav a { color:var(--active); text-decoration:none; font-size:0.85rem; }
     .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
     h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
     .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
@@ -67,12 +71,15 @@
     .intro-lead { font-size: 0.95rem; color: #F4F6F8; margin: 0; line-height: 1.55; }
     .public-explanation { font-size: 0.82rem; color: #8995A3; margin: 0 0 0.5rem 0; font-style: italic; }
     .trend-chart { max-width: 100%; }
+    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#10141B;color:#F4F6F8;border:1px solid #7D8CFF;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7D8CFF;outline-offset:3px;border-radius:2px;}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
   </style>
 </head>
 <body>
 <nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#8995A3;font-size:0.9rem;font-weight:500">Factory</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
 
-  <div class="content">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <nav aria-label="Site navigation"><div class="nav-inner"><a href="/" class="brand">Edoworks</a><a href="/portfolio/">Portfolio</a><a href="/blog/">Blog</a></div></nav>
+  <main class="content" id="main-content">
     <h1>Factory Dashboard</h1>
     <section class="intro">
       <p class="intro-lead">Live measurements from a software factory: how
@@ -80,7 +87,7 @@
       did on their own. Maturity promotion is fail-closed; <a
       href="/factory/maturity/">view the gate methodology</a>.</p>
     </section>
-    <p class="generated">Last regenerated: 2026-08-07T14:59:35Z</p>
+    <p class="generated">Last regenerated: 2026-08-07T15:26:25Z</p>
   <section class="group">
     <h2>Activity</h2>
     <div class="panels">
@@ -203,13 +210,13 @@
     </div>
     </div>
   </section>
-  </div>
+  </main>
   <footer id="dashboard-footer">
     <span>© 2026 Foculoom LLC &nbsp;·&nbsp;
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608071459.0.</span>
+    <br><span>Built by Edoworks 202608071526.0.</span>
   </footer>
 </body>
 </html>
