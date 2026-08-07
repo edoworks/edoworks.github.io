@@ -5,171 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Dashboard</title>
   <meta name="description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
-  <meta name="generator" content="Edoworks 202608070816.0">
+  <meta name="generator" content="Edoworks 202608070855.0">
   <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/inter-variable.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { --bg:#07090D; --surface:#0C1016; --card:#10141B; --border:#29303B; --text:#F4F6F8; --muted:#8995A3; --active:#7D8CFF; --verified:#63D297; --retry:#E2A64B; --failure:#DE6673; --focus-ring:#7D8CFF; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f3ff;
-      color: #111827;
-      line-height: 1.6;
-    }
-    .content { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem; overflow-wrap: break-word; }
-    h1 { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: #111827; }
-    .generated { color: #6b7280; font-size: 0.875rem; margin-bottom: 2.5rem; }
-    h2 {
-      font-size: 1.3rem; font-weight: 700; color: #5b21b6;
-      margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em;
-      padding-bottom: 0.5rem; border-bottom: 2px solid #7c3aed;
-    }
-    .group { margin-bottom: 1.5rem; }
-    .panels { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-    .panel {
-      background: #fff; border: 1px solid #ddd6fe;
-      border-top: 3px solid #7c3aed; border-radius: 12px; padding: 1.25rem;
-      box-shadow: 0 2px 8px rgba(124, 58, 237, 0.06);
-    }
-    .panel h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.5rem 0; color: #111827; }
-    .badge {
-      display: inline-block; font-size: 0.7rem; font-weight: 600;
-      padding: 0.15rem 0.5rem; border-radius: 4px; color: #fff;
-      letter-spacing: 0.04em; text-transform: uppercase;
-    }
-    .status-pass { border-top-color: #2a7d2a; }
-    .status-pass .badge { background: #2a7d2a; }
-    .status-fail { border-top-color: #c62828; }
-    .status-fail .badge { background: #c62828; }
-    .status-unknown { border-color: #9ca3af; border-top-style: dashed; }
-    .status-unknown .badge { background: #4b5563; }
-    .status-stale { border-color: #d97706; border-top-style: double; }
-    .status-stale .badge { background: #b45309; }
-    .status-nodata { border-top-color: #999; }
-    .status-nodata .badge { background: #999; }
-    .status-rejected, .status-error { border-top-color: #c62828; }
-    .status-rejected .badge, .status-error .badge { background: #c62828; }
-    .panel-trend { grid-column: 1 / -1; }
-    .trend-chart { width: 100%; height: auto; display: block; margin-top: 0.75rem; }
-    .detail { font: 0.82rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #374151; margin: 0.5rem 0 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
-    .note { font-size: 0.8rem; color: #6b7280; font-style: italic; margin: 0.4rem 0 0 0; }
-    .metric-value { font-size: 1.4rem; font-weight: 700; color: #4b5563; margin-top: 0.35rem; }
-    .state-reason { font-size: 0.82rem; color: #4b5563; margin-top: 0.2rem; }
-    .provenance { display: inline-block; margin: 0.4rem 0 0; font: 0.72rem ui-monospace, monospace; color: #4b5563; }
-    .source { font-size: 0.75rem; color: #9ca3af; margin: 0.4rem 0 0 0; }
-    code { font-family: ui-monospace, monospace; font-size: 0.8rem; }
-    footer {
-      text-align: center; padding: 1.25rem;
-      font-size: 0.8125rem; color: #9ca3af;
-    }
-    footer a { color: #9ca3af; text-decoration: none; }
-    .intro { background: #ede9fe; border: 1px solid #c4b5fd; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; overflow-wrap: break-word; }
-    .intro-lead { font-size: 0.95rem; color: #3b1f6e; margin: 0; line-height: 1.55; }
-    .public-explanation { font-size: 0.82rem; color: #6b7280; margin: 0 0 0.5rem 0; font-style: italic; }
+    body { font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color:var(--active); }
+    a:hover { color:var(--text); }
+    :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
+    h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
+    .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
+    h2 { font-size:0.78rem; font-weight:700; color:var(--active); margin:2.5rem 0 0.9rem; letter-spacing:0.12em; text-transform:uppercase; padding-bottom:0.55rem; border-bottom:1px solid var(--border); }
+    .group { margin-bottom:1.5rem; }
+    .panels { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:0.9rem; }
+    .panel { background:var(--card); border:1px solid var(--border); border-top:3px solid var(--active); border-radius:8px; padding:1.25rem; box-shadow:0 16px 40px rgba(0,0,0,.16); }
+    .panel h3 { font-size:1rem; font-weight:650; margin:0 0 0.5rem; color:var(--text); }
+    .metric-definition { color:var(--muted); font-size:0.78rem; margin:-0.2rem 0 0.6rem; }
+    .metric-definition::before { content:"def · "; color:var(--active); font-weight:700; }
+    .metric-meta { display:grid; grid-template-columns:max-content 1fr; gap:.18rem .55rem; padding-top:.75rem; margin-top:.75rem; border-top:1px solid var(--border); color:var(--muted); font-size:.72rem; }
+    .metric-meta dt { color:var(--text); font-weight:600; }
+    .badge,.public-state { display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; padding:.15rem .5rem; border-radius:999px; border:1px solid currentColor; letter-spacing:.04em; text-transform:uppercase; }
+    .status-pass { border-top-color:var(--verified); }
+    .status-pass .badge,.public-state.status-pass { color:var(--verified); }
+    .status-fail,.status-rejected,.status-error { border-top-color:var(--failure); }
+    .status-fail .badge,.status-rejected .badge,.status-error .badge,.public-state.status-fail,.public-state.status-rejected,.public-state.status-error { color:var(--failure); }
+    .status-unknown,.status-nodata { border-top-color:var(--muted); border-top-style:dashed; }
+    .status-unknown .badge,.status-nodata .badge,.public-state.status-unknown,.public-state.status-nodata { color:var(--muted); }
+    .status-stale { border-top-color:var(--retry); border-top-style:double; }
+    .status-stale .badge,.public-state.status-stale { color:var(--retry); }
+    .panel-trend { grid-column:1 / -1; }
+    .trend-chart { width:100%; height:auto; display:block; margin-top:.75rem; }
+    .detail { font:.82rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--text); margin:.5rem 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+    .note,.state-reason,.public-explanation { font-size:.8rem; color:var(--muted); margin:.4rem 0 0; }
+    .public-explanation { margin:0 0 .55rem; font-style:italic; }
+    .metric-value { font-size:1.4rem; font-weight:700; color:var(--muted); margin-top:.35rem; }
+    .provenance,.source { font-size:.72rem; color:var(--muted); margin:.4rem 0 0; }
+    code { font-family:ui-monospace,monospace; font-size:.8rem; }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--border); font-size:.8rem; color:var(--muted); }
+    footer a { color:var(--active); text-decoration:none; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+    .intro { background: #0C1016; border: 1px solid #29303B; border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; overflow-wrap: break-word; }
+    .intro-lead { font-size: 0.95rem; color: #F4F6F8; margin: 0; line-height: 1.55; }
+    .public-explanation { font-size: 0.82rem; color: #8995A3; margin: 0 0 0.5rem 0; font-style: italic; }
     .trend-chart { max-width: 100%; }
   </style>
 </head>
 <body>
-<nav style="background:#0f172a;padding:1rem 1.5rem"><div style="max-width:720px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#f8fafc;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span style="color:#475569">/</span><span style="color:#94a3b8;font-size:0.9rem;font-weight:500">Factory</span></div></nav>
+<nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#8995A3;font-size:0.9rem;font-weight:500">Factory</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
 
   <div class="content">
     <h1>Factory Dashboard</h1>
     <section class="intro">
       <p class="intro-lead">Live measurements from a software factory: how
       much it costs to run each day, and how much of the work the agents
-      did on their own.</p>
+      did on their own. Maturity promotion is fail-closed; <a
+      href="/factory/maturity/">view the gate methodology</a>.</p>
     </section>
-    <p class="generated">Last regenerated: 2026-08-07T08:16:34Z</p>
+    <p class="generated">Last regenerated: 2026-08-07T08:55:20Z</p>
   <section class="group">
     <h2>Activity</h2>
     <div class="panels">
     <div id="daily-autonomy" class="panel status-pass panel-trend">
       <h3>Daily autonomy (AI hours per human hour)</h3>
+      <p class="metric-definition">Productive agent hours divided by human hours for each day, summarized with a rolling 28-day median and interquartile band.</p>
       <p class="public-explanation">Agent hours divided by human hours, per day. Higher means the factory ran more autonomously that day.</p>
+      <span class="public-state status-pass"><span class="state-icon" aria-hidden="true">&#10003;</span> VERIFIED</span>
 <svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 28 observations." xmlns="http://www.w3.org/2000/svg">
-  <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">autonomy ratio (X:1)</text>
-  <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">0.0</text>
-  <line x1="44" y1="98.0" x2="464" y2="98.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="101.0" text-anchor="end" font-size="9" fill="#4b5563">49.7</text>
-  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#4b5563">99.3</text>
-  <line x1="44" y1="12" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="184" x2="464" y2="184" stroke="#ccc" stroke-width="1"/>
-  <polyline data-series="measured" points="44.0,167.8 59.6,163.1 75.1,155.8 90.7,167.6 106.2,169.4 121.8,158.0 137.3,144.1 152.9,40.7 168.4,131.3 184.0,164.8 199.6,160.5 215.1,149.5 230.7,132.3 246.2,162.8 261.8,150.4 277.3,89.2 292.9,137.2 308.4,139.5 324.0,114.7 339.6,94.8 355.1,162.6 370.7,160.4 386.2,148.0 401.8,169.8 417.3,124.4 432.9,101.4 448.4,158.0 464.0,148.9" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="167.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="59.6" cy="163.1" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="75.1" cy="155.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="90.7" cy="167.6" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="106.2" cy="169.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="121.8" cy="158.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="137.3" cy="144.1" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="152.9" cy="40.7" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="168.4" cy="131.3" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="184.0" cy="164.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="199.6" cy="160.5" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="215.1" cy="149.5" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="230.7" cy="132.3" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="246.2" cy="162.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="261.8" cy="150.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="277.3" cy="89.2" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="292.9" cy="137.2" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="308.4" cy="139.5" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="324.0" cy="114.7" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="339.6" cy="94.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="355.1" cy="162.6" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="370.7" cy="160.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="386.2" cy="148.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="401.8" cy="169.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="417.3" cy="124.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="432.9" cy="101.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="448.4" cy="158.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="148.9" r="3.5" fill="#7c3aed"/>
-  <text x="44.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-09</text>
-  <text x="106.2" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-13</text>
-  <text x="168.4" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-17</text>
-  <text x="230.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-21</text>
-  <text x="292.9" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-25</text>
-  <text x="355.1" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
-  <text x="417.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">08-02</text>
-  <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">08-05</text>
+  <text x="44" y="20" text-anchor="start" font-size="10" fill="#8995A3">autonomy ratio (X:1)</text>
+  <line x1="44" y1="184.0" x2="412" y2="184.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="187.0" text-anchor="end" font-size="10" fill="#8995A3">0.0</text>
+  <line x1="44" y1="104.0" x2="412" y2="104.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="107.0" text-anchor="end" font-size="10" fill="#8995A3">18.0</text>
+  <line x1="44" y1="24.0" x2="412" y2="24.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="27.0" text-anchor="end" font-size="10" fill="#8995A3">36.0</text>
+  <line x1="44" y1="24" x2="44" y2="184" stroke="#8995A3" stroke-width="1"/>
+  <line x1="44" y1="184" x2="412" y2="184" stroke="#8995A3" stroke-width="1"/>
+  <polygon data-series="rolling-p25-p75" points="44.0,142.5 57.6,133.3 71.3,120.9 84.9,125.6 98.5,130.3 112.1,120.5 125.8,114.4 139.4,104.0 153.0,81.5 166.7,89.0 180.3,96.5 193.9,91.9 207.6,81.5 221.2,85.0 234.8,88.4 248.4,74.0 262.1,63.8 275.7,65.3 289.3,57.6 303.0,50.7 316.6,51.4 330.2,54.5 343.9,57.6 357.5,60.7 371.1,51.4 384.7,49.3 398.4,50.0 412.0,50.7 412.0,129.2 398.4,129.3 384.7,129.4 371.1,129.4 357.5,129.7 343.9,129.3 330.2,129.4 316.6,129.4 303.0,129.7 289.3,129.9 275.7,130.1 262.1,130.3 248.4,131.4 234.8,132.6 221.2,133.7 207.6,134.8 193.9,136.6 180.3,138.3 166.7,140.0 153.0,141.8 139.4,141.9 125.8,142.1 112.1,142.3 98.5,142.5 84.9,141.9 71.3,136.4 57.6,139.5 44.0,142.5" fill="#7D8CFF" fill-opacity="0.16"/>
+  <polyline data-series="rolling-median" points="44.0,142.5 57.6,136.4 71.3,130.3 84.9,136.0 98.5,141.8 112.1,136.0 125.8,130.3 139.4,123.8 153.0,117.3 166.7,123.8 180.3,123.7 193.9,120.5 207.6,117.3 221.2,120.5 234.8,117.3 248.4,114.4 262.1,111.5 275.7,104.7 289.3,97.8 303.0,96.6 316.6,97.8 330.2,104.7 343.9,97.8 357.5,104.7 371.1,97.8 384.7,96.6 398.4,97.8 412.0,96.6" fill="none" stroke="#7D8CFF" stroke-width="2.5"/>
+  <line x1="332.0" y1="28.0" x2="344.0" y2="28.0" stroke="#7D8CFF" stroke-width="2.5"/>
+  <text x="348.0" y="31.0" font-size="9" fill="#8995A3">median</text>
+  <rect x="332.0" y="34.0" width="12" height="8" fill="#7D8CFF" fill-opacity="0.16"/>
+  <text x="348.0" y="41.0" font-size="9" fill="#8995A3">P25-P75</text>
+  <polyline data-series="wallclock" data-role="observations" points="330.2,123.5 357.5,147.4 398.4,117.3 412.0,93.7" fill="none" stroke="#8995A3" stroke-width="1" stroke-opacity=".55"/>
+  <circle data-series="wallclock" data-state="measured" data-value="13.61" cx="330.2" cy="123.5" r="3" fill="#7D8CFF"/>
+  <circle data-series="wallclock" data-state="measured" data-value="8.22" cx="357.5" cy="147.4" r="3" fill="#7D8CFF"/>
+  <circle data-series="wallclock" data-state="measured" data-value="15" cx="398.4" cy="117.3" r="3" fill="#7D8CFF"/>
+  <circle data-series="wallclock" data-state="measured" data-value="20.3" cx="412.0" cy="93.7" r="3" fill="#7D8CFF"/>
+  <circle data-series="effort" data-state="measured" data-value="9.33" cx="44.0" cy="142.5" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="12.08" cx="57.6" cy="130.3" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="16.3" cx="71.3" cy="111.5" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="9.5" cx="84.9" cy="141.8" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="8.46" cx="98.5" cy="146.4" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="15" cx="112.1" cy="117.3" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="23.04" cx="125.8" cy="81.5" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="82.78" cx="139.4" cy="24.0" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="30.45" cx="153.0" cy="48.6" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="11.06" cx="166.7" cy="134.8" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="13.57" cx="180.3" cy="123.7" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="19.94" cx="193.9" cy="95.3" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="29.83" cx="207.6" cy="51.4" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="12.27" cx="221.2" cy="129.4" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="19.38" cx="234.8" cy="97.8" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="54.76" cx="248.4" cy="24.0" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="27.03" cx="262.1" cy="63.8" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="25.7" cx="275.7" cy="69.7" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="40" cx="289.3" cy="24.0" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="51.5" cx="303.0" cy="24.0" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="12.34" cx="316.6" cy="129.1" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="20.82" cx="343.9" cy="91.4" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="34.44" cx="371.1" cy="30.9" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <circle data-series="effort" data-state="measured" data-value="47.73" cx="384.7" cy="24.0" r="3" fill="none" stroke="#8995A3" stroke-width="1.75"/>
+  <text x="44.0" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-09</text>
+  <text x="98.5" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-13</text>
+  <text x="153.0" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-17</text>
+  <text x="207.6" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-21</text>
+  <text x="262.1" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-25</text>
+  <text x="316.6" y="199" text-anchor="middle" font-size="10" fill="#8995A3">07-29</text>
+  <text x="371.1" y="199" text-anchor="middle" font-size="10" fill="#8995A3">08-02</text>
+  <text x="412.0" y="199" text-anchor="middle" font-size="10" fill="#8995A3">08-05</text>
 </svg>
 <p class="detail metric-caption">28 daily observations. Latest: 20.30.</p>
+<p class="detail metric-caption">Rolling 28-day median (line), P25–P75 range (band), and individual daily observations (points). Values above the P75-based chart range are pinned to the top edge.</p>
+      <dl class="metric-meta">
+        <dt>Numerator</dt><dd>Productive agent hours recorded for the day</dd>
+        <dt>Denominator</dt><dd>Human hours recorded for the day</dd>
+        <dt>Window</dt><dd>Rolling 28 calendar days</dd>
+        <dt>Freshness</dt><dd>2026-08-05</dd>
+        <dt>Source</dt><dd>reports/telemetry/daily-autonomy.jsonl</dd>
+        <dt>Version</dt><dd>1.0</dd>
+      </dl>
     </div>
     <div id="daily-cost" class="panel status-pass panel-trend">
       <h3>Daily factory cost ($)</h3>
+      <p class="metric-definition">Measured variable model and provider cost attributed to factory work for each UTC day.</p>
       <p class="public-explanation">What the factory costs to run each day, in US dollars.</p>
+      <span class="public-state status-pass"><span class="state-icon" aria-hidden="true">&#10003;</span> VERIFIED</span>
 <svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily factory cost chart: 10 observations." xmlns="http://www.w3.org/2000/svg">
-  <text x="44" y="8" text-anchor="start" font-size="8" fill="#6b7280">factory cost</text>
-  <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#4b5563">$0.0</text>
-  <line x1="44" y1="98.0" x2="464" y2="98.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="101.0" text-anchor="end" font-size="9" fill="#4b5563">$14.8</text>
-  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#eee" stroke-width="1"/>
-  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#4b5563">$29.7</text>
-  <line x1="44" y1="12" x2="44" y2="184" stroke="#ccc" stroke-width="1"/>
-  <line x1="44" y1="184" x2="464" y2="184" stroke="#ccc" stroke-width="1"/>
-  <polyline data-series="measured" points="44.0,64.8 90.7,78.1 137.3,72.0 184.0,40.7 230.7,80.4 277.3,80.4 324.0,80.4 370.7,80.4 417.3,80.4 464.0,80.4" fill="none" stroke="#5b21b6" stroke-width="2"/>
-  <circle data-state="measured" cx="44.0" cy="64.8" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="90.7" cy="78.1" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="137.3" cy="72.0" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="184.0" cy="40.7" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="230.7" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="277.3" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="324.0" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="370.7" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="417.3" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <circle data-state="measured" cx="464.0" cy="80.4" r="3.5" fill="#7c3aed"/>
-  <text x="44.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-10</text>
-  <text x="90.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-11</text>
-  <text x="137.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-12</text>
-  <text x="184.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-13</text>
-  <text x="230.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-15</text>
-  <text x="277.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-16</text>
-  <text x="324.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-17</text>
-  <text x="370.7" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-25</text>
-  <text x="417.3" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-28</text>
-  <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#4b5563">07-29</text>
+  <text x="44" y="8" text-anchor="start" font-size="8" fill="#8995A3">factory cost</text>
+  <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="187.0" text-anchor="end" font-size="9" fill="#8995A3">$0.0</text>
+  <line x1="44" y1="98.0" x2="464" y2="98.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="101.0" text-anchor="end" font-size="9" fill="#8995A3">$14.8</text>
+  <line x1="44" y1="12.0" x2="464" y2="12.0" stroke="#29303B" stroke-width="1"/>
+  <text x="40" y="15.0" text-anchor="end" font-size="9" fill="#8995A3">$29.7</text>
+  <line x1="44" y1="12" x2="44" y2="184" stroke="#8995A3" stroke-width="1"/>
+  <line x1="44" y1="184" x2="464" y2="184" stroke="#8995A3" stroke-width="1"/>
+  <polyline data-series="measured" points="44.0,64.8 90.7,78.1 137.3,72.0 184.0,40.7 230.7,80.4 277.3,80.4 324.0,80.4 370.7,80.4 417.3,80.4 464.0,80.4" fill="none" stroke="#7D8CFF" stroke-width="2"/>
+  <circle data-state="measured" cx="44.0" cy="64.8" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="90.7" cy="78.1" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="137.3" cy="72.0" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="184.0" cy="40.7" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="230.7" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="277.3" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="324.0" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="370.7" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="417.3" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <circle data-state="measured" cx="464.0" cy="80.4" r="3.5" fill="#7D8CFF"/>
+  <text x="44.0" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-10</text>
+  <text x="90.7" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-11</text>
+  <text x="137.3" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-12</text>
+  <text x="184.0" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-13</text>
+  <text x="230.7" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-15</text>
+  <text x="277.3" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-16</text>
+  <text x="324.0" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-17</text>
+  <text x="370.7" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-25</text>
+  <text x="417.3" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-28</text>
+  <text x="464.0" y="199" text-anchor="middle" font-size="8" fill="#8995A3">07-29</text>
 </svg>
 <p class="detail metric-caption">10 daily observations. Latest: $17.87.</p>
+      <dl class="metric-meta">
+        <dt>Numerator</dt><dd>Sum of measured cost in US dollars</dd>
+        <dt>Denominator</dt><dd>One UTC day</dd>
+        <dt>Window</dt><dd>Daily</dd>
+        <dt>Freshness</dt><dd>2026-07-29</dd>
+        <dt>Source</dt><dd>reports/telemetry/daily-costs.jsonl</dd>
+        <dt>Version</dt><dd>1.0</dd>
+      </dl>
     </div>
     </div>
   </section>
@@ -179,7 +197,7 @@
       <a href="/">Home</a> &nbsp;·&nbsp;
       <a href="/blog/">Blog</a>
     </span>
-    <br><span>Built by Edoworks 202608070816.0.</span>
+    <br><span>Built by Edoworks 202608070855.0.</span>
   </footer>
 </body>
 </html>
