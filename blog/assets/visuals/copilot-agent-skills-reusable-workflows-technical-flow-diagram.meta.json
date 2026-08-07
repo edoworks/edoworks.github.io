@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-agent-skills-reusable-workflows-technical-flow-diagram",
+  "source_article": "copilot-agent-skills-reusable-workflows.html",
+  "output_sha256": "63c91964c8c311ff3f020181670d4dafbbcb273e0735e730fc4242a38020e96d",
+  "concepts": [
+    "Why skills matter for organization",
+    "What a skill encapsulates",
+    "Skill discovery and composition"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

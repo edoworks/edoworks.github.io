@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "site": "edoworks",
+  "pages": [
+    {"path": "/", "source_page_id": "home"},
+    {"path": "/blog/", "source_page_id": "blog-index"},
+    {"path": "/blog/cyber-eval-boundaries", "source_page_id": "blog-post"},
+    {"path": "/blog/eval-first-model-upgrades", "source_page_id": "blog-post"},
+    {"path": "/blog/measure-autonomous-work-surface-outcome", "source_page_id": "blog-post"},
+    {"path": "/blog/opus5-long-running-agent-loop", "source_page_id": "blog-post"},
+    {"path": "/portfolio/", "source_page_id": "portfolio"},
+    {"path": "/privacy/", "source_page_id": "privacy"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "ghcp-cli-work-life-harmony-technical-flow-diagram",
+  "source_article": "ghcp-cli-work-life-harmony.html",
+  "output_sha256": "f265d0b6b1df20348e755368677bdcb632885053045b13a7dd6519a313955b03",
+  "concepts": [
+    "The always-on tax",
+    "What a background agent actually i",
+    "Before lunch: the dispatch pattern"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

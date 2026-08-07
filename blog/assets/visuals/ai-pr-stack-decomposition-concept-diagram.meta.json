@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "concept-diagram",
+  "recipe_id": "ai-pr-stack-decomposition-concept-diagram",
+  "source_article": "ai-pr-stack-decomposition.html",
+  "output_sha256": "255e11a3a8c578a7772dd58a17fc92c7d86b8791a590e2a18e7df251fbca522d",
+  "concepts": [
+    "Two incidents, same pattern",
+    "The boundary is the environment",
+    "What changes for evaluation design"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "meta"
+}

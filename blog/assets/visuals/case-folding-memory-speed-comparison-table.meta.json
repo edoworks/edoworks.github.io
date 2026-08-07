@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "case-folding-memory-speed-comparison-table",
+  "source_article": "case-folding-memory-speed.html",
+  "output_sha256": "1018faef775b204cfe356fa137c33b5f2449e26dbf7af9127f44d6e0915f8c8d",
+  "concepts": [
+    "Why Early Termination Is Tempting",
+    "The Branch-Free Approach",
+    "Memory Bandwidth as the Ceiling"
+  ],
+  "content_kind": "legal-case-explainer",
+  "content_kind_source": "heuristic"
+}

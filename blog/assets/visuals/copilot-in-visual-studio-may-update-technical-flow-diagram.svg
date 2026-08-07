@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="476" viewBox="0 0 1200 476">
+  <rect x="0" y="0" width="1200" height="476" fill="#FFFFFF"/>
+  <rect x="180.0" y="204.0" width="240.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="300.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">The Plan agent in</text>
+  <text x="300.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">Visual Studio</text>
+  <rect x="480.0" y="204.0" width="240.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="600.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">Skills panel for</text>
+  <text x="600.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">workflow discover</text>
+  <rect x="780.0" y="204.0" width="240.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="900.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">Multi-file diffs</text>
+  <text x="900.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">and summaries</text>
+  <line x1="420.0" y1="238.0" x2="480.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 480.0000,238.0000 L 472.0000,230.0000 L 472.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+  <line x1="720.0" y1="238.0" x2="780.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 780.0000,238.0000 L 772.0000,230.0000 L 772.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+</svg>

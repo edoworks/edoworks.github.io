@@ -1,0 +1,61 @@
+{
+  "schema_version": "0.8.15",
+  "recipe_id": "copilot-byok-flexible-authentication-technical-flow-diagram",
+  "kind": "technical-flow-diagram",
+  "canvas": {
+    "width_px": 1200,
+    "height_px": 476,
+    "background_color": "#FFFFFF"
+  },
+  "nodes": [
+    {
+      "id": "step-1",
+      "node_type": "step",
+      "label": "Why BYOK matters\nfor organizations",
+      "stroke": "#7c3aed",
+      "stroke_width": 4
+    },
+    {
+      "id": "step-2",
+      "node_type": "step",
+      "label": "How BYOK\nauthentication",
+      "stroke": "#7c3aed",
+      "stroke_width": 4
+    },
+    {
+      "id": "step-3",
+      "node_type": "step",
+      "label": "What BYOK means\nfor control and co",
+      "stroke": "#7c3aed",
+      "stroke_width": 4
+    }
+  ],
+  "edges": [
+    {
+      "from": "step-1",
+      "to": "step-2",
+      "edge_type": "flow",
+      "stroke": "#7c3aed"
+    },
+    {
+      "from": "step-2",
+      "to": "step-3",
+      "edge_type": "flow",
+      "stroke": "#7c3aed"
+    }
+  ],
+  "edge_style": {
+    "stroke": "#7c3aed",
+    "stroke_width": 4,
+    "arrow_size": 14
+  },
+  "node_style": {
+    "font_size": 20,
+    "padding_x": 18,
+    "padding_y": 18
+  },
+  "metadata": {
+    "purpose": "visual-learning",
+    "generator": "rendit technical-flow-diagram"
+  }
+}

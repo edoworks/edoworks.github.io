@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "microsoft-build-2026-technical-flow-diagram",
+  "source_article": "microsoft-build-2026.html",
+  "output_sha256": "a5c0d9a8fac8f7d403bc659c71e371202c3b0c20fc4412a9271aaa4c83e12f71",
+  "concepts": [
+    "MAI-Code-1: Microsoft's Own Coding",
+    "Windows as an Agent Platform",
+    "Agent 365 (GA) and the Reported Az"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "confidence-aware-agent-automation-technical-flow-diagram",
+  "source_article": "confidence-aware-agent-automation.html",
+  "output_sha256": "56406a9224a5dc50d52499b58db3a7d2049c976b6e07ee71c4a16fb3d8f26884",
+  "concepts": [
+    "Proposal and Execution Are Differe",
+    "Confidence Should Route Work, Not ",
+    "Rationale Makes Review Cheaper"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

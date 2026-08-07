@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-enterprise-managed-settings-technical-flow-diagram",
+  "source_article": "copilot-enterprise-managed-settings.html",
+  "output_sha256": "f1e3b67ea90b099292f9ae6b9ea0ef347334ae133ab16907d4501bd9b988e91a",
+  "concepts": [
+    "What the changelog actually says",
+    "Why cross-client coverage changes ",
+    "The next-task semantics matter for"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

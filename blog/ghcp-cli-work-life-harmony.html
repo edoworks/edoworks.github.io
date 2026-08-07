@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work-Life Harmony with GitHub Copilot CLI: Let Your Agents Work While You Rest — Edoworks</title>
+  <meta name="description" content="How to dispatch long-running AI agents before lunch, a run, or bedtime — and come back to finished work instead of a blinking cursor.">
+  <link rel="canonical" href="https://edoworks.com/blog/ghcp-cli-work-life-harmony.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+th {
+  background: #f3f4f6;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Workflow</div>
+      <h1>Work-Life Harmony with GitHub Copilot CLI: Let Your Agents Work While You Rest</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; May 29, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/ghcp-cli-work-life-harmony-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Work-Life Harmony with GitHub Copilot CLI: Let Your Agents Work While You Rest: The always-on tax, What a background agent actually i, Before lunch: the dispatch pattern" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/ghcp-cli-work-life-harmony-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: The always-on tax → What a background agent actually i → Before lunch: the dispatch pattern</figcaption>
+    </figure>
+
+    <h2>The always-on tax</h2>
+    <p>For a long time, our bottleneck was not code quality, model speed, or even tooling. It was that every meaningful step in the pipeline still required one human body to stay parked at one keyboard. If an implementation plan needed review, if a branch needed validation, if a draft pull request (PR) needed one more pass, the whole system quietly waited for us to be physically present.</p>
+    <p>That sounds manageable until you are the whole company. Lunch becomes a tiny project-management decision. A run becomes "dead time" because you are not there to answer the next question. Bedtime means the pipeline goes dark, not because the computer is done, but because you are.</p>
+    <p>That is the always-on founder tax. Your tools are powerful, but they still behave as if your attention is their power source. The exhausting part is not one dramatic interruption. It is the steady feeling of being on call for your own workflow.</p>
+    <p>So the useful question is not "How do we make AI faster?" It is: what changes when the computer no longer needs us present to do the work?</p>
+    <p>One note before we get into mechanics: this post assumes you are comfortable running commands in a terminal, and that you have a passing familiarity with GitHub — commits, branches, and pull requests. It does not assume you have used GitHub Copilot or any AI coding tool before. Every piece of jargon gets a definition on first use.</p>
+    <h2>What a background agent actually is</h2>
+    <p>Start with a concrete example. We can leave for lunch, dispatch a task, come back an hour later, and read the result. That only works because the task is not running in the same live conversation that is attached to our terminal.</p>
+    <p>GitHub Copilot CLI is a command-line tool — a text-based program you run in your terminal — that lets you dispatch AI agents to complete coding tasks. A background agent is one of those tasks.</p>
+    <p>In practice, a background agent is dispatched with <code>mode: "background"</code>. The call returns immediately with an <code>agent_id</code>, which is just the identifier for that run. The work continues in a separate context window — think of it as a separate browser tab that the agent has open just for this task, with its own conversation history. Closing your terminal does not close that tab.</p>
+    <p>One prerequisite: the examples in this post use Foculoom's <code>orqit</code> Copilot CLI plugin for the <code>orqit:conductor</code> agent, the <code>dev-session</code> skill, and the <code>/usage</code> skill. Install it once with <code>copilot plugin install orqit@foculoom</code>, then run <code>bash scripts/link-plugin-assets.sh</code> to activate the skills. Without the plugin, the dispatch examples will fail. The <code>list_agents()</code>, <code>read_agent()</code>, and <code>write_agent()</code> calls are built into Copilot CLI and do not require any plugin.</p>
+    <p>That is different from sync mode, the default blocking mode where the terminal waits until the task finishes. In background mode, we can check in later instead of sitting there. <code>list_agents()</code> shows what is running, waiting, completed, or failed. <code>read_agent()</code> reads the result. <code>write_agent()</code> sends a follow-up message back into that agent if we want to unblock it or change direction.</p>
+    <p>The important part is what a background agent is <em>not</em>. It is not a fire-and-forget black box. In our workflow it stops at decision gates and waits. We come back to evidence waiting for review, not a cursor hoping we never stood up.</p>
+    <h2>Before lunch: the dispatch pattern</h2>
+    <p>The before-lunch version is the easiest place to start because the time box is small and the cost of a mistake is low. We pick one scoped issue with clear acceptance criteria, meaning a concrete pass-fail list for the work. If the issue still has open questions, vague success language, or "TBD" fields, we do not dispatch it yet. Ambiguity is not something to outsource.</p>
+    <p>Before we send anything, we run <code>dev-session</code> — an orqit skill that acts as the session-start workflow. It checks the state of the repo, recent context, and whether we are resuming something or starting clean. It sounds procedural because it is. The quality of background work depends heavily on starting from a clean, explicit state.</p>
+    <p>Then we dispatch CONDUCTOR. CONDUCTOR is Foculoom's orchestrator agent: it manages the handoffs between three specialized roles. PLANNER writes the implementation plan. BUILDER writes and tests the code. REVIEWER checks whether the result is ready to ship. The reason for three roles rather than one is that each step is deliberately adversarial to the last: the reviewer's job is specifically to find what the builder missed, and the builder's job is to find what the planner underspecified. CONDUCTOR runs them in sequence and stops at named decision gates instead of guessing what we would approve.</p>
+    <p>Then we step away. For local runs, keep the machine awake — machine sleep can suspend the agent. For true away-from-machine durability, use <code>/delegate</code> instead, which runs in GitHub's cloud and survives a closed lid or powered-down machine.</p>
+    <p>When we come back, the pattern is simple. Run <code>list_agents()</code> to find the run, then <code>read_agent(agent_id)</code> to see what happened. If the status is <code>idle</code>, the agent is not stuck. It is waiting at a gate for us to review the plan or the PR evidence and decide what happens next.</p>
+    <h2>The afternoon run: multi-step autonomy</h2>
+    <p>Once the lunch-break pattern feels normal, longer absences become practical. A two-hour stretch away from the keyboard is enough time for a real multi-step workflow, not just one build or one review pass. That is where orchestration matters.</p>
+    <p>In our setup, CONDUCTOR always stops at four founder gates:</p>
+    <ul>
+<li>Plan approval after PLANNER writes the implementation plan.</li>
+<li>Ship or revise after BUILDER prepares the PR and evidence.</li>
+<li>Money, legal, privacy, or other irreversible actions.</li>
+<li>Ambiguity that requires founder judgment.</li>
+</ul>
+    <p>That last point is why background work feels usable instead of reckless. The system does not try to role-play our preferences when the answer is unclear. It produces the best evidence it can, then waits.</p>
+    <p>When an agent has reached one of those gates, its status becomes <code>idle</code>. That means paused and waiting for the next message, not spinning, not hung, and not silently improvising. We can read only the new output with <code>read_agent(agent_id, since_turn: N)</code>, review the result, and respond with <code>write_agent(agent_id, "ship it")</code> or <code>write_agent(agent_id, "revise: tighten the scope and rerun tests")</code>.</p>
+    <p>The practical shift is subtle but important. We do not come back to a blinking terminal that still needs our presence to move. We come back to a completed chunk of thinking, code, or review that is already waiting for our judgment.</p>
+    <h2>Sleeping through a pipeline run</h2>
+    <p>Overnight runs use the same mechanics as a lunch break, but they only feel safe because the workflow is built to stop cleanly. The first safety mechanism is checkpointing. As the session grows, Copilot CLI can preserve progress instead of pretending infinite context exists. In plain terms, the run keeps its place instead of forgetting what it already figured out.</p>
+    <p>The second safety mechanism is that approval gates do not time out. If the agent reaches a founder gate at 1:13 a.m., it stays <code>idle</code> until morning. Nothing gets merged, deployed, or published just because we were asleep when the question came up.</p>
+    <p>One caveat on overnight local runs: keep the machine awake. Machine sleep can strand a local agent mid-run. If you want to close the lid and trust the system, use <code>/delegate</code> to run in GitHub's cloud instead.</p>
+    <p>The third safety mechanism is rule design. Our agents can draft PRs, push branches, and assemble evidence, but they do not auto-merge and they do not auto-deploy. That matters more at night than during the day. The whole point is to wake up to prepared work, not to surprises.</p>
+    <p>The fourth safety mechanism is context-budget discipline. AI models can only hold a certain amount of conversation history in memory at once — think of it as a rolling whiteboard that can only hold so many notes. A run that never cleans up its whiteboard eventually cannot add anything new. Checkpointing saves the important notes to a persistent store. Compacting summarizes and discards the rest, freeing space for the work still ahead. We keep the session lifecycle explicit so the agent does this housekeeping before it runs itself into a wall. That sounds mundane, but it is the difference between an orderly overnight run and a long confused transcript.</p>
+    <p>Morning review is usually incremental, not a full reread. <code>list_agents()</code> shows what is still running or waiting. <code>read_agent(agent_id, since_turn: N)</code> reads only what changed since the last check. If the run created draft PRs, <code>gh pr list</code> tells us what is now sitting there for review.</p>
+    <p>We have also learned not to ask overnight runs to solve open-ended strategy problems. They work best when the decision tree is shallow, usually two gates or fewer. If the work hits something genuinely unclear, the system does the right thing: it stops, documents the uncertainty, and waits.</p>
+    <h2>Knowing it worked (and what it cost)</h2>
+    <p>The shortest useful check is <code>list_agents()</code>. It shows the agent ID, the status, and whether unread output is waiting. If we just want a pulse check, <code>read_agent(agent_id, wait: false)</code> is enough. If we want to sit there until the run finishes, <code>read_agent(agent_id, wait: true)</code> blocks until it has an answer.</p>
+    <p>Cost matters too. Background agents use premium requests, meaning the billed calls to higher-capability Copilot models. The orqit <code>/usage</code> skill queries the Copilot billing API and reports current burn and remaining headroom, so we can check cost before a run and after it. This is distinct from the built-in Copilot CLI <code>/usage</code> command, which shows session metrics.</p>
+    <p>In practice our checklist is simple: <code>list_agents()</code> for status, <code>read_agent()</code> for results, and <code>/usage</code> for cost. If the work is going to become a habit, the cost has to be visible.</p>
+    <h2>The guard rails that make this safe</h2>
+    <p>This only works because the workflow is opinionated about where autonomy stops. We do not treat the system as magical. We treat it as powerful software that needs explicit limits.</p>
+    <p>First, non-trivial plans get an independent rubber-duck review before code is written. That is a separate pass whose job is to challenge the plan before anyone starts implementing it. Second, the anti-hallucination rules require evidence for factual claims. AI models have a structural tendency to generate plausible-sounding output that is factually wrong — inventing issue numbers, file paths, API behavior, or test results that do not exist. This is called hallucination, and it is a property of how the models work, not a bug that can simply be patched. The rules constrain what the agents are allowed to assert without evidence.</p>
+    <p>Third, there is no auto-merge and no auto-deploy path. Agents can prepare branches, draft PRs, and attach evidence, but the founder owns the irreversible step. Fourth, anything involving money, legal questions, privacy, or another irreversible action is an escalation point by design. The system stops and waits.</p>
+    <p>Fifth, version-control hygiene is a hard rule in the workflow itself. Agents are instructed never to push directly to the default branch, and all work moves through feature branches and reviewable pull requests. This is enforced by agent instructions, not a GitHub repository setting — which means it is only as reliable as keeping those instructions current. Sixth, mistakes are supposed to become durable improvements: acknowledged errors trigger a 5-whys post-mortem, a root-cause review that keeps asking why until the real failure mode is visible, and the fix gets written back to the tracking issue and the workflow artifacts.</p>
+    <p>The honest caveat is that none of these guard rails live in the laws of physics. They live in instructions, skills, hooks, and agent profiles. Those can drift. The value is not that the file exists. The value is that we keep it current enough for the rules to still mean something.</p>
+    <h2>Your daily dispatch workflow</h2>
+    <ul>
+<li>Run <code>dev-session</code> so the session starts from a known state.</li>
+<li>Pick one issue with clear acceptance criteria and no open <code>TBD</code> fields.</li>
+<li>Dispatch <code>task(agent_type: "orqit:conductor", mode: "background", ...)</code>.</li>
+<li>Step away, but keep the machine awake for a local run. If you want closed-lid durability, use <code>/delegate</code>.</li>
+</ul>
+    <ul>
+<li>Run <code>list_agents()</code> and find the relevant agent.</li>
+<li>Run <code>read_agent(agent_id)</code> to see the latest result.</li>
+<li>If the status is <code>idle</code>, review the plan or PR evidence and unblock it with <code>write_agent()</code>.</li>
+<li>If the status is <code>completed</code>, review the output and open the draft PR if one was created.</li>
+</ul>
+    <ul>
+<li>Run the <code>dev-session</code> end-of-session flow.</li>
+<li>Check <code>git status --short</code> and make sure no tracked edits are left in limbo.</li>
+<li>Only dispatch overnight work with shallow decision trees, ideally two gates or fewer.</li>
+<li>Keep the machine awake for a local overnight run, or use <code>/delegate</code> if you want cloud durability.</li>
+</ul>
+    <ul>
+<li>Run <code>list_agents()</code> to see what is still running or waiting.</li>
+<li>Run <code>read_agent(agent_id, since_turn: N)</code> for an incremental morning read.</li>
+<li>Run <code>/usage</code> to see the premium-request burn from the run.</li>
+<li>Run <code>gh pr list</code> to see which draft PRs are waiting for review.</li>
+<li>Run <code>dev-session</code> again before picking up the next chunk of work.</li>
+</ul>
+    <h2>What compounds when you reclaim your hours</h2>
+    <p>The payoff is not that we suddenly become willing to work all day and all night. It is the opposite. We get hours back that were previously lost to being physically present for work that did not actually require our live attention. Lunch becomes lunch again. Sleep becomes sleep again. The pipeline keeps moving, but we do not have to sit there and watch it move.</p>
+    <p>That compounds faster than it sounds. One reclaimed lunch break does not change a company. A few reclaimed hours every week starts to change how often we ship, how much context we lose, and how tired we feel while doing it.</p>
+    <p>The honest closing note is the same as the honest opening note: this only works when the inputs are good. Clear acceptance criteria, disciplined session lifecycle, and current instructions are not overhead here. They are the product. Background agents multiply good inputs. They do not rescue bad ones.</p>
+    <hr />
+    <p><em>Questions or different experience with autonomous workflows? <a href="https://tally.so/r/aQvRKb">Reach out</a> — we read every reply.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "agent-debug-panel-jetbrains-technical-flow-diagram",
+  "source_article": "agent-debug-panel-jetbrains.html",
+  "output_sha256": "bf41f671bad69a471626a62c18067a9666774c2a803b3f6d534a2a86b0dd4c32",
+  "concepts": [
+    "Why visibility is not luxury; it i",
+    "What the debug panel exposes",
+    "How this changes troubleshooting w"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "claude-opus-4-8-comparison-table",
+  "source_article": "claude-opus-4-8.html",
+  "output_sha256": "19a26849514b59a322700491b027452ddc13d13df11a4b958e96b41c8b7d90fd",
+  "concepts": [
+    "The model routing problem",
+    "What's new in Claude Opus 4.8",
+    "Benchmark comparison"
+  ],
+  "content_kind": "release-notes / model-eval",
+  "content_kind_source": "heuristic"
+}

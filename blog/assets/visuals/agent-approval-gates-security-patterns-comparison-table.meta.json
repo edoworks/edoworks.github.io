@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "comparison-table",
+  "recipe_id": "agent-approval-gates-security-patterns-comparison-table",
+  "source_article": "agent-approval-gates-security-patterns.html",
+  "output_sha256": "3bbd5f9cd76d3bd11b6e448cb618ef4c230d1b9424921027908a576c369c2e12",
+  "concepts": [
+    "Why approval gates are not optiona",
+    "The three-layer pattern",
+    "How this changes team workflows"
+  ],
+  "content_kind": "security-comparison",
+  "content_kind_source": "heuristic"
+}

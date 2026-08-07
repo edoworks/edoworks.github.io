@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-app-control-center-pattern-technical-flow-diagram",
+  "source_article": "copilot-app-control-center-pattern.html",
+  "output_sha256": "c15038c9783156c1269c0da39a4df8895eba2409592dc259130306070a78cc4a",
+  "concepts": [
+    "What shipped and why it matters",
+    "How we're applying this pattern",
+    "Qualifying source"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

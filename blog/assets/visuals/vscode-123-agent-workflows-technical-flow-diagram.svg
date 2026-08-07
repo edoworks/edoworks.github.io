@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="476" viewBox="0 0 1200 476">
+  <rect x="0" y="0" width="1200" height="476" fill="#FFFFFF"/>
+  <rect x="198.0" y="204.0" width="228.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="312.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">The release note</text>
+  <text x="312.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">that matters</text>
+  <rect x="486.0" y="204.0" width="228.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="600.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">What changed</text>
+  <text x="600.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">operationally</text>
+  <rect x="774.0" y="204.0" width="228.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="888.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">Why the Agents</text>
+  <text x="888.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">window is bigger</text>
+  <line x1="426.0" y1="238.0" x2="486.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 486.0000,238.0000 L 478.0000,230.0000 L 478.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+  <line x1="714.0" y1="238.0" x2="774.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 774.0000,238.0000 L 766.0000,230.0000 L 766.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+</svg>

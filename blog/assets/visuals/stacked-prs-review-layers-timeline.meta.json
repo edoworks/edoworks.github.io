@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "timeline",
+  "recipe_id": "stacked-prs-review-layers-timeline",
+  "source_article": "stacked-prs-review-layers.html",
+  "output_sha256": "203d69519dc6bb5f0c733bf241de3e75cc1acc7cbb73815864a7800bef826e86",
+  "concepts": [
+    "The Unit of Review Gets Smaller",
+    "Branch Direction Becomes Load-Bear",
+    "Parallel Review Needs Serial Integ"
+  ],
+  "content_kind": "unknown (kind override)",
+  "content_kind_source": "override"
+}

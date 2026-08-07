@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "github-mcp-integrations-emerging-pattern-technical-flow-diagram",
+  "source_article": "github-mcp-integrations-emerging-pattern.html",
+  "output_sha256": "cd2f7477e0214fceea454b7435e3a8b4a53bf2e1be71b500bd134d81ec215e1d",
+  "concepts": [
+    "Why standardization matters for ag",
+    "How MCP works at runtime",
+    "What this means for teams and plat"
+  ],
+  "content_kind": "unknown (kind override)",
+  "content_kind_source": "override"
+}

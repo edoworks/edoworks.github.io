@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "building-copilot-plugins-technical-flow-diagram",
+  "source_article": "building-copilot-plugins.html",
+  "output_sha256": "e0845f4745dc629deb260cd50750f4ad4e67b63e33895e081014eafcf80a1575",
+  "concepts": [
+    "Why this post exists",
+    "What a Copilot plugin actually is",
+    "Building the plugin components"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

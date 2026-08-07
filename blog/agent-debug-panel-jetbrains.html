@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Debugging Agents: The New Agent Debug Panel in JetBrains — Edoworks</title>
+  <meta name="description" content="When agents fail, you need to see why. JetBrains' new agent debug panel shows a chronological log of every decision, tool call, and handoff — turning agent work from a black box into a readable workflow.">
+  <link rel="canonical" href="https://edoworks.com/blog/agent-debug-panel-jetbrains.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Debugging Agents: The New Agent Debug Panel in JetBrains</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-06-06">June 6, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/agent-debug-panel-jetbrains-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Debugging Agents: The New Agent Debug Panel in JetBrains: Why visibility is not luxury; it i, What the debug panel exposes, How this changes troubleshooting w" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/agent-debug-panel-jetbrains-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why visibility is not luxury; it i → What the debug panel exposes → How this changes troubleshooting w</figcaption>
+    </figure>
+
+
+    <p>Agent work is invisible by default. You start a session, the agent runs, and you see the result — or you do not. If the agent fails, you have a conversation log but not a workflow trace. The new agent debug panel in JetBrains (June 2, 2026) changes this by exposing a chronological event log: every decision point, every tool call, every plan handoff, every error. This is to agents what stack traces are to synchronous code.</p>
+
+    <h2>Why visibility is not luxury; it is necessity</h2>
+
+    <p>When a regular program crashes, you get a stack trace: line numbers, function names, the exact state at failure. When an agent fails, you previously got silence or a cryptic error. The debug panel bridges that gap. It shows you what the agent was thinking, what tools it tried, in what order, and what happened when each tool returned.</p>
+
+    <p>This visibility is essential for orchestrated workflows. If you are running three agents in parallel, each calling different tools, and one fails mysteriously, the debug panel lets you trace the failure to a specific tool call, a specific agent, at a specific timestamp. Without this, diagnosing parallel agent failures is guesswork.</p>
+
+    <h2>What the debug panel exposes</h2>
+
+    <ul>
+      <li><strong>Event chronology:</strong> A chronological log of every event in the agent session, sorted by timestamp. Events include: planning steps, tool discovery, tool invocation, tool results, and handoffs between agents.</li>
+      <li><strong>Tool call details:</strong> For each tool call, the debug panel shows the tool name, input parameters, and output. If a tool returns an error, the error is visible inline.</li>
+    </ul>
+
+    <h2>How this changes troubleshooting workflows</h2>
+
+    <p>Before the debug panel, troubleshooting a failed agent session meant: check the final error, re-run the session with more verbose logging, or ask the agent to explain what it did. All of these were slow and error-prone. Now, you can click into the debug panel and immediately see where things went wrong.</p>
+
+    <p>This also enables training. When you show a team member how an agent session works, instead of describing it verbally, you can pull up the debug panel and walk through the events chronologically. The panel becomes a teaching tool, not just a diagnostic one.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary source: GitHub Changelog, <a href="https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/">Introducing Copilot CLI and agentic capabilities enhancements in JetBrains IDEs</a> (published June 2, 2026).</p>
+
+    <hr />
+    <p><em>Debug panel features and visibility vary by IDE version and agent implementation. Consult the JetBrains marketplace and GitHub documentation for current status.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

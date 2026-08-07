@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot CLI's New Slash Commands Turn Agent Sessions Into Something You Can Steer — Edoworks</title>
+  <meta name="description" content="GitHub's June 2 update added /remote, /compact, and /chronicle to Copilot CLI sessions in JetBrains. Here's why those controls matter before you decide how to use them.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-cli-slash-commands.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Copilot CLI's New Slash Commands Turn Agent Sessions Into Something You Can Steer</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-06-04">June 4, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-cli-slash-commands-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Copilot CLI&#x27;s New Slash Commands Turn Agent Sessions Into Something You Can Steer: Why the mechanism matters before t, What the new commands actually do, The surrounding upgrades matter to" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-cli-slash-commands-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why the mechanism matters before t → What the new commands actually do → The surrounding upgrades matter to</figcaption>
+    </figure>
+
+
+    <p>An agent session is easy to start and easy to romanticize. You give the system a task, it keeps working, and you imagine a self-driving workflow. In practice, long-running agent sessions fail for a simpler reason: you lose the controls. You cannot see enough, steer enough, or recover enough when the session drifts. GitHub's June 2 update for Copilot CLI sessions in JetBrains matters because it adds those controls directly into the session model.</p>
+
+    <p>The new features are not just extra commands. They are answers to three predictable failure modes. First, you leave your desk and the session keeps running, but you have no handle on it. Second, the conversation grows long enough that useful context gets buried. Third, you finish a week of work and cannot remember which session solved which problem. The new commands map directly to those three failures: <code>/remote</code>, <code>/compact</code>, and <code>/chronicle</code>.</p>
+
+    <h2>Why the mechanism matters before the procedure</h2>
+
+    <p>If you only look at the command list, the update can seem incremental. It is more important than that. A usable agent workflow needs three properties: remote observability, context maintenance, and recoverable history. Without those, agentic tooling becomes a black box that works only when you stay glued to the terminal. With those, an agent session starts to look more like a managed work thread you can inspect and redirect.</p>
+
+    <p>That is the mechanism story behind this release. GitHub did not merely add commands. It added ways to keep a session usable over time.</p>
+
+    <h2>What the new commands actually do</h2>
+
+    <ul>
+      <li><strong><code>/remote</code>:</strong> lets you remotely control a Copilot CLI session from github.com or the GitHub Mobile app. In plain language, it turns an agent session into something you can monitor and steer when you are away from your machine.</li>
+      <li><strong><code>/compact</code>:</strong> manually compresses session context. Think of it as asking the session to pack its working notes into a smaller, more manageable form before the conversation gets unwieldy.</li>
+      <li><strong><code>/chronicle</code>:</strong> reviews and analyzes session history. GitHub says it can generate recent-work summaries, give personalized tips, suggest improvements, and search prior sessions.</li>
+    </ul>
+
+    <p>Each command solves a different operational problem. <code>/remote</code> is about control at a distance. <code>/compact</code> is about keeping a long conversation healthy. <code>/chronicle</code> is about turning past sessions into searchable memory instead of disposable chat scrollback.</p>
+
+    <h2>The surrounding upgrades matter too</h2>
+
+    <p>The same June 2 post also describes an agent picker, an agent debug panel in public preview, and a phased transition toward Copilot CLI agent as the default experience in JetBrains. Those additions matter because controls work better when the surrounding interface makes session state visible.</p>
+
+    <p>The agent picker separates modes such as Agent, Ask, Custom, and Plan. That sounds like interface polish, but it changes operator expectations. You are no longer pretending that every interaction is the same kind of task. The debug panel matters for a similar reason. It gives you a chronological event log, which is exactly what you need when an orchestrated workflow fails and you want to know whether the problem was the plan, the tool call, or the handoff between agents.</p>
+
+    <h2>What this means for real developer workflows</h2>
+
+    <p>The best way to read this release is not "GitHub added three slash commands." The better reading is "GitHub is turning agent sessions into managed work objects." Managed work objects can be steered, compressed, searched, and debugged. That makes them easier to trust in longer workflows, especially when multiple people or multiple sessions are moving in parallel.</p>
+
+    <p>At Foculoom, that is the interesting part. We care less about command novelty and more about operational semantics. When a session can be steered remotely, compacted deliberately, and replayed later, it becomes easier to build founder-friendly workflows around it. The human stays in charge of approval gates, but the agent gets a better execution environment between those gates.</p>
+
+    <p>That is also why this update pairs naturally with the wider shift toward control-center interfaces for agent work. A good multi-agent system is not one where the AI disappears. It is one where the state of work stays legible enough for a human to intervene at the right moments.</p>
+
+    <h2>Qualifying source</h2>
+
+    <p>Primary source: GitHub Blog, <a href="https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/">Introducing Copilot CLI and agentic capabilities enhancements in JetBrains IDEs</a> (published <strong>June 2, 2026</strong>).</p>
+
+    <hr />
+    <p><em>Product note: this steerable-session pattern is shaping how we design operator-facing AI workflows at Foculoom — especially where long-running agents need clear check-in points instead of blind trust.</em></p>
+    <p><em>Feature availability may vary by plan, IDE version, and rollout phase. Always check the <a href="https://docs.github.com/en/copilot">official GitHub Copilot documentation</a> for current feature status before building workflows that depend on specific commands.</em></p>
+    
+    <section class="references">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">docs.github.com</a></li>
+        <li><a href="https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/" target="_blank" rel="noopener">github.blog</a></li>
+      </ul>
+    </section>
+</article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

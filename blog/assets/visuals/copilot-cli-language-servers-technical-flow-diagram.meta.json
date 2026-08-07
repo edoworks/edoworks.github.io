@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-cli-language-servers-technical-flow-diagram",
+  "source_article": "copilot-cli-language-servers.html",
+  "output_sha256": "1d91e7be115b9b2eebc11dce64ca5b89fe68a7c09b0bb9f42e240fc786639957",
+  "concepts": [
+    "What changed",
+    "Why this matters for founder-led t",
+    "Operational effect in day-to-day s"
+  ],
+  "content_kind": "opinion / philosophy / values",
+  "content_kind_source": "heuristic"
+}

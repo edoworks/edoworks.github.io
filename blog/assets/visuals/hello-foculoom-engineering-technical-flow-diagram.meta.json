@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "hello-foculoom-engineering-technical-flow-diagram",
+  "source_article": "hello-foculoom-engineering.html",
+  "output_sha256": "946655ae90e8deb6f1cddc9d13a446e6e9d380e47ecaa75f62dddd43c7738035",
+  "concepts": [
+    "The problem with publishing stacks",
+    "How the build works, step by step",
+    "Why no dependencies?"
+  ],
+  "content_kind": "unknown (kind override)",
+  "content_kind_source": "override"
+}

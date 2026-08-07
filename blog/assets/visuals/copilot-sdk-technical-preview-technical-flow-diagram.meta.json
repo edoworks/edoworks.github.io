@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-sdk-technical-preview-technical-flow-diagram",
+  "source_article": "copilot-sdk-technical-preview.html",
+  "output_sha256": "108e10be3f577a0afc53c441112c0aa4dad76b2e7cd2817b027d0349e9fdce04",
+  "concepts": [
+    "What the SDK exposes",
+    "Why this is structurally different",
+    "Cross-language support and what it"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-sdk-general-availability-technical-flow-diagram",
+  "source_article": "copilot-sdk-general-availability.html",
+  "output_sha256": "e314c30a66f93707d7be4020b42e28f90a58b9a11b56c37d31dde7367284a9b9",
+  "concepts": [
+    "What the SDK exposes",
+    "Language coverage and ecosystem",
+    "Key capabilities in the SDK"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

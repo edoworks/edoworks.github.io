@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-in-visual-studio-may-update-technical-flow-diagram",
+  "source_article": "copilot-in-visual-studio-may-update.html",
+  "output_sha256": "11975214457cca53f20c001b0bac4d5d95104bb11522e2ae191c85014fbd6122",
+  "concepts": [
+    "The Plan agent in Visual Studio",
+    "Skills panel for workflow discover",
+    "Multi-file diffs and summaries"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

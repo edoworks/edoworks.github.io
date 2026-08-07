@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-credit-burn-technical-flow-diagram",
+  "source_article": "copilot-credit-burn.html",
+  "output_sha256": "1a650381ffa69252de3450295eff4f55ad1283836bbaaa05f1daf3b960e06b18",
+  "concepts": [
+    "The billing alert",
+    "How costs compound in multi-agent ",
+    "How GitHub charges now"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

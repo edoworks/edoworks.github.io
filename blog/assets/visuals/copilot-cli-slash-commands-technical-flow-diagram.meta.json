@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-cli-slash-commands-technical-flow-diagram",
+  "source_article": "copilot-cli-slash-commands.html",
+  "output_sha256": "1c6c8f38bc7107cdfdfa246cbfaedd0966f04a2cd31089704a9070f9b7b6988d",
+  "concepts": [
+    "Why the mechanism matters before t",
+    "What the new commands actually do",
+    "The surrounding upgrades matter to"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

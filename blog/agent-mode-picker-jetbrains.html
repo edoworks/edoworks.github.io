@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot CLI Agent Mode Picker: Separating Agent, Ask, Custom, and Plan — Edoworks</title>
+  <meta name="description" content="JetBrains IDEs now ship with an agent mode picker that lets developers choose between autonomous agent, quick Q&A, custom orchestration, or collaborative planning — adapting Copilot's behavior to the task.">
+  <link rel="canonical" href="https://edoworks.com/blog/agent-mode-picker-jetbrains.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Copilot CLI Agent Mode Picker: Separating Agent, Ask, Custom, and Plan</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-05-26">May 26, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/agent-mode-picker-jetbrains-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Copilot CLI Agent Mode Picker: Separating Agent, Ask, Custom, and Plan: Why modes matter more than it seem, What each mode does, How this changes developer expecta" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/agent-mode-picker-jetbrains-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why modes matter more than it seem → What each mode does → How this changes developer expecta</figcaption>
+    </figure>
+
+
+    <p>The agent mode picker is a deceptively subtle UI element that changes how developers think about interaction. Instead of one button that routes to "Copilot," you now choose: Do I want an autonomous agent? A quick answer? A custom workflow? Or collaborative planning? The mode you choose determines whether Copilot will spend resources on a full plan, how much autonomy it gets, and what tools it can call.</p>
+
+    <h2>Why modes matter more than it seems</h2>
+
+    <p>Without modes, a developer has no way to express the scope of a request. You ask a question, and the system decides whether it is a chat, a refactor, or a full project rebuild. That decision is made implicitly, which usually means the system makes the safest choice — the least ambitious one. With modes, you express intent explicitly. You say: "I need autonomous orchestration" or "I just need a factual answer," and the system tailors its behavior accordingly.</p>
+
+    <h2>What each mode does</h2>
+
+    <ul>
+      <li><strong>Agent mode:</strong> Full autonomy. Copilot generates a plan, executes it step by step, and iterates on feedback. This is appropriate for multi-file refactors, complex debugging, or any task that requires sustained reasoning and tool coordination.</li>
+      <li><strong>Ask mode:</strong> Quick, conversational Q&A with minimal planning overhead. You ask a question, Copilot answers it, conversation continues. This is appropriate for quick references, code explanations, or gathering information before deciding on a larger task.</li>
+      <li><strong>Plan mode:</strong> Collaborative planning without immediate execution. Copilot generates a plan, shows it to you, and waits for approval before running any tools. This is appropriate for high-risk work or tasks where stakeholder buy-in is needed before proceeding.</li>
+    </ul>
+
+    <h2>How this changes developer expectations</h2>
+
+    <p>Before the mode picker, many developers defaulted to "ask" because they were not confident an agent would do the right thing. Now, the picker makes it clear that there is a deliberate choice happening. You can start in Plan mode, review the generated plan, and then promote to Agent mode if it looks right. Or you can stay in Ask mode for quick lookups and use Agent mode only when the task warrants it.</p>
+
+    <p>This is also valuable for teams. Onboarding a new developer is easier when you can say: "For routine refactors, use Agent mode. For exploratory questions, use Ask mode. For high-risk work, start in Plan mode to review the plan before execution." The modes become teachable patterns instead of emergent behaviors.</p>
+
+    <h2>Where this fits in JetBrains integration</h2>
+
+    <p>The agent mode picker arrived as part of the June 2 update to Copilot CLI in JetBrains. It works in concert with other UI elements: the agent debug panel (showing a chronological event log), the agent picker (switching between different agent implementations), and the session-list sidebar. Together, they make JetBrains feel like an agent-native IDE rather than a chat layer on top of an IDE.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary source: GitHub Changelog, <a href="https://github.blog/changelog/2026-06-02-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides/">Introducing Copilot CLI and agentic capabilities enhancements in JetBrains IDEs</a> (published June 2, 2026).</p>
+
+    <hr />
+    <p><em>Feature availability may vary by IDE version and rollout phase. Check JetBrains marketplace and GitHub documentation for current status.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

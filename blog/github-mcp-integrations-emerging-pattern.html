@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Context Protocol: The Emerging Standard for AI Tool Integration — Edoworks</title>
+  <meta name="description" content="MCP (Model Context Protocol) surfaces as the standard way for AI agents to discover and invoke external tools. GitHub Copilot, Claude, and enterprise AI platforms are converging on this single interface.">
+  <link rel="canonical" href="https://edoworks.com/blog/github-mcp-integrations-emerging-pattern.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Model Context Protocol: The Emerging Standard for AI Tool Integration</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-05-30">May 30, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/github-mcp-integrations-emerging-pattern-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Model Context Protocol: The Emerging Standard for AI Tool Integration: Why standardization matters for ag, How MCP works at runtime, What this means for teams and plat" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/github-mcp-integrations-emerging-pattern-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why standardization matters for ag → How MCP works at runtime → What this means for teams and plat</figcaption>
+    </figure>
+
+
+    <p>Model Context Protocol (MCP) is how AI agents discover and invoke external tools without being trained on their specifics. Instead of hardcoding integrations into every AI platform, MCP creates a transport layer where tool servers advertise what they can do, and agents invoke them dynamically. GitHub Copilot, Claude, and increasingly every enterprise AI platform are converging on this standard.</p>
+
+    <h2>Why standardization matters for agent ecosystems</h2>
+
+    <p>Before MCP, integrating a new tool into an AI platform required writing a custom integration per platform — APIs, plugins, and function-calling schemes differed. MCP provides a standard interface where tool servers advertise what they can do, and agents invoke them dynamically. This reduces duplication across platforms.</p>
+
+    <p>An MCP server says: "I am a Stripe API server. I have a method called <code>charge_customer(amount, currency)</code>. Here is my schema." An agent can then call that method without platform-specific binding code. Add a new tool: write one MCP server, and every MCP-compliant agent can use it immediately.</p>
+
+    <h2>How MCP works at runtime</h2>
+
+    <p>An MCP server runs locally or in the cloud. It exposes a JSON-RPC interface describing available tools: their names, schemas (required parameters, types), and descriptions. An agent connects to one or more MCP servers at startup and builds a unified tool registry. When the agent needs to call a tool, it looks it up in the registry, validates parameters against the schema, and invokes it over JSON-RPC.</p>
+
+    <p>This is simpler than it sounds, but the implications are profound. Tool discovery is dynamic, schemas are machine-readable, and agents can reason about what tools are available before calling them.</p>
+
+    <h2>What this means for teams and platforms</h2>
+
+    <p>For teams, MCP means you can package your internal APIs, databases, and services as MCP servers and connect them to any AI platform that supports MCP. No vendor lock-in. If you have a custom Stripe integration, a Jira workflow handler, or an internal database query layer, you write it once and expose it via MCP. Then you connect it to Copilot, Claude, your own agents — everywhere.</p>
+
+    <p>For platforms, MCP provides a path for standardized tool integration. GitHub Copilot and Anthropic's Claude support MCP, and community contributions are building a catalog of available servers.</p>
+
+    <h2>Copilot SDK and MCP integration</h2>
+
+    <p>The Copilot SDK (now in general availability) ships with built-in MCP support. You can register an MCP server when instantiating a Copilot agent, and the agent immediately gains access to all tools the server exposes. This is a key part of why the Copilot SDK makes it practical to embed agentic workflows in products — you no longer need to rewrite integrations per platform.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary sources: GitHub Blog, <a href="https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/">GitHub Copilot app: The agent-native desktop experience</a> (published June 2, 2026), which describes MCP integration with Copilot. Anthropic documentation on MCP is available at anthropic.com.</p>
+
+    <hr />
+    <p><em>MCP is rapidly evolving. Ensure you are using the latest spec and compatible server implementations before production deployment.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

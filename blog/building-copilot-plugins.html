@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Building GitHub Copilot Plugins: First Principles, Real Submissions, Honest Lessons — Edoworks</title>
+  <meta name="description" content="We built two Copilot plugins, submitted them, got rejected for fair reasons, and learned exactly what makes a plugin worth building.">
+  <link rel="canonical" href="https://edoworks.com/blog/building-copilot-plugins.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+th {
+  background: #f3f4f6;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Engineering</div>
+      <h1>Building GitHub Copilot Plugins: First Principles, Real Submissions, Honest Lessons</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; May 28, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/building-copilot-plugins-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Building GitHub Copilot Plugins: First Principles, Real Submissions, Honest Lessons: Why this post exists, What a Copilot plugin actually is, Building the plugin components" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/building-copilot-plugins-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why this post exists → What a Copilot plugin actually is → Building the plugin components</figcaption>
+    </figure>
+
+    <h2>Why this post exists</h2>
+    <p>We built two GitHub Copilot plugins. We submitted them to the <a href="https://github.com/github/awesome-copilot">Awesome Copilot</a> community marketplace. Both were rejected. This post is about why that happened and what it taught us about what a Copilot plugin is actually for.</p>
+    <p>The two plugins are <a href="https://github.com/foculoom/orqit">orqit</a> and <a href="https://github.com/foculoom/respit">respit</a>. orqit orchestrates PLANNER → BUILDER → REVIEWER workflows (named agent roles — the architecture section explains what that means) for solo founders running multi-repo product pipelines. respit provides personal-sustainability skills — cognitive state monitoring, scope-creep intervention, momentum tracking — for the same context. Both are in active use internally at Foculoom. Neither belongs in a public marketplace.</p>
+    <p>The rejection feedback was fair. The maintainer gave clear, specific reasons, and the automated intake system worked exactly as designed. Aaron Powell's <a href="https://www.aaron-powell.com/posts/2026-05-25-automating-intakes-to-the-awesome-copilot-marketplace/">post on automating the Awesome Copilot intake</a> used orqit's submission as a showcase example of how the iterative feedback loop works — we went through multiple <code>/rerun-intake</code> cycles without any human maintainer involvement before the final manual review. The process is genuinely impressive engineering.</p>
+    <p>If you want a tutorial that ends with "and then it got accepted," this is not that post. But if you want to understand how Copilot plugins are structured, what the submission process looks like from the inside, and where the line is between useful community tooling and useful internal tooling, read on.</p>
+    <p><em>Prerequisites: this post assumes you are comfortable with git, Markdown, and GitHub pull requests. No prior experience with Copilot extensions or Model Context Protocol is assumed — both are explained here.</em></p>
+    <hr />
+    <h2>What a Copilot plugin actually is</h2>
+    <p>GitHub Copilot's extensibility model has three distinct layers. Understanding each one is necessary before you can make good decisions about what to put where.</p>
+    <p>The base layer is <code>.github/copilot-instructions.md</code> — a Markdown file at the root of any repository that gets injected into every Copilot chat context in that repo. Think of it as a README written for the AI rather than for humans. Where a human README explains how to get started, a <code>copilot-instructions.md</code> explains the workspace conventions, naming rules, agent routing logic, and project-specific context that you want the model to carry into every interaction.</p>
+    <p>Instructions are static and scoped to the repository. They don't execute anything. They're the ambient knowledge layer.</p>
+    <p>The next layer is <code>.github/skills/</code> and <code>.github/agents/</code>. Skills are reusable procedural playbooks — Markdown files with YAML front matter that describe a step-by-step workflow. They're invoked by name in chat (<code>/dev-session</code>, <code>/ship-issue</code>, <code>/status</code>). Agent profiles define bounded personas — a BUILDER that implements one scoped issue, a PLANNER that triages ideas and writes specs, a REVIEWER that evaluates quality. Each agent profile describes what the role does, what it doesn't do, and what signals should route work elsewhere.</p>
+    <p>The key distinction from instructions: skills and agents are <em>invoked</em>. Instructions are always present; skills and agents are pulled in on demand.</p>
+    <p>The third layer is Model Context Protocol: external tool endpoints that the model can call at runtime. Registered in <code>~/.copilot/mcp-config.json</code>, these extend what the model can <em>do</em> rather than what it <em>knows</em>. An image-generation MCP gives the model the ability to call an external image-generation service. A database MCP gives it read access to a live schema. A calendar MCP lets it query real availability.</p>
+    <p>MCP tools are the only layer that creates runtime side effects outside the conversation. Everything else — instructions, skills, agents — lives in context. MCP tools reach out.</p>
+    <p>The composition model is straightforward in principle: instructions set the ambient context, skills define repeatable procedures, agent profiles define bounded roles, MCP tools extend runtime capability. In practice the boundary between "this belongs in instructions" and "this belongs in a skill" requires some judgment, and getting it wrong creates either bloated context on every request or skills that are too fragile to invoke reliably.</p>
+    <hr />
+    <h2>Building the plugin components</h2>
+    <p>Here is what each layer looks like in practice, with synthetic examples that represent the structure without exposing internal files.</p>
+    <p>A good <code>copilot-instructions.md</code> has three sections: what this project is, how it is structured, and how to route work. The first two are orientation for the model. The third is operational — it tells the model which agent role to use for which class of task.</p>
+    <p>The file above would fit in an afternoon's reading. That's the right size. If your <code>copilot-instructions.md</code> is longer than a few hundred lines, you've probably mixed conventions with procedures, and the procedures belong in skills.</p>
+    <p>A skill file opens with a YAML front-matter block (the section between <code>---</code> markers at the top of the file), then three prose sections: <code>## When to use</code>, <code>## Steps</code>, and optionally <code>## Fallback</code>. The front matter carries metadata — at minimum a <code>tier</code> field that controls model routing.</p>
+    <p>The prose-based format is deliberate. A skill written as prose can be read and audited by a human in 30 seconds. A skill written as a shell script cannot. The model executes prose instructions; it does not need a runnable script to follow a procedure.</p>
+    <p>An agent profile describes a role's persona, capabilities, and explicit limits. The <code>&lt;!-- tier: standard --&gt;</code> HTML comment is a machine-readable marker the routing logic can parse.</p>
+    <p>The stop conditions matter. An agent profile without explicit stop conditions is an agent that will keep going when it should pause.</p>
+    <p>A partial <code>mcp-config.json</code> entry for a hypothetical image-generation server:</p>
+    <p>The <code>tools</code> array controls which endpoints are exposed to the model. Registering fewer tools means fewer ways for the model to make unintended calls. Start minimal.</p>
+    <p>The decision tree is roughly:</p>
+    <ul>
+<li><strong>Stable conventions</strong> (naming rules, commit format, PR structure) → instructions</li>
+<li><strong>Repeatable procedures</strong> (how to run a QA checklist, how to open a PR, how to triage a new idea) → skills</li>
+<li><strong>Bounded roles</strong> (who is responsible for what, what each role should not do) → agent profiles</li>
+<li><strong>Runtime side effects</strong> (calling an external API, generating an image, querying a database) → MCP tools</li>
+</ul>
+    <p>Mixing layers is the most common mistake. If your instructions file contains a 20-step deployment procedure, move it to a skill. If your skill tries to define a persona, move that part to an agent profile. The separation makes each layer easier to audit and update independently.</p>
+    <hr />
+    <h2>The Awesome Copilot marketplace and automated intake</h2>
+    <p><a href="https://github.com/github/awesome-copilot">Awesome Copilot</a> is a community-curated list of Copilot extensions, skills, agent profiles, and MCP servers. It's a GitHub repository maintained by the Copilot team, and it accepts community submissions via pull requests and, more recently, a structured issue-based intake flow for external plugins.</p>
+    <p>The external plugin intake — built and documented by Aaron Powell — is a GitHub Issues workflow backed by GitHub Actions. The flow: open an issue using a structured form template, an Action fires and validates the submission against a schema, a bot comments with the parsed JSON payload and any validation errors, you fix issues and trigger a rerun with <code>/rerun-intake</code>, and once the automated validation passes, a human maintainer does a final review and either approves or rejects.</p>
+    <p>What's well-designed about this is the iterative feedback loop. The bot is specific. If your <code>ref</code> doesn't resolve to a real SHA, it tells you that and nothing else. If your description is missing, it tells you the field name. You can iterate on your own timeline without waiting for a human to respond.</p>
+    <p>Aaron Powell's post on building this system specifically cited orqit's submission (<a href="https://github.com/github/awesome-copilot/issues/1813">issue #1813</a>) as an example of the automation working as intended: "That whole back-and-forth happened without any human maintainer involvement." He then notes: "Ultimately, the plugin was rejected after I did a manual review, but I wanted to highlight the process, not the outcome."</p>
+    <p>That is a fair and accurate summary of what happened.</p>
+    <p>The security model is also worth noting. The intake pins submissions to immutable SHAs, not branches. SHAs identify a single fixed snapshot of the code — a branch can be updated to point to new commits at any time. Pinning to a SHA means the approved listing cannot change out from under reviewers after submission. Approved external plugins are flagged for re-review after six months. The system treats external plugin listings as a supply chain problem — because they are — and the design reflects that.</p>
+    <hr />
+    <h2>Foculoom's real experience: orqit and respit</h2>
+    <p>orqit is a Copilot CLI plugin that orchestrates PLANNER → BUILDER → REVIEWER workflows. It provides 12 portable workflow skills (dev-session, ship-issue, status, risk-review, fallback-mode, model-audit, usage, qa-validate, and others) and 4 named agent roles (conductor, planner, builder, reviewer). The goal was to reduce manual context-switching for a solo founder running multiple product repos simultaneously, while encoding model-routing rules, founder gate enforcement, and cost-tier step-down logic.</p>
+    <p>We submitted version 1.0.2 after an initial round of automated feedback caught compatibility issues — a pre-tool hook that fired a cleanup script not present on a fresh install, hard dependencies on MCP tools not available outside Foculoom's environment. We fixed those. The bot validated the new version. Then a maintainer did the manual review.</p>
+    <p>The rejection:</p>
+    <p>&gt; Upon reviewing the files in the plugin repo, I'm going to be rejecting this plugin. The agents in the plugin are not bringing meaningful uplifts in capabilities, and also reimplementing features such as <code>/plan</code> which can result in a degraded experience. Similarly, with the recent inclusion of server-side model routing in <code>auto</code> mode, having model routing done on the client side using the agent is inefficient and error prone.</p>
+    <p>This is correct. GitHub Copilot now has a built-in plan mode. Server-side Auto routing selects models dynamically without client-side logic. When orqit was designed in early 2025, both of these were gaps. By the time we submitted, they were native features. A plugin that reimplements a native feature doesn't add capability — it adds a second code path that can disagree with the native behavior.</p>
+    <p>The CONDUCTOR orchestrator, the BUILDER workflow, the issue-gate enforcement — these are still valuable internally because they encode Foculoom-specific rules that Copilot's native plan mode doesn't know about. But those rules are only meaningful in Foculoom's context. For anyone else, they would be noise layered on top of features that already work.</p>
+    <p>respit is a plugin for the personal-sustainability side of solo founder work. Its skills cover cognitive state monitoring (<code>energy-check</code>), scope-creep intervention (<code>scope-brake</code>), momentum tracking (<code>project-health</code>), structured reflection (<code>personal-retro</code>), and idea capture (<code>ideas</code>). The premise: generic productivity plugins assume a team; a solo founder is the entire team and needs different defaults.</p>
+    <p>The rejection:</p>
+    <p>&gt; Upon reviewing the files in the plugin repo, I'm going to be rejecting this plugin. The skills seem to be tailored around a very specific working style and are rather vague in their generalised usage.</p>
+    <p>Both parts are accurate. The skills <em>are</em> tailored around a specific working style — Foculoom's. <code>scope-brake</code> fires based on Foculoom's definition of scope creep. <code>project-health</code> queries Foculoom's issue tracker conventions. <code>personal-retro</code> outputs in a format that feeds back into the Foculoom session-store database. Extracted from that context and handed to a different team, these skills would need to be rewritten almost entirely to be useful.</p>
+    <p>The "rather vague in their generalised usage" note is also fair. A skill like <code>energy-check</code> sounds meaningful if you know the context; in isolation, it reads as "prompts the founder to check in with themselves," which is something a sticky note does just as well.</p>
+    <p>The distinction between orqit and respit's rejections is instructive. orqit was rejected because it reimplemented things that exist natively. respit was rejected because its value is entirely dependent on context that doesn't transfer. Two different failure modes, both legitimate.</p>
+    <hr />
+    <h2>Five design principles for Copilot plugins</h2>
+    <p>Even if you never submit to the marketplace. These are the principles we'd apply differently if we started over.</p>
+    <p><strong>1. Design for the gap, not the overlap.</strong> If GitHub Copilot already handles something well — code generation, plan mode, model selection, chat context — don't replicate it. Your plugin should do what Copilot cannot do alone: enforce your team's specific constraints, encode your team's domain knowledge, or bridge Copilot to your specific external systems. If you can't clearly articulate what gap you're filling, you're probably building redundancy.</p>
+    <p><strong>2. Fail loudly and explicitly.</strong> Workflows where an AI model takes autonomous sequential steps — writing code, calling tools, opening pull requests — can fail silently and produce confident wrong outputs. Every skill should have explicit stop conditions, named human-review gates, and clear escalation paths. A skill that says "I don't know — stop and ask" is better than one that makes a guess and continues. The stop conditions are not error handling; they are part of the intended behavior.</p>
+    <p><strong>3. Separate instructions from procedures from roles.</strong> What lives in <code>copilot-instructions.md</code> should be stable conventions — things that are true on every request, not just some requests. What lives in skills should be repeatable, invocable procedures. What lives in agent profiles should be bounded personas with explicit limits. Mixing these creates context that is simultaneously too heavy for routine use and too vague for specific use.</p>
+    <p><strong>4. Write the playbook before the automation.</strong> If you cannot write a clear step-by-step Markdown procedure for a workflow in about 20 lines, you are not ready to encode it as a skill. The SKILL.md format forces you to be explicit: what triggers this, what each step does, what to do when a step fails. That explicitness is the value. A skill that you cannot describe precisely will not execute reliably.</p>
+    <p><strong>5. Context budget is the scarce resource.</strong> Every line of instructions, every invoked skill costs attention — the model can only hold so much context at once, measured in tokens (roughly three-quarters of a word each, with a hard per-request cap). Design your plugin with a token budget in mind, not a feature budget. A focused 300-line <code>copilot-instructions.md</code> with 6 well-defined skills is more effective than a sprawling 1,500-line instructions file with 25 skills that overlap. The model's attention is finite.</p>
+    <hr />
+    <h2>Closing</h2>
+    <p>orqit and respit are staying internal. That is the right call.</p>
+    <p>Both plugins are useful precisely because they are specific to Foculoom's workflow. orqit encodes Foculoom's agent routing rules, founder gate requirements, and model-cost management logic. respit encodes Foculoom's specific working rhythms and how they feed back into the session-store database. Those specifics are not a limitation — they are the point. The moment you generalize them enough to be useful to people outside Foculoom, you have removed the parts that make them worth using.</p>
+    <p>The marketplace rejection forced a clarifying question: "Is this general enough to help people we've never met?" For both plugins, the honest answer was no. And "no" is a complete answer. Not every piece of useful tooling needs to be a public artifact.</p>
+    <p>The Awesome Copilot community is worth engaging with. The automated intake is well-designed — the iterative feedback loop, the SHA pinning, the staleness re-review at six months. The maintainers gave clear, specific feedback. The rejection criteria are consistent: does this bring meaningful uplift in capability, and is that uplift generalizable? Both questions are fair.</p>
+    <p>What we are doing with what we learned: keeping orqit and respit as internal tooling, continuing to develop them as Foculoom's workflows evolve, and not trying to generalize them until they earn generalization. If orqit's orchestration model becomes something that could genuinely help solo founders in other contexts — independent of Foculoom's specific rules — that would be a different conversation. We're not there.</p>
+    <p>If you want to see what these look like in practice, both repos are public: <a href="https://github.com/foculoom/orqit">foculoom/orqit</a> and <a href="https://github.com/foculoom/respit">foculoom/respit</a>.</p>
+    <p>The best Copilot plugins are not the ones that add the most features. They are the ones that encode the judgment calls your team makes repeatedly, so you only have to make them once. The hard part is knowing which judgment calls are yours and which ones are everyone's.</p>
+    <hr />
+    <p><em>Credit to <a href="https://www.aaron-powell.com/posts/2026-05-25-automating-intakes-to-the-awesome-copilot-marketplace/">Aaron Powell's post</a> for documenting how the Awesome Copilot automated intake works — the engineering behind that workflow deserves attention independent of any particular plugin outcome.</em></p>
+    
+    <section class="references">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/foculoom/orqit" target="_blank" rel="noopener">github.com</a></li>
+        <li><a href="https://github.com/foculoom/respit" target="_blank" rel="noopener">github.com</a></li>
+        <li><a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener">github.com</a></li>
+        <li><a href="https://github.com/github/awesome-copilot/issues/1813" target="_blank" rel="noopener">github.com</a></li>
+        <li><a href="https://www.aaron-powell.com/posts/2026-05-25-automating-intakes-to-the-awesome-copilot-marketplace/" target="_blank" rel="noopener">aaron-powell.com</a></li>
+      </ul>
+    </section>
+</article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

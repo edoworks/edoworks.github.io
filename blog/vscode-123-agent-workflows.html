@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VS Code 1.123 Quietly Changed How We Run Multi-Agent Sessions — Edoworks</title>
+  <meta name="description" content="Session sync, /chronicle, and side-by-side agent windows in VS Code 1.123 changed how we operate long-running AI engineering sessions.">
+  <meta property="og:title" content="VS Code 1.123 Quietly Changed How We Run Multi-Agent Sessions">
+  <meta property="og:description" content="What actually improved in VS Code 1.123 for agentic engineering workflows, and what teams should change now.">
+  <link rel="canonical" href="https://edoworks.com/blog/vscode-123-agent-workflows.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f3ff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #5f6875;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #5f6875;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #5f6875; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>VS Code 1.123 Quietly Changed How We Run Multi-Agent Sessions</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; June 7, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/vscode-123-agent-workflows-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for VS Code 1.123 Quietly Changed How We Run Multi-Agent Sessions: The release note that matters, What changed operationally, Why the Agents window is bigger th" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/vscode-123-agent-workflows-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: The release note that matters → What changed operationally → Why the Agents window is bigger th</figcaption>
+    </figure>
+
+
+    <h2>The release note that matters</h2>
+    <p>VS Code 1.123 shipped on June 3, 2026 with multiple AI-agent updates. Most headlines focused on the 1M-token context window. The deeper change for day-to-day engineering teams is workflow control: session sync, <code>/chronicle</code>, and side-by-side agent sessions in the Agents window. Those features move agent usage from “one chat at a time” toward a trackable multi-session operating model.</p>
+
+    <h2>What changed operationally</h2>
+    <p>Before 1.123, long-running AI work had a common failure mode: state fragmentation. A plan lived in one session, edits happened in another, and you lost continuity when switching machines or contexts. Session sync changes that baseline. Sessions now persist to your GitHub account with conversation history, files touched, repo context, and referenced PRs/issues/commits.</p>
+    <p>That is not just convenience. It changes accountability. With synced session history and <code>/chronicle</code>, you can ask what happened across prior sessions without rebuilding context from memory or Slack snippets. For teams running async handoffs, that removes a substantial operational drag.</p>
+
+    <h2>Why the Agents window is bigger than it sounds</h2>
+    <p>Multi-agent work has always existed conceptually, but most interfaces made it awkward in practice. The new Agents window preview allows multiple sessions side-by-side. That means you can keep one agent building while another researches and a third reviews, then compare outputs in one place without tab thrash.</p>
+    <p>This directly supports a constrained orchestrator model: one lead session routes work; specialist sessions execute bounded scopes. In our experience, this is the minimum interface support needed to make parallel agent workflows sustainable instead of chaotic.</p>
+
+    <h2>What to update in your team workflow now</h2>
+    <ol>
+      <li><strong>Enable session sync intentionally.</strong> If your org policy allows it, turn it on and treat session history as a first-class artifact.</li>
+      <li><strong>Add <code>/chronicle</code> into your standup loop.</strong> Use it for evidence-based daily summaries instead of recollection.</li>
+      <li><strong>Run one orchestrator session + multiple specialist sessions.</strong> The Agents window makes this practical without context collapse.</li>
+      <li><strong>Document gate points.</strong> Parallel sessions increase throughput only when merge and review boundaries are explicit.</li>
+    </ol>
+
+    <h2>The limit to keep in mind</h2>
+    <p>These features do not remove the need for process discipline. Session sync gives continuity, but it can also increase noise if teams do not define what belongs in a session and what belongs in code review artifacts. Multi-session visibility helps, but only if each session has a clear objective and exit condition.</p>
+    <p>In other words: VS Code 1.123 improves the tool surface for agentic development. It does not replace engineering governance. The highest-leverage teams will use both.</p>
+
+    <hr />
+    <p><em>Questions or running a similar setup? <a href="https://tally.so/r/aQvRKb">Reach out</a> — we read every reply.</em></p>
+
+    <section>
+      <h2>Sources</h2>
+      <ol>
+        <li>Visual Studio Code, <cite>"Visual Studio Code 1.123"</cite> (Release date: June 3, 2026) — used for session sync, <code>/chronicle</code>, Agents window preview, and agent workflow feature details. Source: <a href="https://code.visualstudio.com/updates/v1_123" target="_blank" rel="noopener">code.visualstudio.com/updates/v1_123</a>.</li>
+        <li>GitHub Changelog, <cite>"GPT-5.2 and GPT-5.2-Codex deprecated"</cite> (June 5, 2026) — used for model lifecycle context affecting Copilot workflow planning. Source: <a href="https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/" target="_blank" rel="noopener">github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/</a>.</li>
+      </ol>
+    </section>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

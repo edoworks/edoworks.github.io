@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="release-notes / model-eval">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Opus 4.8: What Changed, How It Compares, and Whether to Upgrade — Edoworks</title>
+  <meta name="description" content="Opus 4.8 shipped today. Here's what changed, how it benchmarks against GPT-5.5 and Gemini 3.1 Pro, and what it means for Edoworks's model routing.">
+  <link rel="canonical" href="https://edoworks.com/blog/claude-opus-4-8.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+th {
+  background: #f3f4f6;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">AI Models</div>
+      <h1>Claude Opus 4.8: What Changed, How It Compares, and Whether to Upgrade</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; May 28, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-comparison-table">
+      <img src="/blog/assets/visuals/claude-opus-4-8-comparison-table.svg" alt="comparison-table diagram for Claude Opus 4.8: What Changed, How It Compares, and Whether to Upgrade: The model routing problem, What&#x27;s new in Claude Opus 4.8, Benchmark comparison" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/claude-opus-4-8-comparison-table.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Comparison Table: The model routing problem → What&#x27;s new in Claude Opus 4.8 → Benchmark comparison</figcaption>
+    </figure>
+
+    <h2>The model routing problem</h2>
+    <p>If you build with AI, you make routing decisions constantly: which model for planning, which for code review, which for fast cheap tasks, which for long autonomous runs. Get it right and costs stay predictable. Get it wrong in a multi-step agentic loop and a poor routing choice compounds across every subsequent action.</p>
+    <p>The pressure to revisit those decisions has been intense in 2026. Anthropic shipped Opus 4.5, 4.6, 4.7, and now 4.8 in roughly four months. Each release moves the tradeoff curves. This post is about what actually changed in 4.8, how it benchmarks against the other models Foculoom evaluates regularly, and what it means for the routing decisions we make every day.</p>
+    <h2>What's new in Claude Opus 4.8</h2>
+    <p>Anthropic announced Opus 4.8 today (<a href="https://www.anthropic.com/news/claude-opus-4-8">official announcement</a>). The headline numbers:</p>
+    <p><strong>1M token context window</strong> is now the default across the API and most platforms. For agentic workflows, this removes the need to chunk large codebases across tool calls. You can load a full project, its test suite, and prior conversation history in a single context and reason over all of it at once.</p>
+    <p><strong>Fast mode runs at 2.5× the output speed, at one-third the price of fast mode for prior Opus models.</strong> This changes the cost tier at which Opus is viable. Tasks where you were routing to Sonnet for cost reasons should now be re-evaluated — the gap narrowed significantly.</p>
+    <p><strong>Honesty and reliability improved meaningfully.</strong> Opus 4.8 is four times less likely to allow flaws in its own code to pass unremarked than prior versions, and it flags uncertainty rather than filling gaps with plausible-sounding wrong answers. For autonomous agents where errors compound across steps, a model that says "I'm not sure" is far more valuable than one that confidently produces a plausible mistake.</p>
+    <p><strong>Dynamic workflows</strong> (parallel subagent execution and large-scale planning) are in research preview via Claude Code. Not production-ready, but the direction is clear.</p>
+    <p><strong>Mid-conversation system messages</strong> let developers update instructions mid-task without breaking prompt continuity. For long-running automation, this removes a painful workaround that required terminating and restarting runs to adjust behavior.</p>
+    <p>Regular pricing is unchanged from Opus 4.7. Fast mode pricing is one-third of what it was for prior Opus versions.</p>
+    <h2>Benchmark comparison</h2>
+    <p>Claude Opus 4.8 benchmarks against GPT-5.5 and Gemini 3.1 Pro across the tasks most relevant to developers building autonomous workflows:</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Benchmark</th>
+      <th>Opus 4.8</th>
+      <th>GPT-5.5</th>
+      <th>Gemini 3.1 Pro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Agentic Coding (SWE-Bench Pro)</td>
+      <td><strong>69.2%</strong></td>
+      <td>58.6%</td>
+      <td>54.2%</td>
+    </tr>
+    <tr>
+      <td>Bug-fix accuracy (SWE-Bench Verified)</td>
+      <td><strong>88.6%</strong></td>
+      <td>— †</td>
+      <td>— †</td>
+    </tr>
+    <tr>
+      <td>Terminal task execution (Terminal-Bench 2.1)</td>
+      <td>74.6%</td>
+      <td><strong>78.2%</strong></td>
+      <td>70.3%</td>
+    </tr>
+    <tr>
+      <td>Multidisciplinary Reasoning (HLE)</td>
+      <td><strong>57.9%</strong></td>
+      <td>~52.2%</td>
+      <td>~51.4%</td>
+    </tr>
+    <tr>
+      <td>Knowledge Work (GDPval-AA)</td>
+      <td><strong>1890</strong></td>
+      <td>1769</td>
+      <td>1314</td>
+    </tr>
+    <tr>
+      <td>Agentic Computer Use (OSWorld)</td>
+      <td><strong>83.4%</strong></td>
+      <td>78.7%</td>
+      <td>76.2%</td>
+    </tr>
+    <tr>
+      <td>Graduate-level Reasoning (GPQA Diamond)</td>
+      <td><strong>93.6%</strong></td>
+      <td>93.6%</td>
+      <td>~92%</td>
+    </tr>
+  </tbody>
+</table>
+    <p>† SWE-Bench Verified scores for GPT-5.5 and Gemini 3.1 Pro were not available in third-party coverage at time of writing. This is the benchmark most directly relevant to autonomous bug-fixing and code-quality tasks.</p>
+    <p><strong>Benchmark guide (what each measures):</strong></p>
+    <ul>
+<li><strong>SWE-Bench Pro / SWE-Bench Verified</strong> — how well a model resolves real GitHub issues autonomously; Verified is a human-curated higher-quality subset</li>
+<li><strong>Terminal-Bench 2.1</strong> — multi-step agentic shell and terminal task completion; measures CLI and file-system workflows, not code review</li>
+<li><strong>HLE (Humanity's Last Exam)</strong> — expert-level multidisciplinary question set requiring deep reasoning across many domains</li>
+<li><strong>GDPval-AA</strong> — simulated professional knowledge-work tasks (analysis, writing, research)</li>
+<li><strong>OSWorld</strong> — ability to complete desktop OS tasks autonomously (computer use)</li>
+<li><strong>GPQA Diamond</strong> — graduate-level science reasoning</li>
+</ul>
+    <p>Sources: <a href="https://www.anthropic.com/news/claude-opus-4-8">Anthropic</a> (primary), <a href="https://officechai.com/ai/claude-opus-4-8-benchmarks/">OfficeChai</a>, <a href="https://www.worthview.com/claude-opus-4-8-vs-gpt-5-5-vs-gemini-3-1-pro-benchmark-2026/">Worthview</a>, <a href="https://9to5mac.com/2026/05/28/anthropic-upgrades-claude-with-new-opus-4-8-model-heres-whats-new/">9to5Mac</a>.</p>
+    <p>The headline: for autonomous, long-horizon agentic work — which is the most expensive and highest-stakes category — Opus 4.8 leads by a wide margin.</p>
+    <p>Two exceptions worth noting. GPT-5.5 wins Terminal-Bench 2.1 (78.2% vs 74.6% — shell/CLI task execution) and retains the lead in visual reasoning (ARC-AGI 2: 85% vs 68.8% for Opus 4.6, a test where 4.8 hasn't been formally benchmarked yet). For terminal-heavy automation or visual-reasoning workloads, GPT-5.5 is still the better tool.</p>
+    <p>Gemini 3.1 Pro generally trails on the tasks above, but it maintains advantages in multimodal understanding, its largest context window variants, and cost-efficiency at scale through its Flash tier. If your workload involves high-volume, lower-stakes inference, Gemini's pricing structure can make sense.</p>
+    <p>The broader pattern is that the gaps between frontier models are narrowing everywhere except the tasks Claude was already winning. On graduate-level reasoning (GPQA Diamond), all three models are within two percentage points of each other.</p>
+    <h2>How Foculoom routes models</h2>
+    <p>Here is the actual routing matrix Foculoom uses in production, encoded in the copilot-instructions.md of our workflow orchestration layer:</p>
+    <table>
+  <thead>
+    <tr>
+      <th>Use case</th>
+      <th>Model</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Day-to-day coding</td>
+      <td>claude-sonnet-4.6</td>
+      <td>Cost/quality sweet spot for routine tasks</td>
+    </tr>
+    <tr>
+      <td>Complex architecture / deep debugging</td>
+      <td>claude-opus-4.7</td>
+      <td>Reasoning depth justifies the cost</td>
+    </tr>
+    <tr>
+      <td>Code review and generation</td>
+      <td>gpt-5.4 / gpt-5.3-codex</td>
+      <td>Observed performance advantage; comparative benchmark data incomplete (see §3)</td>
+    </tr>
+    <tr>
+      <td>iOS / Swift debugging</td>
+      <td>claude-sonnet-4.6 (Opus 4.7 for deep Swift 6)</td>
+      <td>Tier matched to task depth</td>
+    </tr>
+    <tr>
+      <td>PLANNER and REVIEWER agents</td>
+      <td>claude-opus-4.7 (pinned)</td>
+      <td>Role agents need sustained reasoning</td>
+    </tr>
+    <tr>
+      <td>CONDUCTOR orchestration</td>
+      <td>claude-sonnet-4.6</td>
+      <td>Throughput over depth for routing decisions</td>
+    </tr>
+    <tr>
+      <td>Fallback / cost step-down</td>
+      <td>claude-haiku-4.5</td>
+      <td>When budget constraints require it</td>
+    </tr>
+  </tbody>
+</table>
+    <p>The organizing principle is not "use the best model for everything" — it is "match model tier to task consequence." A task that compounds errors across an autonomous run gets the flagship. A task that routes a decision to another agent does not.</p>
+    <p>This routing matrix has been a living document. It gets updated every time a new release changes the cost-performance tradeoff on a tier. Today's release triggers an update.</p>
+    <h2>What Opus 4.8 changes for us</h2>
+    <p><strong>We plan to upgrade PLANNER and REVIEWER from 4.7 to 4.8.</strong> Same price. The honesty improvements matter directly here — a PLANNER that flags uncertainty in a spec is better than one that fills gaps with plausible-but-wrong details that BUILDER then implements. Upgrading the reasoning agents first is the obvious call.</p>
+    <p><strong>Reconsidering the Sonnet tier boundary.</strong> With fast mode pricing now one-third of what it was for prior Opus versions, the cost gap between Sonnet and Opus fast mode has compressed significantly. The key question for any given task is still whether it compounds: if an error in step 3 affects steps 4 through 12, the cost savings on the cheaper model disappear quickly. We will run Opus 4.8 fast mode on a sample of current Sonnet-tier tasks and publish the cost comparison once we have data.</p>
+    <p><strong>The 1M context window changes deep debugging.</strong> We previously chunked large codebases across tool calls for deep architecture analysis. A single 1M-token context window removes that and should reduce the number of false inferences that come from incomplete context.</p>
+    <p><strong>Keeping GPT-5.4 for code review.</strong> We currently route code review to GPT-5.4 based on observed performance. The honest benchmark picture here is incomplete: SWE-Bench Verified — the most directly relevant test for autonomous code quality work — only has data for Opus 4.8 in this comparison. Terminal-Bench (where GPT-5.5 leads) measures shell task execution, not code review; that win doesn't transfer directly to this use case. We're keeping this routing for now on observed quality grounds and will revisit once SWE-Bench Verified data is available for GPT-5.5.</p>
+    <h2>Should you upgrade?</h2>
+    <p>For devtools builders thinking about their own routing matrices:</p>
+    <p><strong>Upgrade your highest-stakes reasoning tasks from Opus 4.7 to 4.8.</strong> No price increase. The honesty and code reliability improvements are the most practically valuable changes in this release, and they matter most in exactly the tasks you are paying flagship prices for.</p>
+    <p><strong>Recalculate your cost tier boundaries.</strong> If you avoided Opus for cost reasons, run the math again against fast mode pricing. The one-third cost reduction on fast mode is meaningful.</p>
+    <p><strong>Wait on dynamic workflows.</strong> The parallel subagent execution capability is research preview only. Do not build production automation on top of it yet.</p>
+    <p><strong>For terminal-heavy and visual reasoning tasks, the GPT family retains its edge.</strong> GPT-5.5 wins Terminal-Bench 2.1 and leads on visual reasoning. The data supports keeping code review and terminal-heavy tasks on the GPT family; which specific version to use depends on your budget and workload.</p>
+    <p><strong>Watch "Mythos."</strong> Anthropic has signaled a next model class in limited preview that exceeds the current flagship. When it ships broadly, the routing matrix will need another update. Build your infrastructure so those updates are cheap to make.</p>
+    <h2>The pace is the point</h2>
+    <p>Four major Opus releases in four months is not an anomaly — it is the operating environment. A model routing decision made in January 2026 is already stale. The teams that will compound advantages in this environment are the ones that treat their routing matrices as code: versioned, tested, and actively maintained, not set once and forgotten.</p>
+    <p>The benchmarks will keep changing. The principle stays the same: match model to consequence, not to familiarity.</p>
+    <hr />
+    <p>We publish Foculoom's engineering decisions as we make them. If you have a different routing setup or a reason to disagree with anything here, <a href="https://tally.so/r/aQvRKb">contact us</a> — we read every reply.</p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Copilot App: The Agent-Native Desktop Experience — Edoworks</title>
+  <meta name="description" content="The new Copilot app brings agent orchestration to the desktop: multi-agent sessions, canvases for collaborative work, and a unified control center for managing parallel workflows.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-app-agent-control-center.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>GitHub Copilot App: The Agent-Native Desktop Experience</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-05-24">May 24, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-app-agent-control-center-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for GitHub Copilot App: The Agent-Native Desktop Experience: Why orchestration matters before c, The structure of the agent-native , How this differs from earlier agen" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-app-agent-control-center-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why orchestration matters before c → The structure of the agent-native  → How this differs from earlier agen</figcaption>
+    </figure>
+
+
+    <p>A unified control center for multi-agent development is not a new idea. What is new is having one that ships with agent orchestration, parallel session management, and collaborative canvases already built in. The GitHub Copilot app, now in expanded technical preview, represents a shift in how teams manage agent workflows — from isolated chat sessions to trackable, mergeable, auditable work objects.</p>
+
+    <h2>Why orchestration matters before coordination</h2>
+
+    <p>Without orchestration, agent work remains invisible until merge. An agent starts a task, and you either wait for completion or interrupt it — there is no middle ground. With orchestration, you dispatch multiple agents in parallel, inspect their progress separately, and synthesize their outputs when ready. The Copilot app implements this through three concepts: My Work (a session dashboard), Canvases (collaborative workspaces), and Agent Merge (approval gates for automated PRs).</p>
+
+    <h2>The structure of the agent-native interface</h2>
+
+    <ul>
+      <li><strong>My Work view:</strong> A unified dashboard showing active agent sessions, linked issues, PRs, and scheduled automations across all connected repositories. Think of it as a Gantt chart for agent work — you see at a glance what is running, what is blocked, and what is waiting for your input.</li>
+      <li><strong>Canvases:</strong> Interactive workspaces where agents and humans structure ongoing work collaboratively. Agents can populate a canvas with structured data (checklists, boards, code fragments), and humans can edit, approve, or redirect the work. The canvas persists alongside the chat, so decisions remain visible.</li>
+      <li><strong>Agent Merge:</strong> Agents can address review comments, fix failing CI checks, and propose their own merge when custom rules are satisfied. You define the rules (number of approvals, test passage, etc.), and the agent follows them autonomously.</li>
+      <li><strong>Model &amp; Tool Selection:</strong> Each session can use a different model (Copilot Chat default, or bring your own foundation model). Connect external tools via Model Context Protocol (MCP) servers, allowing agents to reach beyond GitHub's built-in capabilities.</li>
+    </ul>
+
+    <h2>How this differs from earlier agent workflows</h2>
+
+    <p>Earlier agent workflows in GitHub either lived inside an IDE (Copilot Chat in VS Code or JetBrains) or inside a document (GitHub Issues or Discussions). The Copilot app creates a third surface: agent-native infrastructure. This surface is not a chat wrapper around agent work — it is designed from the ground up to show agent state, orchestrate multiple agents, and integrate approval gates.</p>
+
+    <p>For teams, this distinction matters because it creates auditability. When an agent does work through the app, that work is timestamped, logged, and reviewable. When it does work through a chat, the work may be lost if the chat tab closes.</p>
+
+    <h2>What this means for Foculoom's workflow</h2>
+
+    <p>We are particularly interested in the canvas feature for multi-step product validation. Instead of agents dumping review feedback into a chat, they can populate a canvas with structured critique. The product owner can then review the canvas, propose changes, and let agents iterate directly on the structured data rather than reconstructing context from chat history.</p>
+
+    <p>The agent merge flow also simplifies our approval gates. Instead of manually reviewing and merging each PR that an agent creates, we can define rules (e.g., "merge after 1 approval + green CI"), and agents follow them. Humans remain in control — the rules are explicit and auditable — but the routine work disappears.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary source: GitHub Blog, <a href="https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/">GitHub Copilot app: The agent-native desktop experience</a> (published June 2, 2026). Secondary: <a href="https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/">Expanded technical preview availability for the GitHub Copilot app</a>.</p>
+
+    <hr />
+    <p><em>Feature availability may vary by plan and rollout phase. Check the official <a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a> for current status before building workflows that depend on specific features.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

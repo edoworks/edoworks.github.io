@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "agent-mode-picker-jetbrains-technical-flow-diagram",
+  "source_article": "agent-mode-picker-jetbrains.html",
+  "output_sha256": "c246b368ab77379683230ff7bd2a51b9e0cb80d83487113bcb432898ac5d3a7d",
+  "concepts": [
+    "Why modes matter more than it seem",
+    "What each mode does",
+    "How this changes developer expecta"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

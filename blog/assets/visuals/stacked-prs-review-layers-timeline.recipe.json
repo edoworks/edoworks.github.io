@@ -1,0 +1,81 @@
+{
+  "schema_version": "0.8.34",
+  "recipe_id": "stacked-prs-review-layers-timeline",
+  "kind": "timeline",
+  "canvas": {
+    "width_px": 1200,
+    "height_px": 476,
+    "background_color": "#FFFFFF"
+  },
+  "scene": {
+    "elements": [
+      {
+        "type": "line",
+        "x1": 150,
+        "y1": 238,
+        "x2": 1050,
+        "y2": 238,
+        "stroke": "#7c3aed",
+        "stroke_width": 6
+      },
+      {
+        "type": "circle",
+        "cx": 250,
+        "cy": 238,
+        "r": 28,
+        "fill": "#7c3aed",
+        "stroke": "#FFFFFF",
+        "stroke_width": 4
+      },
+      {
+        "type": "circle",
+        "cx": 600,
+        "cy": 238,
+        "r": 28,
+        "fill": "#7c3aed",
+        "stroke": "#FFFFFF",
+        "stroke_width": 4
+      },
+      {
+        "type": "circle",
+        "cx": 950,
+        "cy": 238,
+        "r": 28,
+        "fill": "#7c3aed",
+        "stroke": "#FFFFFF",
+        "stroke_width": 4
+      },
+      {
+        "type": "text",
+        "x": 200,
+        "y": 188,
+        "content": "The Unit of Review\nGets Smaller",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      },
+      {
+        "type": "text",
+        "x": 550,
+        "y": 188,
+        "content": "Branch Direction\nBecomes Load-Bear",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      },
+      {
+        "type": "text",
+        "x": 900,
+        "y": 188,
+        "content": "Parallel Review\nNeeds Serial Integ",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      }
+    ]
+  },
+  "metadata": {
+    "purpose": "visual-learning",
+    "generator": "rendit timeline"
+  }
+}

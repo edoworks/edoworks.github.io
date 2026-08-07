@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bring Your Own Key: Flexible Authentication for Copilot Integration — Edoworks</title>
+  <meta name="description" content="GitHub Copilot now supports BYOK (bring your own key) authentication, allowing organizations to use Copilot with their own model endpoints while maintaining audit trails and compliance controls.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-byok-flexible-authentication.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Bring Your Own Key: Flexible Authentication for Copilot Integration</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-06-09">June 9, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-byok-flexible-authentication-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Bring Your Own Key: Flexible Authentication for Copilot Integration: Why BYOK matters for organizations, How BYOK authentication works, What BYOK means for control and co" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-byok-flexible-authentication-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: Why BYOK matters for organizations → How BYOK authentication works → What BYOK means for control and co</figcaption>
+    </figure>
+
+
+    <p>Enterprise security teams have a recurring objection to GitHub Copilot: "We cannot use it because the model must be ours." Starting this quarter, that objection can be addressed. GitHub Copilot now supports BYOK (bring your own key) authentication, allowing organizations to configure Copilot to use their own model endpoints while maintaining audit trails and compliance controls.</p>
+
+    <h2>Why BYOK matters for organizations</h2>
+
+    <p>Many organizations have contractual or regulatory requirements around model usage. Some require models to run in their own infrastructure. Others want to validate or fine-tune models before use. BYOK lets organizations configure Copilot to use a model endpoint of their choice, whether that is a hosted service or a self-hosted deployment.</p>
+
+    <p>This is also a cost control mechanism. When using Copilot's default models, costs scale with usage. When you configure your own endpoint, you can optimize pricing, use fine-tuned variants, or route requests through your cost management layer.</p>
+
+    <h2>How BYOK authentication works</h2>
+
+    <p>To enable BYOK, organizations configure Copilot with their model endpoint details (URL and authentication credentials). Copilot routes requests to the configured endpoint instead of GitHub's hosted models. The authentication method depends on the endpoint: API keys, OAuth tokens, or other schemes supported by the endpoint.</p>
+
+    <p>Organizations are responsible for managing the endpoint, ensuring it meets authentication and compliance standards, and maintaining cost controls.</p>
+
+    <h2>What BYOK means for control and compliance</h2>
+
+    <p>When you use Copilot's hosted models, your prompts are transmitted to GitHub's infrastructure. When you use BYOK with a self-hosted endpoint, data flows only to your infrastructure, subject to your security policies and audit controls. You maintain full visibility into who used Copilot, when, and what the model returned.</p>
+
+    <p>BYOK also enables fine-tuning. If your codebase uses domain-specific patterns, you can fine-tune a model on your code and deploy it as your BYOK endpoint. Copilot automatically uses it, and you get improved results tuned to your domain.</p>
+
+    <h2>How this affects our roadmap at Foculoom</h2>
+
+    <p>We are evaluating whether to configure our own model endpoint for internal Foculoom work. This would give us full audit control, the ability to fine-tune on our iOS and Godot project patterns, and cost optimization. BYOK makes that evaluation practical where it would have been infeasible before.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary source: GitHub Blog, <a href="https://github.blog/news-insights/product-news/github-copilot-app-the-agent-native-desktop-experience/">GitHub Copilot app: The agent-native desktop experience</a> (published June 2, 2026), which covers flexible authentication and bring-your-own-model patterns.</p>
+
+    <hr />
+    <p><em>BYOK support, authentication flows, and pricing may vary by product tier and region. Consult GitHub's official Copilot documentation for current supported configurations.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

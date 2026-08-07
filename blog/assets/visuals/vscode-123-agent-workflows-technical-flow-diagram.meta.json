@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "vscode-123-agent-workflows-technical-flow-diagram",
+  "source_article": "vscode-123-agent-workflows.html",
+  "output_sha256": "66514fe58d72532be383fd7986a9953f981003be7e743cfcd0072a96e5488e24",
+  "concepts": [
+    "The release note that matters",
+    "What changed operationally",
+    "Why the Agents window is bigger th"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

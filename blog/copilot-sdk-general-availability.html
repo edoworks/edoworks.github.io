@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Copilot SDK is Now Generally Available — Edoworks</title>
+  <meta name="description" content="GitHub's Copilot SDK reaches general availability with support for Node.js, Python, Go, Rust, .NET, and Java — allowing developers to embed agentic workflows directly in their applications.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-sdk-general-availability.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>Copilot SDK is Now Generally Available</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-05-25">May 25, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-sdk-general-availability-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Copilot SDK is Now Generally Available: What the SDK exposes, Language coverage and ecosystem, Key capabilities in the SDK" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-sdk-general-availability-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: What the SDK exposes → Language coverage and ecosystem → Key capabilities in the SDK</figcaption>
+    </figure>
+
+
+    <p>General availability means one thing: you can now embed GitHub Copilot's agentic engine directly into your application. The Copilot SDK surfaces the full orchestration model — planning, file editing, multi-turn sessions — as language-native libraries. You no longer need to choose between building your own agent or waiting for GitHub's UI. You can ship your own.</p>
+
+    <h2>What the SDK exposes</h2>
+
+    <p>The Copilot SDK surfaces agent orchestration as language-native libraries. You can create sessions, invoke tools, handle MCP protocol exchanges, and manage permission requests — without building orchestration logic from scratch. The SDK includes hooks for executing custom code before and after tool calls, allowing you to integrate custom logic into the agent's workflow.</p>
+
+    <h2>Language coverage and ecosystem</h2>
+
+    <ul>
+      <li><strong>Node.js:</strong> First-class support for JavaScript and TypeScript applications. Use the SDK in an Express server, a Next.js app, or a CLI tool.</li>
+      <li><strong>Python:</strong> Synchronous and async APIs. Integrates with FastAPI, Django, and custom scripts.</li>
+      <li><strong>Go:</strong> Idiomatic Go interfaces for long-running agents and concurrent orchestration.</li>
+      <li><strong>Rust:</strong> For systems where performance and safety are non-negotiable.</li>
+      <li><strong>.NET:</strong> C# and F# support for enterprise Windows and cloud workloads.</li>
+      <li><strong>Java:</strong> Android and Spring Boot applications can embed agents directly.</li>
+    </ul>
+
+    <h2>Key capabilities in the SDK</h2>
+
+    <p><strong>Custom tools:</strong> Register your own tool definitions. The agent can call them, handle their responses, and retry on failure. Tools are discovered dynamically, so new integrations do not require SDK updates.</p>
+
+    <p><strong>Model Context Protocol (MCP) integration:</strong> Connect MCP servers (Anthropic's standard for tool standardization) to the agent. This is how you wire in Stripe APIs, internal databases, or specialized services without writing binding code yourself.</p>
+
+    <p><strong>Fine-grained system prompt customization:</strong> Copilot's "personality" is defined through modular prompt sections. You can override tone, safety rules, formatting preferences, and domain-specific constraints without touching the core agent logic.</p>
+
+    <p><strong>Cloud and remote sessions:</strong> Sessions can live in the cloud, allowing you to start a long-running agent and query its status or results from anywhere. Sessions are addressable by URL, making it easy to share progress with team members.</p>
+
+    <p><strong>Hook system:</strong> Intercept agent behavior at multiple points: before planning, after tool selection, before file edits, on completion. Use hooks to implement approval gates, audit logging, or custom resource limits.</p>
+
+    <h2>What this changes about product development</h2>
+
+    <p>Until now, product teams had two choices: build agent infrastructure from scratch (months of work, high complexity) or defer to GitHub's UI and accept its constraints. The SDK collapses that binary. You can now ship a custom agentic interface in your product within weeks, not months, because the orchestration layer is already written and battle-tested.</p>
+
+    <p>For Foculoom, this is a key unlock. We are now evaluating whether to embed Copilot SDK directly into our product interfaces rather than always routing through GitHub's UIs. That decision was impossible six months ago.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary source: GitHub Changelog, <a href="https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/">Copilot SDK is now generally available</a> (published June 2, 2026).</p>
+
+    <hr />
+    <p><em>Pricing, rate limits, and feature parity with hosted Copilot may vary. Consult the official <a href="https://docs.github.com/en/copilot">GitHub Copilot SDK documentation</a> before production deployment.</em></p>
+    
+    <section class="references">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener">docs.github.com</a></li>
+        <li><a href="https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/" target="_blank" rel="noopener">github.blog</a></li>
+      </ul>
+    </section>
+</article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

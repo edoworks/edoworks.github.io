@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GitHub Copilot in Visual Studio — May Update — Edoworks</title>
+  <meta name="description" content="VS 2026 May update brings cloud agent sessions, custom agent support at the user level, and multi-file diff summaries for managing large-scale code changes.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-in-visual-studio-may-update.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Developer Tools</div>
+      <h1>GitHub Copilot in Visual Studio — May Update</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; <time datetime="2026-05-27">May 27, 2026</time></p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-in-visual-studio-may-update-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for GitHub Copilot in Visual Studio — May Update: The Plan agent in Visual Studio, Skills panel for workflow discover, Multi-file diffs and summaries" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-in-visual-studio-may-update-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: The Plan agent in Visual Studio → Skills panel for workflow discover → Multi-file diffs and summaries</figcaption>
+    </figure>
+
+
+    <p>Visual Studio's May update introduces capabilities that expand Copilot's orchestration toolkit. The Plan agent lets you preview and refine a proposed plan before execution. A new skills panel surfaces available agent skills (packaged workflows) for quick discovery. Multi-file diff summaries turn large refactors into reviewable changesets. And context-window management controls help you stay within token limits on extended sessions.</p>
+
+    <h2>The Plan agent in Visual Studio</h2>
+
+    <p>The Plan agent generates a proposed solution to your request without executing it. You review the plan, ask follow-up questions, and either approve execution or ask for revisions. This is valuable for high-risk work (refactoring core systems, security patches) where you want human oversight before the agent makes changes.</p>
+
+    <h2>Skills panel for workflow discovery</h2>
+
+    <p>A new panel in the Visual Studio sidebar lists available agent skills — packaged workflows your organization has defined. Skills might be "run linter," "apply PR template," or "deploy to staging." The panel lets you browse, filter, and invoke skills without memorizing their names or parameters.</p>
+
+    <h2>Multi-file diffs and summaries</h2>
+
+    <p>When an agent modifies hundreds of files, reviewing the changes becomes harder. The multi-file diff summary feature addresses this by generating a structural summary: which files were touched, what changed in each category (tests, documentation, source), and whether the overall changeset passes static checks. You get an intuitive "accept" / "undo" control for the entire changeset instead of line-by-line review.</p>
+
+    <p>This is not a replacement for detailed code review. Rather, it is a triage layer that lets you quickly accept safe refactors and focus detailed review on riskier changes.</p>
+
+    <h2>Context-window management</h2>
+
+    <p>Extended agent sessions can hit token limits, especially when working with large codebases or long conversation histories. Visual Studio's May update includes controls to monitor and manage context usage: seeing how many tokens remain, compressing earlier conversation history, or starting a new session when limits approach.</p>
+
+    <h2>Qualifying sources</h2>
+
+    <p>Primary sources: GitHub Changelog, <a href="https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update/">GitHub Copilot in Visual Studio — May update</a> (published June 4, 2026). Earlier reference: <a href="https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update/">GitHub Copilot in Visual Studio — April update</a>.</p>
+
+    <hr />
+    <p><em>Cloud session pricing, data residency, and feature parity with local agents may vary. Consult <a href="https://docs.github.com/en/copilot">GitHub Copilot documentation</a> before production use.</em></p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

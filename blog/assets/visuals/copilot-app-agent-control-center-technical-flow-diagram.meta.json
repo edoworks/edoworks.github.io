@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-app-agent-control-center-technical-flow-diagram",
+  "source_article": "copilot-app-agent-control-center.html",
+  "output_sha256": "bda482f6924e7e22b5dc9023b6373a9a8b91677d23957b9457c65e14808decc8",
+  "concepts": [
+    "Why orchestration matters before c",
+    "The structure of the agent-native ",
+    "How this differs from earlier agen"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}

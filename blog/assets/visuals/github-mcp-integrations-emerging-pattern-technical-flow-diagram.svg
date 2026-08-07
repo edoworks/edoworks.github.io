@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="476" viewBox="0 0 1200 476">
+  <rect x="0" y="0" width="1200" height="476" fill="#FFFFFF"/>
+  <rect x="162.0" y="204.0" width="252.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="288.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">Why</text>
+  <text x="288.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">standardization</text>
+  <rect x="474.0" y="204.0" width="252.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="600.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">How MCP works at</text>
+  <text x="600.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">runtime</text>
+  <rect x="786.0" y="204.0" width="252.0" height="68.0" fill="#F3F0FF" stroke="#7c3aed" stroke-width="2" rx="18.0" opacity="1.0"/>
+  <text x="912.0" y="227.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">What this means</text>
+  <text x="912.0" y="255.0" text-anchor="middle" font-family="Noto Sans" font-size="20.0" fill="#1A1030" font-weight="400">for teams and plat</text>
+  <line x1="414.0" y1="238.0" x2="474.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 474.0000,238.0000 L 466.0000,230.0000 L 466.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+  <line x1="726.0" y1="238.0" x2="786.0" y2="238.0" stroke="#7C3AED" stroke-width="2.0" opacity="1.0"/>
+  <path d="M 786.0000,238.0000 L 778.0000,230.0000 L 778.0000,246.0000 Z" fill="#7C3AED" fill-rule="nonzero" stroke="none" stroke-width="0" opacity="1.0"/>
+</svg>

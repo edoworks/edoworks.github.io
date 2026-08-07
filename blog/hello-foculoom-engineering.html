@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello, Edoworks — Edoworks</title>
+  <meta name="description" content="How Edoworks built a static blog with 200 lines of Python and no dependencies — and why the constraints were the point.">
+  <link rel="canonical" href="https://edoworks.com/blog/hello-foculoom-engineering.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+th {
+  background: #f3f4f6;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #6b7280; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Engineering</div>
+      <h1>Hello, Edoworks</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; May 23, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/hello-foculoom-engineering-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for Hello, Edoworks: The problem with publishing stacks, How the build works, step by step, Why no dependencies?" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/hello-foculoom-engineering-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: The problem with publishing stacks → How the build works, step by step → Why no dependencies?</figcaption>
+    </figure>
+
+    <h2>The problem with publishing stacks</h2>
+    <p>Most engineering blogs live inside a platform: Medium, Substack, a headless CMS, a static-site generator with a plugin ecosystem. Those tools are fine, but they all make the same implicit promise: you can always add more later. More plugins, more themes, more JavaScript, more configuration. That promise costs something. The more a tool can do, the more you have to understand before you trust what it actually does.</p>
+    <p>We wanted a blog that we could read end-to-end in an afternoon. Not read the docs — read the entire implementation.</p>
+    <p>So we wrote 200 lines of Python, called it <code>build_blog.py</code>, and made that the blog.</p>
+    <h2>How the build works, step by step</h2>
+    <p>Here is what happens when you run <code>python3 scripts/build_blog.py</code> from the repo root.</p>
+    <p><strong>Step 1: Clean the output.</strong> The script deletes the <code>blog/index.html</code>, the <code>blog/tag/</code> directory, and every generated subdirectory inside <code>blog/posts/</code>. The source Markdown files (<code>.md</code>) are left alone because they live in <code>blog/posts/</code> too. Only the compiled HTML subdirectories are removed.</p>
+    <p>Why delete before rebuilding? So that removing a post's <code>.md</code> file automatically removes that post's output on the next run. No stale pages, no manual cleanup.</p>
+    <p><strong>Step 2: Read and validate every Markdown file.</strong> For each <code>.md</code> file in <code>blog/posts/</code>, the script reads the YAML front matter — the block of metadata between the first two <code>---</code> lines. It checks that five fields are present: <code>title</code>, <code>date</code>, <code>author</code>, <code>tags</code>, and <code>excerpt</code>. If anything is missing or the excerpt exceeds 160 characters, the script exits non-zero and names the file and the failing field. The build fails loudly rather than silently producing a broken page.</p>
+    <p><strong>Step 3: Normalize tags.</strong> Tag strings go through four transformations: lowercase, spaces become hyphens, non-alphanumeric characters (except hyphens) are stripped, repeated hyphens collapse into one. This means <code>iOS Apps</code> and <code>ios-apps</code> would map to the same URL — a collision. If any two raw tag strings across all posts normalize to the same slug, the build exits with an error before writing any files. Two identical raw strings across different posts are fine; one canonical form is required.</p>
+    <p><strong>Step 4: Render Markdown.</strong> The script converts Markdown to HTML using a line-by-line state machine. It handles a limited subset: H1–H3 headings, bold, italic, inline code, fenced code blocks, links, unordered lists, and horizontal rules. There is no CommonMark compliance and no general Markdown parser. The constraint is the feature: a smaller parser means fewer surprises.</p>
+    <p><strong>Step 5: Write HTML files.</strong> For each post, the script creates a directory at <code>blog/posts/{slug}/</code> and writes <code>index.html</code> inside it. For each tag, it creates <code>blog/tag/{slug}/index.html</code> listing all posts with that tag. Finally it writes <code>blog/index.html</code> with all posts sorted newest-first.</p>
+    <p><strong>Step 6: Update the sitemap.</strong> The script reads the existing <code>sitemap.xml</code>, strips any URLs under <code>https://foculoom.com/blog/</code>, and appends fresh entries for the blog index and every published post. Non-blog URLs are preserved unchanged.</p>
+    <h2>Why no dependencies?</h2>
+    <p>The build script imports only Python's standard library. No <code>pip install</code>. No <code>requirements.txt</code>. No virtual environment.</p>
+    <p>This is a practical constraint, not a philosophical one. The script runs on whatever Python 3 the CI runner has installed, with no setup step. If a dependency breaks or its API changes, nothing here breaks with it. The tradeoff is that we write more code ourselves — but the code we write is directly visible in the repo, easy to read, and small enough to reason about completely.</p>
+    <h2>What this pipeline cannot do</h2>
+    <p>The supported Markdown subset does not include tables, footnotes, task lists, or nested lists. If a future post needs those, we will add support explicitly rather than pulling in a general-purpose parser. Every addition is a deliberate choice, not a side effect of a dependency update.</p>
+    <p>This is also not a preview server, a watch mode, or a development workflow. It is a build script. Run it, check the output, commit if it looks right.</p>
+    <hr />
+    <p>That is the full pipeline. The rest of the blog will use it. Future posts will cover product decisions, deployment lessons, and the engineering work behind Foculoom's apps. If you want to discuss anything here, <a href="https://tally.so/r/aQvRKb">contact us</a>.</p>
+    </article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

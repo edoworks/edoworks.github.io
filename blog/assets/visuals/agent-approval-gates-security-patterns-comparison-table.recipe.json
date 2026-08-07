@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.8.34",
+  "recipe_id": "agent-approval-gates-security-patterns-comparison-table",
+  "kind": "comparison-table",
+  "canvas": {
+    "width_px": 1200,
+    "height_px": 476,
+    "background_color": "#FFFFFF"
+  },
+  "scene": {
+    "elements": [
+      {
+        "type": "rect",
+        "x": 50,
+        "y": 40,
+        "width": 360,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 430,
+        "y": 40,
+        "width": 360,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "rect",
+        "x": 810,
+        "y": 40,
+        "width": 360,
+        "height": 340,
+        "fill": "#F8FAFC",
+        "stroke": "#7c3aed",
+        "stroke_width": 3
+      },
+      {
+        "type": "text",
+        "x": 70,
+        "y": 80,
+        "content": "Why approval gates\nare not optiona",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      },
+      {
+        "type": "text",
+        "x": 450,
+        "y": 80,
+        "content": "The three-layer\npattern",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      },
+      {
+        "type": "text",
+        "x": 830,
+        "y": 80,
+        "content": "How this changes\nteam workflows",
+        "font_size": 20,
+        "font_weight": 700,
+        "fill": "#7c3aed"
+      }
+    ]
+  },
+  "metadata": {
+    "purpose": "visual-learning",
+    "generator": "rendit comparison-table"
+  }
+}

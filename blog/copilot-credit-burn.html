@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="generator" content="Edoworks 202607210652.0">
+    <meta name="content_kind" content="agent-pattern / architecture">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We Burned Through Our $300 Copilot Budget in Three Days — Edoworks</title>
+  <meta name="description" content="308 Opus events, 5,223 Sonnet events, $300 gone in three days. Here's what broke in our cost guard — and five controls that would have prevented it.">
+  <meta property="og:title" content="We Burned Through Our $300 Copilot Budget in Three Days">
+  <meta property="og:description" content="308 Opus events, 5,223 Sonnet events, $300 gone in three days. Here's what broke in our cost guard — and five controls that would have prevented it.">
+  <link rel="canonical" href="https://edoworks.com/blog/copilot-credit-burn.html">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f3ff;
+  color: #111827;
+  line-height: 1.7;
+  padding: 0 1rem 2rem;
+}
+nav {
+  background: #0f172a;
+  padding: 1rem 1rem;
+  margin: 0 -1rem 2.5rem;
+}
+nav .nav-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav .brand {
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+nav .brand:hover { color: #c4b5fd; }
+nav .sep { color: #475569; }
+nav .back {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+nav .back:hover { color: #c4b5fd; text-decoration: underline; }
+article {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.post-tag {
+  display: inline-block;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #5b21b6;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+.byline {
+  font-size: 0.875rem;
+  color: #5f6875;
+}
+.byline strong { color: #6d28d9; }
+h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 2.25rem 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+p {
+  color: #374151;
+  margin-bottom: 1.25rem;
+}
+ul, ol {
+  color: #374151;
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+li { margin-bottom: 0.4rem; }
+code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 2rem 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+  display: block;
+}
+th {
+  background: #f3f4f6;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+}
+td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+footer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  font-size: 0.85rem;
+  color: #5f6875;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+footer a { color: #5f6875; text-decoration: none; }
+footer a:hover { color: #7c3aed; }
+footer p { color: inherit; margin: 0; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.6rem; }
+  footer { flex-direction: column; align-items: flex-start; }
+}
+  </style>
+<style>nav .nav-inner{display:flex;align-items:center;gap:16px}nav .brand-meta{color:#94a3b8;font-size:.9em}nav .nav-inner>a{color:#c7d2fe;text-decoration:none}nav .nav-inner>a:hover{color:#fff}@media(max-width:600px){nav .nav-inner{flex-wrap:wrap}}</style>
+</head>
+<body>
+  <nav><div class="nav-inner"><a class="brand" href="https://edoworks.com/">Edoworks</a><span class="brand-meta">software factory</span><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
+  <main data-pagefind-body>
+  <article data-pagefind-body>
+    <header class="post-header">
+      <div class="post-tag">Engineering</div>
+      <h1>We Burned Through Our $300 Copilot Budget in Three Days</h1>
+      <p class="byline">By <strong>Edoworks</strong> &nbsp;·&nbsp; June 5, 2026</p>
+    </header>
+    <figure class="visual-learning-map" data-visual-learning="rendit-technical-flow-diagram">
+      <img src="/blog/assets/visuals/copilot-credit-burn-technical-flow-diagram.svg" alt="technical-flow-diagram diagram for We Burned Through Our $300 Copilot Budget in Three Days: The billing alert, How costs compound in multi-agent , How GitHub charges now" width="1200" height="420" loading="lazy" data-rendit-meta="/blog/assets/visuals/copilot-credit-burn-technical-flow-diagram.meta.json" style="display:block;width:100%;height:auto">
+      <figcaption>Technical Flow Diagram: The billing alert → How costs compound in multi-agent  → How GitHub charges now</figcaption>
+    </figure>
+
+
+    <h2>The billing alert</h2>
+    <p>Three days into running our full multi-agent pipeline under GitHub's new usage-based billing model, a spending alert landed. The $300 monthly cap on Copilot AI credits was gone. The session-store audit for those three days — June 2–4, 2026 — shows 5,223 Claude Sonnet 4.6 events, 308 Claude Opus 4.8 events, and 777 GPT-5.4 events, across 8–9 sessions per day. We upgraded the cap to $450, but that is a delay, not a fix. The problem was that the cost guard had never fired once.</p>
+
+    <h2>How costs compound in multi-agent sessions</h2>
+    <p>When you run a multi-step agent workflow, the billing pattern is different from a single chat session. A single-agent session charges you once. A multi-agent pipeline — where one agent plans, another implements, and a third reviews — charges you for expensive models at least twice per issue: once at the start and once at the end.</p>
+    <p>Here is why that matters. The planning pass is expensive because it requires a long context window: it reads the issue, any prior session history, and related code, then reasons through a full implementation spec. That can be 30,000–80,000 input tokens before the model writes a single word. The review pass at the end is equally expensive — it reads the full implementation output plus the original spec to evaluate them against each other. The implementation pass in the middle is cheaper because it follows a clear spec and does not need the same depth of multi-step reasoning.</p>
+    <p>The result: in a 3-issue session, you pay for expensive models at minimum six times — a planning pass and a review pass per issue. In our three-day period, that produced 308 Claude Opus 4.8 events. Opus is the most capable model in the pipeline and, at $5.00 per million input tokens and $25.00 per million output tokens, also the most expensive. One long Opus call with 60,000 input tokens and 3,000 output tokens costs roughly $0.375. Multiply by 308 events and you have $115 in Opus costs alone, before any implementation work.</p>
+    <p>A note on terminology: GitHub uses the phrase <em>premium requests</em> in older billing documentation. Think of it like a taxi fare — a short trip and a long trip are the same service, but a very different meter. Under usage-based billing (active since June 1, 2026), the meter is literal: you pay for actual tokens consumed, not a per-interaction flat rate. If you see "premium requests" in your billing dashboard, check whether you are on a legacy annual plan that predates the June 1 transition.</p>
+
+    <h2>How GitHub charges now</h2>
+    <p>GitHub switched from its legacy premium-request multiplier model to usage-based billing (AI credits) on June 1, 2026. Under the new model, you pay for actual token consumption. 1 AI credit = $0.01 USD; the $300 cap was 30,000 AI credits. Per-token rates for the models in our pipeline (per 1 million tokens, fetched June 5, 2026 from the <a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot">GitHub Copilot billing documentation</a>):</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Role in pipeline</th>
+          <th>Input (per 1M tokens)</th>
+          <th>Output (per 1M tokens)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Claude Opus 4.8</td>
+          <td>Planning, review passes</td>
+          <td>$5.00</td>
+          <td>$25.00</td>
+        </tr>
+        <tr>
+          <td>Claude Sonnet 4.6</td>
+          <td>Implementation passes</td>
+          <td>$3.00</td>
+          <td>$15.00</td>
+        </tr>
+        <tr>
+          <td>GPT-5.4</td>
+          <td>Code-edit tasks</td>
+          <td>$2.50</td>
+          <td>$15.00</td>
+        </tr>
+        <tr>
+          <td>Claude Haiku 4.5</td>
+          <td>Lightweight exploration</td>
+          <td>$1.00</td>
+          <td>$5.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>The audit's "GPT-5.4 events" field matches the billing table name exactly — no reconciliation needed. The math runs fast: a single long Opus call with 60K input tokens and 3K output tokens costs roughly $0.375. Multiply by 308 Opus events and you are already at $115 before counting Sonnet or GPT-5.4. The 5,223 Sonnet events and 777 GPT-5.4 events account for the rest of the $300.</p>
+    <p>One note on the legacy model: before June 1, GitHub billed in <em>premium requests</em> — a proprietary credit unit where each AI interaction consumed a model-specific multiplier of your monthly allotment. Under that system (still in effect for annual plans that opted out of the June 1 transition), Haiku was 0.33×, Sonnet 4.6 was 9×, and Opus 4.8 was 27× per interaction. Those multipliers are now irrelevant for anyone on the new usage-based billing, but the relative cost hierarchy is identical: Opus is expensive, Sonnet is mid-range, Haiku is cheap. If you are still seeing "premium requests" in your dashboard, check whether you are on a legacy annual plan.</p>
+
+    <h2>Five controls that would have prevented this</h2>
+    <p>The cost guard we had was not broken — it was misconfigured in five separate ways, each of which silently disabled it. Here is what broke, and what the correct configuration looks like.</p>
+    <ol>
+      <li>
+        <strong>Scope your API call to match your account type.</strong>
+        <p style="margin-top:0.5rem">If your Copilot account is org-managed (your company or team pays for it), your billing API calls must use org scope — not user scope. A user-scope call to an org-managed account returns a 403 error silently. The script records the status as <code>"unknown"</code> and exits. Your cost guard never fires because it never received a number to act on.</p>
+        <p>What right looks like: set <code>COPILOT_USAGE_SCOPE=org</code> and <code>COPILOT_USAGE_ORG=yourorg</code>. Then test the call directly before trusting it: <code>curl -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/orgs/yourorg/copilot/billing</code>. If you get billing data back, the scope is correct. If you get 403, it is not. Do not assume — test it once.</p>
+      </li>
+      <li>
+        <strong>Make the cost check mandatory, not optional.</strong>
+        <p style="margin-top:0.5rem">If your cost check runs only when an environment variable is set — for example, <code>if [ -n "$COPILOT_PLAN_LIMIT" ]; then check-usage; fi</code> — and that variable is never configured, the check silently skips on every session. The code that is supposed to protect you never runs. This is not a guard; it is a guard-shaped decoration.</p>
+        <p>What right looks like: the cost check runs unconditionally at session start. If <code>COPILOT_PLAN_LIMIT</code> is not set, the session fails immediately with a clear message: "COPILOT_PLAN_LIMIT is not configured. Set it before starting a session." Optional safety checks are not safety checks.</p>
+      </li>
+      <li>
+        <strong>Set the warning threshold at 50% consumed, not 70% or higher.</strong>
+        <p style="margin-top:0.5rem">At 70% consumed on a $300 cap, you have $90 remaining. A single 3-issue pipeline session with expensive models can burn $50–100. By the time the trigger fires, there is not enough headroom left to change behavior before hitting the cap.</p>
+        <p>What right looks like: enter fallback mode at 50% consumed ($150 remaining on a $300 cap). At 50%, you still have enough budget to complete the current session at a cheaper model tier. Fallback mode is not a degraded experience: implementation passes already run on cheaper models by default, and those models handle planning and review well on routine issues. The quality difference for non-complex work is small; the cost difference is large.</p>
+      </li>
+      <li>
+        <strong>Route trivial work away from expensive models.</strong>
+        <p style="margin-top:0.5rem">A 5-word README edit dispatched to your most expensive model costs the same as a full feature-spec session. The model's extra capability is entirely wasted on mechanical work, but the billing meter runs at full rate. One long expensive-model call on a formatting fix costs roughly the same as 15 cheap-model calls — and those 15 calls could have handled real work.</p>
+        <p>What right looks like: before dispatching any agent, classify the work. Documentation updates, typo fixes, version bumps, and formatting changes do not need your most capable model. Route them to a cheaper tier. Classification can be as simple as checking labels — <code>docs</code>, <code>chore</code>, <code>refactor</code>, <code>mechanical</code> — and skipping the expensive planning pass for those categories. The cost difference is approximately 15×; the quality difference for mechanical work is negligible.</p>
+      </li>
+      <li>
+        <strong>Persist fallback-mode state across context resets.</strong>
+        <p style="margin-top:0.5rem">If you track budget state in-session — for example, "fallback mode is ON" held as a variable in the current agent context — that state disappears when the session is compacted, summarized, or restarted. A resume from a checkpoint looks like a fresh session. The cost guard triggers, sets fallback mode, then a context reset silently drops the flag. The next turn runs at full expensive-model tier with no warning.</p>
+        <p>What right looks like: write the fallback-mode flag to a file the moment it is set — for example, <code>~/.copilot/fallback-state</code> or equivalent. Read that file at every session start, including resumes. In-context state does not survive compaction; file state does. The guard only works if its output outlasts the session that created it.</p>
+      </li>
+    </ol>
+
+    <h2>The takeaway</h2>
+    <p>The multi-agent pipeline architecture is sound. Sequential specialist passes — planning, implementation, review — produce better output than a single all-purpose agent. The problem was not the design. It was that the cost guard was wired to an API call that had been returning 403 for weeks without anyone noticing, because the session tooling treated a failed check as a quiet no-op.</p>
+    <p>Every multi-agent pipeline needs a cost guard that can actually compute burn: one that fails loudly instead of silently, triggers before the budget is gone, and persists its state across context resets. The cap increase bought time. The five controls above change the behavior.</p>
+    <p>If you are running a similar setup and want a minimum viable configuration to check:</p>
+    <ol>
+      <li><strong>API scope matches account type</strong> (org vs. user) — tested with a direct API call, not assumed.</li>
+      <li><strong>Spending limit variable is set</strong> — and the session start fails loudly if it is not.</li>
+      <li><strong>Warning threshold is ≤ 50% consumed</strong> — not 70%, not 80%.</li>
+      <li><strong>Fallback state is written to a file</strong> — not held in session context.</li>
+      <li><strong>Trivial work is classified before model dispatch</strong> — mechanical tasks skip expensive models.</li>
+    </ol>
+
+    <hr />
+    <p><em>Questions or running a similar multi-agent setup? <a href="https://tally.so/r/aQvRKb">Reach out</a> — we read every reply.</em></p>
+    
+    <section class="references">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://docs.github.com/en/billing/managing-billing-for-your-products/managing-billing-for-github-copilot" target="_blank" rel="noopener">docs.github.com</a></li>
+        <li><a href="https://tally.so/r/aQvRKb" target="_blank" rel="noopener">tally.so</a></li>
+      </ul>
+    </section>
+</article>
+    <div id="upvote-container" class="upvote-wrap" style="max-width:720px;margin:2rem auto 3rem;padding:0 1rem">
+    <p style="font-size:0.95rem;color:#374151;margin-bottom:0.75rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Enjoyed this post?</p>
+  </div>
+  <script src="https://foculoom.com/assets/upvote.js" data-upvote-enabled="true" data-upvote-url="https://foculoom-upvotes.foculoom.workers.dev" defer></script>
+  </main>
+  <footer><span>&copy; 2026 Edoworks &middot; Foculoom LLC</span><span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span><span>Built by Edoworks 202607210652.0.</span></footer>
+
+</body>
+</html>

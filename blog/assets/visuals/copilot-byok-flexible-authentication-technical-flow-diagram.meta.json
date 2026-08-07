@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generator": "rendit",
+  "kind": "technical-flow-diagram",
+  "recipe_id": "copilot-byok-flexible-authentication-technical-flow-diagram",
+  "source_article": "copilot-byok-flexible-authentication.html",
+  "output_sha256": "fe87500c01fd091a711aba6bfe00ba1582ff708370a25a7d57751ad2acb947de",
+  "concepts": [
+    "Why BYOK matters for organizations",
+    "How BYOK authentication works",
+    "What BYOK means for control and co"
+  ],
+  "content_kind": "agent-pattern / architecture",
+  "content_kind_source": "heuristic"
+}
