@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edoworks — Factory Evolution</title>
+  <meta name="description" content="Factory capability and maturity evolution timeline. Versioned history of what the factory built and how it matured.">
+  <meta name="generator" content="Edoworks 202608071002.0">
+  <meta name="robots" content="index,follow">
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/inter-variable.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { --bg:#07090D; --surface:#0C1016; --card:#10141B; --border:#29303B; --text:#F4F6F8; --muted:#8995A3; --active:#7D8CFF; --verified:#63D297; --retry:#E2A64B; --failure:#DE6673; --focus-ring:#7D8CFF; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color:var(--active); }
+    a:hover { color:var(--text); }
+    :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
+    h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
+    .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
+    h2 { font-size:0.78rem; font-weight:700; color:var(--active); margin:2.5rem 0 0.9rem; letter-spacing:0.12em; text-transform:uppercase; padding-bottom:0.55rem; border-bottom:1px solid var(--border); }
+    .group { margin-bottom:1.5rem; }
+    .panels { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:0.9rem; }
+    .panel { background:var(--card); border:1px solid var(--border); border-top:3px solid var(--active); border-radius:8px; padding:1.25rem; box-shadow:0 16px 40px rgba(0,0,0,.16); }
+    .panel h3 { font-size:1rem; font-weight:650; margin:0 0 0.5rem; color:var(--text); }
+    .metric-definition { color:var(--muted); font-size:0.78rem; margin:-0.2rem 0 0.6rem; }
+    .metric-definition::before { content:"def · "; color:var(--active); font-weight:700; }
+    .metric-meta { display:grid; grid-template-columns:max-content 1fr; gap:.18rem .55rem; padding-top:.75rem; margin-top:.75rem; border-top:1px solid var(--border); color:var(--muted); font-size:.72rem; }
+    .metric-meta dt { color:var(--text); font-weight:600; }
+    .badge,.public-state { display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; padding:.15rem .5rem; border-radius:999px; border:1px solid currentColor; letter-spacing:.04em; text-transform:uppercase; }
+    .status-pass { border-top-color:var(--verified); }
+    .status-pass .badge,.public-state.status-pass { color:var(--verified); }
+    .status-fail,.status-rejected,.status-error { border-top-color:var(--failure); }
+    .status-fail .badge,.status-rejected .badge,.status-error .badge,.public-state.status-fail,.public-state.status-rejected,.public-state.status-error { color:var(--failure); }
+    .status-unknown,.status-nodata { border-top-color:var(--muted); border-top-style:dashed; }
+    .status-unknown .badge,.status-nodata .badge,.public-state.status-unknown,.public-state.status-nodata { color:var(--muted); }
+    .status-stale { border-top-color:var(--retry); border-top-style:double; }
+    .status-stale .badge,.public-state.status-stale { color:var(--retry); }
+    .panel-trend { grid-column:1 / -1; }
+    .trend-chart { width:100%; height:auto; display:block; margin-top:.75rem; }
+    .detail { font:.82rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--text); margin:.5rem 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+    .note,.state-reason,.public-explanation { font-size:.8rem; color:var(--muted); margin:.4rem 0 0; }
+    .public-explanation { margin:0 0 .55rem; font-style:italic; }
+    .metric-value { font-size:1.4rem; font-weight:700; color:var(--muted); margin-top:.35rem; }
+    .provenance,.source { font-size:.72rem; color:var(--muted); margin:.4rem 0 0; }
+    code { font-family:ui-monospace,monospace; font-size:.8rem; }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--border); font-size:.8rem; color:var(--muted); }
+    footer a { color:var(--active); text-decoration:none; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+
+
+    .timeline-section { margin-bottom:2.5rem; }
+    .timeline-section h2 { color:var(--active); font-size:1rem; font-weight:700; margin:0 0 1rem; }
+    .section-intro { color:var(--muted); font-size:0.85rem; line-height:1.6; margin:0 0 1rem; }
+    .milestone { display:flex; gap:1rem; margin-bottom:0.8rem; }
+    .ms-date { flex-shrink:0; width:90px; color:var(--muted); font-size:0.78rem; font-family:ui-monospace,monospace; padding-top:2px; }
+    .ms-body { flex:1; }
+    .ms-tranche { display:inline-block; padding:1px 8px; border-radius:999px; font-size:0.7em; font-weight:600; background:var(--surface); color:var(--active); border:1px solid var(--border); margin-right:6px; }
+    .ms-body strong { color:var(--text); font-size:0.88rem; }
+    .ms-body p { color:var(--muted); font-size:0.8rem; line-height:1.55; margin:0.2rem 0 0; }
+    .maturity-point { display:flex; gap:1rem; align-items:center; margin-bottom:0.5rem; padding:0.5rem 0.8rem; background:var(--surface); border:1px solid var(--border); border-radius:6px; }
+    .mp-date { flex-shrink:0; width:90px; color:var(--muted); font-size:0.78rem; font-family:ui-monospace,monospace; }
+    .mp-level { font-weight:700; font-size:0.85rem; flex:1; }
+    .mp-dims { color:var(--muted); font-size:0.78rem; }
+    .transition { display:flex; gap:1rem; margin-bottom:0.6rem; }
+    .tr-date { flex-shrink:0; width:90px; color:var(--muted); font-size:0.78rem; font-family:ui-monospace,monospace; padding-top:2px; }
+    .tr-body { flex:1; }
+    .tr-body strong { color:var(--text); font-size:0.85rem; }
+    .tr-body p { color:var(--muted); font-size:0.8rem; line-height:1.55; margin:0.15rem 0 0; }
+    .scorecard-table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+    .scorecard-table th { text-align:left; color:var(--active); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid var(--border); padding:4px 8px; }
+    .scorecard-table td { padding:5px 8px; border-bottom:1px solid var(--border); color:var(--text); }
+    .scorecard-table td.num { font-family:ui-monospace,monospace; text-align:right; }
+    .placeholder { color:var(--muted); font-style:italic; font-size:0.85rem; }
+    .factory-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:0.8rem; margin-bottom:2rem; }
+    .stat-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:0.8rem 1rem; text-align:center; }
+    .stat-value { color:var(--active); font-size:1.3rem; font-weight:700; font-family:ui-monospace,monospace; }
+    .stat-label { color:var(--muted); font-size:0.75rem; margin-top:2px; }
+  </style>
+</head>
+<body>
+<nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Evolution</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
+  <main class="content">
+    <h1>Evolution</h1>
+    <p class="generated">Generated 2026-08-07T10:02:26.961599Z</p>
+
+    <div class="factory-stats">
+      <div class="stat-card"><div class="stat-value">2056</div><div class="stat-label">Total commits</div></div>
+      <div class="stat-card"><div class="stat-value">2026-07-01</div><div class="stat-label">First commit</div></div>
+      <div class="stat-card"><div class="stat-value">7</div><div class="stat-label">Shadow runs</div></div>
+      <div class="stat-card"><div class="stat-value">32</div><div class="stat-label">Scorecard days</div></div>
+    </div>
+
+    <div class="timeline-section">
+      <h2>Capability Milestones</h2>
+      <p class="section-intro">Major factory capability additions, in chronological order. Each milestone represents a shipped tranche of the Edoworks control-room redesign (ECR-001).</p>
+      <div class="milestone">
+        <div class="ms-date">2026-08-06</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Foundation</span>
+          <strong>Tranche A shipped</strong>
+          <p>Blog migration from Foculoom to Edoworks (28 posts). Foculoom consolidated to corporate operator.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Data Contracts</span>
+          <strong>Tranche B1 shipped</strong>
+          <p>Telemetry schema extended with workflow_class, delivery_lane, session_id. 4 new data contracts (scorecard, interventions, daily-costs, operating-costs).</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Visual System</span>
+          <strong>Tranche C shipped</strong>
+          <p>Dark graphite token system for factory dashboards. Light tokens for public homepage. WCAG AA contrast validator. Locally-hosted Inter Variable font.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Emitter Behavior</span>
+          <strong>Tranche B2 shipped</strong>
+          <p>Emitter populates B1 fields. Factory-review PASS verdict linkage replaces commit-subject proxy. Lights-out aggregator + intervention ledger.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Recovery + Maturity</span>
+          <strong>Tranche B3 shipped</strong>
+          <p>Recovery-time script (23 events). Maturity engine with 6-dimension min() gate in shadow mode. Scorecard strict schema conformance.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Homepage + Control Room</span>
+          <strong>Tranche D shipped</strong>
+          <p>Light homepage redesign. Dark /factory/ control room with rolling 28-day median autonomy chart. /factory/maturity/ and /factory/architecture/ pages.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Portfolio Surface</span>
+          <strong>Tranche E (partial) shipped</strong>
+          <p>Richer portfolio cards with outcome, availability, KPI. Per-product detail pages with structured sections.</p>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="ms-date">2026-08-07</div>
+        <div class="ms-body">
+          <span class="ms-tranche">Receipts + Experiments + Evolution</span>
+          <strong>Tranche E (in progress)</strong>
+          <p>Per-product factory receipts with source attribution. Experiment registry. Evolution timeline. Metrics are factory-wide (no per-product telemetry yet).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <h2>Maturity Shadow History</h2>
+      <p class="section-intro">Maturity engine shadow-mode computations. The aggregate level is min() across 6 dimensions. NOT COMPUTABLE until all dimensions are instrumented and fresh.</p>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">3/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <h2>Product Lifecycle Transitions</h2>
+      <p class="section-intro">Key product availability transitions — App Store states and factory rebuild milestones.</p>
+      <div class="transition">
+        <div class="tr-date">2026-07-07</div>
+        <div class="tr-body">
+          <strong>Veilsort</strong>
+          <p>Historically READY_FOR_SALE (v1.0, v1.0.1, v1.1.0), then removed from store</p>
+        </div>
+      </div>
+      <div class="transition">
+        <div class="tr-date">2026-07-07</div>
+        <div class="tr-body">
+          <strong>Vorynce</strong>
+          <p>Factory build v0.0.1 never uploaded; prior non-factory v1.0 DEVELOPER_REJECTED</p>
+        </div>
+      </div>
+      <div class="transition">
+        <div class="tr-date">2026-07-12</div>
+        <div class="tr-body">
+          <strong>Skiplet</strong>
+          <p>v2.0.0 DEVELOPER_REJECTED (submitted without TestFlight validation)</p>
+        </div>
+      </div>
+      <div class="transition">
+        <div class="tr-date">2026-07-19</div>
+        <div class="tr-body">
+          <strong>Veilsort</strong>
+          <p>v2.0.0 + v2.1.1 both READY_FOR_SALE (factory rebuild launched)</p>
+        </div>
+      </div>
+      <div class="transition">
+        <div class="tr-date">2026-08-02</div>
+        <div class="tr-body">
+          <strong>Vorynce</strong>
+          <p>v0.0.1 resubmitted to App Store review (build 20260802.1)</p>
+        </div>
+      </div>
+      <div class="transition">
+        <div class="tr-date">2026-08-05</div>
+        <div class="tr-body">
+          <strong>Veilsort</strong>
+          <p>v2.1.2 WAITING_FOR_REVIEW with IAPs attached for first time</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-section">
+      <h2>Scorecard History (recent)</h2>
+      <p class="section-intro">Daily scorecard values — autonomy ratio, cost, and recovery time. Missing values shown as &mdash;.</p>
+<table class="scorecard-table">
+<thead><tr><th>Date</th><th>Autonomy</th><th>Cost/day</th><th>Recovery</th></tr></thead>
+<tbody>
+<tr><td>2026-07-29</td><td class="num">12.3</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-07-30</td><td class="num">13.6</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-07-31</td><td class="num">20.8</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-01</td><td class="num">8.2</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-02</td><td class="num">34.4</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-03</td><td class="num">47.7</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-04</td><td class="num">15.0</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-05</td><td class="num">20.3</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-06</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+<tr><td>2026-08-07</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td><td class="num">NOT INSTRUMENTED</td></tr>
+</tbody>
+</table>
+    </div>
+
+    <footer>
+      <p>Built by Edoworks 202608071002.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/experiments/">Experiments</a></p>
+    </footer>
+  </main>
+</body>
+</html>

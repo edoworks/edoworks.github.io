@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edoworks — Factory Experiments</title>
+  <meta name="description" content="Factory experiment registry: hypothesis, metrics, evidence, and decision for each experiment.">
+  <meta name="generator" content="Edoworks 202608071002.0">
+  <meta name="robots" content="index,follow">
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/inter-variable.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { --bg:#07090D; --surface:#0C1016; --card:#10141B; --border:#29303B; --text:#F4F6F8; --muted:#8995A3; --active:#7D8CFF; --verified:#63D297; --retry:#E2A64B; --failure:#DE6673; --focus-ring:#7D8CFF; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color:var(--active); }
+    a:hover { color:var(--text); }
+    :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
+    h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
+    .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
+    h2 { font-size:0.78rem; font-weight:700; color:var(--active); margin:2.5rem 0 0.9rem; letter-spacing:0.12em; text-transform:uppercase; padding-bottom:0.55rem; border-bottom:1px solid var(--border); }
+    .group { margin-bottom:1.5rem; }
+    .panels { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:0.9rem; }
+    .panel { background:var(--card); border:1px solid var(--border); border-top:3px solid var(--active); border-radius:8px; padding:1.25rem; box-shadow:0 16px 40px rgba(0,0,0,.16); }
+    .panel h3 { font-size:1rem; font-weight:650; margin:0 0 0.5rem; color:var(--text); }
+    .metric-definition { color:var(--muted); font-size:0.78rem; margin:-0.2rem 0 0.6rem; }
+    .metric-definition::before { content:"def · "; color:var(--active); font-weight:700; }
+    .metric-meta { display:grid; grid-template-columns:max-content 1fr; gap:.18rem .55rem; padding-top:.75rem; margin-top:.75rem; border-top:1px solid var(--border); color:var(--muted); font-size:.72rem; }
+    .metric-meta dt { color:var(--text); font-weight:600; }
+    .badge,.public-state { display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; padding:.15rem .5rem; border-radius:999px; border:1px solid currentColor; letter-spacing:.04em; text-transform:uppercase; }
+    .status-pass { border-top-color:var(--verified); }
+    .status-pass .badge,.public-state.status-pass { color:var(--verified); }
+    .status-fail,.status-rejected,.status-error { border-top-color:var(--failure); }
+    .status-fail .badge,.status-rejected .badge,.status-error .badge,.public-state.status-fail,.public-state.status-rejected,.public-state.status-error { color:var(--failure); }
+    .status-unknown,.status-nodata { border-top-color:var(--muted); border-top-style:dashed; }
+    .status-unknown .badge,.status-nodata .badge,.public-state.status-unknown,.public-state.status-nodata { color:var(--muted); }
+    .status-stale { border-top-color:var(--retry); border-top-style:double; }
+    .status-stale .badge,.public-state.status-stale { color:var(--retry); }
+    .panel-trend { grid-column:1 / -1; }
+    .trend-chart { width:100%; height:auto; display:block; margin-top:.75rem; }
+    .detail { font:.82rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--text); margin:.5rem 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+    .note,.state-reason,.public-explanation { font-size:.8rem; color:var(--muted); margin:.4rem 0 0; }
+    .public-explanation { margin:0 0 .55rem; font-style:italic; }
+    .metric-value { font-size:1.4rem; font-weight:700; color:var(--muted); margin-top:.35rem; }
+    .provenance,.source { font-size:.72rem; color:var(--muted); margin:.4rem 0 0; }
+    code { font-family:ui-monospace,monospace; font-size:.8rem; }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--border); font-size:.8rem; color:var(--muted); }
+    footer a { color:var(--active); text-decoration:none; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+
+
+    .experiment-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.25rem 1.5rem; margin-bottom:1.5rem; }
+    .exp-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.5rem; }
+    .exp-header h3 { color:var(--active); font-size:0.95rem; font-weight:700; margin:0; }
+    .status-badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; flex-shrink:0; }
+    .exp-dates { color:var(--muted); font-size:0.8rem; margin:0 0 1rem; }
+    .exp-section { margin-bottom:1rem; }
+    .exp-section h4 { color:var(--text); font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.4rem; }
+    .exp-section p { color:var(--muted); font-size:0.85rem; line-height:1.6; margin:0; }
+    .evidence-ref { font-family:ui-monospace,monospace; font-size:0.78rem; color:var(--active); }
+    .decision-text { color:var(--text); font-size:0.85rem; line-height:1.6; }
+    .decision-date { color:var(--muted); font-size:0.78rem; margin:0.4rem 0 0; }
+    .metrics-table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+    .metrics-table th { text-align:left; color:var(--active); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid var(--border); padding:4px 8px; }
+    .metrics-table td { padding:6px 8px; border-bottom:1px solid var(--border); color:var(--text); vertical-align:top; }
+    .metric-name { font-weight:600; white-space:nowrap; }
+    .metric-value { font-family:ui-monospace,monospace; }
+    .metric-value.not-instrumented { color:var(--muted); font-style:italic; }
+    .metric-desc { color:var(--muted); font-size:0.85em; line-height:1.5; }
+    .placeholder { color:var(--muted); font-style:italic; font-size:0.85rem; }
+    @media (max-width:560px) {
+      .metrics-table th:nth-child(3), .metrics-table td:nth-child(3) { display:none; }
+    }
+  </style>
+</head>
+<body>
+<nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Experiments</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
+  <main class="content">
+    <h1>Experiments</h1>
+    <p class="generated">Generated 2026-08-07T10:02:26.692641Z</p>
+    <p class="section-intro">Experiments the factory has run to validate its own assumptions. Each record includes hypothesis, metrics, evidence, and decision.</p>
+    <article class="experiment-card" id="EXP-001">
+      <div class="exp-header">
+        <h3>T5 Profile Pilot — OpenCode profile-based configuration routing</h3>
+        <span class="status-badge" style="background:#7D8CFF;color:#07090D">completed</span>
+      </div>
+      <p class="exp-dates">2026-07-28 → 2026-08-03</p>
+      <div class="exp-section">
+        <h4>Hypothesis</h4>
+        <p>Routing agent configuration through named OpenCode profiles (instead of per-session manual config) reduces setup overhead and enables reproducible agent dispatch without manual intervention.</p>
+      </div>
+      <div class="exp-section">
+        <h4>Metrics</h4>
+<table class="metrics-table">
+<thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
+<tbody>
+<tr class="metric-row"><td class="metric-name">pilot_sessions</td><td class="metric-value ">2</td><td class="metric-desc">Number of dispatch sessions using profile-based routing</td></tr><tr class="metric-row"><td class="metric-name">exit_codes</td><td class="metric-value ">0,0</td><td class="metric-desc">Exit codes from pilot sessions (both succeeded)</td></tr><tr class="metric-row"><td class="metric-name">lead_time</td><td class="metric-value not-instrumented">NOT INSTRUMENTED</td><td class="metric-desc">Lead time from dispatch to completion — NOT INSTRUMENTED</td></tr>
+</tbody>
+</table>
+      </div>
+      <div class="exp-section">
+        <h4>Evidence</h4>
+        <p class="evidence-ref">Profile pilot session log (2 records, both exit_code=0)</p>
+      </div>
+      <div class="exp-section">
+        <h4>Decision</h4>
+        <p class="decision-text">Pilot completed successfully. Profile-based routing is technically viable. Lead time instrumentation gap identified — no automated dispatch-to-completion timer. Full promotion deferred pending the autonomous runner (factory_runner.py Phase 2).</p>
+        <p class="decision-date">Decided: 2026-08-03</p>
+      </div>
+    </article>
+    <article class="experiment-card" id="EXP-002">
+      <div class="exp-header">
+        <h3>B2 Conductor Acceptance Test — Full-pipeline telemetry via env var injection</h3>
+        <span class="status-badge" style="background:#E2A64B;color:#07090D">blocked</span>
+      </div>
+      <p class="exp-dates">2026-08-07</p>
+      <div class="exp-section">
+        <h4>Hypothesis</h4>
+        <p>Setting FOCULOOM_WORKFLOW_CLASS=full-pipeline via bash export before dispatching subagents will populate the workflow_class field in agent telemetry, enabling verification of conductor child-dispatch visibility.</p>
+      </div>
+      <div class="exp-section">
+        <h4>Metrics</h4>
+<table class="metrics-table">
+<thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
+<tbody>
+<tr class="metric-row"><td class="metric-name">full_pipeline_records</td><td class="metric-value ">0</td><td class="metric-desc">Number of telemetry records with workflow_class=full-pipeline (target: &gt;=3)</td></tr><tr class="metric-row"><td class="metric-name">test_result</td><td class="metric-value ">FAIL</td><td class="metric-desc">verify_b2_conductor_acceptance.py result</td></tr>
+</tbody>
+</table>
+      </div>
+      <div class="exp-section">
+        <h4>Evidence</h4>
+        <p class="evidence-ref">B2 acceptance defect event (2026-08-07): env-var injection gap documented</p>
+      </div>
+      <div class="exp-section">
+        <h4>Decision</h4>
+        <p class="decision-text">Blocked — bash export does not propagate to the opencode process (the plugin reads process.env at startup, not from bash). The task tool has no env parameter. Requires either a plugin code change (per-dispatch injection) or a platform change (task tool env param). Plugin emitter changes shipped in S111 but require opencode restart to take effect.</p>
+        
+      </div>
+    </article>
+    <article class="experiment-card" id="EXP-003">
+      <div class="exp-header">
+        <h3>Maturity Engine Shadow Mode — 30-day validation before public display</h3>
+        <span class="status-badge" style="background:#63D297;color:#07090D">running</span>
+      </div>
+      <p class="exp-dates">2026-08-07 → running</p>
+      <div class="exp-section">
+        <h4>Hypothesis</h4>
+        <p>A hard-gated min() maturity engine running in shadow mode for 30 days will produce stable, reproducible maturity level computations across re-runs before the public /factory/maturity/ page publishes a level.</p>
+      </div>
+      <div class="exp-section">
+        <h4>Metrics</h4>
+<table class="metrics-table">
+<thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
+<tbody>
+<tr class="metric-row"><td class="metric-name">shadow_runs</td><td class="metric-value ">7</td><td class="metric-desc">Number of shadow-mode maturity computations logged</td></tr><tr class="metric-row"><td class="metric-name">aggregate_level</td><td class="metric-value ">NOT COMPUTABLE</td><td class="metric-desc">Current aggregate level (blocked by provenance, lights_out, accepted_work dimensions being unknown/null)</td></tr><tr class="metric-row"><td class="metric-name">dimensions_fresh</td><td class="metric-value ">3 of 6</td><td class="metric-desc">Dimensions with fresh timestamps (scope_coverage, recovery, sustained_evidence)</td></tr>
+</tbody>
+</table>
+      </div>
+      <div class="exp-section">
+        <h4>Evidence</h4>
+        <p class="evidence-ref">Maturity shadow log (7 runs, all NOT COMPUTABLE due to uninstrumented dimensions)</p>
+      </div>
+      <div class="exp-section">
+        <h4>Decision</h4>
+        <p class="decision-text">Running. Shadow mode started 2026-08-07. Promotion session needed ~2026-09-06 after 30 calendar days of stable computation. Three dimensions (provenance, lights_out, accepted_work) remain uninstrumented — the aggregate cannot leave NOT COMPUTABLE until they are populated.</p>
+        
+      </div>
+    </article>
+    <footer>
+      <p>Built by Edoworks 202608071002.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/evolution/">Evolution</a></p>
+    </footer>
+  </main>
+</body>
+</html>
