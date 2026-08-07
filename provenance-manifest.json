@@ -1,0 +1,938 @@
+{
+  "manifest_version": "1.0",
+  "site": "edoworks.com",
+  "generated_at": "2026-08-07T16:36:54.917124+00:00",
+  "web_repo_commit_sha": "c9a15d72346717a0f6881b2048d268cb26f4efcc",
+  "web_repo_short_sha": "c9a15d7",
+  "factory_repo_commit_sha": "a2188174d6d6f471a6c325c77b70a1a98851c4e5",
+  "factory_version": "202608071636.0",
+  "file_count": 185,
+  "total_bytes": 1954999,
+  "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/human-feedback.md",
+      "size_bytes": 1268,
+      "sha256": "e4a3bd633ff1f6d41cbf545b5fe5ef3134856f3a62fc412ded7c52218a5a9a63"
+    },
+    {
+      "path": "CNAME",
+      "size_bytes": 12,
+      "sha256": "4a9673eb2e0cfdf2fc527939e2cbbc9c3d6b462be491a08cf324d711c53a9d29"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 1443,
+      "sha256": "c89424098ed5f53561e873534faf314d9dbced62724cf622a81790f02c8ecdde"
+    },
+    {
+      "path": "assets/fonts/inter-variable.woff2",
+      "size_bytes": 352240,
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3"
+    },
+    {
+      "path": "assets/site.webmanifest",
+      "size_bytes": 266,
+      "sha256": "226f52fc979fbd00fd759eafed027e603c326551afb5dfc13296bdf36617faff"
+    },
+    {
+      "path": "blog/_snapshots/WI6-AUDIT-REPORT.md",
+      "size_bytes": 491,
+      "sha256": "1508e1f435729254a7c26ef823fb7868eec81a071375bcf1f4347970498025ba"
+    },
+    {
+      "path": "blog/_snapshots/cyber-eval-boundaries/d382e1dba0c7.json",
+      "size_bytes": 618,
+      "sha256": "4c7686b61bdb36181fc64a56c66d7d34c41f5acbac524c3d7ec8638780f7339e"
+    },
+    {
+      "path": "blog/_snapshots/eval-first-model-upgrades/4f0d8975b634.json",
+      "size_bytes": 498,
+      "sha256": "5ec71891a3d27676596977f28bfa796ab91c768dd4dcadd6e1582afaad3b6b6e"
+    },
+    {
+      "path": "blog/_snapshots/eval-first-model-upgrades/67c184ed18ef.json",
+      "size_bytes": 547,
+      "sha256": "acc15c0e9cb7d68660133df0e97cbbc8f17d81294edb2b10aab60065c94dd1f8"
+    },
+    {
+      "path": "blog/_snapshots/eval-first-model-upgrades/e75df1016aa1.json",
+      "size_bytes": 430,
+      "sha256": "663e65eb50e4187a6f4daa0135d355b988c84cc43dbd9be1c3e0061585b40825"
+    },
+    {
+      "path": "blog/_snapshots/measure-autonomous-work-surface-outcome/a6ec8a388aad.json",
+      "size_bytes": 503,
+      "sha256": "ee39a6939d9e517a485d9545e20be804d93c72bc839c8ca2ae4c06e36ea5321d"
+    },
+    {
+      "path": "blog/agent-approval-gates-security-patterns.html",
+      "size_bytes": 11816,
+      "sha256": "9cbd19cca33eb2868260c90461f79d8d3ec6fd6d4fd0002054f444af04292095"
+    },
+    {
+      "path": "blog/agent-debug-panel-jetbrains.html",
+      "size_bytes": 11024,
+      "sha256": "dbff7eef9b7dd85c470f1a79bc86f8ec3aa41854b74f5dcae7ff34d4b13c20dd"
+    },
+    {
+      "path": "blog/agent-mode-picker-jetbrains.html",
+      "size_bytes": 11849,
+      "sha256": "a5863ed6b6a4b551a8b8c14b1b06be1da48d871d4fcc4a861c030ba04bf93813"
+    },
+    {
+      "path": "blog/ai-pr-stack-decomposition.html",
+      "size_bytes": 14904,
+      "sha256": "0fae4a5b0e04f92128f40474e1c8e530105ec65dba04bec90d81c35efa879907"
+    },
+    {
+      "path": "blog/anthropic-eval-incident-response-pattern.html",
+      "size_bytes": 9621,
+      "sha256": "3c9ec35df575877a875b927309b9fafaccf804c625cd3f9be416ed21083d3b1c"
+    },
+    {
+      "path": "blog/assets/visuals/agent-approval-gates-security-patterns-comparison-table.meta.json",
+      "size_bytes": 524,
+      "sha256": "48bf0a2eddb62b8d0ed8fa5328bc951fee06f4af8668036b38d08ca383000ad1"
+    },
+    {
+      "path": "blog/assets/visuals/agent-approval-gates-security-patterns-comparison-table.recipe.json",
+      "size_bytes": 1605,
+      "sha256": "645a0e08839705d3e03bc4e886806c6e2b9018c2052c900b9441d47bed4cecb1"
+    },
+    {
+      "path": "blog/assets/visuals/agent-approval-gates-security-patterns-comparison-table.svg",
+      "size_bytes": 1020,
+      "sha256": "3bbd5f9cd76d3bd11b6e448cb618ef4c230d1b9424921027908a576c369c2e12"
+    },
+    {
+      "path": "blog/assets/visuals/agent-debug-panel-jetbrains-technical-flow-diagram.meta.json",
+      "size_bytes": 531,
+      "sha256": "e1e0efae36664bdef6a1fbef0d84a45d7903fb97d1ec73ba174a47d404b47a0a"
+    },
+    {
+      "path": "blog/assets/visuals/agent-debug-panel-jetbrains-technical-flow-diagram.recipe.json",
+      "size_bytes": 1269,
+      "sha256": "f8917b9047e9d964d717861a359d4f5ef1ab6cfe8216094d146b271418581a5e"
+    },
+    {
+      "path": "blog/assets/visuals/agent-debug-panel-jetbrains-technical-flow-diagram.svg",
+      "size_bytes": 1994,
+      "sha256": "bf41f671bad69a471626a62c18067a9666774c2a803b3f6d534a2a86b0dd4c32"
+    },
+    {
+      "path": "blog/assets/visuals/agent-mode-picker-jetbrains-technical-flow-diagram.meta.json",
+      "size_bytes": 522,
+      "sha256": "e58cbcb5985dfe14db685639375f7af7c288322fc306737eacd48283eeed9264"
+    },
+    {
+      "path": "blog/assets/visuals/agent-mode-picker-jetbrains-technical-flow-diagram.recipe.json",
+      "size_bytes": 1260,
+      "sha256": "5d5253802839d2e9a23c119766008de38aefd38204d88b974cddd53f0fbd4125"
+    },
+    {
+      "path": "blog/assets/visuals/agent-mode-picker-jetbrains-technical-flow-diagram.svg",
+      "size_bytes": 1985,
+      "sha256": "c246b368ab77379683230ff7bd2a51b9e0cb80d83487113bcb432898ac5d3a7d"
+    },
+    {
+      "path": "blog/assets/visuals/ai-pr-stack-decomposition-concept-diagram.meta.json",
+      "size_bytes": 503,
+      "sha256": "f053ef8adef9f04b859f3e76c8d5cfc812be0d41129ce9d105d344916cc31cdb"
+    },
+    {
+      "path": "blog/assets/visuals/ai-pr-stack-decomposition-concept-diagram.recipe.json",
+      "size_bytes": 1246,
+      "sha256": "3d010d38ab345a2c093883b5a2aa0e1a4559ce16201dfb873b23e3ac0b38644c"
+    },
+    {
+      "path": "blog/assets/visuals/ai-pr-stack-decomposition-concept-diagram.svg",
+      "size_bytes": 2117,
+      "sha256": "255e11a3a8c578a7772dd58a17fc92c7d86b8791a590e2a18e7df251fbca522d"
+    },
+    {
+      "path": "blog/assets/visuals/anthropic-eval-incident-response-pattern-comparison-table.meta.json",
+      "size_bytes": 484,
+      "sha256": "40e82a1ee41d635a87b6df3be9ec34906a850c3109843e4cbf4317b224e74334"
+    },
+    {
+      "path": "blog/assets/visuals/anthropic-eval-incident-response-pattern-comparison-table.recipe.json",
+      "size_bytes": 4119,
+      "sha256": "8005e63096e058b5ef5b7a686b673be96f50084efdb9662e3a02ae61274e9da5"
+    },
+    {
+      "path": "blog/assets/visuals/anthropic-eval-incident-response-pattern-comparison-table.svg",
+      "size_bytes": 2830,
+      "sha256": "4109cb688100f9c4a773b4d2c0d316579438792ea9f27a2ab73074abeb7ab285"
+    },
+    {
+      "path": "blog/assets/visuals/building-copilot-plugins-technical-flow-diagram.meta.json",
+      "size_bytes": 512,
+      "sha256": "01f9c96bce99604e81dd525739212b3ae81820a961767ebd8a0a1b4c5e6b34ac"
+    },
+    {
+      "path": "blog/assets/visuals/building-copilot-plugins-technical-flow-diagram.recipe.json",
+      "size_bytes": 1253,
+      "sha256": "471ed863b84c9fd7f8ceb297330bd7adb3eb72d1ef9e913d2a3462bba8a359ed"
+    },
+    {
+      "path": "blog/assets/visuals/building-copilot-plugins-technical-flow-diagram.svg",
+      "size_bytes": 1981,
+      "sha256": "e0845f4745dc629deb260cd50750f4ad4e67b63e33895e081014eafcf80a1575"
+    },
+    {
+      "path": "blog/assets/visuals/case-folding-memory-speed-comparison-table.meta.json",
+      "size_bytes": 499,
+      "sha256": "2bea06e23bed1ee61010283235476bc7b6a8ff92a550a4b860a4b30222665fe2"
+    },
+    {
+      "path": "blog/assets/visuals/case-folding-memory-speed-comparison-table.recipe.json",
+      "size_bytes": 1583,
+      "sha256": "d3307d3a1394d345f36302f111b41bf014255c4823655f1a582a88f3195f0a4f"
+    },
+    {
+      "path": "blog/assets/visuals/case-folding-memory-speed-comparison-table.svg",
+      "size_bytes": 1011,
+      "sha256": "1018faef775b204cfe356fa137c33b5f2449e26dbf7af9127f44d6e0915f8c8d"
+    },
+    {
+      "path": "blog/assets/visuals/case-folding-memory-speed.png",
+      "size_bytes": 42568,
+      "sha256": "c8e284616c9386e9e4579348cb1075b989374629214410a60d9344d7b3e3f128"
+    },
+    {
+      "path": "blog/assets/visuals/case-folding-memory-speed.sha256",
+      "size_bytes": 96,
+      "sha256": "e663f3f65b7cf7888daaeb75cf3417861dd5357f9fd00e5abf18a682a4cc7db3"
+    },
+    {
+      "path": "blog/assets/visuals/claude-opus-4-8-comparison-table.meta.json",
+      "size_bytes": 471,
+      "sha256": "72196bd8e44e5e67fa18aeaf247ad9d3ac377423327456290ab252e971adbb04"
+    },
+    {
+      "path": "blog/assets/visuals/claude-opus-4-8-comparison-table.recipe.json",
+      "size_bytes": 1568,
+      "sha256": "a653c7c081ca29c6da253ab5cc495c47b10e9657d9480cdf5ecc534d6fd8272e"
+    },
+    {
+      "path": "blog/assets/visuals/claude-opus-4-8-comparison-table.svg",
+      "size_bytes": 1006,
+      "sha256": "19a26849514b59a322700491b027452ddc13d13df11a4b958e96b41c8b7d90fd"
+    },
+    {
+      "path": "blog/assets/visuals/confidence-aware-agent-automation-technical-flow-diagram.meta.json",
+      "size_bytes": 545,
+      "sha256": "b71234e5bf07c14763f93261779f381a42f8615c34d5a63319c903495e07e7e7"
+    },
+    {
+      "path": "blog/assets/visuals/confidence-aware-agent-automation-technical-flow-diagram.recipe.json",
+      "size_bytes": 1268,
+      "sha256": "494607308be506ce85026572cf136e42df2c92d632aa5e2f10d0f22ae4f671b5"
+    },
+    {
+      "path": "blog/assets/visuals/confidence-aware-agent-automation-technical-flow-diagram.svg",
+      "size_bytes": 1987,
+      "sha256": "56406a9224a5dc50d52499b58db3a7d2049c976b6e07ee71c4a16fb3d8f26884"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-agent-skills-reusable-workflows-technical-flow-diagram.meta.json",
+      "size_bytes": 549,
+      "sha256": "be2fb48e31a08f0759de9c97c28f08c5017b245ebbc9e7c4a4e09d1e0fb1eba0"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-agent-skills-reusable-workflows-technical-flow-diagram.recipe.json",
+      "size_bytes": 1275,
+      "sha256": "6e73eacbc6a000fc6160de5948e346e32ef9b24457265ae0627d24b105c3af54"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-agent-skills-reusable-workflows-technical-flow-diagram.svg",
+      "size_bytes": 1988,
+      "sha256": "63c91964c8c311ff3f020181670d4dafbbcb273e0735e730fc4242a38020e96d"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-agent-control-center-technical-flow-diagram.meta.json",
+      "size_bytes": 547,
+      "sha256": "62793e8eec66a1b9cbe80d1580bcb2fff1420367c23fe8397d2ee2db5629a5ac"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-agent-control-center-technical-flow-diagram.recipe.json",
+      "size_bytes": 1279,
+      "sha256": "0b04ba6ed54aa123f93dde8087feda7e81fdd6c47d6a65767f5c4d217541f519"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-agent-control-center-technical-flow-diagram.svg",
+      "size_bytes": 1999,
+      "sha256": "bda482f6924e7e22b5dc9023b6373a9a8b91677d23957b9457c65e14808decc8"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-control-center-pattern-technical-flow-diagram.meta.json",
+      "size_bytes": 528,
+      "sha256": "59d304a03aa1f8181644458cf859ef94aee391fe587e9ec60f12a36101d4e11d"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-control-center-pattern-technical-flow-diagram.recipe.json",
+      "size_bytes": 1258,
+      "sha256": "9253e42c80d450111a59afd4d706ae49338c1a3e20ad350721a16775b6149253"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-app-control-center-pattern-technical-flow-diagram.svg",
+      "size_bytes": 1847,
+      "sha256": "c15038c9783156c1269c0da39a4df8895eba2409592dc259130306070a78cc4a"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-byok-flexible-authentication-technical-flow-diagram.meta.json",
+      "size_bytes": 550,
+      "sha256": "9dc6e9f7eacad8c199fac9d4a8193600471c8a972a5433eb8a4d64988c9bdebd"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-byok-flexible-authentication-technical-flow-diagram.recipe.json",
+      "size_bytes": 1273,
+      "sha256": "8d2929154d84d3c43b612fd8d00128db3bd168411129ac6588f607a63776f8fa"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-byok-flexible-authentication-technical-flow-diagram.svg",
+      "size_bytes": 1989,
+      "sha256": "fe87500c01fd091a711aba6bfe00ba1582ff708370a25a7d57751ad2acb947de"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-language-servers-technical-flow-diagram.meta.json",
+      "size_bytes": 518,
+      "sha256": "ed30ed6884ea39162e189b264e1baed5c158d75777171722ccb1e40bfdc54db0"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-language-servers-technical-flow-diagram.recipe.json",
+      "size_bytes": 1253,
+      "sha256": "a08ce4da01c983ae05b7321922c2b421cfcfbdf77824686e1b096ef71bc18d3c"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-language-servers-technical-flow-diagram.svg",
+      "size_bytes": 1848,
+      "sha256": "1d91e7be115b9b2eebc11dce64ca5b89fe68a7c09b0bb9f42e240fc786639957"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-slash-commands-technical-flow-diagram.meta.json",
+      "size_bytes": 534,
+      "sha256": "c53e4626a10855462ee6616f6809b7578855dffd68bf854795e88fce67269a82"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-slash-commands-technical-flow-diagram.recipe.json",
+      "size_bytes": 1270,
+      "sha256": "b4b36b2a6464141aa6762e358e755986037a7e2e51360da33cfdac1ffa5d3d5f"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-cli-slash-commands-technical-flow-diagram.svg",
+      "size_bytes": 1996,
+      "sha256": "1c6c8f38bc7107cdfdfa246cbfaedd0966f04a2cd31089704a9070f9b7b6988d"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-credit-burn-technical-flow-diagram.meta.json",
+      "size_bytes": 492,
+      "sha256": "b5c6537248b983ff5ee8a5c991a3e6f9fb44103592c6574e4926e5ce438568b3"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-credit-burn-technical-flow-diagram.recipe.json",
+      "size_bytes": 1236,
+      "sha256": "c3d8668501124d3df5c9d6014278c4fec36173981dc933a5f28c52f4d4ac312d"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-credit-burn-technical-flow-diagram.svg",
+      "size_bytes": 1840,
+      "sha256": "1a650381ffa69252de3450295eff4f55ad1283836bbaaa05f1daf3b960e06b18"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-enterprise-managed-settings-technical-flow-diagram.meta.json",
+      "size_bytes": 551,
+      "sha256": "3d9d82370d714e5f4634a5834ae437b1eca21f1d8680a29f21c9fc02de9c6325"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-enterprise-managed-settings-technical-flow-diagram.recipe.json",
+      "size_bytes": 1276,
+      "sha256": "babca00145a461abf276b5c7cc987c241e6d54195386c496a49531a8d8e30795"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-enterprise-managed-settings-technical-flow-diagram.svg",
+      "size_bytes": 1993,
+      "sha256": "f1e3b67ea90b099292f9ae6b9ea0ef347334ae133ab16907d4501bd9b988e91a"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-in-visual-studio-may-update-technical-flow-diagram.meta.json",
+      "size_bytes": 546,
+      "sha256": "217b8beb95212cdbd6d3994f97fa713bb74542ffe26e312bb1cf5eff36c1ed87"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-in-visual-studio-may-update-technical-flow-diagram.recipe.json",
+      "size_bytes": 1276,
+      "sha256": "5211d611094f3667afaf12330824d6c5d5a4995b7a7f4f0b447cb33ce4cfcb91"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-in-visual-studio-may-update-technical-flow-diagram.svg",
+      "size_bytes": 1993,
+      "sha256": "11975214457cca53f20c001b0bac4d5d95104bb11522e2ae191c85014fbd6122"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-general-availability-technical-flow-diagram.meta.json",
+      "size_bytes": 523,
+      "sha256": "bfbfa3d0c677410d23f2a6bf490965198ccabee37e2845435ac37ac3f87a0957"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-general-availability-technical-flow-diagram.recipe.json",
+      "size_bytes": 1256,
+      "sha256": "40e8c981563e5921a7f7e59a7f829595743cfe9b2bbbad10de6fa36f764aeed0"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-general-availability-technical-flow-diagram.svg",
+      "size_bytes": 1976,
+      "sha256": "e314c30a66f93707d7be4020b42e28f90a58b9a11b56c37d31dde7367284a9b9"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-technical-preview-technical-flow-diagram.meta.json",
+      "size_bytes": 527,
+      "sha256": "ab47d30cd46b9ccb8d81231be797e675d546eeb40ee9018ade420c370dfde05e"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-technical-preview-technical-flow-diagram.recipe.json",
+      "size_bytes": 1250,
+      "sha256": "44d9e9551b6a7fc6cc9a6ab38f828f3776657e8e7ada619a3c7c7a929adf1125"
+    },
+    {
+      "path": "blog/assets/visuals/copilot-sdk-technical-preview-technical-flow-diagram.svg",
+      "size_bytes": 1973,
+      "sha256": "108e10be3f577a0afc53c441112c0aa4dad76b2e7cd2817b027d0349e9fdce04"
+    },
+    {
+      "path": "blog/assets/visuals/cyber-eval-boundaries-comparison-table.meta.json",
+      "size_bytes": 640,
+      "sha256": "0a378ea452f061b7df3e0571f8627dc745d6a08cf0231b34c663fa1f5a733cb0"
+    },
+    {
+      "path": "blog/assets/visuals/cyber-eval-boundaries-comparison-table.recipe.json",
+      "size_bytes": 7638,
+      "sha256": "a1a4b0f379c7bcc31b4327eca64ff28ef4b30a6b86414fa9bf6959d5782f9fb5"
+    },
+    {
+      "path": "blog/assets/visuals/cyber-eval-boundaries-comparison-table.svg",
+      "size_bytes": 5332,
+      "sha256": "b1c283b64eae9e4dadc3ede2cd6058f7a7f7f89845e09e07473df23c739320e8"
+    },
+    {
+      "path": "blog/assets/visuals/cyber-eval-boundaries.png",
+      "size_bytes": 29802,
+      "sha256": "4456f1707314ef60cb26f81fcc852bb9774f5e6dc9b1864a145947c4f1b2fef0"
+    },
+    {
+      "path": "blog/assets/visuals/cyber-eval-boundaries.sha256",
+      "size_bytes": 92,
+      "sha256": "52d7e3fb81f38483180d21797a9fc88e8874cc256b84cfba74c65c72793a90cd"
+    },
+    {
+      "path": "blog/assets/visuals/eval-first-model-upgrades-comparison-table.meta.json",
+      "size_bytes": 575,
+      "sha256": "6e68bdba674923b33efbaddf1a8682cccd0819974be4ebefb80d4f873c235d03"
+    },
+    {
+      "path": "blog/assets/visuals/eval-first-model-upgrades-comparison-table.recipe.json",
+      "size_bytes": 7633,
+      "sha256": "28149c007f8394c9b0c91b6f4003f619e27dabd3397e9b10f7ac861f0ca20bbe"
+    },
+    {
+      "path": "blog/assets/visuals/eval-first-model-upgrades-comparison-table.svg",
+      "size_bytes": 5332,
+      "sha256": "13af1dd6ec331a7c69def13e58ccde53fcbc49d82aabe838b064d5e817b11434"
+    },
+    {
+      "path": "blog/assets/visuals/ghcp-cli-work-life-harmony-technical-flow-diagram.meta.json",
+      "size_bytes": 518,
+      "sha256": "80475248012fe6a9e850710563f24c59943a88b11be69164328aed2d46d06126"
+    },
+    {
+      "path": "blog/assets/visuals/ghcp-cli-work-life-harmony-technical-flow-diagram.recipe.json",
+      "size_bytes": 1256,
+      "sha256": "7846fab511e584694fade4b50aff4d0e1c1acd13de0bc385de3557a9f6a3e3b3"
+    },
+    {
+      "path": "blog/assets/visuals/ghcp-cli-work-life-harmony-technical-flow-diagram.svg",
+      "size_bytes": 1853,
+      "sha256": "f265d0b6b1df20348e755368677bdcb632885053045b13a7dd6519a313955b03"
+    },
+    {
+      "path": "blog/assets/visuals/github-mcp-integrations-emerging-pattern-technical-flow-diagram.meta.json",
+      "size_bytes": 547,
+      "sha256": "21a7a8107bd15ee239c76c3bc0fc3a6e1d93d48bda8af892ea20a5583a9b9432"
+    },
+    {
+      "path": "blog/assets/visuals/github-mcp-integrations-emerging-pattern-technical-flow-diagram.recipe.json",
+      "size_bytes": 1263,
+      "sha256": "5ced44770ab3c1003746ae4f667d412539ba50659c401b995edc11ffbc531627"
+    },
+    {
+      "path": "blog/assets/visuals/github-mcp-integrations-emerging-pattern-technical-flow-diagram.svg",
+      "size_bytes": 1975,
+      "sha256": "cd2f7477e0214fceea454b7435e3a8b4a53bf2e1be71b500bd134d81ec215e1d"
+    },
+    {
+      "path": "blog/assets/visuals/hello-foculoom-engineering-technical-flow-diagram.meta.json",
+      "size_bytes": 514,
+      "sha256": "19a89a83eb742125a07accad3007136c5e3dfc08e589cbccf872b85133facddc"
+    },
+    {
+      "path": "blog/assets/visuals/hello-foculoom-engineering-technical-flow-diagram.recipe.json",
+      "size_bytes": 1254,
+      "sha256": "73acd3281c590317a8c6c444b98b82aedaa016b515d512ed894d144a73b84abd"
+    },
+    {
+      "path": "blog/assets/visuals/hello-foculoom-engineering-technical-flow-diagram.svg",
+      "size_bytes": 1980,
+      "sha256": "946655ae90e8deb6f1cddc9d13a446e6e9d380e47ecaa75f62dddd43c7738035"
+    },
+    {
+      "path": "blog/assets/visuals/measure-autonomous-work-surface-outcome-comparison-table.meta.json",
+      "size_bytes": 614,
+      "sha256": "10c65f1c00d8ed620df504cad6cc4d36cbf452e6ea7cf54e35eab3dd615d9bd9"
+    },
+    {
+      "path": "blog/assets/visuals/measure-autonomous-work-surface-outcome-comparison-table.recipe.json",
+      "size_bytes": 6601,
+      "sha256": "86ee105e46b3d7c4d3382c0e7181bca2687f7dc0b0ec5f911ffc649d4b462f2b"
+    },
+    {
+      "path": "blog/assets/visuals/measure-autonomous-work-surface-outcome-comparison-table.svg",
+      "size_bytes": 4553,
+      "sha256": "0f4e4a616ec4f9df88e9f6e5f9ec7d823af9be44886a520d1c839d91efa0039f"
+    },
+    {
+      "path": "blog/assets/visuals/microsoft-build-2026-technical-flow-diagram.meta.json",
+      "size_bytes": 517,
+      "sha256": "3274c9b93abb6c867f88b87cbbca8ffda418ed5cf02c103213a79f703b92c9cf"
+    },
+    {
+      "path": "blog/assets/visuals/microsoft-build-2026-technical-flow-diagram.recipe.json",
+      "size_bytes": 1255,
+      "sha256": "f5d4d6e53fed24ea526ab9d784ee9bc383c987c5aebee6c0d2410cf921f9a2ef"
+    },
+    {
+      "path": "blog/assets/visuals/microsoft-build-2026-technical-flow-diagram.svg",
+      "size_bytes": 1987,
+      "sha256": "a5c0d9a8fac8f7d403bc659c71e371202c3b0c20fc4412a9271aaa4c83e12f71"
+    },
+    {
+      "path": "blog/assets/visuals/opus5-long-running-agent-loop-comparison-table.meta.json",
+      "size_bytes": 577,
+      "sha256": "35c6599217d70dcac9b00f3e2ae487f5c2d174673c69caff87c09c84634741ac"
+    },
+    {
+      "path": "blog/assets/visuals/opus5-long-running-agent-loop-comparison-table.recipe.json",
+      "size_bytes": 7029,
+      "sha256": "3429bb771c41dd435daa5adb91ad2df8a50f7537cf9fd32c121a2f64c2bb5e77"
+    },
+    {
+      "path": "blog/assets/visuals/opus5-long-running-agent-loop-comparison-table.svg",
+      "size_bytes": 4886,
+      "sha256": "e7d4ef1717188f882c0d22968d2718291c7387265b256ae42af71dd5d29a8b1c"
+    },
+    {
+      "path": "blog/assets/visuals/opus5-long-running-agent-loop.png",
+      "size_bytes": 6457,
+      "sha256": "f8b41bd1caaab65cb1fecbf077300a9f3624d75035bf5ca04f138d8cbb9dcc8b"
+    },
+    {
+      "path": "blog/assets/visuals/opus5-long-running-agent-loop.sha256",
+      "size_bytes": 100,
+      "sha256": "ccf6370b0e5a3da611de14a4b1c241d1148af97e2a2f64dd3133835c047fd4d2"
+    },
+    {
+      "path": "blog/assets/visuals/stacked-prs-review-layers-timeline.meta.json",
+      "size_bytes": 496,
+      "sha256": "06f4e98d355c8b4da2451f02b20ea0990bdd637e35a0f44c5fbf736bcc2883f9"
+    },
+    {
+      "path": "blog/assets/visuals/stacked-prs-review-layers-timeline.recipe.json",
+      "size_bytes": 1688,
+      "sha256": "7aa6cfed7b4815c4bf5d2c412ec35d3cafb0b4bb86ccaa6619e5abe2f3a1dbf1"
+    },
+    {
+      "path": "blog/assets/visuals/stacked-prs-review-layers-timeline.svg",
+      "size_bytes": 1071,
+      "sha256": "203d69519dc6bb5f0c733bf241de3e75cc1acc7cbb73815864a7800bef826e86"
+    },
+    {
+      "path": "blog/assets/visuals/stacked-prs-review-layers.png",
+      "size_bytes": 31092,
+      "sha256": "4606b3ff85911eedbd671f7e06bccf5f4507c0d21ffcd4ef77938f4665a622cc"
+    },
+    {
+      "path": "blog/assets/visuals/stacked-prs-review-layers.sha256",
+      "size_bytes": 96,
+      "sha256": "99df17c9ea13492b2c585f95269d6dc5a0cb1c24914463c2bf4e09cb07f19075"
+    },
+    {
+      "path": "blog/assets/visuals/vscode-123-agent-workflows-technical-flow-diagram.meta.json",
+      "size_bytes": 522,
+      "sha256": "91bc5ad74d54d4171ea619bf3510937dd3052c6d32180a7116aaa930750d4385"
+    },
+    {
+      "path": "blog/assets/visuals/vscode-123-agent-workflows-technical-flow-diagram.recipe.json",
+      "size_bytes": 1258,
+      "sha256": "065e2b7e86ee99cf551e2ca586a307b7d4394fb391c9426fc5295a9e7b3e0c51"
+    },
+    {
+      "path": "blog/assets/visuals/vscode-123-agent-workflows-technical-flow-diagram.svg",
+      "size_bytes": 1984,
+      "sha256": "66514fe58d72532be383fd7986a9953f981003be7e743cfcd0072a96e5488e24"
+    },
+    {
+      "path": "blog/building-copilot-plugins.html",
+      "size_bytes": 28153,
+      "sha256": "063970976bfb4fa3756a5c9709020a28e87f99a9399ab346001f136076671527"
+    },
+    {
+      "path": "blog/case-folding-memory-speed.html",
+      "size_bytes": 13658,
+      "sha256": "a54f524cf7d1096c4e3a9bc0830c2d8841a02a5f5f0754d5afb2dcf7fb2d2105"
+    },
+    {
+      "path": "blog/claude-opus-4-8.html",
+      "size_bytes": 20586,
+      "sha256": "86fcb56906f29737fc1d2d17be15cd5f93cb1f2e58aa28a7ed10d68706dcc4c2"
+    },
+    {
+      "path": "blog/confidence-aware-agent-automation.html",
+      "size_bytes": 12740,
+      "sha256": "607277a96b99ca18d499c21094a33a08d01805a29f02c7884820856ae73f5a10"
+    },
+    {
+      "path": "blog/copilot-agent-skills-reusable-workflows.html",
+      "size_bytes": 11468,
+      "sha256": "bc5942a0d1401f0ccae87bbe571fd5b911587acf15100b7601d791c64d5848e3"
+    },
+    {
+      "path": "blog/copilot-app-agent-control-center.html",
+      "size_bytes": 12583,
+      "sha256": "4ce9f239996d80017564a158e31df63b6387bd8669564b5384d656563ae6b074"
+    },
+    {
+      "path": "blog/copilot-app-control-center-pattern.html",
+      "size_bytes": 10606,
+      "sha256": "6e278854aabe62a4a26019f06fe6dd37d3c03d0e404ede0bee4de1df8f419b8a"
+    },
+    {
+      "path": "blog/copilot-byok-flexible-authentication.html",
+      "size_bytes": 11380,
+      "sha256": "b9970c9b2a9309757eb038a447ac5b03815852eac1bcae2d45ab4141455459d0"
+    },
+    {
+      "path": "blog/copilot-cli-language-servers.html",
+      "size_bytes": 10984,
+      "sha256": "0f2f264fd9ba26017c49998f6f10529f2a86fd29a80ca0e206c584ebd83208bc"
+    },
+    {
+      "path": "blog/copilot-cli-slash-commands.html",
+      "size_bytes": 14116,
+      "sha256": "b40dd94b1045cabbd99ec1c895b1bf3271288c78010742654d56e28dcaf52ac3"
+    },
+    {
+      "path": "blog/copilot-credit-burn.html",
+      "size_bytes": 19905,
+      "sha256": "fdb57609c7f8a4474f4ea26f6e5f7ceaa20eada1eaea61ddd4c3e936973fab62"
+    },
+    {
+      "path": "blog/copilot-enterprise-managed-settings.html",
+      "size_bytes": 14442,
+      "sha256": "8804b27e162ba0f3ca2351d3cf9e01434bdafd67c38c5f44fe8f3f4021a9fa21"
+    },
+    {
+      "path": "blog/copilot-in-visual-studio-may-update.html",
+      "size_bytes": 10822,
+      "sha256": "6ffeff1c9b5145343c1513f4ca6194f5773e9b6b128e96b392577f18a8419cc4"
+    },
+    {
+      "path": "blog/copilot-sdk-general-availability.html",
+      "size_bytes": 12391,
+      "sha256": "b07228ef310edd65bcf31e63eb53c02ef6d6994a6606180f8391424cb25cdf1e"
+    },
+    {
+      "path": "blog/copilot-sdk-technical-preview.html",
+      "size_bytes": 16404,
+      "sha256": "a7b0e29678bdbd9e0ba3f489825cc3defc7b6288dd7ac39393f33c5dbc225128"
+    },
+    {
+      "path": "blog/cyber-eval-boundaries.html",
+      "size_bytes": 12162,
+      "sha256": "09d69971815949de40ff65ae34bbc3f8bcd73a0c2e5739ed8ada38e3ef8ffefc"
+    },
+    {
+      "path": "blog/eval-first-model-upgrades.html",
+      "size_bytes": 11251,
+      "sha256": "8d75d9e2d4edfa3283141c6663e98018803e17672484bb41681b4b73b820a67c"
+    },
+    {
+      "path": "blog/ghcp-cli-work-life-harmony.html",
+      "size_bytes": 23982,
+      "sha256": "194280777199dfb6a409df01bbaf7d8b3ba865ce4bbaee100585148cf15df590"
+    },
+    {
+      "path": "blog/github-mcp-integrations-emerging-pattern.html",
+      "size_bytes": 11656,
+      "sha256": "df0aafd388ccdcbd07076c214260959be4b490a30f3dc3e2f4f6e02f62d38b72"
+    },
+    {
+      "path": "blog/hello-foculoom-engineering.html",
+      "size_bytes": 12751,
+      "sha256": "01df67773e472ce2e873f08f26e49b0dfd57a6da6a530dbc63009b2cb6b019bd"
+    },
+    {
+      "path": "blog/index.html",
+      "size_bytes": 22526,
+      "sha256": "af633dd3144d72f3a30a83977fa190b73cf61757b7cccd3f7e14e61779f4bd3a"
+    },
+    {
+      "path": "blog/measure-autonomous-work-surface-outcome.html",
+      "size_bytes": 11936,
+      "sha256": "e87bb8aa8afcee19275e6e7932fbb18209241d5c9aa3695a1f9372a8e2a32b76"
+    },
+    {
+      "path": "blog/microsoft-build-2026.html",
+      "size_bytes": 27840,
+      "sha256": "3ed5eccd96ab3cc0a51d19740c99d08dfc8d5b4712909a519e085885446981f9"
+    },
+    {
+      "path": "blog/opus5-long-running-agent-loop.html",
+      "size_bytes": 11668,
+      "sha256": "9f46aff66454843c9549aafc734d80f09b94f2ae63830bd45698eb8b25398bb3"
+    },
+    {
+      "path": "blog/stacked-prs-review-layers.html",
+      "size_bytes": 13765,
+      "sha256": "a6694ae8ccd734b38bf3ee826f81a13fc5efe93e916b545cfba303f3b2695630"
+    },
+    {
+      "path": "blog/vscode-123-agent-workflows.html",
+      "size_bytes": 11869,
+      "sha256": "e7f707365599e9e451f74ea9b6a3255003779528414506807ceb71e5c779c9de"
+    },
+    {
+      "path": "factory/architecture/index.html",
+      "size_bytes": 21440,
+      "sha256": "a012160c1610a80685bcaff0bed53079ef6777736b9012371feac16bddafc86b"
+    },
+    {
+      "path": "factory/evolution/index.html",
+      "size_bytes": 21383,
+      "sha256": "f128d74cb77358e126c80b1fbe638acd7e8ddfea35c9cfc9bf72675c36646376"
+    },
+    {
+      "path": "factory/experiments/index.html",
+      "size_bytes": 16695,
+      "sha256": "62134660ab1720bd75fe921f8a4a4ec755739a23ca07ee42177bb79240eba261"
+    },
+    {
+      "path": "factory/index.html",
+      "size_bytes": 20841,
+      "sha256": "abbbf1dab44968d54fb16c788ef8f5f4b2a596bbbf72612db5e1d1645dce7f7c"
+    },
+    {
+      "path": "factory/maturity/index.html",
+      "size_bytes": 15639,
+      "sha256": "b16f31e6347225b7cc6dee24ee22c99d087ef6ba8fdabd42fc955ffc8e98ffa8"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 11354,
+      "sha256": "0f969aea1cf5c06c9021c5270c9054da24a4da7f56567c375bfdabfc9695e008"
+    },
+    {
+      "path": "pagefind/fragment/en_3bf3d42.pf_fragment",
+      "size_bytes": 2542,
+      "sha256": "7af7b359ca1c9d2c477f9252102b0d4ae7ce19902184ee3ab09621568a59a492"
+    },
+    {
+      "path": "pagefind/fragment/en_4d86682.pf_fragment",
+      "size_bytes": 2774,
+      "sha256": "3ecca09679f07a7051d7cb0751d9c79aba7b68f366760a850737a9d92303a623"
+    },
+    {
+      "path": "pagefind/fragment/en_50e6808.pf_fragment",
+      "size_bytes": 2310,
+      "sha256": "a6d84853107371406b9c8e2e4fc3dc631834618c7bc42c622ed75ee39537af32"
+    },
+    {
+      "path": "pagefind/fragment/en_5568352.pf_fragment",
+      "size_bytes": 2201,
+      "sha256": "51cdd784b0ad2e3b7ddb2b8450db3b797c55b8bf047a18a5555c38294e283e58"
+    },
+    {
+      "path": "pagefind/fragment/en_5e98522.pf_fragment",
+      "size_bytes": 1295,
+      "sha256": "ea4a0e76222bf3ab4979eb467482ea76a8de8ec465ea2dc86f9076dc848aec60"
+    },
+    {
+      "path": "pagefind/fragment/en_88bfab3.pf_fragment",
+      "size_bytes": 2068,
+      "sha256": "6cdd448d95c00c71388216ef137243a262ce4e11b8370fe8522e892d4080a834"
+    },
+    {
+      "path": "pagefind/fragment/en_95de143.pf_fragment",
+      "size_bytes": 2054,
+      "sha256": "f2b8ae3e0ad41368deedd5ef07de0b3631c5d415ad68cce6a789efc9db74f61b"
+    },
+    {
+      "path": "pagefind/fragment/en_a557c73.pf_fragment",
+      "size_bytes": 2374,
+      "sha256": "54b0a09cf093840ce2169fbf2deeb2962deaab81dbf094a1c68c32814f11e457"
+    },
+    {
+      "path": "pagefind/fragment/en_cadece7.pf_fragment",
+      "size_bytes": 2302,
+      "sha256": "c5ac700cbf0b34ed5808c2d4c3b84d99d6b52dbacd9c3f2f0b26be14451f67ac"
+    },
+    {
+      "path": "pagefind/fragment/en_fb52b24.pf_fragment",
+      "size_bytes": 2062,
+      "sha256": "5aa8ca30ad96fad23de15d5c5fcabb5cb5a07706d3267d985ed44252c168febc"
+    },
+    {
+      "path": "pagefind/index/en_415acc7.pf_index",
+      "size_bytes": 6657,
+      "sha256": "0530f4086c6af0e9e79e564ded4d68d2598f0d338f116eea4486a2f420b26841"
+    },
+    {
+      "path": "pagefind/index/en_88caaf5.pf_index",
+      "size_bytes": 9923,
+      "sha256": "cf85616ed4d10dc2feebb85fa6e30e7bc6a8bb399309ef62523f59cfa74e6efb"
+    },
+    {
+      "path": "pagefind/index/en_b4d784f.pf_index",
+      "size_bytes": 12493,
+      "sha256": "599745391a4c1d24e4c8d6d423eadfedbd5fe61159ab93077a28d1ab3dd11c60"
+    },
+    {
+      "path": "pagefind/index/en_df7dd63.pf_index",
+      "size_bytes": 12046,
+      "sha256": "8975566f70b1ff7d194857d20dd2902d974d95f97c8b8acd9e4a8405d284fd0e"
+    },
+    {
+      "path": "pagefind/index/en_e4f46df.pf_index",
+      "size_bytes": 12995,
+      "sha256": "3ae8513567e8d5d149db251968c3df57bfe0d3d99e1f5ba4894d346343dd84af"
+    },
+    {
+      "path": "pagefind/pagefind-component-ui.css",
+      "size_bytes": 41830,
+      "sha256": "de389c7e5d87d6e2b10d65fb1e36e8989a12a2ad8dd6239b7e070d81fb5d8b0d"
+    },
+    {
+      "path": "pagefind/pagefind-component-ui.js",
+      "size_bytes": 175488,
+      "sha256": "958620129dd14bd851805daeb12ce708bd63b9287325d1d5ae6f73a04d1723f8"
+    },
+    {
+      "path": "pagefind/pagefind-entry.json",
+      "size_bytes": 171,
+      "sha256": "1356a0e46583b7a9d81652b9c9c545c6137f1ed2909f4899b61d18ecc4aa22bf"
+    },
+    {
+      "path": "pagefind/pagefind-highlight.js",
+      "size_bytes": 44352,
+      "sha256": "04741266a86911636cefc41c8b407e380dda99b7d208724f700f94cdf57e37b5"
+    },
+    {
+      "path": "pagefind/pagefind-modular-ui.css",
+      "size_bytes": 7336,
+      "sha256": "653ab29e4de5629f6ddf5f6fcdf5d2b3eb539a8c07fff8a56b8ce2156a570788"
+    },
+    {
+      "path": "pagefind/pagefind-modular-ui.js",
+      "size_bytes": 14634,
+      "sha256": "f3efa0f74b305ccab0bc9edc7c09ab69867180b4c43093d84bb9b508ac4ec32c"
+    },
+    {
+      "path": "pagefind/pagefind-ui.css",
+      "size_bytes": 14482,
+      "sha256": "e113b816110ed07b017613e901addfe635350f2a5b84990aa76c91a74b158084"
+    },
+    {
+      "path": "pagefind/pagefind-ui.js",
+      "size_bytes": 119987,
+      "sha256": "2efa93f2e80a199ca742a69bd4cfffabc5c591ebe7763f64f7c655fd00d2209f"
+    },
+    {
+      "path": "pagefind/pagefind-worker.js",
+      "size_bytes": 41255,
+      "sha256": "4ca50d25bcab9e1c3afbc00ab5f7761114e83c8fc1b83d38655af1558b650c2a"
+    },
+    {
+      "path": "pagefind/pagefind.en_4b2578b7fa.pf_meta",
+      "size_bytes": 142,
+      "sha256": "c73433ac9c5dc7fdf407bb135e9434dc62436c6b35f2c1a7725be6887c064e9a"
+    },
+    {
+      "path": "pagefind/pagefind.en_5e36c709b6.pf_meta",
+      "size_bytes": 130,
+      "sha256": "601fe91ebf215a67a6123de3b53cb8a78c6af0f9e4699bc34d3eed17127989e3"
+    },
+    {
+      "path": "pagefind/pagefind.en_68c7415ca7.pf_meta",
+      "size_bytes": 111,
+      "sha256": "2c389190fb7617d84db1fc7a4b5e8323be07bb8738bc4d7a9d2f599427c47aea"
+    },
+    {
+      "path": "pagefind/pagefind.en_dfa4a46b3b.pf_meta",
+      "size_bytes": 141,
+      "sha256": "b66082b02fd1e27c495654522178d89fe7a4c152eb8c4afaf209de147678cb71"
+    },
+    {
+      "path": "pagefind/pagefind.en_f34a9af85b.pf_meta",
+      "size_bytes": 122,
+      "sha256": "790715613c4600cc928070dd80d87b8e44d6ae4a6c471683687d65565439a846"
+    },
+    {
+      "path": "pagefind/pagefind.js",
+      "size_bytes": 45555,
+      "sha256": "252d272bd34d483d19a752060f6a065114d15ab12c42d8f905ca565e2768a009"
+    },
+    {
+      "path": "pagefind/wasm.en.pagefind",
+      "size_bytes": 72740,
+      "sha256": "6c8406154b5d460fc8b6cdbf2c99c008c43c465efdb1f9c15c192f5cf30dcd85"
+    },
+    {
+      "path": "pagefind/wasm.unknown.pagefind",
+      "size_bytes": 68199,
+      "sha256": "2533da887ac06de36813d031310af0f737daadacc931775e342aa5a3857a4959"
+    },
+    {
+      "path": "portfolio/index.html",
+      "size_bytes": 9168,
+      "sha256": "e146dcb0c137be0bfccc3dce5fc4041b58d8e2d7a849f7e3f450a8ad8b21cae7"
+    },
+    {
+      "path": "portfolio/veilsort/index.html",
+      "size_bytes": 13602,
+      "sha256": "8ec515cf22a139a6ceee50f21aeff49286abdcfefe0a0824159e0d3efbd2dac1"
+    },
+    {
+      "path": "portfolio/vorynce/index.html",
+      "size_bytes": 13618,
+      "sha256": "42c9e16cdbba6a4896ced560fba7c15ea37e01a00c7b9c706d69767ef5829b26"
+    },
+    {
+      "path": "privacy/index.html",
+      "size_bytes": 6744,
+      "sha256": "d18d9f21fb979824cb3c68b8f83c62cbc4e57d15cf8c74413069f50412925dbf"
+    },
+    {
+      "path": "robots.txt",
+      "size_bytes": 65,
+      "sha256": "b4230dc92603abebaf4647300276054ee171594ec61b9214098632ba792031c2"
+    },
+    {
+      "path": "sitemap.xml",
+      "size_bytes": 7744,
+      "sha256": "c35311febd07d333b72eb2d5d9e551153d29f2b4b9727595ac62a653f1d18f6b"
+    },
+    {
+      "path": "source-page-manifest.json",
+      "size_bytes": 4208,
+      "sha256": "ab0b947640760392e400ae122c7fcec1e0f9b7a37c8972e29e6377584bbfc969"
+    }
+  ]
+}
