@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Architecture</title>
   <meta name="description" content="Public-safe software factory architecture: operating model, agent organization, human approval gates, trust boundaries, and data flow.">
-  <meta name="generator" content="Edoworks 202608071459.0">
+  <meta name="generator" content="Edoworks 202608071525.0">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://edoworks.com/factory/architecture/">
 <meta name="theme-color" content="#111418">
@@ -32,6 +32,10 @@
     a { color:var(--active); }
     a:hover { color:var(--text); }
     :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    nav.nav-inner, .nav-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1rem; }
+    nav[aria-label] { background:var(--surface); border-bottom:1px solid var(--border); padding:0.75rem 1.5rem; }
+    nav .brand { color:var(--text); text-decoration:none; font-weight:700; font-size:0.9rem; }
+    nav a { color:var(--active); text-decoration:none; font-size:0.85rem; }
     .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
     h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
     .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
@@ -98,13 +102,15 @@
     .flow-desc { color:var(--muted); font-size:0.76rem; }
     .section-intro { color:var(--muted); font-size:0.85rem; line-height:1.6; margin:0 0 1rem; }
     code { font-family:ui-monospace,monospace; font-size:0.82rem; color:var(--active); }
+    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#10141B;color:#F4F6F8;border:1px solid #7D8CFF;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7D8CFF;outline-offset:3px;border-radius:2px;}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 <nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Architecture</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
-  <main class="content">
+  <main class="content" id="main-content">
     <h1>Architecture</h1>
-    <p class="generated">Generated 2026-08-07T14:59:34.970074Z</p>
+    <p class="generated">Generated 2026-08-07T15:25:56.947607Z</p>
 
     <h2>Operating Model</h2>
     <p class="section-intro">The factory runs on short feedback loops. Human attention is reserved for product direction, ambiguity, risk approval, and final acceptance — everything else is delegated to agents.</p>
@@ -290,7 +296,7 @@
     </div>
 
     <footer>
-      <p>Built by Edoworks 202608071459.0. <a href="/factory/">Factory dashboard</a> · <a href="/factory/maturity/">Maturity</a></p>
+      <p>Built by Edoworks 202608071525.0. <a href="/factory/">Factory dashboard</a> · <a href="/factory/maturity/">Maturity</a></p>
     </footer>
   </main>
 </body>

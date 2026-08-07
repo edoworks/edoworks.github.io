@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <style>
     @font-face { font-family:"Inter"; src:url("/assets/fonts/inter-variable.woff2") format("woff2-variations"); font-weight:100 900; font-display:swap; }
-    :root { --bg:#faf9ff; --text:#1f2937; --accent:#7c3aed; --card:#ffffff; --border:#e5e7eb; --muted:#6b7280; --dark-bg:#07090D; --dark-surface:#0C1016; --dark-card:#10141B; --dark-border:#29303B; --dark-text:#F4F6F8; --dark-muted:#8995A3; --dark-active:#7D8CFF; --verified:#63D297; }
+    :root { --bg:#faf9ff; --text:#1f2937; --accent:#7c3aed; --card:#ffffff; --border:#e5e7eb; --muted:#6b7280; --dark-bg:#07090D; --dark-surface:#0C1016; --dark-card:#10141B; --dark-border:#29303B; --dark-text:#F4F6F8; --dark-muted:#8995A3; --dark-active:#7D8CFF; --verified:#1B7A44; }
     * { box-sizing:border-box; }
     body { margin:0; background:var(--bg); color:var(--text); font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
     a { color:var(--accent); }
@@ -58,6 +58,9 @@
     footer { max-width:1120px; margin:0 auto; padding:28px 24px 44px; border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
     @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .overview { grid-template-columns:1fr; } .proof { grid-template-columns:1fr; } }
     @media (max-width:620px) { .brand-meta { display:none; } .nav-inner { padding:0 16px; gap:12px; } .nav-links { gap:12px; } main { padding:44px 16px 56px; } .kpis { grid-template-columns:1fr; } .kpi { border-right:0; } .flow { grid-template-columns:1fr; } .flow li { min-height:auto; } .flow li::after { content:"↓"; right:12px; top:auto; bottom:-15px; } .flow li:last-child::after { content:"✓"; top:12px; bottom:auto; } }
+  /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
+  /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
+  /*a11y-focus-visible*/a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}
   </style>
 
 <link rel="canonical" href="https://edoworks.com/">
@@ -74,13 +77,15 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Edoworks", "url": "https://edoworks.com"}</script>
 </head>
 <body>
+  <!--a11y-skip-link-->
+  <a href="#main-content" class="skip-link">Skip to content</a>
   <nav aria-label="Site navigation">
     <div class="nav-inner">
       <a class="brand" href="/">Edoworks</a><span class="brand-meta">software factory</span>
       <div class="nav-links"><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/factory/">Factory</a></div>
     </div>
   </nav>
-  <main>
+  <main id="main-content">
     <section aria-labelledby="hero-title">
       <p class="eyebrow">Intent → verified software</p>
       <h1 id="hero-title">A software factory that ships products.</h1>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Experiments</title>
   <meta name="description" content="Factory experiment registry: hypothesis, metrics, evidence, and decision for each experiment.">
-  <meta name="generator" content="Edoworks 202608071459.0">
+  <meta name="generator" content="Edoworks 202608071525.0">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://edoworks.com/factory/experiments/">
 <meta name="theme-color" content="#111418">
@@ -32,6 +32,10 @@
     a { color:var(--active); }
     a:hover { color:var(--text); }
     :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    nav.nav-inner, .nav-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1rem; }
+    nav[aria-label] { background:var(--surface); border-bottom:1px solid var(--border); padding:0.75rem 1.5rem; }
+    nav .brand { color:var(--text); text-decoration:none; font-weight:700; font-size:0.9rem; }
+    nav a { color:var(--active); text-decoration:none; font-size:0.85rem; }
     .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
     h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
     .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
@@ -68,11 +72,11 @@
 
     .experiment-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.25rem 1.5rem; margin-bottom:1.5rem; }
     .exp-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.5rem; }
-    .exp-header h3 { color:var(--active); font-size:0.95rem; font-weight:700; margin:0; }
+    .exp-header h2 { color:var(--active); font-size:0.95rem; font-weight:700; margin:0; }
     .status-badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:0.72em; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; flex-shrink:0; }
     .exp-dates { color:var(--muted); font-size:0.8rem; margin:0 0 1rem; }
     .exp-section { margin-bottom:1rem; }
-    .exp-section h4 { color:var(--text); font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.4rem; }
+    .exp-section h3 { color:var(--text); font-size:0.82rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.4rem; }
     .exp-section p { color:var(--muted); font-size:0.85rem; line-height:1.6; margin:0; }
     .evidence-ref { font-family:ui-monospace,monospace; font-size:0.78rem; color:var(--active); }
     .decision-text { color:var(--text); font-size:0.85rem; line-height:1.6; }
@@ -88,26 +92,28 @@
     @media (max-width:560px) {
       .metrics-table th:nth-child(3), .metrics-table td:nth-child(3) { display:none; }
     }
+    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#10141B;color:#F4F6F8;border:1px solid #7D8CFF;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7D8CFF;outline-offset:3px;border-radius:2px;}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 <nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Experiments</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
-  <main class="content">
+  <main class="content" id="main-content">
     <h1>Experiments</h1>
-    <p class="generated">Generated 2026-08-07T14:59:35.211101Z</p>
+    <p class="generated">Generated 2026-08-07T15:25:57.269080Z</p>
     <p class="section-intro">Experiments the factory has run to validate its own assumptions. Each record includes hypothesis, metrics, evidence, and decision.</p>
     <article class="experiment-card" id="EXP-001">
       <div class="exp-header">
-        <h3>T5 Profile Pilot — OpenCode profile-based configuration routing</h3>
+        <h2>T5 Profile Pilot — OpenCode profile-based configuration routing</h2>
         <span class="status-badge" style="background:#7D8CFF;color:#07090D">completed</span>
       </div>
       <p class="exp-dates">2026-07-28 → 2026-08-03</p>
       <div class="exp-section">
-        <h4>Hypothesis</h4>
+        <h3>Hypothesis</h3>
         <p>Routing agent configuration through named OpenCode profiles (instead of per-session manual config) reduces setup overhead and enables reproducible agent dispatch without manual intervention.</p>
       </div>
       <div class="exp-section">
-        <h4>Metrics</h4>
+        <h3>Metrics</h3>
 <table class="metrics-table">
 <thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
 <tbody>
@@ -116,27 +122,27 @@
 </table>
       </div>
       <div class="exp-section">
-        <h4>Evidence</h4>
+        <h3>Evidence</h3>
         <p class="evidence-ref">Profile pilot session log (2 records, both exit_code=0)</p>
       </div>
       <div class="exp-section">
-        <h4>Decision</h4>
+        <h3>Decision</h3>
         <p class="decision-text">Pilot completed successfully. Profile-based routing is technically viable. Lead time instrumentation gap identified — no automated dispatch-to-completion timer. Full promotion deferred pending the autonomous runner (factory_runner.py Phase 2).</p>
         <p class="decision-date">Decided: 2026-08-03</p>
       </div>
     </article>
     <article class="experiment-card" id="EXP-002">
       <div class="exp-header">
-        <h3>B2 Conductor Acceptance Test — Full-pipeline telemetry via env var injection</h3>
+        <h2>B2 Conductor Acceptance Test — Full-pipeline telemetry via env var injection</h2>
         <span class="status-badge" style="background:#E2A64B;color:#07090D">blocked</span>
       </div>
       <p class="exp-dates">2026-08-07</p>
       <div class="exp-section">
-        <h4>Hypothesis</h4>
+        <h3>Hypothesis</h3>
         <p>Setting FOCULOOM_WORKFLOW_CLASS=full-pipeline via bash export before dispatching subagents will populate the workflow_class field in agent telemetry, enabling verification of conductor child-dispatch visibility.</p>
       </div>
       <div class="exp-section">
-        <h4>Metrics</h4>
+        <h3>Metrics</h3>
 <table class="metrics-table">
 <thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
 <tbody>
@@ -145,27 +151,27 @@
 </table>
       </div>
       <div class="exp-section">
-        <h4>Evidence</h4>
+        <h3>Evidence</h3>
         <p class="evidence-ref">B2 acceptance defect event (2026-08-07): env-var injection gap documented</p>
       </div>
       <div class="exp-section">
-        <h4>Decision</h4>
+        <h3>Decision</h3>
         <p class="decision-text">Blocked — bash export does not propagate to the opencode process (the plugin reads process.env at startup, not from bash). The task tool has no env parameter. Requires either a plugin code change (per-dispatch injection) or a platform change (task tool env param). Plugin emitter changes shipped in S111 but require opencode restart to take effect.</p>
         
       </div>
     </article>
     <article class="experiment-card" id="EXP-003">
       <div class="exp-header">
-        <h3>Maturity Engine Shadow Mode — 30-day validation before public display</h3>
+        <h2>Maturity Engine Shadow Mode — 30-day validation before public display</h2>
         <span class="status-badge" style="background:#63D297;color:#07090D">running</span>
       </div>
       <p class="exp-dates">2026-08-07 → running</p>
       <div class="exp-section">
-        <h4>Hypothesis</h4>
+        <h3>Hypothesis</h3>
         <p>A hard-gated min() maturity engine running in shadow mode for 30 days will produce stable, reproducible maturity level computations across re-runs before the public /factory/maturity/ page publishes a level.</p>
       </div>
       <div class="exp-section">
-        <h4>Metrics</h4>
+        <h3>Metrics</h3>
 <table class="metrics-table">
 <thead><tr><th>Metric</th><th>Value</th><th>Description</th></tr></thead>
 <tbody>
@@ -174,17 +180,17 @@
 </table>
       </div>
       <div class="exp-section">
-        <h4>Evidence</h4>
+        <h3>Evidence</h3>
         <p class="evidence-ref">Maturity shadow log (7 runs, all NOT COMPUTABLE due to uninstrumented dimensions)</p>
       </div>
       <div class="exp-section">
-        <h4>Decision</h4>
+        <h3>Decision</h3>
         <p class="decision-text">Running. Shadow mode started 2026-08-07. Promotion session needed ~2026-09-06 after 30 calendar days of stable computation. Three dimensions (provenance, lights_out, accepted_work) remain uninstrumented — the aggregate cannot leave NOT COMPUTABLE until they are populated.</p>
         
       </div>
     </article>
     <footer>
-      <p>Built by Edoworks 202608071459.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/evolution/">Evolution</a></p>
+      <p>Built by Edoworks 202608071525.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/evolution/">Evolution</a></p>
     </footer>
   </main>
 </body>

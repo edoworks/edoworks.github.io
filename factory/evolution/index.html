@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Factory Evolution</title>
   <meta name="description" content="Factory capability and maturity evolution timeline. Versioned history of what the factory built and how it matured.">
-  <meta name="generator" content="Edoworks 202608071459.0">
+  <meta name="generator" content="Edoworks 202608071525.0">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://edoworks.com/factory/evolution/">
 <meta name="theme-color" content="#111418">
@@ -32,6 +32,10 @@
     a { color:var(--active); }
     a:hover { color:var(--text); }
     :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    nav.nav-inner, .nav-inner { max-width:960px; margin:0 auto; display:flex; align-items:center; gap:1rem; }
+    nav[aria-label] { background:var(--surface); border-bottom:1px solid var(--border); padding:0.75rem 1.5rem; }
+    nav .brand { color:var(--text); text-decoration:none; font-weight:700; font-size:0.9rem; }
+    nav a { color:var(--active); text-decoration:none; font-size:0.85rem; }
     .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
     h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
     .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
@@ -93,18 +97,20 @@
     .stat-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:0.8rem 1rem; text-align:center; }
     .stat-value { color:var(--active); font-size:1.3rem; font-weight:700; font-family:ui-monospace,monospace; }
     .stat-label { color:var(--muted); font-size:0.75rem; margin-top:2px; }
+    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#10141B;color:#F4F6F8;border:1px solid #7D8CFF;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7D8CFF;outline-offset:3px;border-radius:2px;}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
 <nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Evolution</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
-  <main class="content">
+  <main class="content" id="main-content">
     <h1>Evolution</h1>
-    <p class="generated">Generated 2026-08-07T14:59:35.457175Z</p>
+    <p class="generated">Generated 2026-08-07T15:25:57.594363Z</p>
 
     <div class="factory-stats">
-      <div class="stat-card"><div class="stat-value">2060</div><div class="stat-label">Total commits</div></div>
+      <div class="stat-card"><div class="stat-value">2063</div><div class="stat-label">Total commits</div></div>
       <div class="stat-card"><div class="stat-value">2026-07-01</div><div class="stat-label">First commit</div></div>
-      <div class="stat-card"><div class="stat-value">10</div><div class="stat-label">Shadow runs</div></div>
+      <div class="stat-card"><div class="stat-value">11</div><div class="stat-label">Shadow runs</div></div>
       <div class="stat-card"><div class="stat-value">32</div><div class="stat-label">Scorecard days</div></div>
     </div>
 
@@ -230,6 +236,11 @@
         <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
         <div class="mp-dims">5/6 dimensions fresh</div>
       </div>
+      <div class="maturity-point">
+        <div class="mp-date">2026-08-07</div>
+        <div class="mp-level" style="color:#DE6673">NOT COMPUTABLE</div>
+        <div class="mp-dims">5/6 dimensions fresh</div>
+      </div>
     </div>
 
     <div class="timeline-section">
@@ -300,7 +311,7 @@
     </div>
 
     <footer>
-      <p>Built by Edoworks 202608071459.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/experiments/">Experiments</a></p>
+      <p>Built by Edoworks 202608071525.0. <a href="/factory/">Factory dashboard</a> &middot; <a href="/factory/maturity/">Maturity</a> &middot; <a href="/factory/experiments/">Experiments</a></p>
     </footer>
   </main>
 </body>
