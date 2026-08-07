@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vorynce — Edoworks</title>
-  <meta name="description" content="Vorynce — a product built by the Edoworks software factory. Audio-first productivity: voice capture to smart task, audio journal, focus timer with soundscapes. Revenue not yet inst">
-  <meta name="generator" content="Edoworks 202608070931.0">
+  <meta name="description" content="Vorynce — a product built by the Edoworks software factory. Audio-first productivity: voice capture to smart task, audio journal, focus timer with soundscapes.">
+  <meta name="generator" content="Edoworks 202608070936.0">
   <meta name="robots" content="index,follow">
   <style>
     :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
@@ -13,12 +13,12 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
            background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: var(--accent); }
-    nav { background: #0f172a; color: #fff; padding: 16px 20px; }
-    nav .nav-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
-    nav .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1em; }
-    nav .brand-meta { color: #94a3b8; font-size: 0.9em; }
-    nav a { color: #c7d2fe; text-decoration: none; }
-    nav a:hover { color: #fff; }
+    nav { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--border); padding: 0; }
+    nav .nav-inner { max-width: 1120px; min-height: 64px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 20px; }
+    nav .brand { font-weight: 800; color: var(--text); text-decoration: none; font-size: 1.1em; letter-spacing: -0.02em; }
+    nav .brand-meta { color: var(--muted); font-size: 0.84em; }
+    nav a { color: var(--accent); text-decoration: none; }
+    nav a:hover { color: var(--text); }
     main { max-width: 760px; margin: 0 auto; padding: 48px 20px 60px; }
     .breadcrumb { color: var(--muted); font-size: 0.85em; margin-bottom: 16px; }
     .breadcrumb a { color: var(--accent); text-decoration: none; }
@@ -32,6 +32,9 @@
     .domain-tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.75em; font-weight: 600; background: #f3e8ff; color: var(--accent); border: 1px solid var(--accent); }
     .outcome-statement { color: var(--text); font-size: 1.05em; margin-top: 6px; }
     .outcome-statement.not-instrumented { color: var(--muted); font-style: italic; }
+    .kpi-line { margin: 6px 0 0; font-size: 0.85em; color: var(--muted); }
+    .kpi-label { font-weight: 600; }
+    .kpi-value.not-instrumented { color: var(--muted); font-style: italic; }
     .detail-section { margin-bottom: 32px; }
     .detail-section h2 { color: var(--accent); font-size: 1.1em; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 12px; }
     .section-content { line-height: 1.65; color: var(--text); }
@@ -45,6 +48,8 @@
     @media (max-width: 560px) {
       .product-header { flex-direction: column; text-align: center; }
       .hero-screenshot { width: 80px; height: 80px; }
+      nav .nav-inner { gap: 10px; }
+      nav .brand-meta { display: none; }
     }
   </style>
 </head>
@@ -65,7 +70,8 @@
       <div class="product-title">
         <h1>Vorynce</h1>
         <span class="domain-tag">productivity</span>
-        <p class="outcome-statement ">Audio-first productivity: voice capture to smart task, audio journal, focus timer with soundscapes. Revenue not yet instrumented.</p>
+        <p class="outcome-statement ">Audio-first productivity: voice capture to smart task, audio journal, focus timer with soundscapes.</p>
+        <p class="kpi-line"><span class="kpi-label">Revenue:</span> <span class="kpi-value not-instrumented">NOT INSTRUMENTED</span></p>
       </div>
     </div>
 <section class="detail-section" id="problem">
@@ -74,19 +80,19 @@
 </section>
 <section class="detail-section" id="audience">
   <h2>Audience</h2>
-  <div class="section-content">Product managers in back-to-back calls, architects with ADHD using ambient sound for focus, journalists recording field notes with on-device privacy requirements. Users who value speed, accuracy, and total privacy.</div>
+  <div class="section-content">Product managers in back-to-back calls, architects using ambient sound for focus, journalists recording field notes with on-device privacy requirements. Users who value speed, accuracy, and total privacy.</div>
 </section>
 <section class="detail-section" id="proof">
   <h2>Proof</h2>
-  <div class="section-content"><ul><li><strong>Website:</strong> <a href="https://vorynce.com/">vorynce.com</a></li><li><strong>App Store state:</strong> WAITING_FOR_REVIEW</li><li><strong>Observed:</strong> 2026-08-02</li></ul></div>
+  <div class="section-content"><ul><li><strong>Website:</strong> <a href="https://vorynce.com/">vorynce.com</a></li><li><strong>Availability:</strong> In App Store review</li></ul></div>
 </section>
 <section class="detail-section" id="privacy">
   <h2>Privacy</h2>
-  <div class="section-content">All audio processing on device. FoundationModels (Apple Intelligence) enhances transcription on iOS 26.0+/A17 Pro+. SFSpeechRecognizer fallback for iOS 17.0–25.x. No account required. No cloud AI, no API keys. <a href="https://vorynce.com/privacy" class="section-link">Product privacy policy &rarr;</a></div>
+  <div class="section-content">All audio processing on device. No account required. No cloud AI, no API keys. PII stays local. <a href="https://vorynce.com/privacy" class="section-link">Product privacy policy &rarr;</a></div>
 </section>
 <section class="detail-section" id="quality">
   <h2>Quality</h2>
-  <div class="section-content">Simulator core-flow PASS (3/3 required REQs). On-device validated on 2 devices. v2.1.0 in App Store review with IAPs.</div>
+  <div class="section-content">Simulator core-flow validated. On-device validated on 2 devices. Currently in App Store review.</div>
 </section>
 <section class="detail-section" id="availability">
   <h2>Availability</h2>
@@ -94,13 +100,13 @@
 </section>
 <section class="detail-section" id="receipt">
   <h2>Receipt</h2>
-  <div class="section-content"><p class="placeholder">Factory receipts ship in REC-001 (planned). Each receipt will include per-metric source attribution: data file, commit SHA, and generation timestamp.</p></div>
+  <div class="section-content"><p class="placeholder">Factory receipts are planned for a future release. Each receipt will include per-metric source attribution: data file, commit SHA, and generation timestamp.</p></div>
 </section>
   </main>
   <footer>
     <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
     <span><a href="/portfolio/">Portfolio</a> &middot; <a href="/factory/">Factory</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></span>
-    <span>Built by Edoworks 202608070931.0.</span>
+    <span>Built by Edoworks 202608070936.0.</span>
   </footer>
 </body>
 </html>
