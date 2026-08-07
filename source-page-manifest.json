@@ -1,14 +1,170 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "site": "edoworks",
   "pages": [
-    {"path": "/", "source_page_id": "home"},
-    {"path": "/blog/", "source_page_id": "blog-index"},
-    {"path": "/blog/cyber-eval-boundaries", "source_page_id": "blog-post"},
-    {"path": "/blog/eval-first-model-upgrades", "source_page_id": "blog-post"},
-    {"path": "/blog/measure-autonomous-work-surface-outcome", "source_page_id": "blog-post"},
-    {"path": "/blog/opus5-long-running-agent-loop", "source_page_id": "blog-post"},
-    {"path": "/portfolio/", "source_page_id": "portfolio"},
-    {"path": "/privacy/", "source_page_id": "privacy"}
+    {
+      "path": "/blog/agent-approval-gates-security-patterns.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/agent-debug-panel-jetbrains.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/agent-mode-picker-jetbrains.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/ai-pr-stack-decomposition.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/anthropic-eval-incident-response-pattern.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/building-copilot-plugins.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/case-folding-memory-speed.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/claude-opus-4-8.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/confidence-aware-agent-automation.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-agent-skills-reusable-workflows.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-app-agent-control-center.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-app-control-center-pattern.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-byok-flexible-authentication.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-cli-language-servers.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-cli-slash-commands.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-credit-burn.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-enterprise-managed-settings.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-in-visual-studio-may-update.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-sdk-general-availability.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/copilot-sdk-technical-preview.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/cyber-eval-boundaries.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/eval-first-model-upgrades.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/ghcp-cli-work-life-harmony.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/github-mcp-integrations-emerging-pattern.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/hello-foculoom-engineering.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/",
+      "source_page_id": "blog-index"
+    },
+    {
+      "path": "/blog/measure-autonomous-work-surface-outcome.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/microsoft-build-2026.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/opus5-long-running-agent-loop.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/stacked-prs-review-layers.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/blog/vscode-123-agent-workflows.html",
+      "source_page_id": "blog-post"
+    },
+    {
+      "path": "/factory/architecture/",
+      "source_page_id": "factory-subpage"
+    },
+    {
+      "path": "/factory/evolution/",
+      "source_page_id": "factory-subpage"
+    },
+    {
+      "path": "/factory/experiments/",
+      "source_page_id": "factory-subpage"
+    },
+    {
+      "path": "/factory/",
+      "source_page_id": "factory-dashboard"
+    },
+    {
+      "path": "/factory/maturity/",
+      "source_page_id": "factory-subpage"
+    },
+    {
+      "path": "/",
+      "source_page_id": "home"
+    },
+    {
+      "path": "/portfolio/",
+      "source_page_id": "portfolio"
+    },
+    {
+      "path": "/portfolio/veilsort/",
+      "source_page_id": "product-detail"
+    },
+    {
+      "path": "/portfolio/vorynce/",
+      "source_page_id": "product-detail"
+    },
+    {
+      "path": "/privacy/",
+      "source_page_id": "privacy"
+    }
   ]
 }
