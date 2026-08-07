@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Portfolio</title>
   <meta name="description" content="Public portfolio of products built by the Edoworks software factory.">
-  <meta name="generator" content="Edoworks 202608051746.0">
+  <meta name="generator" content="Edoworks 202608070931.0">
   <meta name="robots" content="index,follow">
   <style>
     :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
@@ -32,8 +32,30 @@
     .btn { display: inline-block; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9em; margin-right: 8px; }
     .btn-site { background: var(--accent); color: #fff; }
     .btn-prd { background: #e5e7eb; color: var(--text); }
+    .btn-details { background: #f3e8ff; color: var(--accent); border: 1px solid var(--accent); }
+    .btn-details:hover { background: var(--accent); color: #fff; }
     .note { color: var(--muted); font-size: 0.9em; }
     a { color: var(--accent); }
+    /* Portfolio card layout (public): screenshot + body grid */
+    .card-portfolio { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start; transition: box-shadow 0.15s ease; }
+    .card-portfolio:hover { box-shadow: 0 4px 16px rgba(124,58,237,0.10); }
+    .card-screenshot { width: 120px; height: 120px; border-radius: 8px; overflow: hidden; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c4b5fd 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-screenshot img { width: 100%; height: 100%; object-fit: cover; }
+    .card-screenshot-placeholder { }
+    .placeholder-initial { font-size: 3em; font-weight: 700; color: #7c3aed; opacity: 0.5; }
+    .card-body { min-width: 0; }
+    .card-body h3 { font-size: 1.2em; }
+    .card-body .links { margin-top: 10px; }
+    .avail-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.75em; font-weight: 600; margin: 4px 0 8px; }
+    .avail-live { background: #dcfce7; color: #16a34a; border: 1px solid #16a34a40; }
+    .avail-pending { background: #fef9c3; color: #ca8a04; border: 1px solid #ca8a0440; }
+    .avail-neutral { background: #f3f4f6; color: #6b7280; border: 1px solid #6b728040; }
+    .outcome { margin: 6px 0 8px; line-height: 1.5; color: var(--text); font-size: 0.92em; }
+    .outcome.not-instrumented { color: var(--muted); font-style: italic; }
+    @media (max-width: 560px) {
+      .card-portfolio { grid-template-columns: 1fr; gap: 12px; }
+      .card-screenshot { width: 100%; height: 180px; }
+    }
     footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     footer a { color: var(--accent); text-decoration: none; }
   </style>
@@ -43,7 +65,8 @@
     <div class="nav-inner">
       <a class="brand" href="https://edoworks.com/">Edoworks</a>
       <span class="brand-meta">software factory · portfolio</span>
-      <a href="/blog/" style="margin-left:auto">Blog</a>
+      <a href="/factory/" style="margin-left:auto">Factory</a>
+      <a href="/blog/">Blog</a>
       <a href="/privacy/">Privacy</a>
     </div>
   </nav>
@@ -52,20 +75,28 @@
     <p class="lede">Products built by the Edoworks software factory.</p>
 <section class="category" id="stage-released">
   <h2>Released</h2>
-  <div class="card" id="veilsort">
-  <h3>Veilsort </h3>
-  
-  <div class="links"><a class="btn btn-site" href="https://veilsort.com/">Website</a></div>
+  <div class="card card-portfolio" id="veilsort">
+  <div class="card-screenshot card-screenshot-placeholder"><span class="placeholder-initial">V</span></div>
+  <div class="card-body">
+    <h3>Veilsort </h3>
+    <span class="avail-badge avail-pending">In App Store review</span>
+    <p class="outcome">On-device email analysis via Apple Foundation Models. Revenue not yet instrumented.</p>
+    <div class="links"><a class="btn btn-site" href="https://veilsort.com/">Website</a> <a class="btn btn-details" href="/portfolio/veilsort/">View details &rarr;</a></div>
+  </div>
 </div>
 
 </section>
 
 <section class="category" id="stage-beta">
   <h2>In beta</h2>
-  <div class="card" id="vorynce">
-  <h3>Vorynce </h3>
-  
-  <div class="links"><a class="btn btn-site" href="https://vorynce.com/">Website</a></div>
+  <div class="card card-portfolio" id="vorynce">
+  <div class="card-screenshot card-screenshot-placeholder"><span class="placeholder-initial">V</span></div>
+  <div class="card-body">
+    <h3>Vorynce </h3>
+    <span class="avail-badge avail-pending">In App Store review</span>
+    <p class="outcome">Audio-first productivity: voice capture to smart task, audio journal, focus timer with soundscapes. Revenue not yet instrumented.</p>
+    <div class="links"><a class="btn btn-site" href="https://vorynce.com/">Website</a> <a class="btn btn-details" href="/portfolio/vorynce/">View details &rarr;</a></div>
+  </div>
 </div>
 
 </section>
@@ -74,7 +105,7 @@
   <footer>
     <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
     <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></span>
-    <span>Built by Edoworks 202608051746.0.</span>
+    <span>Built by Edoworks 202608070931.0.</span>
   </footer>
 </body>
 </html>
