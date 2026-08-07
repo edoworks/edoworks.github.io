@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edoworks — Factory Architecture</title>
+  <meta name="description" content="Public-safe software factory architecture: operating model, agent organization, human approval gates, trust boundaries, and data flow.">
+  <meta name="generator" content="Edoworks 202608070913.0">
+  <meta name="robots" content="index,follow">
+  <style>
+    @font-face {
+      font-family: "Inter";
+      src: url("/assets/fonts/inter-variable.woff2") format("woff2-variations");
+      font-weight: 100 900;
+      font-display: swap;
+    }
+    :root { --bg:#07090D; --surface:#0C1016; --card:#10141B; --border:#29303B; --text:#F4F6F8; --muted:#8995A3; --active:#7D8CFF; --verified:#63D297; --retry:#E2A64B; --failure:#DE6673; --focus-ring:#7D8CFF; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+    a { color:var(--active); }
+    a:hover { color:var(--text); }
+    :focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }
+    .content { max-width:960px; margin:0 auto; padding:2.5rem 1.5rem; overflow-wrap:break-word; }
+    h1 { font-size:clamp(2rem,5vw,3.25rem); font-weight:760; letter-spacing:-0.04em; margin-bottom:0.5rem; color:var(--text); }
+    .generated { color:var(--muted); font-size:0.78rem; margin-bottom:2.5rem; font-variant-numeric:tabular-nums; }
+    h2 { font-size:0.78rem; font-weight:700; color:var(--active); margin:2.5rem 0 0.9rem; letter-spacing:0.12em; text-transform:uppercase; padding-bottom:0.55rem; border-bottom:1px solid var(--border); }
+    .group { margin-bottom:1.5rem; }
+    .panels { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:0.9rem; }
+    .panel { background:var(--card); border:1px solid var(--border); border-top:3px solid var(--active); border-radius:8px; padding:1.25rem; box-shadow:0 16px 40px rgba(0,0,0,.16); }
+    .panel h3 { font-size:1rem; font-weight:650; margin:0 0 0.5rem; color:var(--text); }
+    .metric-definition { color:var(--muted); font-size:0.78rem; margin:-0.2rem 0 0.6rem; }
+    .metric-definition::before { content:"def · "; color:var(--active); font-weight:700; }
+    .metric-meta { display:grid; grid-template-columns:max-content 1fr; gap:.18rem .55rem; padding-top:.75rem; margin-top:.75rem; border-top:1px solid var(--border); color:var(--muted); font-size:.72rem; }
+    .metric-meta dt { color:var(--text); font-weight:600; }
+    .badge,.public-state { display:inline-flex; align-items:center; gap:.3rem; font-size:.7rem; font-weight:700; padding:.15rem .5rem; border-radius:999px; border:1px solid currentColor; letter-spacing:.04em; text-transform:uppercase; }
+    .status-pass { border-top-color:var(--verified); }
+    .status-pass .badge,.public-state.status-pass { color:var(--verified); }
+    .status-fail,.status-rejected,.status-error { border-top-color:var(--failure); }
+    .status-fail .badge,.status-rejected .badge,.status-error .badge,.public-state.status-fail,.public-state.status-rejected,.public-state.status-error { color:var(--failure); }
+    .status-unknown,.status-nodata { border-top-color:var(--muted); border-top-style:dashed; }
+    .status-unknown .badge,.status-nodata .badge,.public-state.status-unknown,.public-state.status-nodata { color:var(--muted); }
+    .status-stale { border-top-color:var(--retry); border-top-style:double; }
+    .status-stale .badge,.public-state.status-stale { color:var(--retry); }
+    .panel-trend { grid-column:1 / -1; }
+    .trend-chart { width:100%; height:auto; display:block; margin-top:.75rem; }
+    .detail { font:.82rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--text); margin:.5rem 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+    .note,.state-reason,.public-explanation { font-size:.8rem; color:var(--muted); margin:.4rem 0 0; }
+    .public-explanation { margin:0 0 .55rem; font-style:italic; }
+    .metric-value { font-size:1.4rem; font-weight:700; color:var(--muted); margin-top:.35rem; }
+    .provenance,.source { font-size:.72rem; color:var(--muted); margin:.4rem 0 0; }
+    code { font-family:ui-monospace,monospace; font-size:.8rem; }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--border); font-size:.8rem; color:var(--muted); }
+    footer a { color:var(--active); text-decoration:none; }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }
+
+
+    .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-bottom:2rem; }
+    .step { display:flex; gap:0.8rem; background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1rem; }
+    .step-num { flex-shrink:0; width:2rem; height:2rem; border-radius:50%; background:var(--active); color:var(--bg); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:0.9rem; }
+    .step-body strong { color:var(--text); font-size:0.9rem; }
+    .step-body p { color:var(--muted); font-size:0.82rem; margin:0.3rem 0 0; line-height:1.55; }
+    .org-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0.9rem; margin-bottom:2rem; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.1rem 1.25rem; }
+    .card h3 { color:var(--active); font-size:0.88rem; font-weight:700; margin:0 0 0.3rem; }
+    .card-mission { color:var(--text); font-size:0.82rem; font-weight:600; margin:0 0 0.4rem; }
+    .card-desc { color:var(--muted); font-size:0.78rem; line-height:1.55; margin:0; }
+    .agents-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.7rem; margin-bottom:2rem; }
+    .agent-card { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:0.8rem 1rem; }
+    .agent-card strong { color:var(--text); font-size:0.85rem; }
+    .agent-card p { color:var(--muted); font-size:0.76rem; margin:0.2rem 0 0; line-height:1.5; }
+    .gates-list { list-style:none; padding:0; margin:0 0 2rem; }
+    .gates-list li { color:var(--muted); font-size:0.82rem; padding:0.4rem 0; border-bottom:1px solid var(--border); line-height:1.55; }
+    .gates-list li:last-child { border-bottom:none; }
+    .gates-list strong { color:var(--text); }
+    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0.9rem; margin-bottom:2rem; }
+    .trust-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1.1rem 1.25rem; }
+    .trust-autonomous { border-top:3px solid var(--verified); }
+    .trust-gated { border-top:3px solid var(--failure); }
+    .trust-card h3 { font-size:0.88rem; font-weight:700; margin:0 0 0.4rem; }
+    .trust-autonomous h3 { color:var(--verified); }
+    .trust-gated h3 { color:var(--failure); }
+    .trust-card p { color:var(--muted); font-size:0.8rem; line-height:1.6; margin:0; }
+    .flow-chain { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2rem; }
+    .flow-step { display:flex; align-items:center; gap:0.5rem; background:var(--card); border:1px solid var(--border); border-radius:6px; padding:0.6rem 0.9rem; }
+    .flow-node { color:var(--active); font-weight:700; font-size:0.82rem; }
+    .flow-desc { color:var(--muted); font-size:0.76rem; }
+    .section-intro { color:var(--muted); font-size:0.85rem; line-height:1.6; margin:0 0 1rem; }
+    code { font-family:ui-monospace,monospace; font-size:0.82rem; color:var(--active); }
+  </style>
+</head>
+<body>
+<nav aria-label="Site navigation" style="background:#0C1016;border-bottom:1px solid #29303B;padding:1rem 1.5rem"><div style="max-width:960px;margin:0 auto;display:flex;align-items:center;gap:0.5rem"><a href="/" style="color:#F4F6F8;text-decoration:none;font-size:0.9rem;font-weight:700;letter-spacing:0.02em">Edoworks</a><span aria-hidden="true" style="color:#29303B">/</span><a href="/factory/" style="color:#8995A3;text-decoration:none;font-size:0.9rem;font-weight:500">Factory</a><span aria-hidden="true" style="color:#29303B">/</span><span style="color:#F4F6F8;font-size:0.9rem;font-weight:500">Architecture</span><a href="/portfolio/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:auto">Portfolio</a><a href="/blog/" style="color:#7D8CFF;text-decoration:none;font-size:0.85rem;margin-left:1rem">Blog</a></div></nav>
+  <main class="content">
+    <h1>Architecture</h1>
+    <p class="generated">Generated 2026-08-07T09:13:27.760882Z</p>
+
+    <h2>Operating Model</h2>
+    <p class="section-intro">The factory runs on short feedback loops. Human attention is reserved for product direction, ambiguity, risk approval, and final acceptance — everything else is delegated to agents.</p>
+    <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Human states intent and constraints</strong>
+            <p>The founder sets product direction, priorities, and approval boundaries. Human attention is reserved for product direction, ambiguity, risk approval, and final acceptance.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Agents research current state and risks</strong>
+            <p>Research agents inspect code, docs, market context, and risks before any changes.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Agents produce a plan with validation and approval gates</strong>
+            <p>Planning agents turn intent into scoped implementation plans with objectives, non-scope, constraints, test strategy, rollback, and human approval gates.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Agents implement scoped changes</strong>
+            <p>Implementation agents make the smallest correct change, run tests, and verify the result.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <strong>Agents verify, review, document, and report results</strong>
+            <p>Review agents check correctness, regressions, security, tests, and docs. Each change includes a summary, rationale, files changed, verification, risks, and limitations.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-body">
+            <strong>Reusable lessons become factory improvements</strong>
+            <p>Factory-improvement agents convert repeated friction into reusable systems, templates, prompts, tests, workflows, and docs.</p>
+          </div>
+        </div>
+    </div>
+
+    <h2>Executive Organization</h2>
+    <p class="section-intro">Agents are organized like an accountable company, not a pile of tools. Every role owns one decision; every agent reports to exactly one executive owner.</p>
+    <div class="org-grid">
+        <div class="card">
+          <h3>Chief Product Officer</h3>
+          <p class="card-mission">Build the right products</p>
+          <p class="card-desc">Market research, customer feedback, product strategy, roadmap, PRDs, UX research, success metrics.</p>
+        </div>
+        <div class="card">
+          <h3>Chief Technology Officer</h3>
+          <p class="card-mission">Build products correctly</p>
+          <p class="card-desc">Architecture, code quality, platform architecture, AI engineering, technical standards, security, performance.</p>
+        </div>
+        <div class="card">
+          <h3>Chief Operating Officer</h3>
+          <p class="card-mission">Optimize the factory itself</p>
+          <p class="card-desc">CI/CD, deployment, quality gates, documentation, knowledge management, AI orchestration, workflow optimization.</p>
+        </div>
+        <div class="card">
+          <h3>Chief Revenue Officer</h3>
+          <p class="card-mission">Maximize long-term customer value</p>
+          <p class="card-desc">Customer acquisition, pricing, subscription optimization, App Store optimization, retention, portfolio growth.</p>
+        </div>
+        <div class="card">
+          <h3>Chief Financial Officer</h3>
+          <p class="card-mission">Allocate capital wisely</p>
+          <p class="card-desc">Cash flow, profitability, AI compute costs, API spend, ROI analysis, portfolio allocation.</p>
+        </div>
+        <div class="card">
+          <h3>Chief Knowledge Officer</h3>
+          <p class="card-mission">Preserve and evolve institutional knowledge</p>
+          <p class="card-desc">Standards, prompt libraries, reusable templates, lessons learned, decision records, knowledge hygiene.</p>
+        </div>
+    </div>
+
+    <h2>Agent Roster</h2>
+    <p class="section-intro">Specialist agents handle research, planning, implementation, review, and factory improvement. A coordinating agent remains accountable for final integration and reporting.</p>
+    <div class="agents-grid">
+        <div class="agent-card">
+          <strong>Planner</strong>
+          <p>Turns intent into scoped implementation plans with validation and approval gates.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Builder</strong>
+          <p>Makes small, verified changes following the approved plan.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Reviewer</strong>
+          <p>Checks correctness, regressions, security, test gaps, and maintainability.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Vision</strong>
+          <p>Reviews screenshots, UI layouts, and rendered output for visual compliance.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Audio</strong>
+          <p>Reviews generated SFX, ambience, and voice lines for quality and suitability.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Eval</strong>
+          <p>Runs or analyzes local evals and validation results deterministically.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Editor</strong>
+          <p>Reviews editorial and portfolio web-presence content for quality.</p>
+        </div>
+        <div class="agent-card">
+          <strong>Local tier</strong>
+          <p>Cheap-tier agents for triage, summaries, retrospectives, and small docs edits.</p>
+        </div>
+    </div>
+
+    <h2>Human Approval Gates</h2>
+    <p class="section-intro">The factory is autonomous only inside approved boundaries. These categories always require explicit human approval before proceeding.</p>
+    <ul class="gates-list">
+        <li><strong>Destructive operations</strong> — Data deletion, migration, or irreversible changes.</li>
+        <li><strong>Production deployment</strong> — Releasing changes to live production environments.</li>
+        <li><strong>Release submission</strong> — App Store review submission and TestFlight soak.</li>
+        <li><strong>Billing & payments</strong> — Subscriptions, store configuration, pricing changes.</li>
+        <li><strong>Secrets & credentials</strong> — API keys, tokens, certificates, permission changes.</li>
+        <li><strong>Dependency changes</strong> — Supply-chain or licensing impact additions.</li>
+        <li><strong>External services</strong> — Configuration of external service integrations.</li>
+        <li><strong>Legal & compliance</strong> — Privacy, policy, or compliance-sensitive changes.</li>
+        <li><strong>Architectural rewrites</strong> — Large-scale rewrites that materially alter product direction.</li>
+    </ul>
+
+    <h2>Trust Boundaries</h2>
+    <p class="section-intro">What agents can do on their own vs. what requires human sign-off.</p>
+    <div class="trust-grid">
+        <div class="trust-card trust-autonomous">
+          <h3>Autonomous</h3>
+          <p>Read, search, validate, plan, implement within approved scope, run tests, generate docs, review code, create PRs (after review PASS), merge PRs (after review PASS).</p>
+        </div>
+        <div class="trust-card trust-gated">
+          <h3>Requires approval</h3>
+          <p>Destructive operations, production deployment, release submission, billing, secrets, dependency changes, external services, legal/compliance, architectural rewrites, product direction changes.</p>
+        </div>
+    </div>
+
+    <h2>Data Flow</h2>
+    <p class="section-intro">From intent to shipped product to measured improvement — a closed loop.</p>
+    <div class="flow-chain">
+        <div class="flow-step">
+          <div class="flow-node">Intent</div>
+          <div class="flow-desc">Human states intent and constraints.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Plan</div>
+          <div class="flow-desc">Planner produces scoped plan with approval gates.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Build</div>
+          <div class="flow-desc">Builder implements scoped changes.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Verify</div>
+          <div class="flow-desc">Tests, lint, type checks, build, smoke checks run.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Review</div>
+          <div class="flow-desc">Reviewer checks correctness, regressions, security.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Ship</div>
+          <div class="flow-desc">PR merged after review PASS; telemetry emitted to scorecard.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Measure</div>
+          <div class="flow-desc">Scorecard computes autonomy ratio, cost, maturity inputs.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-node">Improve</div>
+          <div class="flow-desc">Retrospectives and 5-whys feed reusable improvements back.</div>
+        </div>
+    </div>
+
+    <footer>
+      <p>Built by Edoworks 202608070913.0. <a href="/factory/">Factory dashboard</a> · <a href="/factory/maturity/">Maturity</a></p>
+    </footer>
+  </main>
+</body>
+</html>
