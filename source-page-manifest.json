@@ -155,14 +155,6 @@
       "source_page_id": "portfolio"
     },
     {
-      "path": "/portfolio/veilsort/",
-      "source_page_id": "product-detail"
-    },
-    {
-      "path": "/portfolio/vorynce/",
-      "source_page_id": "product-detail"
-    },
-    {
       "path": "/privacy/",
       "source_page_id": "privacy"
     }

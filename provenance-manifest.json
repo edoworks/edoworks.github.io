@@ -6,7 +6,7 @@
   "web_repo_short_sha": "c9a15d7",
   "factory_repo_commit_sha": "a2188174d6d6f471a6c325c77b70a1a98851c4e5",
   "factory_version": "202608071636.0",
-  "file_count": 185,
+  "file_count": 183,
   "total_bytes": 1954999,
   "files": [
     {
@@ -905,16 +905,6 @@
       "sha256": "e146dcb0c137be0bfccc3dce5fc4041b58d8e2d7a849f7e3f450a8ad8b21cae7"
     },
     {
-      "path": "portfolio/veilsort/index.html",
-      "size_bytes": 13602,
-      "sha256": "8ec515cf22a139a6ceee50f21aeff49286abdcfefe0a0824159e0d3efbd2dac1"
-    },
-    {
-      "path": "portfolio/vorynce/index.html",
-      "size_bytes": 13618,
-      "sha256": "42c9e16cdbba6a4896ced560fba7c15ea37e01a00c7b9c706d69767ef5829b26"
-    },
-    {
       "path": "privacy/index.html",
       "size_bytes": 6744,
       "sha256": "d18d9f21fb979824cb3c68b8f83c62cbc4e57d15cf8c74413069f50412925dbf"
@@ -934,5 +924,6 @@
       "size_bytes": 4208,
       "sha256": "ab0b947640760392e400ae122c7fcec1e0f9b7a37c8972e29e6377584bbfc969"
     }
-  ]
+  ],
+  "pages": []
 }
