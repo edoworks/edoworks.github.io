@@ -127,26 +127,6 @@
       "source_page_id": "blog-post"
     },
     {
-      "path": "/factory/architecture/",
-      "source_page_id": "factory-subpage"
-    },
-    {
-      "path": "/factory/evolution/",
-      "source_page_id": "factory-subpage"
-    },
-    {
-      "path": "/factory/experiments/",
-      "source_page_id": "factory-subpage"
-    },
-    {
-      "path": "/factory/",
-      "source_page_id": "factory-dashboard"
-    },
-    {
-      "path": "/factory/maturity/",
-      "source_page_id": "factory-subpage"
-    },
-    {
       "path": "/",
       "source_page_id": "home"
     },
