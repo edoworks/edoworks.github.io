@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edoworks — Factory Dashboard</title>
-  <meta name="description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
+  <title>Edoworks — Factory Evidence Dashboard</title>
+  <meta name="description" content="Observed factory measurements with explicit source, definition, and freshness state.">
   <meta name="generator" content="Edoworks 202608201500.0">
   <link rel="canonical" href="https://edoworks.com/factory/">
 <meta name="theme-color" content="#111418">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Edoworks — Factory Dashboard">
-<meta property="og:description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
+<meta property="og:title" content="Edoworks — Factory Evidence Dashboard">
+<meta property="og:description" content="Observed factory measurements with explicit source, definition, and freshness state.">
 <meta property="og:site_name" content="Edoworks">
 <meta property="og:url" content="https://edoworks.com/factory/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edoworks — Factory Dashboard">
-<meta name="twitter:description" content="Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Edoworks — Factory Dashboard", "description": "Edoworks factory dashboard — live measurements of a software factory: cost, autonomy, and validation status.", "url": "https://edoworks.com/factory/", "isPartOf": {"@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com"}}</script>
+<meta name="twitter:title" content="Edoworks — Factory Evidence Dashboard">
+<meta name="twitter:description" content="Observed factory measurements with explicit source, definition, and freshness state.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Edoworks — Factory Evidence Dashboard", "description": "Observed factory measurements with explicit source, definition, and freshness state.", "url": "https://edoworks.com/factory/", "isPartOf": {"@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Edoworks", "item": "https://edoworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Factory", "item": "https://edoworks.com/factory/"}]}</script>
   <style>
     @font-face {
@@ -80,7 +80,7 @@
   <main class="content" id="main-content">
     <h1>Factory Dashboard</h1>
     <section class="intro">
-      <p class="intro-lead">Live measurements from a software factory: how
+      <p class="intro-lead">Observed measurements from a software factory: how
       much it costs to run each day, and how much of the work the agents
       did on their own. Maturity promotion is fail-closed; <a
       href="/factory/maturity/">view the gate methodology</a>.</p>
@@ -89,11 +89,11 @@
   <section class="group">
     <h2>Activity</h2>
     <div class="panels">
-    <div id="daily-autonomy" class="panel status-pass panel-trend">
+    <div id="daily-autonomy" class="panel panel-trend">
       <h3>Daily autonomy (AI hours per human hour)</h3>
       <p class="metric-definition">Productive agent hours divided by human hours for each day, summarized with a rolling 28-day median and interquartile band.</p>
       <p class="public-explanation">Agent hours divided by human hours, per day. Higher means the factory ran more autonomously that day.</p>
-      <span class="public-state status-pass"><span class="state-icon" aria-hidden="true">&#10003;</span> VERIFIED</span>
+      <span class="public-state">STALE</span>
 <svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily autonomy ratio chart: 28 observations." xmlns="http://www.w3.org/2000/svg">
   <text x="44" y="20" text-anchor="start" font-size="10" fill="#8995A3">autonomy ratio (X:1)</text>
   <line x1="44" y1="184.0" x2="412" y2="184.0" stroke="#29303B" stroke-width="1"/>
@@ -154,16 +154,17 @@
         <dt>Numerator</dt><dd>Productive agent hours recorded for the day</dd>
         <dt>Denominator</dt><dd>Human hours recorded for the day</dd>
         <dt>Window</dt><dd>Rolling 28 calendar days</dd>
-        <dt>Freshness</dt><dd>2026-08-05</dd>
+        <dt>Observation date</dt><dd>2026-08-05</dd>
+        <dt>Freshness</dt><dd>STALE as of this page regeneration</dd>
         <dt>Source</dt><dd>reports/telemetry/daily-autonomy.jsonl</dd>
         <dt>Version</dt><dd>1.0</dd>
       </dl>
     </div>
-    <div id="daily-cost" class="panel status-pass panel-trend">
+    <div id="daily-cost" class="panel panel-trend">
       <h3>Daily factory cost ($)</h3>
       <p class="metric-definition">Measured variable model and provider cost attributed to factory work for each UTC day.</p>
       <p class="public-explanation">What the factory costs to run each day, in US dollars.</p>
-      <span class="public-state status-pass"><span class="state-icon" aria-hidden="true">&#10003;</span> VERIFIED</span>
+      <span class="public-state">STALE</span>
 <svg class="trend-chart" viewBox="0 0 480 220" role="img" aria-label="Daily factory cost chart: 14 observations." xmlns="http://www.w3.org/2000/svg">
   <text x="44" y="8" text-anchor="start" font-size="8" fill="#8995A3">factory cost</text>
   <line x1="44" y1="184.0" x2="464" y2="184.0" stroke="#29303B" stroke-width="1"/>
@@ -203,7 +204,8 @@
         <dt>Numerator</dt><dd>Sum of measured cost in US dollars</dd>
         <dt>Denominator</dt><dd>One UTC day</dd>
         <dt>Window</dt><dd>Daily</dd>
-        <dt>Freshness</dt><dd>2026-08-08</dd>
+        <dt>Observation date</dt><dd>2026-08-08</dd>
+        <dt>Freshness</dt><dd>STALE as of this page regeneration</dd>
         <dt>Source</dt><dd>reports/telemetry/daily-costs.jsonl</dd>
         <dt>Version</dt><dd>1.0</dd>
       </dl>
