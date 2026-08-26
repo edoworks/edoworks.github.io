@@ -3,320 +3,61 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blog — Edoworks</title>
-  <meta name="description" content="Notes on agentic software patterns, factory lessons, and shipped-product learnings from Edoworks.">
   <meta name="generator" content="Edoworks 202607210652.0">
-  
+  <title>Blog - Edoworks</title>
+  <meta name="description" content="Verified release notes and evidence-backed engineering case studies from Edoworks.">
+  <link rel="canonical" href="https://edoworks.com/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Edoworks Blog">
+  <meta property="og:description" content="Verified release notes and evidence-backed engineering case studies.">
+  <meta property="og:url" content="https://edoworks.com/blog/">
   <style>
-    :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: var(--bg); color: var(--text); margin: 0; padding: 0; }
-    nav { background: #0f172a; color: #fff; padding: 16px 20px; }
-    nav .nav-inner { max-width: 920px; margin: 0 auto; display: flex; align-items: center; gap: 16px; }
-    nav .brand { font-weight: 700; color: #fff; text-decoration: none; font-size: 1.1em; }
-    nav .brand-meta { color: #94a3b8; font-size: 0.9em; }
-    nav a { color: #c7d2fe; text-decoration: none; }
-    nav a:hover { color: #fff; }
-    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 60px; }
-    .page-header { margin-bottom: 32px; }
-    .page-header h1 { color: var(--accent); margin: 0 0 8px; font-size: 2em; }
-    .page-header p { color: var(--muted); margin: 0; font-size: 1.05em; }
-    .post-list { display: flex; flex-direction: column; gap: 16px; }
-    .post-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
-    .post-card h2 { margin: 0 0 6px; font-size: 1.2em; }
-    .post-card h2 a { color: var(--text); text-decoration: none; }
-    .post-card h2 a:hover { color: var(--accent); }
-    .post-card .byline { color: var(--muted); font-size: 0.9em; margin-bottom: 8px; }
-    .post-card p { margin: 0; line-height: 1.55; }
-    .empty { color: var(--muted); font-style: italic; padding: 40px 0; text-align: center; }
-    footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    footer a { color: var(--accent); text-decoration: none; }
-    /* Pagefind search */
-    .site-search { margin: 0 0 28px; }
-    .site-search input[type="search"] {
-      width: 100%; padding: 12px 16px; font-size: 1em;
-      border: 1px solid var(--border); border-radius: 10px;
-      background: var(--card); color: var(--text);
-      box-sizing: border-box; outline: none;
-    }
-    .site-search input[type="search"]:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(124,58,237,0.15); }
-    .search-results { margin-top: 12px; }
-    .search-result { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
-    .search-result .result-title { font-weight: 600; }
-    .search-result .result-title a { color: var(--text); text-decoration: none; }
-    .search-result .result-title a:hover { color: var(--accent); }
-    .search-result .result-excerpt { color: var(--muted); font-size: 0.95em; margin-top: 4px; line-height: 1.5; }
-    .search-result .result-excerpt mark { background: #ede9fe; color: var(--text); padding: 0 2px; border-radius: 2px; }
-    .search-empty { color: var(--muted); font-style: italic; padding: 16px 0; }
-  /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
-  /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
-  /*a11y-focus-visible*/a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}
+    :root { --accent:#7c3aed; --bg:#faf9ff; --card:#fff; --border:#e5e7eb; --text:#1f2937; --muted:#6b7280; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    nav { background:#0f172a; color:#fff; }
+    .nav-inner { max-width:920px; min-height:64px; margin:0 auto; padding:0 20px; display:flex; align-items:center; gap:18px; }
+    nav a { color:#c7d2fe; text-decoration:none; }
+    nav .brand { color:#fff; font-weight:750; }
+    main { max-width:920px; margin:0 auto; padding:56px 20px 72px; }
+    header { margin-bottom:32px; }
+    h1 { margin:0 0 8px; color:var(--accent); font-size:clamp(2.2rem,6vw,3.6rem); letter-spacing:-.045em; }
+    header p { max-width:650px; margin:0; color:var(--muted); font-size:1.15rem; line-height:1.55; }
+    .posts { display:grid; gap:18px; }
+    article { padding:26px; border:1px solid var(--border); border-radius:12px; background:var(--card); }
+    article h2 { margin:0 0 8px; font-size:1.35rem; }
+    article h2 a { color:var(--text); text-decoration:none; }
+    article h2 a:hover { color:var(--accent); }
+    .byline { margin:0 0 12px; color:var(--muted); font-size:.92rem; }
+    article p:last-child { margin-bottom:0; line-height:1.55; }
+    footer { max-width:920px; margin:0 auto; padding:26px 20px 40px; border-top:1px solid var(--border); color:var(--muted); font-size:.88rem; }
+    .skip-link { position:absolute; left:-9999px; top:1rem; padding:.5rem 1rem; background:#fff; color:var(--text); }
+    .skip-link:focus { left:1rem; }
+    a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
   </style>
-
-<link rel="canonical" href="https://edoworks.com/blog/">
-<meta name="theme-color" content="#111418">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:description" content="Notes on agentic software patterns, factory lessons, and shipped-product learnings from Edoworks.">
-<meta property="og:site_name" content="Edoworks">
-<meta property="og:url" content="https://edoworks.com/blog/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Blog">
-<meta name="twitter:description" content="Notes on agentic software patterns, factory lessons, and shipped-product learnings from Edoworks.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Edoworks Blog", "url": "https://edoworks.com/blog/", "description": "Notes on agentic software patterns, factory lessons, and shipped-product learnings from Edoworks."}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Edoworks", "item": "https://edoworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://edoworks.com/blog/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Edoworks Blog","url":"https://edoworks.com/blog/","description":"Verified release notes and evidence-backed engineering case studies from Edoworks."}</script>
 </head>
 <body>
-  <!--a11y-skip-link-->
-  <a href="#main-content" class="skip-link">Skip to content</a>
-  <nav aria-label="Site navigation">
-    <div class="nav-inner">
-      <a class="brand" href="https://edoworks.com/">Edoworks</a>
-      <span class="brand-meta">software factory</span>
-      <a href="/blog/" style="margin-left:auto">Blog</a>
-      <a href="/portfolio/">Portfolio</a>
-    </div>
-  </nav>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav aria-label="Site navigation"><div class="nav-inner"><a class="brand" href="/">Edoworks</a><a href="/blog/" style="margin-left:auto">Blog</a><a href="/portfolio/">Portfolio</a></div></nav>
   <main id="main-content">
-    <div class="page-header">
+    <header>
       <h1>Edoworks Blog</h1>
-      <p>Notes on agentic software patterns and factory lessons.</p>
-    </div>
-    <div class="site-search">
-      <input id="site-search-input" type="search" placeholder="Search posts…" aria-label="Search posts" autocomplete="off">
-      <div class="search-results" id="site-search-results" role="status" aria-live="polite"></div>
-    </div>
-    <div class="post-list" id="post-list">
-      <div class="post-card">
-        <h2><a href="/blog/ai-pr-stack-decomposition.html">Decomposing AI-Generated Pull Requests Into Stacks</a></h2>
-        <div class="byline">Edoworks &middot; August 5, 2026</div>
-        <p>GitHub's August 2026 stacked pull requests post shows how to turn one giant AI-generated pull request into an ordered stack of small, independently reviewable PRs. The pattern is the answer to the un-reviewable 1,000-line agent diff.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/case-folding-memory-speed.html">Case-Folding at Memory Speed</a></h2>
-        <div class="byline">Edoworks &middot; August 3, 2026</div>
-        <p>GitHub engineers achieved over 45 GiB/s case-folding on a single core using a branch-free loop and byte-space arithmetic. The approach trades early termination for predictable memory-bandwidth-bound throughput.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/stacked-prs-review-layers.html">Stacked Pull Requests Change Review Shape</a></h2>
-        <div class="byline">Edoworks &middot; July 31, 2026</div>
-        <p>GitHub's stacked pull requests public preview turns a large change into dependency-ordered review layers. The engineering opportunity is smaller decisions without losing end-to-end responsibility.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-enterprise-managed-settings.html">Enterprise Managed Settings Now Reach the Copilot App and Cloud Agent</a></h2>
-        <div class="byline">Edoworks &middot; July 29, 2026</div>
-        <p>GitHub extended enterprise managed settings to the Copilot app and cloud agent on July 27, 2026. What the policy coverage means for agentic development governance.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/confidence-aware-agent-automation.html">Confidence-Aware Agent Automation</a></h2>
-        <div class="byline">Edoworks &middot; July 26, 2026</div>
-        <p>GitHub's new issue-automation controls separate confidence, rationale, and approval. The pattern is useful well beyond issue triage.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-cli-language-servers.html">Copilot CLI + Language Servers: Why June 10’s Update Matters for Real Code Navigation</a></h2>
-        <div class="byline">Edoworks &middot; June 11, 2026</div>
-        <p>GitHub’s June 10, 2026 update brings language-server-backed code intelligence to Copilot CLI. Here is what it changes for workflow reliability and review speed.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-byok-flexible-authentication.html">Bring Your Own Key: Flexible Authentication for Copilot Integration</a></h2>
-        <div class="byline">Edoworks &middot; June 9, 2026</div>
-        <p>GitHub Copilot now supports BYOK (bring your own key) authentication, allowing organizations to use Copilot with their own model endpoints while maintaining audit trails and compliance controls.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-agent-skills-reusable-workflows.html">Copilot Agent Skills: Packaging Recurring Workflows as Reusable Components</a></h2>
-        <div class="byline">Edoworks &middot; June 8, 2026</div>
-        <p>Agent skills let you package recurring workflows (PR templates, security checks, deployment patterns) as discoverable, reusable components that agents can invoke without reimplementation.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/vscode-123-agent-workflows.html">VS Code 1.123 Quietly Changed How We Run Multi-Agent Sessions</a></h2>
-        <div class="byline">Edoworks &middot; June 7, 2026</div>
-        <p>Session sync, /chronicle, and side-by-side agent windows in VS Code 1.123 changed how we operate long-running AI engineering sessions.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/agent-debug-panel-jetbrains.html">Debugging Agents: The New Agent Debug Panel in JetBrains</a></h2>
-        <div class="byline">Edoworks &middot; June 6, 2026</div>
-        <p>When agents fail, you need to see why. JetBrains' new agent debug panel shows a chronological log of every decision, tool call, and handoff — turning agent work from a black box into a readable workflow.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-credit-burn.html">We Burned Through Our $300 Copilot Budget in Three Days</a></h2>
-        <div class="byline">Edoworks &middot; June 5, 2026</div>
-        <p>308 Opus events, 5,223 Sonnet events, $300 gone in three days. Here's what broke in our cost guard — and five controls that would have prevented it.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-cli-slash-commands.html">Copilot CLI&#x27;s New Slash Commands Turn Agent Sessions Into Something You Can Steer</a></h2>
-        <div class="byline">Edoworks &middot; June 4, 2026</div>
-        <p>GitHub's June 2 update added /remote, /compact, and /chronicle to Copilot CLI sessions in JetBrains. Here's why those controls matter before you decide how to use them.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-app-control-center-pattern.html">GitHub Copilot App: The Control Center Pattern for Multi-Agent Development</a></h2>
-        <div class="byline">Edoworks &middot; June 3, 2026</div>
-        <p>GitHub's Copilot app introduces a control-center model for parallel agents. Here's what shipped at Build 2026 and how we're applying the pattern to product delivery workflows.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/microsoft-build-2026.html">Microsoft Build 2026: What the Agent-First Platform Means for Developers</a></h2>
-        <div class="byline">Edoworks &middot; June 2, 2026</div>
-        <p>Microsoft Build 2026 delivered. Here's what MAI-Code-1, the Windows agent platform, cloud-scale agent governance, and multi-model Copilot mean for developers building agentic applications.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-sdk-technical-preview.html">The GitHub Copilot SDK Is Now in Technical Preview</a></h2>
-        <div class="byline">Edoworks &middot; June 1, 2026</div>
-        <p>GitHub's Copilot SDK lets developers embed the agentic planning loop — plan mode, background tasks, approval gates — into any Node.js, Python, Go, or .NET application. Here's what it opens up.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/agent-approval-gates-security-patterns.html">Agent Approval Gates: Security Patterns for Autonomous Code Deployment</a></h2>
-        <div class="byline">Edoworks &middot; May 31, 2026</div>
-        <p>GitHub agents can merge PRs autonomously, but only when explicit approval rules are satisfied. This pattern — sandboxed execution, branch protection, audit logs — is shaping how teams trust code without humans in every loop.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/github-mcp-integrations-emerging-pattern.html">Model Context Protocol: The Emerging Standard for AI Tool Integration</a></h2>
-        <div class="byline">Edoworks &middot; May 30, 2026</div>
-        <p>MCP (Model Context Protocol) surfaces as the standard way for AI agents to discover and invoke external tools. GitHub Copilot, Claude, and enterprise AI platforms are converging on this single interface.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/ghcp-cli-work-life-harmony.html">Work-Life Harmony with GitHub Copilot CLI: Let Your Agents Work While You Rest</a></h2>
-        <div class="byline">Edoworks &middot; May 29, 2026</div>
-        <p>How to dispatch long-running AI agents before lunch, a run, or bedtime — and come back to finished work instead of a blinking cursor.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/claude-opus-4-8.html">Claude Opus 4.8: What Changed, How It Compares, and Whether to Upgrade</a></h2>
-        <div class="byline">Edoworks &middot; May 28, 2026</div>
-        <p>Opus 4.8 shipped today. Here's what changed, how it benchmarks against GPT-5.5 and Gemini 3.1 Pro, and what it means for Edoworks's model routing.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/building-copilot-plugins.html">Building GitHub Copilot Plugins: First Principles, Real Submissions, Honest Lessons</a></h2>
-        <div class="byline">Edoworks &middot; May 28, 2026</div>
-        <p>We built two Copilot plugins, submitted them, got rejected for fair reasons, and learned exactly what makes a plugin worth building.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-in-visual-studio-may-update.html">GitHub Copilot in Visual Studio — May Update</a></h2>
-        <div class="byline">Edoworks &middot; May 27, 2026</div>
-        <p>VS 2026 May update brings cloud agent sessions, custom agent support at the user level, and multi-file diff summaries for managing large-scale code changes.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/agent-mode-picker-jetbrains.html">Copilot CLI Agent Mode Picker: Separating Agent, Ask, Custom, and Plan</a></h2>
-        <div class="byline">Edoworks &middot; May 26, 2026</div>
-        <p>JetBrains IDEs now ship with an agent mode picker that lets developers choose between autonomous agent, quick Q&amp;A, custom orchestration, or collaborative planning — adapting Copilot's behavior to the task.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-sdk-general-availability.html">Copilot SDK is Now Generally Available</a></h2>
-        <div class="byline">Edoworks &middot; May 25, 2026</div>
-        <p>GitHub's Copilot SDK reaches general availability with support for Node.js, Python, Go, Rust, .NET, and Java — allowing developers to embed agentic workflows directly in their applications.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/copilot-app-agent-control-center.html">GitHub Copilot App: The Agent-Native Desktop Experience</a></h2>
-        <div class="byline">Edoworks &middot; May 24, 2026</div>
-        <p>The new Copilot app brings agent orchestration to the desktop: multi-agent sessions, canvases for collaborative work, and a unified control center for managing parallel workflows.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/hello-foculoom-engineering.html">Hello, Foculoom Engineering</a></h2>
-        <div class="byline">Edoworks &middot; May 23, 2026</div>
-        <p>How Edoworks built a static blog with 200 lines of Python and no dependencies — and why the constraints were the point.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/anthropic-eval-incident-response-pattern.html">How Anthropic Responded to Its Own Eval Incident</a></h2>
-        <div class="byline">Edoworks &middot; August 5, 2026</div>
-        <p>Anthropic's July 2026 cyber eval incident review found three cases where a model reached the internet from a sealed test. The response pattern is a useful template for any team running agentic tests.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/opus5-long-running-agent-loop.html">Claude Opus 5 and the Long-Running Agent Loop</a></h2>
-        <div class="byline">Edoworks &middot; August 3, 2026</div>
-        <p>Anthropic's Claude Opus 5 launch emphasizes long-running agents. A plan-build-review-verify loop maps directly to the agent loop Opus 5 is designed to sustain.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/cyber-eval-boundaries.html">Cyber Evaluations Need Hard Boundaries</a></h2>
-        <div class="byline">Edoworks &middot; July 31, 2026</div>
-        <p>Anthropic found three real-world incidents during a review of cyber evaluations. The lesson is to enforce scope, isolation, monitoring, and automatic stops outside the prompt.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/measure-autonomous-work-surface-outcome.html">Measure Autonomous Work by Surface and Outcome</a></h2>
-        <div class="byline">Edoworks &middot; July 29, 2026</div>
-        <p>GitHub expanded Copilot app usage metrics across report rollups. The lesson is to measure autonomous work by surface and outcome, not adoption alone.</p>
-      </div>
-      <div class="post-card">
-        <h2><a href="/blog/eval-first-model-upgrades.html">Eval-First Model Upgrades</a></h2>
-        <div class="byline">Edoworks &middot; July 26, 2026</div>
-        <p>A model launch is a reason to rerun evaluations, not a reason to change every agent route on announcement day.</p>
-      </div>
-    </div>
+      <p>Verified release notes and evidence-backed engineering case studies. No vendor-news feed, speculative roadmap, or unsupported operating claims.</p>
+    </header>
+    <section class="posts" aria-label="Posts">
+      <article>
+        <h2><a href="/blog/rung-0-3-1-release.html">Rung 0.3.1 Is Available</a></h2>
+        <p class="byline">August 26, 2026</p>
+        <p>Direct links to the GitHub Release, PyPI artifacts, public workflow record, installation command, and product limitations.</p>
+      </article>
+      <article>
+        <h2><a href="/blog/building-copilot-plugins.html">What a Rejected Copilot Plugin Taught Us</a></h2>
+        <p class="byline">Updated August 26, 2026</p>
+        <p>A concise account of a public submission that passed automated intake and failed manual review, with no claim of acceptance or adoption.</p>
+      </article>
+    </section>
   </main>
-  <footer>
-    <span>&copy; 2026 Edoworks · Foculoom LLC</span>
-    <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/portfolio/">Portfolio</a></span>
-    <span>Built by Edoworks 202607210652.0.</span>
-  </footer>
-  <link rel="stylesheet" href="/pagefind/pagefind-modular-ui.css">
-  <script src="/pagefind/pagefind-modular-ui.js" type="module"></script>
-  <script type="module">
-    const input = document.getElementById('site-search-input');
-    const resultsEl = document.getElementById('site-search-results');
-    const postList = document.getElementById('post-list');
-    let pagefind, debounce, reqId = 0;
-    async function ensurePagefind() {
-      if (!pagefind) {
-        pagefind = await import('/pagefind/pagefind.js');
-        await pagefind.options({ excerptLength: 25 });
-        pagefind.init();
-      }
-      return pagefind;
-    }
-    function renderExcerpt(parent, excerpt) {
-      // Pagefind returns excerpt with <mark>...</mark> highlighting. Parse via
-      // DOMParser then keep only bare <mark> elements (no attributes) to prevent
-      // any event-handler/attribute injection. Text nodes are preserved.
-      const doc = new DOMParser().parseFromString('<div>' + (excerpt || '') + '</div>', 'text/html');
-      const out = document.createElement('div');
-      for (const node of doc.body.firstChild.childNodes) {
-        if (node.nodeType === Node.TEXT_NODE) {
-          out.appendChild(node.cloneNode());
-        } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'MARK' && !node.attributes.length) {
-          const m = document.createElement('mark');
-          m.textContent = node.textContent;
-          out.appendChild(m);
-        }
-      }
-      parent.appendChild(out);
-    }
-    async function runSearch(query) {
-      const myId = ++reqId;
-      if (!query.trim()) {
-        if (myId === reqId) { resultsEl.innerHTML = ''; postList.style.display = ''; }
-        return;
-      }
-      const pf = await ensurePagefind();
-      if (myId !== reqId) return;
-      const search = await pf.search(query);
-      if (myId !== reqId) return;
-      postList.style.display = 'none';
-      if (!search.results.length) {
-        resultsEl.innerHTML = '<div class="search-empty">No posts match “' + query.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])) + '.”</div>';
-        return;
-      }
-      const top = await Promise.all(search.results.slice(0, 20).map(r => r.data()));
-      if (myId !== reqId) return;
-      resultsEl.innerHTML = '';
-      for (const r of top) {
-        const card = document.createElement('div');
-        card.className = 'search-result';
-        const titleRow = document.createElement('div');
-        titleRow.className = 'result-title';
-        const a = document.createElement('a');
-        a.href = r.url;
-        a.textContent = r.meta?.title || r.url;
-        titleRow.appendChild(a);
-        const ex = document.createElement('div');
-        ex.className = 'result-excerpt';
-        renderExcerpt(ex, r.excerpt);
-        card.appendChild(titleRow);
-        card.appendChild(ex);
-        resultsEl.appendChild(card);
-      }
-    }
-    input.addEventListener('input', () => {
-      clearTimeout(debounce);
-      debounce = setTimeout(() => runSearch(input.value), 180);
-    });
-    input.addEventListener('keydown', e => { if (e.key === 'Enter') { clearTimeout(debounce); runSearch(input.value); } });
-  </script>
+  <footer>© 2026 Edoworks · Foculoom LLC · <a href="/portfolio/">Portfolio</a> · Built by Edoworks 202607210652.0.</footer>
 </body>
 </html>
