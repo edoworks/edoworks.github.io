@@ -23,6 +23,10 @@
       "source_page_id": "portfolio"
     },
     {
+      "path": "/rung/",
+      "source_page_id": "rung-project"
+    },
+    {
       "path": "/privacy/",
       "source_page_id": "privacy"
     }

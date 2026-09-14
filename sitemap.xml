@@ -31,6 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://edoworks.com/rung/</loc>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://edoworks.com/privacy/</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>

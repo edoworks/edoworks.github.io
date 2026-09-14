@@ -2,11 +2,9 @@
 
 Public website for **Edoworks**.
 
-- **Domain:** `edoworks.com` (pending registration, FG-114 — founder
-  approval gate. See
-  `.factory/reports/2026-07-21-edoworks-brand-infrastructure-5-whys.md`.)
-- **Surfaces:** landing (`index.html`), blog (`blog/index.html`), and portfolio
-  (`portfolio/index.html`).
+- **Domain:** `edoworks.com` (live via GitHub Pages and Cloudflare DNS).
+- **Surfaces:** landing (`index.html`), blog (`blog/index.html`), portfolio
+  (`portfolio/index.html`), and Rung project page (`rung/index.html`).
 - **Build stamp:** every HTML page carries
   `<meta name="generator" content="Edoworks <version>">` and a
   `Built by Edoworks <version>.` footer per
@@ -26,13 +24,13 @@ edoworks.github.io/
 ├── CNAME            # edoworks.com (set after domain registration)
 ├── index.html       # landing (links to portfolio + blog)
 ├── blog/
-│   └── index.html   # blog index (empty until first post)
+│   └── index.html   # blog index
+├── rung/
+│   └── index.html   # static Rung distribution page
 └── robots.txt
 ```
 
 ## Publishing
 
-This is a GitHub Pages site. Until `edoworks.com` is registered and the
-repo is pushed, this directory is a **local scaffold only** — do not push
-without founder approval (`AUTHORIZE EDOWORKS SITE PUSH`, gated on
-FG-114).
+This is a GitHub Pages site. Publishing changes requires rendered-page review
+and the public-link check.
