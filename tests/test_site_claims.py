@@ -64,6 +64,75 @@ class SiteClaimTests(unittest.TestCase):
             errors = MODULE.validate(root)
             self.assertTrue(any("sitemap omits" in error for error in errors))
 
+    def test_unsupported_trademark_and_individual_deletion_claims_are_rejected(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            terms = root / "nownest/terms/index.html"
+            terms.write_text(terms.read_text() + '"NowNest" is a trademark of Foculoom LLC.')
+            support = root / "nownest/support/index.html"
+            support.write_text(support.read_text() + "Testers can delete individual saved ideas.")
+            errors = MODULE.validate(root)
+            self.assertGreaterEqual(sum("stale or unsupported" in error for error in errors), 2)
+
+    def test_paraphrased_deletion_and_trademark_symbol_claims_are_rejected(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            support = root / "nownest/support/index.html"
+            support.write_text(support.read_text() + "You can delete saved ideas one at a time. NowNest™")
+            errors = MODULE.validate(root)
+            self.assertGreaterEqual(sum("unsupported NowNest claim pattern" in error for error in errors), 2)
+
+    def test_full_public_contract_is_required(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            home = root / "nownest/index.html"
+            home.write_text(home.read_text().replace("Save again", "Keep it"))
+            privacy = root / "nownest/privacy/index.html"
+            privacy.write_text(
+                privacy.read_text()
+                .replace("does not schedule or send notifications", "stays quiet")
+                .replace("network access", "remote connection")
+            )
+            terms = root / "nownest/terms/index.html"
+            terms.write_text(terms.read_text().replace("does not claim trademark registration or adoption", "makes no brand statement"))
+            errors = MODULE.validate(root)
+            self.assertEqual(4, sum("public contract is incomplete" in error for error in errors))
+
+    def test_truthful_deletion_and_trademark_disclaimers_are_allowed(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            support = root / "nownest/support/index.html"
+            support.write_text(support.read_text() + "You cannot delete saved ideas individually.")
+            terms = root / "nownest/terms/index.html"
+            terms.write_text(terms.read_text() + "NowNest is not a trademark of Foculoom LLC.")
+            errors = MODULE.validate(root)
+            self.assertFalse(any("unsupported NowNest claim pattern" in error for error in errors))
+
+    def test_stale_public_product_language_is_rejected(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            home = root / "nownest/index.html"
+            home.write_text(home.read_text() + "Park ideas. Park Interruptions. Review Later.")
+            errors = MODULE.validate(root)
+            self.assertGreaterEqual(sum("stale or unsupported" in error for error in errors), 3)
+
+    def test_home_requires_featured_nownest_record(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            home = root / "index.html"
+            home.write_text(home.read_text().replace('class="product-spotlight" id="nownest"', 'class="product-summary"'))
+            self.assertTrue(any("home does not feature" in error for error in MODULE.validate(root)))
+
+    def test_shared_theme_and_art_are_required(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            (root / "nownest/assets/sophie-nest.svg").unlink()
+            support = root / "nownest/support/index.html"
+            support.write_text(support.read_text().replace('<link rel="stylesheet" href="/nownest/styles.css">', ""))
+            errors = MODULE.validate(root)
+            self.assertTrue(any("product asset is missing" in error for error in errors))
+            self.assertTrue(any("shared product theme" in error for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()
