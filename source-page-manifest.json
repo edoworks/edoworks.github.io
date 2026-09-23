@@ -39,6 +39,22 @@
       "source_page_id": "rung-project"
     },
     {
+      "path": "/nownest/",
+      "source_page_id": "nownest-qualification"
+    },
+    {
+      "path": "/nownest/support/",
+      "source_page_id": "nownest-support"
+    },
+    {
+      "path": "/nownest/privacy/",
+      "source_page_id": "nownest-privacy"
+    },
+    {
+      "path": "/nownest/terms/",
+      "source_page_id": "nownest-terms"
+    },
+    {
       "path": "/privacy/",
       "source_page_id": "privacy"
     }
