@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Edoworks 202609230000.0">
   <title>NowNest — Park ideas. Return to now.</title>
   <meta name="description" content="NowNest is a quiet, offline-first space for holding your current next action when a new idea appears. No account, no network, no analytics.">
   <link rel="canonical" href="https://edoworks.com/nownest/">
@@ -36,7 +37,7 @@
     .privacy-strip strong { font-weight: 700; }
     .privacy-strip a { color: var(--accent-dark); font-weight: 600; }
 
-    .features { max-width: 720px; margin: 3rem auto 0; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .features { max-width: 720px; margin: 3rem auto 0; padding: 0 1.5rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
     .feature-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
     .feature-card .icon { font-size: 1.5rem; margin-bottom: 0.75rem; display: block; }
     .feature-card h3 { font-size: 0.9375rem; font-weight: 700; margin-bottom: 0.4rem; }
@@ -45,6 +46,7 @@
     footer { border-top: 1px solid var(--border); padding: 2rem 1.5rem; text-align: center; font-size: 0.8125rem; color: var(--subtle); line-height: 1.8; }
     .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin-bottom: 0.75rem; }
     .footer-links a { color: var(--accent); }
+    @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -68,9 +70,11 @@
         action visible. Park an interruption locally, confirm it's tucked away,
         and return to NOW.
       </p>
+      <p class="tagline"><strong>Qualification preview.</strong> NowNest is not
+        currently available for download and has not completed Apple acceptance.</p>
       <aside class="privacy-strip" role="note" aria-label="Privacy notice">
         <strong>Offline-first by design.</strong> No account, no network, no
-        analytics, no notifications. All data stays on your device.
+        analytics, no notifications. Qualification-build data stays on the test device.
         <a href="/nownest/privacy/">Full privacy policy &rarr;</a>
       </aside>
     </section>
@@ -94,7 +98,7 @@
       <div class="feature-card">
         <span class="icon" aria-hidden="true">&#128274;</span>
         <h3>No Account Needed</h3>
-        <p>No login, no cloud, no sync. Your data lives on your device. Open the app and start immediately.</p>
+        <p>No login, no cloud, no sync. The qualification build keeps its data on the device.</p>
       </div>
     </section>
   </main>
@@ -108,6 +112,7 @@
       <a href="/">Edoworks</a>
     </nav>
     <p>&copy; 2026 NowNest / Foculoom LLC.</p>
+    <p>Built by Edoworks 202609230000.0.</p>
   </footer>
 
 </body>
