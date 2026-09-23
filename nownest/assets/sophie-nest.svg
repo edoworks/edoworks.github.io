@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" role="img" aria-labelledby="title desc">
+  <title id="title">Sophie beside a nest holding saved notes</title>
+  <desc id="desc">A small warm ginger nest keeper sits quietly beside a paper nest.</desc>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="#F7E8C8" d="M54 278c36-37 86-56 151-56 65 0 119 20 162 59-42 29-96 44-162 44-64 0-115-16-151-47Z"/>
+    <ellipse cx="214" cy="268" rx="126" ry="57" fill="#B95F35" fill-opacity=".82"/>
+    <ellipse cx="214" cy="258" rx="96" ry="38" fill="#D99324" fill-opacity=".32"/>
+    <g stroke="#B95F35" stroke-linecap="round" stroke-width="8">
+      <path d="m112 253-38-30M135 232l-20-43M164 222l-5-49M267 224l18-47M297 236l38-37M315 258l45-13"/>
+    </g>
+    <g transform="translate(151 202)">
+      <rect width="69" height="50" x="0" y="0" rx="12" fill="#FFFDF7" stroke="#28231D" stroke-opacity=".14"/>
+      <path stroke="#6F665B" stroke-linecap="round" stroke-width="5" d="M14 16h40M14 29h28"/>
+      <path stroke="#617A64" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="m45 37 8 8 15-19"/>
+    </g>
+    <g transform="translate(234 50)">
+      <path stroke="#D99324" stroke-linecap="round" stroke-width="14" d="M103 177c25-17 35-41 27-72"/>
+      <ellipse cx="130" cy="99" rx="12" ry="15" fill="#D99324"/>
+      <ellipse cx="68" cy="174" rx="58" ry="61" fill="#B95F35"/>
+      <ellipse cx="68" cy="180" rx="37" ry="40" fill="#F4D79C" fill-opacity=".58"/>
+      <ellipse cx="72" cy="89" rx="39" ry="38" fill="#B95F35"/>
+      <ellipse cx="51" cy="53" rx="15" ry="24" fill="#B95F35" transform="rotate(-18 51 53)"/>
+      <ellipse cx="90" cy="51" rx="15" ry="24" fill="#B95F35" transform="rotate(18 90 51)"/>
+      <ellipse cx="51" cy="56" rx="7" ry="13" fill="#D99324" fill-opacity=".7"/>
+      <ellipse cx="89" cy="54" rx="7" ry="13" fill="#D99324" fill-opacity=".7"/>
+      <ellipse cx="58" cy="84" rx="6" ry="8" fill="#28231D"/>
+      <ellipse cx="84" cy="84" rx="6" ry="8" fill="#28231D"/>
+      <circle cx="60" cy="81" r="2" fill="#FFFDF7"/>
+      <circle cx="86" cy="81" r="2" fill="#FFFDF7"/>
+      <ellipse cx="71" cy="101" rx="7" ry="5" fill="#D99324"/>
+      <g stroke="#28231D" stroke-linecap="round" stroke-opacity=".32" stroke-width="2">
+        <path d="M61 104 34 101M61 110l-27 7M81 104l27-3M81 110l27 7"/>
+      </g>
+      <ellipse cx="42" cy="222" rx="17" ry="11" fill="#B95F35"/>
+      <ellipse cx="88" cy="222" rx="17" ry="11" fill="#B95F35"/>
+    </g>
+    <ellipse cx="327" cy="306" rx="46" ry="9" fill="#617A64" fill-opacity=".22"/>
+  </g>
+</svg>

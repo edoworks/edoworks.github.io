@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Edoworks — Verified Software Factory Evidence</title>
   <meta name="description" content="Edoworks builds, verifies, and documents evidence for software maintained by its operators.">
-  <meta name="generator" content="Edoworks 202608200800.0">
+  <meta name="generator" content="Edoworks 202609231940.0">
   
   <link rel="manifest" href="/assets/site.webmanifest">
   <style>
@@ -54,8 +54,17 @@
     .proof h2 { margin:0 0 8px; font-size:1.1rem; }
     .proof p { margin:0 0 12px; color:var(--muted); font-size:.9rem; }
     .proof a { font-weight:700; }
+    .product-spotlight { margin-top:24px; display:grid; grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr); overflow:hidden; border:1px solid #d7bd87; border-radius:24px; background:#fff8ea; color:#28231d; }
+    .product-art { min-height:300px; padding:24px; display:grid; place-items:center; background:#fffdf7; border-right:1px solid #d7bd87; }
+    .product-art img { width:min(100%,320px); height:auto; }
+    .product-body { padding:34px; align-self:center; }
+    .product-body .eyebrow { color:#8f4526; }
+    .product-body h2 { margin:0 0 12px; font-size:clamp(1.8rem,4vw,3rem); letter-spacing:-.04em; }
+    .product-body p { max-width:640px; color:#625a50; }
+    .product-status { display:inline-block; margin-bottom:16px; padding:5px 10px; border:1px solid #8f4526; border-radius:999px; color:#71371f; font-size:.76rem; font-weight:800; }
+    .product-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; padding:10px 16px; border-radius:10px; background:#d99324; color:#28231d; font-weight:800; text-decoration:none; }
     footer { max-width:1120px; margin:0 auto; padding:28px 24px 44px; border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-    @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .overview { grid-template-columns:1fr; } .proof { grid-template-columns:1fr; } }
+    @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .overview { grid-template-columns:1fr; } .proof { grid-template-columns:1fr; } .product-spotlight { grid-template-columns:1fr; } .product-art { min-height:240px; border-right:0; border-bottom:1px solid #d7bd87; } }
     @media (max-width:620px) { .brand-meta { display:none; } .nav-inner { padding:0 16px; gap:12px; } .nav-links { gap:12px; } main { padding:44px 16px 56px; } .kpis { grid-template-columns:1fr; } .kpi { border-right:0; } .flow { grid-template-columns:1fr; } .flow li { min-height:auto; } .flow li::after { content:"↓"; right:12px; top:auto; bottom:-15px; } .flow li:last-child::after { content:"✓"; top:12px; bottom:auto; } }
   /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
   /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
@@ -99,11 +108,22 @@
       </article>
     </section>
 
+    <section class="product-spotlight" id="nownest" aria-labelledby="nownest-title">
+      <div class="product-art"><img src="/nownest/assets/sophie-nest.svg" alt=""></div>
+      <div class="product-body">
+        <p class="eyebrow">NowNest · current work</p>
+        <span class="product-status">In qualification · no public download</span>
+        <h2 id="nownest-title">Save it for later. Return to now.</h2>
+        <p>NowNest is an offline iPhone and iPad app for saving an interruption without losing the next action already in front of you. It is still being tested; hands-on use and distribution checks are still underway.</p>
+        <a class="product-link" href="/nownest/">Visit the qualification page →</a>
+      </div>
+    </section>
+
     <section class="proof" aria-label="Products and engineering record">
       <article><h2>Products</h2><p>Explore the software the factory has built, grouped by category and lifecycle status.</p><a href="/portfolio/">View portfolio →</a></article>
       <article><h2>Engineering record</h2><p>Read practical notes about agentic workflows, validation systems, and lessons from shipped work.</p><a href="/blog/">Read the blog →</a></article>
     </section>
   </main>
-  <footer><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="https://foculoom.com/">foculoom.com</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 202608200800.0.</span></footer>
+  <footer><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="https://foculoom.com/">foculoom.com</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 202609231940.0.</span></footer>
 </body>
 </html>
