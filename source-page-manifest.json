@@ -57,6 +57,150 @@
     {
       "path": "/privacy/",
       "source_page_id": "privacy"
+    },
+    {
+      "path": "/blog/agent-approval-gates-security-patterns.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/agent-debug-panel-jetbrains.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/agent-mode-picker-jetbrains.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/ai-pr-stack-decomposition.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/case-folding-memory-speed.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/claude-opus-4-8.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/confidence-aware-agent-automation.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-agent-skills-reusable-workflows.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-app-agent-control-center.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-app-control-center-pattern.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-byok-flexible-authentication.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-cli-language-servers.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-cli-slash-commands.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-credit-burn.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-enterprise-managed-settings.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-in-visual-studio-may-update.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-sdk-general-availability.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/copilot-sdk-technical-preview.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/ghcp-cli-work-life-harmony.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/github-mcp-integrations-emerging-pattern.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/hello-foculoom-engineering.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/microsoft-build-2026.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/stacked-prs-review-layers.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
+    },
+    {
+      "path": "/blog/vscode-123-agent-workflows.html",
+      "source_page_id": "retired-article",
+      "indexable": false,
+      "content_marker": "This article is no longer part of the current Edoworks blog."
     }
   ]
 }
