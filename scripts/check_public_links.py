@@ -18,14 +18,8 @@ URLS = (
     "https://edoworks.com/nownest/support/",
     "https://edoworks.com/nownest/privacy/",
     "https://edoworks.com/nownest/terms/",
-    "https://github.com/edoworks/rung",
-    "https://github.com/edoworks/rung/releases",
-    "https://pypi.org/project/rung-audit/",
+    "https://foculoom.com/",
     "https://mews-and-woofs.foculoom-5388.chatgpt.site/",
-    "https://rung-evidence.foculoom-5388.chatgpt.site/",
-    "https://buy.stripe.com/5kQ7sL2zx3snavce9t9AA03",
-    "https://buy.stripe.com/dRm8wP2zxd2X32KaXh9AA08",
-    "https://buy.stripe.com/5kQfZheif1kf6eW5CX9AA09",
 )
 
 

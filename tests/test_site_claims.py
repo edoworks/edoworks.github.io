@@ -133,6 +133,32 @@ class SiteClaimTests(unittest.TestCase):
             self.assertTrue(any("product asset is missing" in error for error in errors))
             self.assertTrue(any("shared product theme" in error for error in errors))
 
+    def test_rung_retirement_must_appear_on_every_active_surface(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            article = root / "blog/rung-0-3-2-release.html"
+            article.write_text(article.read_text().replace("retired and is not an active product or paid offer", "available today"))
+            errors = MODULE.validate(root)
+            self.assertTrue(any("Rung retirement statement is missing" in error for error in errors))
+
+    def test_rung_install_and_source_ctas_are_rejected(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            project = root / "rung/index.html"
+            project.write_text(project.read_text() + '<a href="https://github.com/edoworks/rung">View source</a>')
+            portfolio = root / "portfolio/index.html"
+            portfolio.write_text(portfolio.read_text() + " Free engine available")
+            errors = MODULE.validate(root)
+            self.assertTrue(any("active Rung source, install, or payment link" in error for error in errors))
+            self.assertTrue(any("active Rung offer" in error for error in errors))
+
+    def test_rung_claims_authority_cannot_be_removed(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            manifest = root / "source-page-manifest.json"
+            manifest.write_text(manifest.read_text().replace('"path": "docs/ops/public-claims-register.md"', '"path": ""'))
+            self.assertTrue(any("owner lifecycle authority" in error for error in MODULE.validate(root)))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,6 +1,11 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "site": "edoworks",
+  "lifecycle_authority": {
+    "repository": "foculoom/foculoomllc",
+    "path": "docs/ops/public-claims-register.md",
+    "review_pr": "https://github.com/foculoom/foculoomllc/pull/33"
+  },
   "pages": [
     {
       "path": "/blog/building-copilot-plugins.html",
@@ -8,11 +13,13 @@
     },
     {
       "path": "/blog/rung-0-3-1-release.html",
-      "source_page_id": "blog-post"
+      "source_page_id": "blog-post",
+      "claims_record": "rung"
     },
     {
       "path": "/blog/rung-0-3-2-release.html",
-      "source_page_id": "blog-post"
+      "source_page_id": "blog-post",
+      "claims_record": "rung"
     },
     {
       "path": "/blog/mews-and-woofs-concept-experiment.html",
@@ -20,7 +27,8 @@
     },
     {
       "path": "/blog/",
-      "source_page_id": "blog-index"
+      "source_page_id": "blog-index",
+      "claims_record": "rung"
     },
     {
       "path": "/",
@@ -28,7 +36,8 @@
     },
     {
       "path": "/portfolio/",
-      "source_page_id": "portfolio"
+      "source_page_id": "portfolio",
+      "claims_record": "rung"
     },
     {
       "path": "/mews-and-woofs/",
@@ -36,7 +45,8 @@
     },
     {
       "path": "/rung/",
-      "source_page_id": "rung-project"
+      "source_page_id": "rung-project",
+      "claims_record": "rung"
     },
     {
       "path": "/nownest/",

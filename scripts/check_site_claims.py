@@ -23,6 +23,26 @@ NOWNEST_URLS = {
     "https://edoworks.com/nownest/privacy/",
     "https://edoworks.com/nownest/terms/",
 }
+RUNG_PAGES = (
+    "portfolio/index.html",
+    "rung/index.html",
+    "blog/index.html",
+    "blog/rung-0-3-1-release.html",
+    "blog/rung-0-3-2-release.html",
+)
+RUNG_STATUS_PHRASE = "retired and is not an active product or paid offer"
+RUNG_ACTIVE_PHRASES = (
+    "free engine available",
+    "install from pypi",
+    "install the exact release",
+    "current rung release",
+    "planned report unlaunched",
+    "a $5 commit-pinned report is planned",
+)
+RUNG_ACTIVE_LINK = re.compile(
+    r'href=["\'](?:https?://(?:github\.com/edoworks/rung|pypi\.org/project/rung-audit|buy\.stripe\.com)|https?://rung\.edoworks\.com)',
+    re.IGNORECASE,
+)
 FORBIDDEN_CLAIMS = (
     re.compile(r"available (?:now\b|today\b|for download)", re.IGNORECASE),
     re.compile(r"available\s+to\s+download", re.IGNORECASE),
@@ -122,6 +142,28 @@ def validate(root: Path = ROOT) -> list[str]:
             errors.append(f"NowNest product asset is missing: {asset}")
 
     manifest = json.loads((root / "source-page-manifest.json").read_text(encoding="utf-8"))
+    authority = manifest.get("lifecycle_authority", {})
+    if authority.get("repository") != "foculoom/foculoomllc" or authority.get("path") != "docs/ops/public-claims-register.md":
+        errors.append("source-page manifest lacks the owner lifecycle authority")
+    claimed_paths = {page["path"] for page in manifest["pages"] if page.get("claims_record") == "rung"}
+    expected_rung_paths = {"/portfolio/", "/rung/", "/blog/", "/blog/rung-0-3-1-release.html", "/blog/rung-0-3-2-release.html"}
+    if not expected_rung_paths <= claimed_paths:
+        errors.append("source-page manifest omits a Rung claims-record reference")
+    for path in RUNG_PAGES:
+        html = (root / path).read_text(encoding="utf-8")
+        normalized = " ".join(html.lower().split())
+        visible_body = " ".join(html.split("</head>", 1)[-1].lower().split())
+        if RUNG_STATUS_PHRASE not in visible_body:
+            errors.append(f"Rung retirement statement is missing: {path}")
+        for phrase in RUNG_ACTIVE_PHRASES:
+            if phrase in normalized:
+                errors.append(f"active Rung offer remains in {path}: {phrase}")
+        if RUNG_ACTIVE_LINK.search(html):
+            errors.append(f"active Rung source, install, or payment link remains: {path}")
+    for path in ("rung/index.html", "blog/rung-0-3-1-release.html", "blog/rung-0-3-2-release.html"):
+        html = (root / path).read_text(encoding="utf-8")
+        if "retired" not in html.split("</head>", 1)[0].lower():
+            errors.append(f"Rung page metadata lacks retired status: {path}")
     manifest_paths = {page["path"] for page in manifest["pages"]}
     expected_paths = {url.removeprefix("https://edoworks.com") for url in NOWNEST_URLS}
     if not expected_paths <= manifest_paths:

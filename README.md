@@ -4,7 +4,7 @@ Public website for **Edoworks**.
 
 - **Domain:** `edoworks.com` (live via GitHub Pages and Cloudflare DNS).
 - **Surfaces:** landing (`index.html`), blog (`blog/index.html`), portfolio
-  (`portfolio/index.html`), Rung project page (`rung/index.html`), and the
+  (`portfolio/index.html`), retired Rung archive (`rung/index.html`), and the
   qualification-stage NowNest pages (`nownest/`).
 - **Build stamp:** every HTML page carries
   `<meta name="generator" content="Edoworks <version>">` and a
@@ -27,7 +27,7 @@ edoworks.github.io/
 ├── blog/
 │   └── index.html   # blog index
 ├── rung/
-│   └── index.html   # static Rung distribution page
+│   └── index.html   # retired Rung archive record
 ├── nownest/          # qualification, support, privacy, and terms pages
 └── robots.txt
 ```
