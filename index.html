@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edoworks — Verified Software Factory Evidence</title>
-  <meta name="description" content="Edoworks builds, verifies, and documents evidence for software maintained by its operators.">
+  <title>Edoworks — Software project records</title>
+  <meta name="description" content="Edoworks documents Foculoom LLC software projects and experiments, with current availability stated on each record.">
   <meta name="generator" content="Edoworks 202609231940.0">
   
   <link rel="manifest" href="/assets/site.webmanifest">
@@ -36,16 +36,11 @@
     .kpi-value { margin:0; font-size:1.45rem; font-weight:800; font-variant-numeric:tabular-nums; }
     .kpi-value.unavailable { color:var(--muted); font-size:.82rem; letter-spacing:.04em; }
     .kpi-note { margin:5px 0 0; color:var(--muted); font-size:.7rem; }
-    .overview { display:grid; grid-template-columns:1.5fr 1fr; gap:20px; margin-top:24px; }
-    .pipeline { padding:28px; border-radius:8px; background:var(--dark-bg); color:var(--dark-text); }
-    .pipeline .eyebrow { color:var(--dark-active); }
-    .pipeline h2,.summary h2 { margin:0 0 9px; font-size:1.35rem; }
-    .pipeline > p { color:var(--dark-muted); margin:0 0 24px; }
-    .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; list-style:none; margin:0; padding:0; }
-    .flow li { position:relative; min-height:76px; padding:12px 9px; border:1px solid var(--dark-border); border-radius:6px; background:var(--dark-card); font-size:.75rem; font-weight:700; }
-    .flow li::after { content:"→"; position:absolute; right:-9px; top:26px; z-index:1; color:var(--dark-active); }
-    .flow li:last-child::after { content:"✓"; right:8px; color:var(--verified); }
-    .flow span { display:block; color:var(--dark-muted); font-size:.65rem; font-weight:500; }
+    .overview { margin-top:24px; }
+    .record-note { padding:28px; border-radius:8px; background:var(--dark-bg); color:var(--dark-text); }
+    .record-note .eyebrow { color:var(--dark-active); }
+    .record-note h2,.summary h2 { margin:0 0 9px; font-size:1.35rem; }
+    .record-note > p { color:var(--dark-muted); margin:0 0 24px; }
     .summary { padding:28px; border:1px solid var(--border); border-radius:8px; background:var(--card); }
     .summary p { color:var(--muted); }
     .summary a { font-weight:750; }
@@ -64,8 +59,8 @@
     .product-status { display:inline-block; margin-bottom:16px; padding:5px 10px; border:1px solid #8f4526; border-radius:999px; color:#71371f; font-size:.76rem; font-weight:800; }
     .product-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; padding:10px 16px; border-radius:10px; background:#d99324; color:#28231d; font-weight:800; text-decoration:none; }
     footer { max-width:1120px; margin:0 auto; padding:28px 24px 44px; border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-    @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .overview { grid-template-columns:1fr; } .proof { grid-template-columns:1fr; } .product-spotlight { grid-template-columns:1fr; } .product-art { min-height:240px; border-right:0; border-bottom:1px solid #d7bd87; } }
-    @media (max-width:620px) { .brand-meta { display:none; } .nav-inner { padding:0 16px; gap:12px; } .nav-links { gap:12px; } main { padding:44px 16px 56px; } .kpis { grid-template-columns:1fr; } .kpi { border-right:0; } .flow { grid-template-columns:1fr; } .flow li { min-height:auto; } .flow li::after { content:"↓"; right:12px; top:auto; bottom:-15px; } .flow li:last-child::after { content:"✓"; top:12px; bottom:auto; } }
+    @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .proof { grid-template-columns:1fr; } .product-spotlight { grid-template-columns:1fr; } .product-art { min-height:240px; border-right:0; border-bottom:1px solid #d7bd87; } }
+    @media (max-width:620px) { .brand-meta { display:none; } .nav-inner { padding:0 16px; gap:12px; } .nav-links { gap:12px; } main { padding:44px 16px 56px; } .kpis { grid-template-columns:1fr; } .kpi { border-right:0; } }
   /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
   /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
   /*a11y-focus-visible*/a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}
@@ -74,37 +69,35 @@
 <link rel="canonical" href="https://edoworks.com/">
 <meta name="theme-color" content="#111418">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Edoworks — A Software Factory That Ships">
-<meta property="og:description" content="Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record.">
+<meta property="og:title" content="Edoworks — Software project records">
+<meta property="og:description" content="Edoworks documents Foculoom LLC software projects and experiments, with current availability stated on each record.">
 <meta property="og:site_name" content="Edoworks">
 <meta property="og:url" content="https://edoworks.com/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edoworks — A Software Factory That Ships">
-<meta name="twitter:description" content="Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com", "description": "Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record."}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Edoworks", "url": "https://edoworks.com"}</script>
+<meta name="twitter:title" content="Edoworks — Software project records">
+<meta name="twitter:description" content="Edoworks documents Foculoom LLC software projects and experiments, with current availability stated on each record.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com", "description": "Edoworks documents Foculoom LLC software projects and experiments, with current availability stated on each record."}</script>
 </head>
 <body>
   <!--a11y-skip-link-->
   <a href="#main-content" class="skip-link">Skip to content</a>
   <nav aria-label="Site navigation">
     <div class="nav-inner">
-      <a class="brand" href="/">Edoworks</a><span class="brand-meta">software factory</span>
+      <a class="brand" href="/">Edoworks</a><span class="brand-meta">project records</span>
       <div class="nav-links"><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/nownest/">NowNest</a></div>
     </div>
   </nav>
   <main id="main-content">
     <section aria-labelledby="hero-title">
-      <p class="eyebrow">Intent → verified software</p>
-      <h1 id="hero-title">An evolving verified software factory.</h1>
-      <p class="lede">Edoworks builds, verifies, and documents software maintained by its operators. Case studies describe the work; they do not establish product ownership or commercial proof.</p>
-      <div class="actions"><a class="button" href="/portfolio/">See case-study evidence</a></div>
+      <p class="eyebrow">Projects / current status</p>
+      <h1 id="hero-title">Software work, with its current status.</h1>
+      <p class="lede">Edoworks records software projects and experiments under Foculoom LLC. The project pages describe the work and its current availability; they make no claim of commercial success.</p>
+      <div class="actions"><a class="button" href="/portfolio/">Explore the project records</a></div>
     </section>
 
-    <section class="overview" aria-label="Delivery pipeline">
-      <article class="pipeline">
-        <p class="eyebrow">The delivery pipeline</p><h2>Evidence at every handoff</h2><p>Each stage produces a reviewable artifact before work advances.</p>
-        <ol class="flow"><li>Research<span>ground claims</span></li><li>Plan<span>freeze approach</span></li><li>Build<span>small diff</span></li><li>Verify<span>offline gates</span></li><li>Review<span>independent verdict</span></li></ol>
+    <section class="overview" aria-label="Project record scope">
+      <article class="record-note">
+        <p class="eyebrow">About these records</p><h2>Evidence varies by project</h2><p>Read each project page for its specific status and documented checks. A project record alone does not establish release or market traction.</p>
       </article>
     </section>
 
@@ -119,9 +112,9 @@
       </div>
     </section>
 
-    <section class="proof" aria-label="Products and engineering record">
-      <article><h2>Products</h2><p>Explore the software the factory has built, grouped by category and lifecycle status.</p><a href="/portfolio/">View portfolio →</a></article>
-      <article><h2>Engineering record</h2><p>Read practical notes about agentic workflows, validation systems, and lessons from shipped work.</p><a href="/blog/">Read the blog →</a></article>
+    <section class="proof" aria-label="Project records and engineering notes">
+      <article><h2>Project records</h2><p>Explore qualification work, concepts, and historical projects, grouped by lifecycle status.</p><a href="/portfolio/">View portfolio →</a></article>
+      <article><h2>Engineering notes</h2><p>Read dated notes about engineering experiments, validation methods, and lessons learned.</p><a href="/blog/">Read the blog →</a></article>
     </section>
   </main>
   <footer><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="https://foculoom.com/">foculoom.com</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 202609231940.0.</span></footer>
