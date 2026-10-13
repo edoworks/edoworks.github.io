@@ -141,6 +141,14 @@ class SiteClaimTests(unittest.TestCase):
             errors = MODULE.validate(root)
             self.assertTrue(any("Rung retirement statement is missing" in error for error in errors))
 
+    def test_home_rung_record_must_keep_retirement_status(self):
+        with TemporaryDirectory() as directory:
+            root = self.fixture(directory)
+            home = root / "index.html"
+            home.write_text(home.read_text().replace("retired and is not an active product or paid offer", "available today"))
+            errors = MODULE.validate(root)
+            self.assertTrue(any("Rung retirement statement is missing: index.html" in error for error in errors))
+
     def test_rung_install_and_source_ctas_are_rejected(self):
         with TemporaryDirectory() as directory:
             root = self.fixture(directory)

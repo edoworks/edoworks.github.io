@@ -24,6 +24,7 @@ NOWNEST_URLS = {
     "https://edoworks.com/nownest/terms/",
 }
 RUNG_PAGES = (
+    "index.html",
     "portfolio/index.html",
     "rung/index.html",
     "blog/index.html",
@@ -146,7 +147,7 @@ def validate(root: Path = ROOT) -> list[str]:
     if authority.get("repository") != "foculoom/foculoomllc" or authority.get("path") != "docs/ops/public-claims-register.md":
         errors.append("source-page manifest lacks the owner lifecycle authority")
     claimed_paths = {page["path"] for page in manifest["pages"] if page.get("claims_record") == "rung"}
-    expected_rung_paths = {"/portfolio/", "/rung/", "/blog/", "/blog/rung-0-3-1-release.html", "/blog/rung-0-3-2-release.html"}
+    expected_rung_paths = {"/", "/portfolio/", "/rung/", "/blog/", "/blog/rung-0-3-1-release.html", "/blog/rung-0-3-2-release.html"}
     if not expected_rung_paths <= claimed_paths:
         errors.append("source-page manifest omits a Rung claims-record reference")
     for path in RUNG_PAGES:

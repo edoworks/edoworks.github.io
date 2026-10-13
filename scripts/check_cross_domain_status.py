@@ -13,6 +13,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parents[1]
 STATUS = "retired and is not an active product or paid offer"
 RUNG_PAGES = (
+    "index.html",
     "portfolio/index.html",
     "rung/index.html",
     "blog/index.html",

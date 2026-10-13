@@ -3,127 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edoworks — Verified Software Factory Evidence</title>
-  <meta name="description" content="Edoworks builds, verifies, and documents evidence for software maintained by its operators.">
-  <meta name="generator" content="Edoworks 202609231940.0">
-  
+  <title>Edoworks — Focused software, built with evidence</title>
+  <meta name="description" content="Edoworks researches, builds, verifies, and documents focused software. Explore current qualification work, concepts, and retired projects with clear status.">
+  <meta name="generator" content="Edoworks 20261013.0">
+  <meta name="theme-color" content="#f7f6f2">
   <link rel="manifest" href="/assets/site.webmanifest">
-  <style>
-    @font-face { font-family:"Inter"; src:url("/assets/fonts/inter-variable.woff2") format("woff2-variations"); font-weight:100 900; font-display:swap; }
-    :root { --bg:#faf9ff; --text:#1f2937; --accent:#7c3aed; --card:#ffffff; --border:#e5e7eb; --muted:#6b7280; --dark-bg:#07090D; --dark-surface:#0C1016; --dark-card:#10141B; --dark-border:#29303B; --dark-text:#F4F6F8; --dark-muted:#8995A3; --dark-active:#7D8CFF; --verified:#1B7A44; }
-    * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--text); font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
-    a { color:var(--accent); }
-    a:hover { text-decoration-thickness:2px; }
-    :focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
-    nav { border-bottom:1px solid var(--border); background:rgba(255,255,255,.9); }
-    .nav-inner { max-width:1120px; min-height:64px; margin:0 auto; padding:0 24px; display:flex; align-items:center; gap:20px; }
-    .brand { color:var(--text); font-weight:800; text-decoration:none; letter-spacing:-.02em; }
-    .brand-meta { color:var(--muted); font-size:.84rem; }
-    .nav-links { margin-left:auto; display:flex; align-items:center; gap:18px; }
-    .nav-links a { font-size:.9rem; font-weight:650; text-decoration:none; }
-    main { max-width:1120px; margin:0 auto; padding:64px 24px 72px; }
-    .eyebrow { margin:0 0 12px; color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
-    h1 { max-width:850px; margin:0; font-size:clamp(2.7rem,7vw,5.5rem); line-height:.98; letter-spacing:-.055em; }
-    .lede { max-width:720px; margin:24px 0 28px; color:var(--muted); font-size:clamp(1.05rem,2vw,1.3rem); }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:40px; }
-    .button { min-height:44px; display:inline-flex; align-items:center; padding:10px 16px; border-radius:6px; border:1px solid var(--accent); background:var(--accent); color:#fff; font-weight:750; text-decoration:none; }
-    .button.secondary { background:var(--card); color:var(--accent); }
-    .kpis { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); border:1px solid var(--border); border-radius:8px; background:var(--card); overflow:hidden; }
-    .kpi { min-height:112px; padding:18px; border-right:1px solid var(--border); }
-    .kpi:last-child { border-right:0; }
-    .kpi-label { margin:0 0 9px; color:var(--muted); font-size:.72rem; font-weight:750; letter-spacing:.07em; text-transform:uppercase; }
-    .kpi-value { margin:0; font-size:1.45rem; font-weight:800; font-variant-numeric:tabular-nums; }
-    .kpi-value.unavailable { color:var(--muted); font-size:.82rem; letter-spacing:.04em; }
-    .kpi-note { margin:5px 0 0; color:var(--muted); font-size:.7rem; }
-    .overview { display:grid; grid-template-columns:1.5fr 1fr; gap:20px; margin-top:24px; }
-    .pipeline { padding:28px; border-radius:8px; background:var(--dark-bg); color:var(--dark-text); }
-    .pipeline .eyebrow { color:var(--dark-active); }
-    .pipeline h2,.summary h2 { margin:0 0 9px; font-size:1.35rem; }
-    .pipeline > p { color:var(--dark-muted); margin:0 0 24px; }
-    .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; list-style:none; margin:0; padding:0; }
-    .flow li { position:relative; min-height:76px; padding:12px 9px; border:1px solid var(--dark-border); border-radius:6px; background:var(--dark-card); font-size:.75rem; font-weight:700; }
-    .flow li::after { content:"→"; position:absolute; right:-9px; top:26px; z-index:1; color:var(--dark-active); }
-    .flow li:last-child::after { content:"✓"; right:8px; color:var(--verified); }
-    .flow span { display:block; color:var(--dark-muted); font-size:.65rem; font-weight:500; }
-    .summary { padding:28px; border:1px solid var(--border); border-radius:8px; background:var(--card); }
-    .summary p { color:var(--muted); }
-    .summary a { font-weight:750; }
-    .proof { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; }
-    .proof article { padding:22px; border:1px solid var(--border); border-radius:8px; background:var(--card); }
-    .proof h2 { margin:0 0 8px; font-size:1.1rem; }
-    .proof p { margin:0 0 12px; color:var(--muted); font-size:.9rem; }
-    .proof a { font-weight:700; }
-    .product-spotlight { margin-top:24px; display:grid; grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr); overflow:hidden; border:1px solid #d7bd87; border-radius:24px; background:#fff8ea; color:#28231d; }
-    .product-art { min-height:300px; padding:24px; display:grid; place-items:center; background:#fffdf7; border-right:1px solid #d7bd87; }
-    .product-art img { width:min(100%,320px); height:auto; }
-    .product-body { padding:34px; align-self:center; }
-    .product-body .eyebrow { color:#8f4526; }
-    .product-body h2 { margin:0 0 12px; font-size:clamp(1.8rem,4vw,3rem); letter-spacing:-.04em; }
-    .product-body p { max-width:640px; color:#625a50; }
-    .product-status { display:inline-block; margin-bottom:16px; padding:5px 10px; border:1px solid #8f4526; border-radius:999px; color:#71371f; font-size:.76rem; font-weight:800; }
-    .product-link { display:inline-flex; min-height:44px; align-items:center; margin-top:8px; padding:10px 16px; border-radius:10px; background:#d99324; color:#28231d; font-weight:800; text-decoration:none; }
-    footer { max-width:1120px; margin:0 auto; padding:28px 24px 44px; border-top:1px solid var(--border); color:var(--muted); font-size:.82rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-    @media (max-width:850px) { .kpis { grid-template-columns:repeat(2,1fr); } .kpi { border-bottom:1px solid var(--border); } .overview { grid-template-columns:1fr; } .proof { grid-template-columns:1fr; } .product-spotlight { grid-template-columns:1fr; } .product-art { min-height:240px; border-right:0; border-bottom:1px solid #d7bd87; } }
-    @media (max-width:620px) { .brand-meta { display:none; } .nav-inner { padding:0 16px; gap:12px; } .nav-links { gap:12px; } main { padding:44px 16px 56px; } .kpis { grid-template-columns:1fr; } .kpi { border-right:0; } .flow { grid-template-columns:1fr; } .flow li { min-height:auto; } .flow li::after { content:"↓"; right:12px; top:auto; bottom:-15px; } .flow li:last-child::after { content:"✓"; top:12px; bottom:auto; } }
-  /*a11y-skip-link-css*/.skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}
-  /*a11y-reduced-motion*/@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
-  /*a11y-focus-visible*/a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}
-  </style>
-
-<link rel="canonical" href="https://edoworks.com/">
-<meta name="theme-color" content="#111418">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Edoworks — A Software Factory That Ships">
-<meta property="og:description" content="Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record.">
-<meta property="og:site_name" content="Edoworks">
-<meta property="og:url" content="https://edoworks.com/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edoworks — A Software Factory That Ships">
-<meta name="twitter:description" content="Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com", "description": "Edoworks turns intent into verified, shipped software. See the delivery pipeline, portfolio, and engineering record."}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Edoworks", "url": "https://edoworks.com"}</script>
+  <link rel="stylesheet" href="/assets/studio.css">
+  <link rel="canonical" href="https://edoworks.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Edoworks — Focused software, built with evidence">
+  <meta property="og:description" content="Explore Edoworks work with clear current status and reviewable engineering evidence.">
+  <meta property="og:site_name" content="Edoworks">
+  <meta property="og:url" content="https://edoworks.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Edoworks — Focused software, built with evidence">
+  <meta name="twitter:description" content="Explore Edoworks work with clear current status and reviewable engineering evidence.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Edoworks","url":"https://edoworks.com/","description":"Edoworks researches, builds, verifies, and documents focused software."}</script>
 </head>
 <body>
-  <!--a11y-skip-link-->
-  <a href="#main-content" class="skip-link">Skip to content</a>
-  <nav aria-label="Site navigation">
-    <div class="nav-inner">
-      <a class="brand" href="/">Edoworks</a><span class="brand-meta">software factory</span>
-      <div class="nav-links"><a href="/blog/">Blog</a><a href="/portfolio/">Portfolio</a><a href="/nownest/">NowNest</a></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Site navigation">
+      <a class="wordmark" href="/">Edoworks</a>
+      <span class="brand-role">software factory</span>
+      <div class="nav-links"><a href="/portfolio/">Work</a><a href="/blog/">Notes</a><a href="/nownest/">NowNest</a></div>
+    </nav>
+  </header>
+  <main class="page-shell" id="main-content">
+    <div class="home-hero">
+      <section class="hero-copy" aria-labelledby="hero-title">
+        <p class="eyebrow">Edoworks / research · build · verify</p>
+        <h1 class="display" id="hero-title">Focused software, built with evidence.</h1>
+        <p class="lede">Edoworks researches, builds, verifies, and documents focused software. Each case study shows what exists today and what remains in qualification.</p>
+        <p class="role-cue">NowNest is built by Edoworks and operated by <a href="https://foculoom.com/">Foculoom LLC</a>.</p>
+        <a class="button" href="/portfolio/">Explore the work <span aria-hidden="true">&nbsp;→</span></a>
+      </section>
+      <section class="product-spotlight" id="nownest" aria-labelledby="nownest-title">
+        <div class="spotlight-content">
+          <span class="status status-qualification">In qualification · no public download</span>
+          <h2 id="nownest-title">NowNest</h2>
+          <p>Save it for later. Return to now. An offline iPhone and iPad app for saving an interruption without losing your place.</p>
+          <a class="product-link" href="/nownest/">View qualification record <span aria-hidden="true">&nbsp;→</span></a>
+          <figure>
+            <img src="/nownest/assets/sophie-nest.svg" alt="" width="420" height="360">
+            <figcaption>Original Sophie illustration · not an app screenshot</figcaption>
+          </figure>
+        </div>
+      </section>
     </div>
-  </nav>
-  <main id="main-content">
-    <section aria-labelledby="hero-title">
-      <p class="eyebrow">Intent → verified software</p>
-      <h1 id="hero-title">An evolving verified software factory.</h1>
-      <p class="lede">Edoworks builds, verifies, and documents software maintained by its operators. Case studies describe the work; they do not establish product ownership or commercial proof.</p>
-      <div class="actions"><a class="button" href="/portfolio/">See case-study evidence</a></div>
-    </section>
 
-    <section class="overview" aria-label="Delivery pipeline">
-      <article class="pipeline">
-        <p class="eyebrow">The delivery pipeline</p><h2>Evidence at every handoff</h2><p>Each stage produces a reviewable artifact before work advances.</p>
-        <ol class="flow"><li>Research<span>ground claims</span></li><li>Plan<span>freeze approach</span></li><li>Build<span>small diff</span></li><li>Verify<span>offline gates</span></li><li>Review<span>independent verdict</span></li></ol>
-      </article>
-    </section>
-
-    <section class="product-spotlight" id="nownest" aria-labelledby="nownest-title">
-      <div class="product-art"><img src="/nownest/assets/sophie-nest.svg" alt=""></div>
-      <div class="product-body">
-        <p class="eyebrow">NowNest · current work</p>
-        <span class="product-status">In qualification · no public download</span>
-        <h2 id="nownest-title">Save it for later. Return to now.</h2>
-        <p>NowNest is an offline iPhone and iPad app for saving an interruption without losing the next action already in front of you. It is still being tested; hands-on use and distribution checks are still underway.</p>
-        <a class="product-link" href="/nownest/">Visit the qualification page →</a>
+    <section aria-labelledby="selected-title">
+      <div class="section-intro">
+        <h2 id="selected-title">Selected work</h2>
+        <p>Every project carries its current status beside the story.</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card project-card-concept">
+          <span class="status status-concept">Concept preview · beta not open</span>
+          <h3>Mews &amp; Woofs</h3>
+          <p>A playful pet-sound idea being tested as a concept preview. The preview is not a shipped iOS product.</p>
+          <a href="/mews-and-woofs/">Open concept record <span aria-hidden="true">&nbsp;→</span></a>
+        </article>
+        <article class="project-card project-card-archive">
+          <span class="status status-retired">Retired · no active offer</span>
+          <h3>Rung</h3>
+          <p>Rung was a repository-evidence audit engine built by Edoworks. It is retired and is not an active product or paid offer.</p>
+          <a href="/rung/">Read archive record <span aria-hidden="true">&nbsp;→</span></a>
+        </article>
       </div>
     </section>
 
-    <section class="proof" aria-label="Products and engineering record">
-      <article><h2>Products</h2><p>Explore the software the factory has built, grouped by category and lifecycle status.</p><a href="/portfolio/">View portfolio →</a></article>
-      <article><h2>Engineering record</h2><p>Read practical notes about agentic workflows, validation systems, and lessons from shipped work.</p><a href="/blog/">Read the blog →</a></article>
+    <section class="process-note" aria-labelledby="process-title">
+      <h2 id="process-title">Evidence at each handoff</h2>
+      <p>Research, planning, builds, checks, and independent review leave a record that can be inspected.</p>
+      <a href="/blog/">Read engineering notes →</a>
     </section>
   </main>
-  <footer><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="https://foculoom.com/">foculoom.com</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 202609231940.0.</span></footer>
+  <footer class="site-footer"><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="https://foculoom.com/">Foculoom</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 20261013.0.</span></footer>
 </body>
 </html>

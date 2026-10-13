@@ -1,10 +1,10 @@
 {
   "name": "Edoworks",
   "short_name": "Edoworks",
-  "description": "Notes from the Edoworks software factory \u2014 part of Foculoom LLC.",
+  "description": "Notes from the Edoworks software factory — part of Foculoom LLC.",
   "icons": [],
-  "theme_color": "#7c3aed",
-  "background_color": "#FFFFFF",
-  "display": "standalone",
+  "theme_color": "#f7f6f2",
+  "background_color": "#f7f6f2",
+  "display": "browser",
   "start_url": "/"
 }

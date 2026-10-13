@@ -32,7 +32,8 @@
     },
     {
       "path": "/",
-      "source_page_id": "home"
+      "source_page_id": "home",
+      "claims_record": "rung"
     },
     {
       "path": "/portfolio/",

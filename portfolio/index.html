@@ -3,143 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edoworks — Portfolio</title>
-  <meta name="description" content="Public portfolio of products built by the Edoworks software factory.">
-  <meta name="generator" content="Edoworks 202609231940.0">
+  <title>Edoworks — Work and current status</title>
+  <meta name="description" content="Explore Edoworks qualification work, concept experiments, and retired projects. Every record states its current availability.">
+  <meta name="generator" content="Edoworks 20261013.0">
   <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f7f6f2">
+  <link rel="manifest" href="/assets/site.webmanifest">
+  <link rel="stylesheet" href="/assets/studio.css">
   <link rel="canonical" href="https://edoworks.com/portfolio/">
-<meta name="theme-color" content="#111418">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Edoworks — Portfolio">
-<meta property="og:description" content="Public portfolio of products built by the Edoworks software factory.">
-<meta property="og:site_name" content="Edoworks">
-<meta property="og:url" content="https://edoworks.com/portfolio/">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Edoworks — Portfolio">
-<meta name="twitter:description" content="Public portfolio of products built by the Edoworks software factory.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Edoworks — Portfolio", "description": "Public portfolio of products built by the Edoworks software factory.", "url": "https://edoworks.com/portfolio/", "isPartOf": {"@type": "WebSite", "name": "Edoworks", "url": "https://edoworks.com"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Edoworks", "item": "https://edoworks.com/"}, {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://edoworks.com/portfolio/"}]}</script>
-  <style>
-    :root { --accent: #7c3aed; --bg: #faf9ff; --card: #fff; --border: #e5e7eb; --text: #1f2937; --muted: #6b7280; }
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-           background: var(--bg); color: var(--text); margin: 0; padding: 0; }
-    nav { background: rgba(255,255,255,0.9); border-bottom: 1px solid var(--border); padding: 0; }
-    nav .nav-inner { max-width: 1120px; min-height: 64px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 20px; }
-    nav .brand { font-weight: 800; color: var(--text); text-decoration: none; font-size: 1.1em; letter-spacing: -0.02em; }
-    nav .brand-meta { color: var(--muted); font-size: 0.84em; }
-    nav a { color: var(--accent); text-decoration: none; }
-    nav a:hover { color: var(--text); }
-    main { max-width: 920px; margin: 0 auto; padding: 48px 20px 60px; }
-    h1 { color: var(--accent); margin: 0 0 8px; font-size: 2em; }
-    h2 { color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-top: 40px; }
-    .lede { color: var(--muted); margin: 0 0 32px; }
-    .category { margin-bottom: 24px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin: 14px 0; }
-    .card h3 { margin: 0 0 6px; font-size: 1.15em; color: var(--text); }
-    .card .meta { color: var(--muted); font-size: 0.9em; margin-bottom: 8px; }
-    .card .notes { margin: 8px 0; line-height: 1.55; color: var(--text); }
-    .card .links { margin-top: 10px; }
-    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.75em; font-weight: 600; margin-left: 8px; vertical-align: middle; }
-    .btn { display: inline-block; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-size: 0.9em; margin-right: 8px; }
-    .btn-site { background: var(--accent); color: #fff; }
-    .btn-prd { background: #e5e7eb; color: var(--text); }
-    .btn-details { background: #f3e8ff; color: var(--accent); border: 1px solid var(--accent); }
-    .btn-details:hover { background: var(--accent); color: #fff; }
-    .note { color: var(--muted); font-size: 0.9em; }
-    a { color: var(--accent); }
-    /* Portfolio card layout (public): screenshot + body grid */
-    .card-portfolio { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: start; transition: box-shadow 0.15s ease; }
-    .card-portfolio:hover { box-shadow: 0 4px 16px rgba(124,58,237,0.10); }
-    .card-screenshot { width: 120px; height: 120px; border-radius: 8px; overflow: hidden; background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 50%, #c4b5fd 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .card-screenshot img { width: 100%; height: 100%; object-fit: cover; }
-    .card-screenshot.nownest-art { background:#fff8ea; border:1px solid #d7bd87; }
-    .card-screenshot.nownest-art img { object-fit:contain; padding:8px; }
-    .card-screenshot-placeholder { }
-    .placeholder-initial { font-size: 3em; font-weight: 700; color: #7c3aed; opacity: 0.5; }
-    .card-body { min-width: 0; }
-    .card-body h3 { font-size: 1.2em; }
-    .card-body .links { margin-top: 10px; }
-    .avail-badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.75em; font-weight: 600; margin: 4px 0 8px; }
-    .avail-live { background: #dcfce7; color: #15803d; border: 1px solid #15803d40; }
-    .avail-pending { background: #fef9c3; color: #854d0e; border: 1px solid #854d0e40; }
-    .avail-neutral { background: #f3f4f6; color: #4b5563; border: 1px solid #4b556340; }
-    .outcome { margin: 6px 0 4px; line-height: 1.5; color: var(--text); font-size: 0.92em; }
-    .outcome.not-instrumented { color: var(--muted); font-style: italic; }
-    .kpi-line { margin: 4px 0 8px; font-size: 0.82em; color: var(--muted); }
-    .kpi-label { font-weight: 600; }
-    .kpi-value.not-instrumented { color: var(--muted); font-style: italic; }
-    @media (max-width: 560px) {
-      .card-portfolio { grid-template-columns: 1fr; gap: 12px; }
-      .card-screenshot { width: 100%; height: 180px; }
-      nav .nav-inner { gap: 10px; }
-      nav .brand-meta { display: none; }
-    }
-    footer { max-width: 920px; margin: 0 auto; padding: 24px 20px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85em; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    footer a { color: var(--accent); text-decoration: none; }
-    .skip-link{position:absolute;left:-9999px;top:1rem;z-index:9999;padding:.5rem 1rem;background:#fff;color:#1f2937;border:1px solid #7c3aed;border-radius:4px;font-weight:700;text-decoration:none;}.skip-link:focus{left:1rem;}a:focus-visible,button:focus-visible,[tabindex]:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #7c3aed;outline-offset:3px;border-radius:2px;}@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}}
-  </style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Edoworks — Work and current status">
+  <meta property="og:description" content="Qualification work, concept experiments, and retired projects with current availability beside every record.">
+  <meta property="og:site_name" content="Edoworks">
+  <meta property="og:url" content="https://edoworks.com/portfolio/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Edoworks — Work and current status">
+  <meta name="twitter:description" content="Qualification work, concept experiments, and retired projects with current availability beside every record.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Edoworks — Work and current status","url":"https://edoworks.com/portfolio/","description":"Qualification work, concept experiments, and retired projects with current availability beside every record.","isPartOf":{"@type":"WebSite","name":"Edoworks","url":"https://edoworks.com/"}}</script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to content</a>
-  <nav aria-label="Site navigation">
-    <div class="nav-inner">
-      <a class="brand" href="https://edoworks.com/">Edoworks</a>
-      <span class="brand-meta">software factory · portfolio</span>
-      <a href="/blog/" style="margin-left:auto">Blog</a>
-      <a href="/privacy/">Privacy</a>
-    </div>
-  </nav>
-  <main id="main-content">
-    <h1>Edoworks — Portfolio</h1>
-    <p class="lede">Case-study evidence for software built by the Edoworks factory. Product ownership and commercial operation remain with the named operator.</p>
-<section class="category" id="experiments">
-  <h2>Experiments</h2>
-  <div class="card" id="mews-and-woofs-experiment">
-    <h3>Mews &amp; Woofs</h3>
-    <span class="avail-badge avail-pending">Concept preview · beta not open</span>
-    <p class="notes">A low-cost experiment testing interest in playful pet-sound and context interactions. The temporary prototype is not the shipped iOS product and does not collect information from this portfolio page.</p>
-    <div class="links"><a class="btn btn-site" href="/mews-and-woofs/">Experiment record</a> <a class="btn btn-details" href="https://mews-and-woofs.foculoom-5388.chatgpt.site/">Open temporary preview</a></div>
-  </div>
-</section>
-<section class="category" id="qualification">
-  <h2>In qualification</h2>
-  <div class="card card-portfolio" id="nownest">
-    <div class="card-screenshot nownest-art"><img src="/nownest/assets/sophie-nest.svg" alt=""></div>
-    <div class="card-body">
-      <h3>NowNest</h3>
-      <span class="avail-badge avail-pending">In qualification · not available for download</span>
-      <p class="outcome">An offline iPhone and iPad app for saving an interruption without losing your place. It keeps the current next action visible and brings saved ideas back with the context needed to begin.</p>
-      <p class="kpi-line"><span class="kpi-label">Lifecycle:</span> <span class="kpi-value">Hands-on use, exact-build checks, outside testing, and distribution are not complete.</span></p>
-      <p class="kpi-line"><span class="kpi-label">Privacy:</span> <span class="kpi-value">The tested build has no account, cloud sync, analytics, notifications, or network access.</span></p>
-      <p class="kpi-line"><span class="kpi-label">Commercial evidence:</span> <span class="kpi-value">None claimed.</span></p>
-      <p class="kpi-line"><span class="kpi-label">Operator:</span> <span class="kpi-value">Foculoom LLC</span></p>
-      <p class="kpi-line"><span class="kpi-label">Builder:</span> <span class="kpi-value">Edoworks</span></p>
-      <div class="links"><a class="btn btn-site" href="/nownest/">Qualification page</a> <a class="btn btn-details" href="/nownest/privacy/">Privacy</a></div>
-    </div>
-  </div>
-</section>
-<section class="category" id="archive">
-  <h2>Archive</h2>
-  <div class="card card-portfolio" id="rung">
-  <div class="card-screenshot card-screenshot-placeholder" aria-hidden="true"><span class="placeholder-initial">Retired</span></div>
-  <div class="card-body">
-    <h3>Rung</h3>
-    <span class="avail-badge avail-neutral">Retired · no active offer</span>
-    <p class="outcome">Rung was a repository-evidence audit engine built by Edoworks. It is retired and is not an active product or paid offer.</p>
-    <p class="kpi-line"><span class="kpi-label">Record:</span> <span class="kpi-value">Historical releases and verification notes are retained as dated history. They are not a current install or support invitation.</span></p>
-    <p class="kpi-line"><span class="kpi-label">Builder:</span> <span class="kpi-value">Edoworks</span></p>
-    <div class="links"><a class="btn btn-details" href="/rung/">Read the archive record &rarr;</a></div>
-  </div>
-</div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Site navigation">
+      <a class="wordmark" href="/">Edoworks</a>
+      <span class="brand-role">software factory</span>
+      <div class="nav-links"><a href="/portfolio/" aria-current="page">Work</a><a href="/blog/">Notes</a><a href="/nownest/">NowNest</a></div>
+    </nav>
+  </header>
+  <main class="page-shell" id="main-content">
+    <header class="portfolio-hero">
+      <p class="eyebrow">Portfolio / current status</p>
+      <h1 class="display">Work, with its current status.</h1>
+      <p class="lede">Explore current qualification work, concept experiments, and retired projects. Each record states its current availability.</p>
+    </header>
 
-</section>
+    <section aria-labelledby="nownest-title">
+      <article class="card card-portfolio" id="nownest">
+        <div class="card-body">
+          <span class="status status-qualification">01 / In qualification · not available for download</span>
+          <h2 id="nownest-title">NowNest</h2>
+          <p>An offline iPhone and iPad app for saving an interruption without losing your place. It keeps the current next action visible and brings saved ideas back with context.</p>
+          <p>Hands-on use, exact-build checks, outside testing, and distribution are not complete.</p>
+          <p><strong>Operator:</strong> Foculoom LLC · <strong>Builder:</strong> Edoworks</p>
+          <a class="product-link" href="/nownest/">View qualification record <span aria-hidden="true">&nbsp;→</span></a>
+        </div>
+        <figure>
+          <img src="/nownest/assets/sophie-nest.svg" alt="" width="420" height="360">
+          <figcaption>Original Sophie illustration · not current app UI</figcaption>
+        </figure>
+      </article>
+    </section>
 
+    <section class="portfolio-secondary" aria-labelledby="other-records-title">
+      <h2 id="other-records-title">Other records</h2>
+      <div class="project-grid">
+        <article class="project-card project-card-concept" id="mews-and-woofs-experiment">
+          <span class="status status-concept">02 / Concept preview · beta not open</span>
+          <h3>Mews &amp; Woofs</h3>
+          <p>A playful pet-sound and context concept. The temporary preview is not a shipped iOS product.</p>
+          <a href="/mews-and-woofs/">Open concept record <span aria-hidden="true">&nbsp;→</span></a>
+        </article>
+        <article class="project-card project-card-archive" id="rung">
+          <span class="status status-retired">03 / Retired · no active offer</span>
+          <!-- Lifecycle authority: foculoom/foculoomllc/docs/ops/public-claims-register.md, Rung record. -->
+          <h3>Rung</h3>
+          <p>Rung was a repository-evidence audit engine built by Edoworks. It is retired and is not an active product or paid offer.</p>
+          <a href="/rung/">Read archive record <span aria-hidden="true">&nbsp;→</span></a>
+        </article>
+      </div>
+    </section>
   </main>
-  <footer>
-    <span>&copy; 2026 Edoworks &middot; Foculoom LLC</span>
-    <span><a href="https://edoworks.com/">Home</a> &middot; <a href="/blog/">Blog</a> &middot; <a href="/privacy/">Privacy</a></span>
-    <span>Built by Edoworks 202609231940.0.</span>
-  </footer>
+  <footer class="site-footer"><span>&copy; 2026 Edoworks · Foculoom LLC</span><span><a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/privacy/">Privacy</a></span><span>Built by Edoworks 20261013.0.</span></footer>
 </body>
 </html>

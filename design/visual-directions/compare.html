@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edoworks visual directions — review board</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f3f2ef; color: #1b1d28; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header, main, footer { max-width: 1700px; margin: auto; padding: 1.25rem clamp(1rem, 3vw, 3rem); }
+    header { padding-top: 3rem; }
+    h1 { font: 400 clamp(2.3rem, 4vw, 4.4rem)/1.1 Georgia, serif; letter-spacing: -.04em; margin: .3rem 0 1rem; }
+    h2 { font: 400 clamp(1.8rem, 3vw, 2.6rem)/1.2 Georgia, serif; margin: 0 0 1.2rem; }
+    h3 { margin: 0 0 .65rem; font-size: 1.05rem; }
+    p { max-width: 90ch; line-height: 1.6; }
+    .eyebrow { color: #5830b2; text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; font-weight: 800; }
+    .notice { background: #fff8ea; border: 1px solid #b67b36; border-radius: 12px; padding: 1rem 1.2rem; }
+    nav { display: flex; flex-wrap: wrap; gap: .8rem 1.4rem; margin: 2rem 0 0; }
+    a { color: #5830b2; text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid #5830b2; outline-offset: 4px; }
+    section { border-top: 1px solid #cdd0d9; padding: 2.5rem 0; }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1.5rem; }
+    figure { margin: 0; min-width: 0; background: white; border: 1px solid #cdd0d9; border-radius: 13px; padding: .8rem; }
+    figcaption { padding: .25rem .3rem .8rem; font-size: .93rem; font-weight: 750; }
+    img { width: 100%; height: auto; display: block; border: 1px solid #ddd; }
+    .mobile figure { max-width: 440px; justify-self: center; }
+    .mobile img { max-width: 390px; margin: auto; }
+    .small { color: #4c5361; font-size: .88rem; }
+    @media (max-width: 840px) { .pair { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Edoworks / review artifact / October 13, 2026</p>
+    <h1>Two visual directions for the software factory</h1>
+    <p class="notice"><strong>Static PNG design comps.</strong> These are Pillow compositions using proposed real site copy and an existing Edoworks illustration. They are not browser-rendered site builds, exact-build app UI, or accessibility evidence. Browser layout, 400% reflow, keyboard use, and device checks remain <strong>NOT RUN</strong>.</p>
+    <p>Direction A is a calm paper editorial layout with restrained violet navigation and a warm NowNest feature. Its revised mobile hierarchy places NowNest status and purpose before the Sophie illustration and uses compact concept/archive records. Direction B is a dark technical alternative with numbered project bands. Both identify Edoworks as NowNest's builder and Foculoom LLC as its operator, keep NowNest in qualification, Mews &amp; Woofs at concept stage, and Rung retired. These are static compositions, not browser captures.</p>
+    <nav aria-label="Comparison sections"><a href="#home-mobile">Home · 390</a><a href="#home-desktop">Home · 1280</a><a href="#portfolio-mobile">Portfolio · 390</a><a href="#portfolio-desktop">Portfolio · 1280</a><a href="#provenance">Provenance and review gates</a></nav>
+  </header>
+  <main>
+    <section id="home-mobile">
+      <h2>Home · 390 CSS pixel canvas</h2>
+      <div class="pair mobile">
+        <figure><figcaption>A · Paper editorial · mobile</figcaption><img src="editorial-home-390.png" alt="Paper editorial mobile homepage with the NowNest owner and builder cue, purpose before illustration, Mews concept, and Rung retired archive" width="390" height="2080"></figure>
+        <figure><figcaption>B · Night factory · mobile</figcaption><img src="night-home-390.png" alt="Night factory mobile homepage with the same availability records and explicit qualification action" width="390" height="2050"></figure>
+      </div>
+    </section>
+    <section id="home-desktop">
+      <h2>Home · 1280 CSS pixel canvas</h2>
+      <div class="pair">
+        <figure><figcaption>A · Paper editorial · desktop</figcaption><img src="editorial-home-1280.png" alt="Paper editorial desktop homepage concept" width="1280" height="1390" loading="lazy"></figure>
+        <figure><figcaption>B · Night factory · desktop</figcaption><img src="night-home-1280.png" alt="Night factory desktop homepage concept" width="1280" height="1485" loading="lazy"></figure>
+      </div>
+    </section>
+    <section id="portfolio-mobile">
+      <h2>Portfolio · 390 CSS pixel canvas</h2>
+      <div class="pair mobile">
+        <figure><figcaption>A · Paper editorial · mobile</figcaption><img src="editorial-portfolio-390.png" alt="Paper editorial mobile portfolio showing NowNest availability and purpose before its illustration" width="390" height="1770" loading="lazy"></figure>
+        <figure><figcaption>B · Night factory · mobile</figcaption><img src="night-portfolio-390.png" alt="Night factory mobile portfolio showing NowNest qualification, Mews concept, and Rung archive" width="390" height="1840" loading="lazy"></figure>
+      </div>
+    </section>
+    <section id="portfolio-desktop">
+      <h2>Portfolio · 1280 CSS pixel canvas</h2>
+      <div class="pair">
+        <figure><figcaption>A · Paper editorial · desktop</figcaption><img src="editorial-portfolio-1280.png" alt="Paper editorial desktop portfolio concept" width="1280" height="1420" loading="lazy"></figure>
+        <figure><figcaption>B · Night factory · desktop</figcaption><img src="night-portfolio-1280.png" alt="Night factory desktop portfolio concept" width="1280" height="1420" loading="lazy"></figure>
+      </div>
+    </section>
+    <section id="provenance">
+      <h2>Provenance and review gates</h2>
+      <p>The Sophie illustration is a raster conversion of the original <code>nownest/assets/sophie-nest.svg</code> in the Edoworks site repository. It is labeled as illustration, never current app UI. The comp uses no third-party photography or generated app screens. Sam and Tom must confirm the existing asset rights record before any changed public use.</p>
+      <p>Rung uses the retirement sentence from Foculoom’s <a href="https://github.com/foculoom/foculoomllc/pull/33">draft public claims register</a>. Foculoom’s <a href="https://github.com/foculoom/public-archives/blob/main/index.json">public archive index</a> records that the original <code>edoworks/rung</code> repository was deleted after recovery checks and preserves a fixed <a href="https://github.com/foculoom/public-archives/tree/main/edoworks/rung">historical snapshot</a>. An owner decision on historical website link policy remains open. The comps include no active source, install, release, support, or payment CTA.</p>
+      <p>Reviewer decision: accept, revise, or reject each direction with a specific canvas and reason. Publication requires owner approval, paired-site comprehension, exact branch browser captures, 400% reflow, keyboard and contrast checks, working links, and current factual claims. These checks are not conferred by this board.</p>
+      <p>Pixel equivalence is <strong>NOT RUN</strong>. Direction A is an authored composition using the key proposed HTML copy and hierarchy; its compact footer omits some HTML links and the repository build stamp. Direction B is an unimplemented alternative with some abbreviated supporting copy.</p>
+      <p class="small">Prepared for Sam and Tom’s independent review. Source renderer: <code>design/visual-directions/render_comps.py</code> in the Edoworks review branch.</p>
+    </section>
+  </main>
+  <footer class="small">Edoworks visual direction review · static comparison artifact · 2026-10-13</footer>
+</body>
+</html>
